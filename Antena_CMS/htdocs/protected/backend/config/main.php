@@ -9,7 +9,7 @@ Yii::setPathOfAlias('backend',$backend);
 return array(
 	'basePath'=>$frontend,
 	
-	'name'=>'Backend panel',
+	'name'=>'Antena CMS',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
