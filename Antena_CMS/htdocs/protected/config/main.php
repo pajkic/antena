@@ -8,6 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Antena Site',
+	'sourceLanguage' => 'sr_yu',
+	'Language' => 'sr_yu',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -16,6 +18,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.messages.*',
 	),
 
 	'modules'=>array(
@@ -55,10 +58,17 @@ return array(
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=78.47.124.179:3306;dbname=antena',
+			//'connectionString' => 'mysql:host=localhost;dbname=antena',
 			'emulatePrepare' => true,
+			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
+			/*
+			'username' => 'root',
+			'password' => '',
+			 */
 			'charset' => 'utf8',
+			'tablePrefix' => 'cms_',
 		),
 				
 		'errorHandler'=>array(
