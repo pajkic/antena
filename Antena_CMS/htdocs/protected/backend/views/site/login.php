@@ -11,8 +11,6 @@ $this->breadcrumbs=array(
 
 <h1>Login</h1>
 
-<p>Popunite polja:</p>
-
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
