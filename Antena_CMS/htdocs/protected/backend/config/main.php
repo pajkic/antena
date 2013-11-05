@@ -8,8 +8,9 @@ Yii::setPathOfAlias('backend',$backend);
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>$frontend,
-	
 	'name'=>'Antena CMS',
+	'sourceLanguage' => 'sr_yu',
+	'Language' => 'sr_yu',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
@@ -22,6 +23,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.messages.*',
 		'backend.models.*',
 		'backend.components.*',
 	),
@@ -42,7 +44,7 @@ return array(
 	'components'=>array(
 		'user'=>array(
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>false,
 		),
 		// uncomment the following to enable URLs in path-format
 		
@@ -54,6 +56,9 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		'coreMessages'=>array(
+            'basePath'=>null,
+        ),
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -63,10 +68,17 @@ return array(
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=78.47.124.179:3306;dbname=antena',
+			//'connectionString' => 'mysql:host=localhost;dbname=antena',
 			'emulatePrepare' => true,
+			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
+			 /*
+			 'username' => 'root',
+			 'password' => '',
+			  */
 			'charset' => 'utf8',
+			'tablePrefix' => 'cms_',
 		),
 		
 		'errorHandler'=>array(
@@ -81,11 +93,11 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
+				
 			),
 		),
 	),
