@@ -14,14 +14,24 @@ return array(
 	// preloading 'log' component
 	'preload'=>array('log'),
 
+	 // path aliases
+    'aliases' => array(
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
+    ),
+    
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
 		'application.messages.*',
+		'bootstrap.helpers.TbHtml',
 	),
 
+	// application modules
 	'modules'=>array(
+		 'gii' => array(
+            'generatorPaths' => array('bootstrap.gii'),
+     ),
 		// uncomment the following to enable the Gii tool
 		/*
 		'gii'=>array(
@@ -35,6 +45,9 @@ return array(
 
 	// application components
 	'components'=>array(
+		'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',   
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
