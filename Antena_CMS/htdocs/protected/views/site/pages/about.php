@@ -14,7 +14,7 @@ $this->breadcrumbs=array(
 
 
 <p>Talert samo sa bootstrap klasom</p>
-<div class="alert alert-success alert-dismissable">
+<div class="alert alert-warning alert-dismissable">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		Lorem ipsum dolorem sit amet
 </div>
