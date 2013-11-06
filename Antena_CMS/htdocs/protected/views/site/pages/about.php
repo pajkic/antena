@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 <h1>About</h1>
 
 
-<h4>upozorenje i dugme sa funkcijom</h4>
+<h4>upozorenje i dugme sa Yiistrap funkcijom</h4>
 <?php echo TbHtml::alert(TbHtml::ALERT_COLOR_WARNING, 'Lorem ipsum dolorem sit amet '); ?>
 <?php echo TbHtml::button('Primary', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
 
