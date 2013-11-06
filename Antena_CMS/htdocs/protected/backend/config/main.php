@@ -2,7 +2,7 @@
 $backend = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
 $bootstrap = realpath(__DIR__ . '/../extensions/bootstrap');
-echo $bootstrap;die();
+echo 'Bootstrap:' . $bootstrap;die();
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
