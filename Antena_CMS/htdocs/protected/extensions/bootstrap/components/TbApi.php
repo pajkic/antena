@@ -11,6 +11,7 @@
 /**
  * Bootstrap API component.
  */
+ 
 class TbApi extends CApplicationComponent
 {
     // Bootstrap plugins
