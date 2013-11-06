@@ -70,7 +70,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=78.47.124.179:3306;dbname=antena',
+			'connectionString' => 'mysql:host=localhost;dbname=antena',
 			//'connectionString' => 'mysql:host=localhost;dbname=antena',
 			'emulatePrepare' => true,
 			
