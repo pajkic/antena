@@ -38,6 +38,7 @@ return array(
 			'password'=>'000',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
+			'generatorPaths' => array('bootstrap.gii'),
 		),
 		
 	),
@@ -102,6 +103,9 @@ return array(
 				
 			),
 		),
+		'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',   
+        ),
 	),
 
 	// application-level parameters that can be accessed
