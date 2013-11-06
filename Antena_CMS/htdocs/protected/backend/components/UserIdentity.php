@@ -33,7 +33,7 @@ class UserIdentity extends CUserIdentity
 		 $user = User::model()->findByAttributes(array('login'=>$this->username));
 		 if ($user===null) { // No user found!
 			    $this->errorCode=self::ERROR_USERNAME_INVALID;
-		 } else if ($user->pass !== ($this->password) ) { // Invalid password!
+		 } else if ($user->pass !== md5($this->password) ) { // Invalid password!
 			  $this->errorCode=self::ERROR_PASSWORD_INVALID;
 		 } else { // Okay!
 	    	  $this->errorCode=self::ERROR_NONE;
