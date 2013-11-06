@@ -1,9 +1,10 @@
 <?php
 $backend = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
+$bootstrap = realpath(__DIR__ . '/../extensions/bootstrap');
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
-
+Yii::setPAthOfAlias('bootstrap',$bootstrap);
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -26,6 +27,7 @@ return array(
 		'application.messages.*',
 		'backend.models.*',
 		'backend.components.*',
+		'bootstrap.helpers.TbHtml'
 	),
 
 	'modules'=>array(
