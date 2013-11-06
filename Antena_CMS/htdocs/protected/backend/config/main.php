@@ -1,7 +1,7 @@
 <?php
 $backend = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
-$bootstrap = realpath(__DIR__ . '/../../extensions/bootstrap');
+$bootstrap = realpath(__DIR__ . '/../extensions/bootstrap');
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
@@ -71,15 +71,14 @@ return array(
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=antena',
-			//'connectionString' => 'mysql:host=localhost;dbname=antena',
 			'emulatePrepare' => true,
 			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
-			 /*
+			/*
 			 'username' => 'root',
 			 'password' => '',
-			  */
+			 */ 
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),
@@ -118,6 +117,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'info@implementacija.rs',
 	),
 );
