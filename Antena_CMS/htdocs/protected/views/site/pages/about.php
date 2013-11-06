@@ -14,7 +14,10 @@ $this->breadcrumbs=array(
 
 
 <p>Talert samo sa bootstrap klasom</p>
-<div class="alert alert-success alert-dismissable">Lorem ipsum dolorem sit amet</div>
+<div class="alert alert-success alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		Lorem ipsum dolorem sit amet
+</div>
 
 <p>This is a "static" page. You may change the content of this page
 by updating the file <code><?php echo __FILE__; ?></code>.</p>
