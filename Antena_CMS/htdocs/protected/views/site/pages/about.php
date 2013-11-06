@@ -9,11 +9,11 @@ $this->breadcrumbs=array(
 <h1>About</h1>
 
 
-<p>Talert sa funkcijom</p>
+<p>alert sa funkcijom</p>
 <?php echo TbHtml::alert(TbHtml::ALERT_COLOR_WARNING, 'Lorem ipsum dolorem sit amet'); ?>
 
 
-<p>Talert samo sa bootstrap klasom</p>
+<p>alert samo sa bootstrap klasom</p>
 <div class="alert alert-warning alert-dismissable">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		Lorem ipsum dolorem sit amet
