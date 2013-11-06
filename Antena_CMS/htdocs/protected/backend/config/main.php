@@ -1,7 +1,7 @@
 <?php
 $backend = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
-$bootstrap = realpath(__DIR__ . '/../extensions/bootstrap');
+$bootstrap = $backend . '/extensions/bootstrap';
 echo 'Bootstrap:' . $bootstrap.'<br>';
 echo 'Backend:' . $backend;die();
 // uncomment the following to define a path alias
