@@ -1,8 +1,7 @@
 <?php
 $backend = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
-$bootstrap = $backend . '/extensions/bootstrap';
-
+$bootstrap = realpath(__DIR__ . '/../../extensions/bootstrap');
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
@@ -72,7 +71,6 @@ return array(
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=antena',
-			//'connectionString' => 'mysql:host=localhost;dbname=antena',
 			'emulatePrepare' => true,
 			
 			'username' => 'antena',
