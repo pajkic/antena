@@ -13,7 +13,7 @@ return array(
 	'name'=>'Antena CMS',
 	'sourceLanguage' => 'sr_yu',
 	'Language' => 'sr_yu',
-	'homeUrl' => '/site/login',
+	'homeUrl' => '/backend.php/site/login',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
