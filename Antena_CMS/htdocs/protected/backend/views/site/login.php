@@ -23,8 +23,6 @@ $this->breadcrumbs=array(
 	<p class="help-block">Polja označena zvezdicom <span class="required">*</span> su obavezna.</p>
 	    
     <?php echo $form->textFieldControlGroup($model, 'username', array('id' => 'username', 'placeholder' => 'Korisničko ime', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
-    <?php echo $form->error($model, 'username', array(), true,true );?>
-
     <?php echo $form->passwordFieldControlGroup($model, 'password', array('id' => 'password','placeholder' => 'Lozinka', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
 	    
     <div class="form-actions">

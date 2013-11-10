@@ -1,7 +1,7 @@
 <?php
 $backend = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
-$bootstrap = realpath(__DIR__ . '/../../extensions/bootstrap');
+$bootstrap = realpath(__DIR__) . '/../extensions/bootstrap';
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
@@ -12,6 +12,7 @@ return array(
 	'name'=>'Antena CMS',
 	'sourceLanguage' => 'sr_yu',
 	'Language' => 'sr_yu',
+	'homeUrl' => '/backend.php/site/login',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
@@ -40,7 +41,6 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 			'generatorPaths' => array('bootstrap.gii'),
 		),
-		
 	),
 
 	// application components
@@ -78,7 +78,7 @@ return array(
 			/*
 			 'username' => 'root',
 			 'password' => '',
-			 */ 
+			 */
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),
@@ -111,6 +111,7 @@ return array(
 		'bootstrap' => array(
             'class' => 'bootstrap.components.TbApi',   
         ),
+        
 	),
 
 	// application-level parameters that can be accessed
