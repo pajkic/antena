@@ -1,5 +1,6 @@
 <?php
 $backend = dirname(dirname(__FILE__));
+
 $frontend = dirname($backend);
 $bootstrap = realpath(__DIR__) . '/../extensions/bootstrap';
 // uncomment the following to define a path alias
@@ -12,7 +13,7 @@ return array(
 	'name'=>'Antena CMS',
 	'sourceLanguage' => 'sr_yu',
 	'Language' => 'sr_yu',
-	'homeUrl' => $backend.'/backend.php/site/login',
+	'homeUrl' => $backend.'/site/login',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
