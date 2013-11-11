@@ -200,4 +200,5 @@ return array (
   '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} sadrži nepropisno ugnježdene widget tagove u svom pogledu (view) "{view}". {widget} widget nema endWidget() poziv.',
   '{controller} has an extra endWidget({id}) call in its view.' => '{controller} ima suvišan endWidget({id}) poziv u svom pogledu (view).',
   '{widget} cannot find the view "{view}".' => '{widget} ne može da pronađe pogled (view) "{view}".',
+  
 );

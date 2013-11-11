@@ -20,10 +20,10 @@ $this->breadcrumbs=array(
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation' => false,
 )); ?>
-	<p class="help-block">Polja označena zvezdicom <span class="required">*</span> su obavezna.</p>
+	<p class="help-block"><?php echo Yii::t('en','Fields with <span class="required">*</span> are required.');?></p>
 	    
-    <?php echo $form->textFieldControlGroup($model, 'username', array('id' => 'username', 'placeholder' => 'Korisničko ime', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
-    <?php echo $form->passwordFieldControlGroup($model, 'password', array('id' => 'password','placeholder' => 'Lozinka', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
+    <?php echo $form->textFieldControlGroup($model, 'username', array('id' => 'username', 'placeholder' => 'Username', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
+    <?php echo $form->passwordFieldControlGroup($model, 'password', array('id' => 'password','placeholder' => 'Password', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
 	    
     <div class="form-actions">
         <?php echo TbHtml::submitButton('Login',array(

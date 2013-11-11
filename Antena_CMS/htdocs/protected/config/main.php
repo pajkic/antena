@@ -8,8 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Antena Site',
-	'sourceLanguage' => 'sr_yu',
-	'Language' => 'sr_yu',
+	'sourceLanguage' => 'sr',
+	'Language' => 'sr',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
