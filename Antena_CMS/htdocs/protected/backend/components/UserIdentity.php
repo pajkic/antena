@@ -42,6 +42,7 @@ class UserIdentity extends CUserIdentity
 	    	  $this->errorCode=self::ERROR_NONE;
 			  $this->_id = $user->id;
 			  $this->setState('role', $user->role->name);
+			  $this->setState('language',$user->language->lang);
 			  return !$this->errorCode;
 			  
 			  

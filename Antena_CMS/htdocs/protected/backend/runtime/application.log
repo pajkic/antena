@@ -1206,3 +1206,194 @@ Stack trace:
 REQUEST_URI=/backend.php/site/login
 HTTP_REFERER=http://yii.localhost/backend.php/site/login
 ---
+2013/11/10 18:30:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\www\antena\htdocs\protected\backend\models\User.php(34): CActiveRecord::model('User')
+#8 D:\www\antena\htdocs\protected\backend\components\UserIdentity.php(35): User::model()
+#9 D:\www\antena\htdocs\protected\backend\models\LoginForm.php(55): UserIdentity->authenticate()
+#10 D:\www\antena\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#11 D:\www\antena\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 D:\www\antena\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#13 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(93): CModel->validate()
+#14 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#19 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---
+2013/11/10 18:31:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\www\antena\htdocs\protected\backend\models\User.php(34): CActiveRecord::model('User')
+#8 D:\www\antena\htdocs\protected\backend\components\UserIdentity.php(35): User::model()
+#9 D:\www\antena\htdocs\protected\backend\models\LoginForm.php(55): UserIdentity->authenticate()
+#10 D:\www\antena\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#11 D:\www\antena\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 D:\www\antena\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#13 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(93): CModel->validate()
+#14 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#19 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---
+2013/11/10 18:33:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\www\antena\htdocs\protected\backend\models\User.php(34): CActiveRecord::model('User')
+#8 D:\www\antena\htdocs\protected\backend\components\UserIdentity.php(35): User::model()
+#9 D:\www\antena\htdocs\protected\backend\models\LoginForm.php(55): UserIdentity->authenticate()
+#10 D:\www\antena\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#11 D:\www\antena\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 D:\www\antena\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#13 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(93): CModel->validate()
+#14 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#19 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---
+2013/11/11 11:03:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\www\antena\htdocs\protected\backend\models\User.php(34): CActiveRecord::model('User')
+#8 D:\www\antena\htdocs\protected\backend\components\UserIdentity.php(35): User::model()
+#9 D:\www\antena\htdocs\protected\backend\models\LoginForm.php(55): UserIdentity->authenticate()
+#10 D:\www\antena\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#11 D:\www\antena\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 D:\www\antena\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#13 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(93): CModel->validate()
+#14 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#19 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---
+2013/11/11 11:04:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\www\antena\htdocs\protected\backend\models\User.php(34): CActiveRecord::model('User')
+#8 D:\www\antena\htdocs\protected\backend\components\UserIdentity.php(35): User::model()
+#9 D:\www\antena\htdocs\protected\backend\models\LoginForm.php(55): UserIdentity->authenticate()
+#10 D:\www\antena\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#11 D:\www\antena\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 D:\www\antena\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#13 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(93): CModel->validate()
+#14 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#19 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---
+2013/11/11 11:04:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#7 D:\www\antena\htdocs\protected\backend\models\User.php(34): CActiveRecord::model('User')
+#8 D:\www\antena\htdocs\protected\backend\components\UserIdentity.php(35): User::model()
+#9 D:\www\antena\htdocs\protected\backend\models\LoginForm.php(55): UserIdentity->authenticate()
+#10 D:\www\antena\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#11 D:\www\antena\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 D:\www\antena\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#13 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(93): CModel->validate()
+#14 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#19 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#20 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---
+2013/11/11 11:31:33 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.language" is not defined.' in D:\www\antena\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\www\antena\framework\web\auth\CWebUser.php(140): CComponent->__get('language')
+#1 D:\www\antena\htdocs\protected\backend\components\Controller.php(29): CWebUser->__get('language')
+#2 D:\www\antena\framework\web\CWebApplication.php(281): Controller->init()
+#3 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#4 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#5 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/backend.php
+HTTP_REFERER=http://yii.localhost/backend.php/site/contact
+---
+2013/11/11 11:37:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "backend.php".' in D:\www\antena\framework\web\CController.php:483
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(270): CController->missingAction('backend.php')
+#1 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('backend.php')
+#2 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/backend.ph...')
+#3 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/backend.php/site/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php/site/login
+---

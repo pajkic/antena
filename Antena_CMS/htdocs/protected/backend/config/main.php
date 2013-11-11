@@ -11,9 +11,9 @@ Yii::setPAthOfAlias('bootstrap',$bootstrap);
 return array(
 	'basePath'=>$frontend,
 	'name'=>'Antena CMS',
-	'sourceLanguage' => 'sr_yu',
-	'Language' => 'sr_yu',
 	'homeUrl' => '/backend.php/site/login',
+	//'sourceLanguage' => Yii::app()->user->language,
+	//'Language' => Yii::app()->user->language,
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
@@ -102,10 +102,12 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				
+				/*
 				array(
 					'class'=>'CWebLogRoute',
 				),
+				 * 
+				 */
 				
 			),
 		),

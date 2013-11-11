@@ -72,7 +72,8 @@ class User extends CActiveRecord
 		return array(
 			'posts' => array(self::HAS_MANY, 'Post', 'users_id'),
 			'userMetas' => array(self::HAS_MANY, 'UserMeta', 'user_id'),
-			'role' => array(self::BELONGS_TO, 'Role', 'role_id')
+			'role' => array(self::BELONGS_TO, 'Role', 'role_id'),
+			'language' => array(self::BELONGS_TO, 'Language', 'lang_id'),
 			);
 	}
 
