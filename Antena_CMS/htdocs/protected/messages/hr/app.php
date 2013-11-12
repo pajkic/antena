@@ -1,9 +1,5 @@
 <?php
 return array (
-'Home' => 'Početna',
-'About' => 'O nama',
-'Contact' => 'Kontakt',
-'Welcome to' => 'Dobrodošli u ',
-
+'Polja označena <span class="required">*</span> su obavezna.' => 'Polja označena zvijezdicama su obavezna.',
 );
 ?>

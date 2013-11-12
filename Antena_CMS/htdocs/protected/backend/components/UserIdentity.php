@@ -17,6 +17,8 @@ class UserIdentity extends CUserIdentity
 	 */
 	 
 	private $_id;
+	private $_name;
+	
 	public function authenticate()
 	{
 		/*
@@ -41,8 +43,10 @@ class UserIdentity extends CUserIdentity
 		 } else { // Okay!
 	    	  $this->errorCode=self::ERROR_NONE;
 			  $this->_id = $user->id;
-			  $this->setState('role', $user->role->name);
-			  $this->setState('language',$user->language->lang);
+			  $this->_name = $user->display_name;
+			  $this->setState('__role', $user->role->name);
+			  $this->setState('__language',$user->language->lang);
+			  
 			  return !$this->errorCode;
 			  
 			  
@@ -52,5 +56,9 @@ class UserIdentity extends CUserIdentity
 	
 	public function getId() {
     	return $this->_id;
+	}
+	
+	public function getName() {
+		return $this->_name;
 	}
 }
