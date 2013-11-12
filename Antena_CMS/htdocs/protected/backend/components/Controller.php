@@ -31,7 +31,6 @@ class Controller extends CController
 		} else {
 			$lang = Language::model()->findByAttributes(array('main'=>1));
 			$app->language = $lang->lang;
-			$app->language = 'en';
 		}
 	}
 	

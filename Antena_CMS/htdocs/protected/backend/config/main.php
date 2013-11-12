@@ -12,8 +12,8 @@ return array(
 	'basePath'=>$frontend,
 	'name'=>'Antena CMS',
 	'homeUrl' => '/backend.php/site/login',
-	//'sourceLanguage' => Yii::app()->user->language,
-	//'Language' => Yii::app()->user->language,
+	'sourceLanguage' => 'sr',
+	'Language' => 'sr',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',

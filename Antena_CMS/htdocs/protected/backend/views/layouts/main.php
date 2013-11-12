@@ -30,14 +30,15 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>Yii::t('app','Home'), 'url'=>array('/site/index')),
-				array('label'=>Yii::t('app','About'), 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>Yii::t('app','Contact'), 'url'=>array('/site/contact')),
-				array('label'=>Yii::t('app','Login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>Yii::t('app','Logout ('.Yii::app()->user->name.')'), 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Početna', 'url'=>array('/site/index')),
+				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -47,7 +48,7 @@
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
-
+	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 		All Rights Reserved.<br/>
