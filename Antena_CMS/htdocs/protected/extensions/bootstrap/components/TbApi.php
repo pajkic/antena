@@ -37,7 +37,7 @@ class TbApi extends CApplicationComponent
     /**
      * @var bool whether we should copy the asset file or directory even if it is already published before.
      */
-    public $forceCopyAssets = false;
+    public $forceCopyAssets = true; // CHANGE IN PRODUCTION MODE TO FALSE!
 
     private $_assetsUrl;
 
