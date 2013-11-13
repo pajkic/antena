@@ -63,7 +63,7 @@ class LoginForm extends CFormModel
 			        $this->addError('username','Korisničko ime ne postoji.');
 			        break;
 			    default: // UserIdentity::ERROR_PASSWORD_INVALID
-			        $this->addError('password','Pogrešna šifra.');
+			        $this->addError('password','Neispravna lozinka.');
 			        break;
 			}
 		}
