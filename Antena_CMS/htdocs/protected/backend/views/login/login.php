@@ -26,7 +26,8 @@ $this->pageTitle=Yii::app()->name . ' - Login';
     <?php $this->endWidget(); ?>
 </div>
 
-<!--
+
+testiranje
 <div class="account-wall">
 	<img class="profile-img" src="/htdocs/protected/backend/extensions/bootstrap/assets/img/implementacija.png" alt="">
 	<form class="form-signin">
@@ -35,4 +36,3 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Prijavi me</button>     
 	</form>
 </div>      
--->
