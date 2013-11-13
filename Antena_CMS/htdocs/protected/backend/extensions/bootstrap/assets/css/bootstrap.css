@@ -6167,6 +6167,9 @@ a.badge:focus {
 }
 
 /* login */
+.login-single {
+	margin: 20% auto;
+}
 #login-form, .account-wall  {
 	max-width: 305px;
 	margin: 0 auto;
