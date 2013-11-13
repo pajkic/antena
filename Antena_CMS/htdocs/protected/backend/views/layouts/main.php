@@ -50,8 +50,7 @@
 	<div class="clear"></div>
 	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a><br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
