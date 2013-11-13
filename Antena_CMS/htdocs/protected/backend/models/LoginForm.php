@@ -60,10 +60,10 @@ class LoginForm extends CFormModel
 			        Yii::app()->user->login($identity,$duration);
 			        break;
 			    case UserIdentity::ERROR_USERNAME_INVALID:
-			        $this->addError('username','Username doesn\'t exist.');
+			        $this->addError('username','Korisničko ime ne postoji.');
 			        break;
 			    default: // UserIdentity::ERROR_PASSWORD_INVALID
-			        $this->addError('password','Wrong password.');
+			        $this->addError('password','Pogrešna šifra.');
 			        break;
 			}
 		}
