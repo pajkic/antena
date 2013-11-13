@@ -6167,20 +6167,20 @@ a.badge:focus {
 }
 
 /* login */
-.form-signin, .account-wall  {
+#login-form, .account-wall  {
 	max-width: 330px;
 	margin: 0 auto;
 }
-.form-signin {
+#login-form {
     padding: 15px;
 }
 .form-signin .form-signin-heading, .form-signin .checkbox {
     margin-bottom: 10px;
 }
-.form-signin .checkbox {
+#login-form .checkbox {
     font-weight: normal;
 }
-.form-signin .form-control {
+#login-form .form-control {
     position: relative;
     font-size: 16px;
     height: auto;
@@ -6190,15 +6190,15 @@ a.badge:focus {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.form-signin .form-control:focus {
+#login-form .form-control:focus {
     z-index: 2;
 }
-.form-signin input[type="text"] {
+#login-form input[type="text"] {
     margin-bottom: -1px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-.form-signin input[type="password"] {
+#login-form input[type="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
