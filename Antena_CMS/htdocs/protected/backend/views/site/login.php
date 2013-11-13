@@ -8,7 +8,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 
 
 <div class="account-wall">
-	<img class="profile-img" src="/htdocs/protected/backend/extensions/bootstrap/assets/img/implementacija.png" alt="">
+	<img class="profile-img" src="/htdocs/protected/backend/images/implementacija.png" alt="">
 	<form class="form-signin">
 		<input type="text" class="form-control" placeholder="Email" required autofocus>
 		<input type="password" class="form-control" placeholder="Password" required>
