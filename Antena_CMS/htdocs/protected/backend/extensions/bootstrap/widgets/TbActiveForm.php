@@ -723,7 +723,7 @@ class TbActiveForm extends CActiveForm
         $error = $this->error($model, $attribute, $errorOptions, $enableAjaxValidation, $enableClientValidation);
         // kind of a hack for ajax forms but this works for now.
         if (!empty($error) && strpos($error, 'display:none') === false) {
-            $options['color'] = TbHtml::INPUT_COLOR_SUCCESS;
+            $options['color'] = TbHtml::INPUT_COLOR_ERROR;
         }
         if (!$this->hideInlineErrors) {
             $options['error'] = $error;
