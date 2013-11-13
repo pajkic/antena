@@ -6167,7 +6167,7 @@ a.badge:focus {
 }
 
 /* login */
-.login-single {
+.containter.login-single {
 	margin: 20% auto;
 }
 #login-form, .account-wall  {
@@ -6214,7 +6214,7 @@ a.badge:focus {
 .profile-img {
     width: 96px;
     height: 96px;
-    margin: 0 auto 25px;
+    margin: 0 auto;
     display: block;
 }
 .btn-lg {
