@@ -30,3 +30,16 @@ $this->pageTitle=Yii::app()->name . ' - Login';
     <?php $this->endWidget(); ?>
 
 </div>
+
+<!--
+	
+<div class="account-wall">
+	<img class="profile-img" src="/htdocs/protected/backend/extensions/bootstrap/assets/img/implementacija.png" alt="">
+	<form class="form-signin">
+		<input type="text" class="form-control" placeholder="Korisničko ime" required autofocus>
+		<input type="password" class="form-control" placeholder="Lozinka" required>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Prijavi me</button>     
+	</form>
+</div>      
+ 
+-->
