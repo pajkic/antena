@@ -6171,7 +6171,7 @@ a.badge:focus {
 	max-width: 305px;
 	margin: 0 auto;
 }
-.form-signin .form-signin-heading, .form-signin .checkbox {
+#login-form .form-signin-heading, #login-form .checkbox {
     margin-bottom: 10px;
 }
 #login-form .checkbox {
