@@ -10,6 +10,7 @@ class LoginController extends Controller
 	/**
 	 * Displays the login page
 	 */
+	public $layout='//layouts/login';
 	public function actionIndex()
 	{
 		$model=new LoginForm;
