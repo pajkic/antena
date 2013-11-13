@@ -8,6 +8,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
    
 <div class="account-wall">
 	<img class="profile-img" src="/images/backend/implementacija.png" alt="Antena CMS"> 
+		<h1 class="text-center login-title">Antena CMS</h1>
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array( 
 	'id'=>'login-form', 
 	// Please note: When you enable ajax validation, make sure the corresponding 
