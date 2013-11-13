@@ -20,11 +20,12 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 	'layout' => 'signin',
 	)); 
 	?>
-	    
+	
+	<?php echo $form->errorSummary($model);?>    
     <?php echo $form->textField($model, 'username', array('class' => 'form-control', 'id' => 'username', 'placeholder' => 'Korisničko ime')); ?>
-    <?php echo $form->error($model,'username'); ?>
+    
     <?php echo $form->passwordField($model, 'password', array('class' => 'form-control', 'id' => 'password','placeholder' => 'Lozinka', )); ?>
-    <?php echo $form->error($model,'password'); ?>
+    
 	<button class="btn btn-lg btn-primary btn-block" type="submit">Prijavi me</button>
 
     <?php $this->endWidget(); ?>
