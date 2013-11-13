@@ -94,7 +94,7 @@ return array (
   'No columns are being updated for table "{table}".' => 'Ni jedna kolona neće biti ažurirana u tabeli "{table}".',
   'No counter columns are being updated for table "{table}".' => 'Brojač kolona neće biti ažuriran za tebelu "{table}".',
   'Object configuration must be an array containing a "class" element.' => 'Konfiguracija objekta mora biti niz koji sadrži "class" element.',
-  'Please fix the following input errors:' => 'Molim vas ispravite greške:',
+  'Please fix the following input errors:' => 'Podaci su pogrešni',
   'Property "{class}.{property}" is not defined.' => 'Svojstvo (property) "{class}.{property}" nije definisano.',
   'Property "{class}.{property}" is read only.' => 'Svojstvo (property) "{class}.{property}" je samo za čitanje.',
   'Queue data must be an array or an object implementing Traversable.' => 'Podatak reda (Queue data) mora biti niz ili objekat koji implementira Traversable.',
