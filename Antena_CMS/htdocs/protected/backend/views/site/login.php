@@ -8,7 +8,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 
 
 <div class="account-wall">
-	<img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+	<img class="profile-img" src="/htdocs/protected/backend/extensions/bootstrap/assets/img/implementacija.png"
                     alt="">
 	<form class="form-signin">
 		<input type="text" class="form-control" placeholder="Email" required autofocus>
@@ -18,9 +18,6 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 </div>      
  
     
-
-
-<h1>Login</h1>
 
 <div class="form">
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
