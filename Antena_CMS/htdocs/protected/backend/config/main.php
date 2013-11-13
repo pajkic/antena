@@ -11,7 +11,7 @@ Yii::setPAthOfAlias('bootstrap',$bootstrap);
 return array(
 	'basePath'=>$frontend,
 	'name'=>'Antena CMS',
-	'homeUrl' => '/backend.php/site/login',
+	'homeUrl' => '/backend.php/login',
 	'sourceLanguage' => 'sr',
 	'Language' => 'sr',
 	
@@ -79,7 +79,7 @@ return array(
 			/*
 			 'username' => 'root',
 			 'password' => '',
-			 */
+			*/
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),

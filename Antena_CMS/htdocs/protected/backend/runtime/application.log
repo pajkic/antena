@@ -1920,3 +1920,346 @@ Stack trace:
 REQUEST_URI=/backend.php/site/login
 HTTP_REFERER=http://antena.localhost/backend.php/site/login
 ---
+2013/11/13 16:33:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'antena'@'localhost' (using password: YES)' in D:\www\antena\framework\db\CDbConnection.php:381
+Stack trace:
+#0 D:\www\antena\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\www\antena\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\www\antena\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\www\antena\framework\base\CApplication.php(438): CModule->getComponent('db')
+#4 D:\www\antena\framework\db\ar\CActiveRecord.php(623): CApplication->getDb()
+#5 D:\www\antena\framework\db\ar\CActiveRecord.php(2309): CActiveRecord->getDbConnection()
+#6 D:\www\antena\framework\db\ar\CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(Language))
+#7 D:\www\antena\htdocs\protected\backend\models\Language.php(23): CActiveRecord::model('Language')
+#8 D:\www\antena\htdocs\protected\backend\components\Controller.php(32): Language::model()
+#9 D:\www\antena\framework\web\CWebApplication.php(281): Controller->init()
+#10 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#11 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/backend.php
+---
+2013/11/13 16:33:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/login
+---
+2013/11/13 16:34:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/login
+---
+2013/11/13 16:34:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login/index".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('login/index')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/login/index
+---
+2013/11/13 16:34:35 [error] [exception.CException] exception 'CException' with message 'LoginController ne može da pronađe zahtevani pogled (view) "login".' in D:\www\antena\framework\web\CController.php:878
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#1 D:\www\antena\htdocs\protected\backend\controllers\LoginController.php(31): CController->render('login', Array)
+#2 D:\www\antena\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#3 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('index')
+#7 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('login/index')
+#8 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php/login/index
+---
+2013/11/13 16:36:03 [error] [exception.CException] exception 'CException' with message 'SiteController ne može da pronađe zahtevani pogled (view) "login".' in D:\www\antena\framework\web\CController.php:878
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#1 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(98): CController->render('login', Array)
+#2 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#3 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#7 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#8 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php
+---
+2013/11/13 16:36:29 [error] [exception.CException] exception 'CException' with message 'SiteController ne može da pronađe zahtevani pogled (view) "login".' in D:\www\antena\framework\web\CController.php:878
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#1 D:\www\antena\htdocs\protected\backend\controllers\SiteController.php(98): CController->render('login', Array)
+#2 D:\www\antena\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#3 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('login')
+#7 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#8 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/backend.php/site/login
+HTTP_REFERER=http://yii.localhost/backend.php
+---
+2013/11/13 16:42:28 [error] [exception.CException] exception 'CException' with message 'Svojstvo (property) "TbActiveForm.class" nije definisano.' in D:\www\antena\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\www\antena\framework\web\CWidgetFactory.php(161): CComponent->__set('class', 'form-signin')
+#1 D:\www\antena\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(LoginController), 'bootstrap.widge...', Array)
+#2 D:\www\antena\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\www\antena\htdocs\protected\backend\views\login\login.php(32): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 D:\www\antena\framework\web\CBaseController.php(126): require('D:\www\antena\h...')
+#5 D:\www\antena\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\www\antena\h...', Array, true)
+#6 D:\www\antena\framework\web\CController.php(869): CBaseController->renderFile('D:\www\antena\h...', Array, true)
+#7 D:\www\antena\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 D:\www\antena\htdocs\protected\backend\controllers\LoginController.php(31): CController->render('login', Array)
+#9 D:\www\antena\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#10 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#15 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/backend.php/login
+HTTP_REFERER=http://yii.localhost/backend.php
+---
+2013/11/13 16:43:20 [error] [exception.CException] exception 'CException' with message 'Svojstvo (property) "TbActiveForm.class" nije definisano.' in D:\www\antena\framework\base\CComponent.php:173
+Stack trace:
+#0 D:\www\antena\framework\web\CWidgetFactory.php(161): CComponent->__set('class', 'form-signin')
+#1 D:\www\antena\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(LoginController), 'bootstrap.widge...', Array)
+#2 D:\www\antena\framework\web\CBaseController.php(189): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 D:\www\antena\htdocs\protected\backend\views\login\login.php(32): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 D:\www\antena\framework\web\CBaseController.php(126): require('D:\www\antena\h...')
+#5 D:\www\antena\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\www\antena\h...', Array, true)
+#6 D:\www\antena\framework\web\CController.php(869): CBaseController->renderFile('D:\www\antena\h...', Array, true)
+#7 D:\www\antena\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 D:\www\antena\htdocs\protected\backend\controllers\LoginController.php(31): CController->render('login', Array)
+#9 D:\www\antena\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#10 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 D:\www\antena\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 D:\www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 D:\www\antena\framework\web\CWebApplication.php(282): CController->run('')
+#14 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#15 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/backend.php/login
+HTTP_REFERER=http://yii.localhost/backend.php
+---
+2013/11/13 16:52:59 [error] [php] Use of undefined constant php - assumed 'php' (D:\www\antena\htdocs\protected\backend\views\login\login.php:45)
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(869): LoginController->renderFile()
+#1 D:\www\antena\framework\web\CController.php(782): LoginController->renderPartial()
+#2 D:\www\antena\htdocs\protected\backend\controllers\LoginController.php(31): LoginController->render()
+#3 D:\www\antena\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#4 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\www\antena\framework\web\CController.php(286): LoginController->runAction()
+#6 D:\www\antena\framework\web\CController.php(265): LoginController->runActionWithFilters()
+#7 D:\www\antena\framework\web\CWebApplication.php(282): LoginController->run()
+#8 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 D:\www\antena\htdocs\backend.php(13): CWebApplication->run()
+REQUEST_URI=/backend.php/login
+in D:\www\antena\htdocs\protected\backend\views\login\login.php (45)
+in D:\www\antena\htdocs\protected\backend\controllers\LoginController.php (31)
+in D:\www\antena\htdocs\backend.php (13)
+2013/11/13 16:53:31 [error] [php] Use of undefined constant php - assumed 'php' (D:\www\antena\htdocs\protected\backend\views\login\login.php:46)
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(869): LoginController->renderFile()
+#1 D:\www\antena\framework\web\CController.php(782): LoginController->renderPartial()
+#2 D:\www\antena\htdocs\protected\backend\controllers\LoginController.php(31): LoginController->render()
+#3 D:\www\antena\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#4 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\www\antena\framework\web\CController.php(286): LoginController->runAction()
+#6 D:\www\antena\framework\web\CController.php(265): LoginController->runActionWithFilters()
+#7 D:\www\antena\framework\web\CWebApplication.php(282): LoginController->run()
+#8 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 D:\www\antena\htdocs\backend.php(13): CWebApplication->run()
+REQUEST_URI=/backend.php/login
+in D:\www\antena\htdocs\protected\backend\views\login\login.php (46)
+in D:\www\antena\htdocs\protected\backend\controllers\LoginController.php (31)
+in D:\www\antena\htdocs\backend.php (13)
+2013/11/13 16:55:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "extensions/bootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('extensions/boot...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/extensions/bootstrap/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:55:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/img/impl...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:55:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/img/impl...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/assets/img/implementacija.png
+---
+2013/11/13 16:57:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Gotivac".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('Gotivac')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/Gotivac
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:57:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Gotivac".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('Gotivac')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/Gotivac
+---
+2013/11/13 16:58:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap.assets.img.implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap.asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap.assets.img.implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:58:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap.assets.img.implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap.asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap.assets.img.implementacija.png
+---
+2013/11/13 16:58:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/assets.img.implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap/assets.img.implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:58:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/assetsimg.implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap/assetsimg.implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:58:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/assets/img.implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap/assets/img.implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:58:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:58:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/assets/img/implementacija/png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap/assets/img/implementacija/png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 16:58:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bootstrap/assets/img/implementacija/png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('bootstrap/asset...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/bootstrap/assets/img/implementacija/png
+---
+2013/11/13 16:59:16 [error] [php] Undefined variable: backend (D:\www\antena\htdocs\protected\backend\views\login\login.php:14)
+Stack trace:
+#0 D:\www\antena\framework\web\CController.php(869): LoginController->renderFile()
+#1 D:\www\antena\framework\web\CController.php(782): LoginController->renderPartial()
+#2 D:\www\antena\htdocs\protected\backend\controllers\LoginController.php(31): LoginController->render()
+#3 D:\www\antena\framework\web\actions\CInlineAction.php(49): LoginController->actionIndex()
+#4 D:\www\antena\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\www\antena\framework\web\CController.php(286): LoginController->runAction()
+#6 D:\www\antena\framework\web\CController.php(265): LoginController->runActionWithFilters()
+#7 D:\www\antena\framework\web\CWebApplication.php(282): LoginController->run()
+#8 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 D:\www\antena\htdocs\backend.php(13): CWebApplication->run()
+REQUEST_URI=/backend.php/login
+in D:\www\antena\htdocs\protected\backend\views\login\login.php (14)
+in D:\www\antena\htdocs\protected\backend\controllers\LoginController.php (31)
+in D:\www\antena\htdocs\backend.php (13)
+2013/11/13 16:59:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backendbootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('backendbootstra...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/backendbootstrap/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 17:06:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "prote/backend/extensions/bootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('prote/backend/e...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/prote/backend/extensions/bootstrap/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 17:06:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "protected/backend/extensions/bootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('protected/backe...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/protected/backend/extensions/bootstrap/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
+2013/11/13 17:06:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "protected/backend/extensions/bootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('protected/backe...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/protected/backend/extensions/bootstrap/assets/img/implementacija.png
+---
+2013/11/13 17:06:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "protected/backend/extensions/bootstrap/assets/img/implementacija.png".' in D:\www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('protected/backe...')
+#1 D:\www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/protected/backend/extensions/bootstrap/assets/img/implementacija.png
+HTTP_REFERER=http://yii.localhost/backend.php/login
+---
