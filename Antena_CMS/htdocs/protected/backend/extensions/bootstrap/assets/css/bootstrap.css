@@ -6222,5 +6222,11 @@ a.badge:focus {
 	font-size: 18px;
 	line-height: 1.33;
 	border-radius: 6px;
-	}
+}
+.login-title {
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}	
 /* end login */
