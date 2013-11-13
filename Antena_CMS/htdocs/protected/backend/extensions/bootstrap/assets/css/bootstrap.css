@@ -6190,6 +6190,10 @@ a.badge:focus {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+#login-form .form-control.error {
+	border: 1px solid #b94a48;
+	
+}
 #login-form .form-control:focus {
     z-index: 2;
 }
