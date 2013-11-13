@@ -27,7 +27,6 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation' => false,
 )); ?>
-	<p class="help-block"><?php echo Yii::t('app','Polja označena <span class="required">*</span> su obavezna.');?></p>
 	    
     <?php echo $form->textFieldControlGroup($model, 'username', array('id' => 'username', 'placeholder' => 'Korisničko ime', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
     <?php echo $form->passwordFieldControlGroup($model, 'password', array('id' => 'password','placeholder' => 'Lozinka', 'size' => TbHtml::INPUT_SIZE_MEDIUM)); ?>
