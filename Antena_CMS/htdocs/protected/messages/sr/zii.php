@@ -33,5 +33,4 @@ return array (
   'Update' => 'Prepravi',
   'View' => 'Pogledaj',
   '{class} must specify "model" and "attribute" or "name" property values.' => '{class} mora postaviti "model" i "attribute" ili "name" vrednosti atributa.',
-  
 );
