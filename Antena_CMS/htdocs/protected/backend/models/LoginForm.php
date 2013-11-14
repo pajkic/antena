@@ -33,7 +33,8 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-
+			'username' => 'Korisničko ime',
+			'password' => 'Lozinka',
 		);
 	}
 
