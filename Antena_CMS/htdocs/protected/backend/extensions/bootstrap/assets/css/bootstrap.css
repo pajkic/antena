@@ -6283,4 +6283,8 @@ a.badge:focus {
     line-height: 36px;
     padding: 0 16px 0 7px;
 }
+#mainmenu-backend ul > li > a:hover {
+    background-color: #FFFFFF;
+    color: #1963AA;
+}
 /* end mainmenu-backend */
