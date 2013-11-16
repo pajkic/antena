@@ -37,7 +37,6 @@
     )); ?>
     
 
- 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
@@ -51,7 +50,7 @@
 	</div> <!-- mainmenu -->
 </div>	
 
-<div class="span-10">	
+ 
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -68,7 +67,7 @@
 		Copyright &copy; <?php echo date('Y'); ?> <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 	</div><!-- footer -->
 
-</div>
+ 
 
 </div><!-- page -->
 
