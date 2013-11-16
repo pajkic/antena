@@ -27,7 +27,7 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-<div class="span2">
+<div class="sidebar">
     <?php echo TbHtml::stackedTabs(array(
     array('label' => 'Home', 'url' => '#', 'active' => true),
     array('label' => 'Profile', 'url' => '#',),
