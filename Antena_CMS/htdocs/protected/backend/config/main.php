@@ -1,11 +1,15 @@
 <?php
 $backend = dirname(dirname(__FILE__));
-
 $frontend = dirname($backend);
 $bootstrap = realpath(__DIR__) . '/../extensions/bootstrap';
+$yiiwheels = realpath(__DIR__) . '/../extensions/yiiwheels';
+
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
+Yii::setPAthOfAlias('yiiwheels',$yiiwheels);
+
+
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -30,6 +34,7 @@ return array(
 		'backend.models.*',
 		'backend.components.*',
 		'bootstrap.helpers.TbHtml'
+		
 	),
 
 	'modules'=>array(
@@ -112,7 +117,11 @@ return array(
 			),
 		),
 		'bootstrap' => array(
-            'class' => 'bootstrap.components.TbApi',   
+            'class' => 'bootstrap.components.TbApi',
+               
+        ),
+        'yiiwheels' => array(
+            'class' => 'yiiwheels.YiiWheels',   
         ),
         
 	),
@@ -123,4 +132,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'info@implementacija.rs',
 	),
+	
+
 );
