@@ -27,18 +27,25 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-
-
 <div class="span2">
     <?php echo TbHtml::stackedTabs(array(
     array('label' => 'Home', 'url' => '#', 'active' => true),
     array('label' => 'Profile', 'url' => '#',),
     array('label' => 'Messages', 'url' => '#',),
     )); ?>
-    
-
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
+   
+    <?php echo TbHtml::stackedTabs(array(
+   'items'=>array(
+				array('label'=>'Početna', 'url'=>array('/site/index')),
+				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+    )); ?>
+   
+   
+     <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
 				array('label'=>'Početna', 'url'=>array('/site/index')),
 				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
@@ -46,7 +53,19 @@
 				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
-		)); ?>
+		)); ?> 
+		
+<!--
+	<div id="mainmenu">
+		 <?php $this->widget('zii.widgets.CMenu',array(  
+			'items'=>array(
+				array('label'=>'Početna', 'url'=>array('/site/index')),
+				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+		)); ?> 
 	</div> <!-- mainmenu -->
 </div>	
 
@@ -60,14 +79,11 @@
 	<?php echo $content; ?>
 
 
-
 	<div class="clear"></div>
 	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 	</div><!-- footer -->
-
- 
 
 </div><!-- page -->
 
