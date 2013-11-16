@@ -34,7 +34,7 @@
     array('label' => 'Messages', 'url' => '#',),
     )); ?>
       
-   
+<div class="nav-tabs nav-stacked">   
      <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
 				array('label'=>'Početna', 'url'=>array('/site/index')),
@@ -44,6 +44,7 @@
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?> 
+</div>
 		
 <!--
 	<div id="mainmenu">
