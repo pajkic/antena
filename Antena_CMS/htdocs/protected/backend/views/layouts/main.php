@@ -32,7 +32,7 @@
 <div id="mainmenu-backend">
 		 <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
-				array('label'=>'Početna', 'url'=>array('/site/index')),  
+				array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
 				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
