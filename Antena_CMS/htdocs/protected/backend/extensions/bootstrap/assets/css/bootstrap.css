@@ -6263,8 +6263,18 @@ a.badge:focus {
     min-height: 100%;
     padding: 0;
 }
-#mainmenu-backend {
-	
+#mainmenu-backend ul {
+	list-style: none outside none;
+    margin: 0;
+    padding: 0;
 }
-
+#mainmenu-backend > li > a {
+    background-color: #F9F9F9;
+    color: #585858;
+    display: block;
+    font-size: 13px;
+    height: 38px;
+    line-height: 36px;
+    padding: 0 16px 0 7px;
+}
 /* end mainmenu-backend */
