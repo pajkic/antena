@@ -6268,7 +6268,7 @@ a.badge:focus {
     margin: 0;
     padding: 0;
 }
-#mainmenu-backend > li > a {
+#mainmenu-backend ul > li > a {
     background-color: #F9F9F9;
     color: #585858;
     display: block;
