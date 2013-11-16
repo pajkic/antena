@@ -34,7 +34,7 @@
     array('label' => 'Messages', 'url' => '#',),
     )); ?>
       
-	<div id="mainmenu">
+	<div id="mainmenu-backend">
 		 <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
 				array('label'=>'Početna', 'url'=>array('/site/index')),
