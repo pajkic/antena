@@ -165,6 +165,8 @@
   }
   .span2 {
     width: 170px;
+    margin-right: 2.5%;
+  	margin-left: 0;
   }
   .span1 {
     width: 70px;
@@ -628,8 +630,6 @@
   .row-fluid .span2 {
     width: 14.3646408839779%;
     *width: 14.311449394616199%;
-    margin-right: 2.5%;
-    margin-left: 0;
   }
   .row-fluid .span1 {
     width: 5.801104972375691%;
