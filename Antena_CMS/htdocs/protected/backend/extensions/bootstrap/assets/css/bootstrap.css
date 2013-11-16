@@ -6281,12 +6281,11 @@ a.badge:focus {
     color: #999;
     display: block;
     font-size: 14px;
-    height: 38px;
-    line-height: 36px;
-    padding: 0 16px 0 7px;
+    padding: 8px 20px;
 }
-#mainmenu-backend ul > li > a:hover, #mainmenu-backend ul li.active a {
-    background-color: #FFFFFF;
-    color: #1963AA;
+#mainmenu-backend ul li.active a, #mainmenu-backend ul > li > a:hover { 
+	text-decoration: none;
+	background-color: #FFFFFF;
+	color: #1963AA;
 }
 /* end mainmenu-backend */
