@@ -21,11 +21,13 @@
 
 <body>
 
-<div class="container" id="page">
+<div class="container-fluid" id="page">
 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
+
+
 
 
     <?php echo TbHtml::stackedTabs(array(
@@ -57,6 +59,8 @@
 	<?php endif?>
 
 	<?php echo $content; ?>
+
+
 
 	<div class="clear"></div>
 	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
