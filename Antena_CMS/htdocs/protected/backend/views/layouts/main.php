@@ -18,7 +18,6 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
 </head>
-
 <body>
 
 <div class="container-fluid" id="page">
@@ -27,9 +26,8 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-<div class="sidebar">  
-	
-<div id="mainmenu-backend">
+<div class="sidebar">  	
+	<div id="mainmenu-backend">
 		 <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
 				array('label'=>'Početna', 'url'=>array('/site/index')),  
@@ -40,11 +38,8 @@
 			),
 		)); ?> 
 	</div>  <!-- mainmenu -->
-	
-	<i class="icon-home"></i>
 </div>	<!-- sidebar -->
 
- 
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
