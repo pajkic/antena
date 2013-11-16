@@ -6,25 +6,18 @@ body
 	font: normal 10pt Arial,Helvetica,sans-serif;
 	background: #EFEFEF;
 }
-
 #page
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	background: white;
-	/* border: 1px solid #C9E0ED; */
 }
 
 #header
 {
 	margin: 0;
 	padding: 0;
-	/* border-top: 3px solid #C9E0ED; */
-}
-
-#content
-{
-  /*  padding: 20px; */
+ 
 }
 
 #sidebar
@@ -35,10 +28,8 @@ body
 #footer
 {
 	padding: 10px 0;
-	/* margin: 10px 20px; */
 	font-size: 0.8em;
 	text-align: center;
-	/* border-top: 1px solid #C9E0ED; */
 }
 
 #logo
@@ -46,7 +37,7 @@ body
 	padding: 10px 20px;
 	font-size: 200%;
 }
-
+/*
 #mainmenu
 {
 	background:white url(bg.gif) repeat-x left top;
@@ -79,7 +70,7 @@ body
 	background-color:#EFF4FA;
 	text-decoration:none;
 }
-
+*/
 div.flash-error, div.flash-notice, div.flash-success
 {
 	padding:.8em;
