@@ -29,17 +29,13 @@
 
 
     <?php echo TbHtml::stackedTabs(array(
-   			'items'=>array(
-				array('label'=>'Početna', 'url'=>array('/site/index')),
-				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
+    array('label' => 'Home', 'url' => '#', 'active' => true),
+    array('label' => 'Profile', 'url' => '#',),
+    array('label' => 'Messages', 'url' => '#',),
     )); ?>
     
 
-<!-- 
+ 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
@@ -50,8 +46,7 @@
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
-	</div> 
- mainmenu -->
+	</div> <!-- mainmenu -->
 	
 
 	
