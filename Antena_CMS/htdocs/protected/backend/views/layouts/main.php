@@ -29,7 +29,7 @@
 
 
 
-
+<div class="span2">
     <?php echo TbHtml::stackedTabs(array(
     array('label' => 'Home', 'url' => '#', 'active' => true),
     array('label' => 'Profile', 'url' => '#',),
@@ -49,9 +49,9 @@
 			),
 		)); ?>
 	</div> <!-- mainmenu -->
-	
+</div>	
 
-	
+<div class="span-10">	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -67,6 +67,8 @@
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 	</div><!-- footer -->
+
+</div>
 
 </div><!-- page -->
 
