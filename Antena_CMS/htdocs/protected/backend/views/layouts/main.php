@@ -27,13 +27,7 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-<div class="sidebar">
-    <?php echo TbHtml::stackedTabs(array(
-    array('label' => 'Home', 'url' => '#', 'active' => true),
-    array('label' => 'Profile', 'url' => '#',),
-    array('label' => 'Messages', 'url' => '#',),
-    )); ?>
-      
+<div class="sidebar">   
 	<div id="mainmenu-backend">
 		 <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
