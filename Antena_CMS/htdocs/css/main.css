@@ -37,7 +37,7 @@ body
 	padding: 10px 20px;
 	font-size: 200%;
 }
-/*
+
 #mainmenu
 {
 	background:white url(bg.gif) repeat-x left top;
@@ -70,7 +70,7 @@ body
 	background-color:#EFF4FA;
 	text-decoration:none;
 }
-*/
+
 div.flash-error, div.flash-notice, div.flash-success
 {
 	padding:.8em;
