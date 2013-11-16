@@ -27,14 +27,12 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
- 
-
 <div class="sidebar">   
 	<div id="mainmenu-backend">
 		 <?php $this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
 				array('label'=>'Početna', 'url'=>array('/site/index')),  
-				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'O nama', 'icon'=>'pencil', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
