@@ -42,7 +42,6 @@
 
 	<?php if(isset($this->breadcrumbs)):?>  
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'<i class="icon-home"></i>',
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
