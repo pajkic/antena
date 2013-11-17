@@ -22,16 +22,29 @@
 
 <div class="container-fluid" id="page">
 	<div id="header">
-		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		
+		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		</div>	
 				 
-    
-	<div class="navbar navbar-inverse nav">		
+    	</div><!-- header -->
+<div class="navbar navbar-inverse nav">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">CMS</a>
+    		
+          	<div class="nav-collapse collapse">
+              <ul class="nav">
+                  <li class="divider-vertical"></li>
+                  <li><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+              </ul>
+			
 		<div class="pull-right">
                 <ul class="nav pull-right">
                 	<?php echo TbHtml::textField('appendedInputButton', '',
-   					 array('append' => TbHtml::button('<i class="icon-search"></i>'), 'span' => 2)); ?>
-             
-   			 
+   					 array('append' => TbHtml::button('<i class="icon-search"></i>'), 'span' => 2)); ?>		 
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
@@ -42,10 +55,10 @@
                     </li>
                 </ul>
               </div>
-      </div>	
+      </div></div>	</div>	</div>		
          
-         </div>	
-	</div><!-- header -->
+          
+ 
 
 <div class="sidebar">  			
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
