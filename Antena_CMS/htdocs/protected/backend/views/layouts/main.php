@@ -26,6 +26,46 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>	
 	</div><!-- header -->
 
+<?php $this->widget('bootstrap.widgets.TbNavbar', array(
+    'color' => TbHtml::NAVBAR_COLOR_INVERSE,
+    'brandLabel' => 'Title',
+    'brandUrl'=>'#',
+    'collapse'=>true, // requires bootstrap-responsive.css
+    'items'=>array(
+        array(
+            'class'=>'bootstrap.widgets.TbMenu',
+            'items'=>array(
+                array('label'=>'Home', 'url'=>'#', 'active'=>true),
+                array('label'=>'Link', 'url'=>'#'),
+                array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
+                    array('label'=>'Action', 'url'=>'#'),
+                    array('label'=>'Another action', 'url'=>'#'),
+                    array('label'=>'Something else here', 'url'=>'#'),
+                    '---',
+                    array('label'=>'NAV HEADER'),
+                    array('label'=>'Separated link', 'url'=>'#'),
+                    array('label'=>'One more separated link', 'url'=>'#'),
+                )),
+            ),
+        ),
+        '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
+        array(
+            'class'=>'bootstrap.widgets.TbMenu',
+            'htmlOptions'=>array('class'=>'pull-right'),
+            'items'=>array(
+                array('label'=>'Link', 'url'=>'#'),
+                array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
+                    array('label'=>'Action', 'url'=>'#'),
+                    array('label'=>'Another action', 'url'=>'#'),
+                    array('label'=>'Something else here', 'url'=>'#'),
+                    '---',
+                    array('label'=>'Separated link', 'url'=>'#'),
+                )),
+            ),
+        ),
+    ),
+)); ?>
+
 <div class="sidebar">  			
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
 	    'type'=>TbHtml::NAV_TYPE_PILLS, // '', 'tabs', 'pills' (or 'list')
