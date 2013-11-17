@@ -23,13 +23,13 @@
 <div class="container-fluid" id="page">
 	<div id="header">
 		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		
-			
-			<?php echo TbHtml::textField('appendedInputButton', '',
-    array('append' => TbHtml::button('Go!'), 'span' => 2)); ?>
+				 
     
 	<div class="navbar navbar-inverse nav">		
 		<div class="pull-right">
                 <ul class="nav pull-right">
+                	<?php echo TbHtml::textField('appendedInputButton', '',
+   			 array('append' => TbHtml::button('Go!'), 'span' => 2)); ?>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
