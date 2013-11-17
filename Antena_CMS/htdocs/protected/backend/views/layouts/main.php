@@ -33,12 +33,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 	
+           <span><?php echo CHtml::encode(Yii::app()->name); ?></span> 	
     		
           	<div class="nav-collapse collapse">
  
 			
-		<div class="pull-right">
+			<div class="pull-right">
                 <ul class="nav pull-right">
                 	 <li><?php echo TbHtml::textField('appendedInputButton', '',
    					 array('append' => TbHtml::button('<i class="icon-search"></i>'), 'span' => 2)); ?></li> 
@@ -52,10 +52,13 @@
                     </li>
                 </ul>
               </div>
-      </div></div>	</div>	</div>		
+     	 </div>
+      </div>	
+    </div>	
+</div>	
+	
          
-          
- 
+       
 
 <div class="sidebar">  			
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
