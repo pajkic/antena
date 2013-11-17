@@ -22,12 +22,22 @@
 
 <div class="container-fluid" id="page">
 
+<?php $this->widget('bootstrap.widgets.TbNavbar', array(
+    'brandLabel' => 'Title',
+    'collapse' => true,
+    'items' => array(
+					array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
+	        		array('label' => 'Test naslov'),
+					array('label'=>'O nama', 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>'Kontakt', 'icon'=>'envelope', 'url'=>array('/site/contact')),
+					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)	
+	),
+)); ?>
+
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>	
 	</div><!-- header -->
-
-
- 
 
 <div class="sidebar">  			
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
