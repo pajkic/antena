@@ -6289,12 +6289,3 @@ a.badge:focus {
 #header .navbar {
 	margin: 0;
 }
-#header .icon-search {
-    height: 16px;
-    line-height: 20px;
-    margin-top: 4px;
-}
-#header .input-append {
-	 margin-top: 5px;
-	 margin-bottom: 0;
-}
