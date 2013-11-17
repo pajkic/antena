@@ -39,7 +39,7 @@
 		                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
 		                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
 		                            <li class="divider"></li>
-		                            <li><a href="/site/logout"><i class="icon-off"></i> Odjavi me</a></li>
+		                            <li><a href="/backend.php/site/logout"><i class="icon-off"></i> Odjavi me</a></li>
 		                        </ul>
 		                    </li>
 		                </ul>
