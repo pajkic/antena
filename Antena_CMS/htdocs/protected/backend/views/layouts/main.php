@@ -30,10 +30,10 @@
 	<div id="mainmenu-backend">
 		
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
-	    'type'=>TbHtml::NAV_TYPE_TABS, // '', 'tabs', 'pills' (or 'list')
+	    'type'=>TbHtml::NAV_TYPE_PILLS, // '', 'tabs', 'pills' (or 'list')
 	    'stacked'=>true, // whether this is a stacked menu
 	    'items'=>array(
-	        		array('label'=>'Početna', 'url'=>array('/site/index')),  
+	        		array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
 					array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>'Kontakt', 'url'=>array('/site/contact')),
 					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
