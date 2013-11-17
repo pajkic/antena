@@ -23,6 +23,10 @@
 <div class="container-fluid" id="page">
 	<div id="header">
 		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		
+			
+			<?php echo TbHtml::textField('appendedInputButton', '',
+    array('append' => TbHtml::button('Go!'), 'span' => 2)); ?>
+    
 	<div class="navbar navbar-inverse nav">		
 		<div class="pull-right">
                 <ul class="nav pull-right">
@@ -37,6 +41,7 @@
                 </ul>
               </div>
       </div>	
+         
          </div>	
 	</div><!-- header -->
 
