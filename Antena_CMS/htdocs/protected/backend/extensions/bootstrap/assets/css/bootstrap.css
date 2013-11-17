@@ -2275,7 +2275,8 @@ table th[class*="span"],
 [class^="icon-"],
 [class*=" icon-"] {
   display: inline-block;
-  width: 14px;
+  width: 19px;
+  /*width: 14px;*/
   height: 14px;
   margin-top: 1px;
   *margin-right: .3em;
@@ -2305,7 +2306,8 @@ table th[class*="span"],
 .dropdown-submenu:hover > a > [class^="icon-"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
-.dropdown-submenu:focus > a > [class*=" icon-"] {
+.dropdown-submenu:focus > a > [class*=" icon-"],
+.nav > li > a:hover > [class^="icon-"], .nav > li > a:hover > [class*=" icon-"], .nav > li > a:focus > [class^="icon-"], .nav > li > a:focus > [class*=" icon-"] {
  /* background-image: url("../img/glyphicons-halflings-white.png"); */
  background-image: url("/images/backend/glyphicons-halflings-white.png");
 }
