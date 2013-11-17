@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<div class="container-fluid backend" id="page">
+<div class="container-fluid" id="page">
 
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>

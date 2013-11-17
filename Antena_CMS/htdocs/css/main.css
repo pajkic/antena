@@ -118,17 +118,6 @@ div.view
 	border: 1px solid #C9E0ED;
 }
 
-div.breadcrumbs
-{
-	font-size: 0.9em;
-	padding: 5px 20px;
-}
-
-div.breadcrumbs span
-{
-	font-weight: bold;
-}
-
 div.search-form
 {
 	padding: 10px;
