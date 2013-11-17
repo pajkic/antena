@@ -40,7 +40,7 @@
 	</div>  <!-- mainmenu -->
 </div>	<!-- sidebar -->
 
-	<?php if(isset($this->breadcrumbs)):?>
+	<?php if(isset($this->breadcrumbs)):?> <?php echo TbHtml::icon(TbHtml::ICON_GLASS); ?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
