@@ -31,6 +31,7 @@
 	    'type'=>TbHtml::NAV_TYPE_PILLS, // '', 'tabs', 'pills' (or 'list')
 	    'stacked'=>true, // whether this is a stacked menu
 	    'items'=>array(
+	    			array('label' => 'List header'),
 	        		array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
 					array('label'=>'O nama', 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>'Kontakt', 'icon'=>'envelope', 'url'=>array('/site/contact')),
