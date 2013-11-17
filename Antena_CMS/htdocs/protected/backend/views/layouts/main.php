@@ -23,15 +23,7 @@
 <div class="container-fluid" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?> 
-			
-			<?php $this->widget('bootstrap.widgets.TbNavbar', array(
-			    'brandLabel' => '<?php echo CHtml::encode(Yii::app()->name); ?>',
-				    'items' => array(
-				        TbHtml::navbarSearchForm('#'),
-				    ),
-				));?>
-			</div>	
+		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>	
 	</div><!-- header -->
 
 <div class="sidebar">  			
