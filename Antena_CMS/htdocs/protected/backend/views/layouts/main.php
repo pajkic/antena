@@ -26,11 +26,11 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?> 
 			
 			<?php $this->widget('bootstrap.widgets.TbNavbar', array(
-    'brandLabel' => 'Title',
-	    'items' => array(
-	        TbHtml::navbarSearchForm('#'),
-	    ),
-	));?>
+			    'brandLabel' => '<?php echo CHtml::encode(Yii::app()->name); ?>',
+				    'items' => array(
+				        TbHtml::navbarSearchForm('#'),
+				    ),
+				));?>
 			</div>	
 	</div><!-- header -->
 
