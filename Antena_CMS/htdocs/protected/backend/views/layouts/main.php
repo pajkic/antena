@@ -25,12 +25,7 @@
 <?php $this->widget('bootstrap.widgets.TbNavbar', array(
     'brandLabel' => 'Title',
     'collapse' => true,
-    'items' => array(
-					array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
-	        		array('label' => 'Test naslov'),
-					array('label'=>'O nama', 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
-					array('label'=>'Kontakt', 'icon'=>'envelope', 'url'=>array('/site/contact')),
-					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+    'items' => array(	
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)	
 	),
 )); ?>
