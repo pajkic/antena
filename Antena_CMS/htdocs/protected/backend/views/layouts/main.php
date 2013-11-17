@@ -26,9 +26,7 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-<div class="sidebar">  	
-	<div id="mainmenu-backend">
-		
+<div class="sidebar">  			
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
 	    'type'=>TbHtml::NAV_TYPE_PILLS, // '', 'tabs', 'pills' (or 'list')
 	    'stacked'=>true, // whether this is a stacked menu
@@ -37,23 +35,9 @@
 					array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>'Kontakt', 'url'=>array('/site/contact')),
 					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			
+					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)			
 	    ),
-	)); ?>
-		
-		
-		
-		 <?php /*$this->widget('zii.widgets.CMenu',array(  
-			'items'=>array(
-				array('label'=>'Početna', 'url'=>array('/site/index')),  
-				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Kontakt', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); */?> 
-	</div>  <!-- mainmenu -->
+	)); ?>		
 </div>	<!-- sidebar -->
 
 
