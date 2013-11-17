@@ -4156,7 +4156,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .nav-pills.nav-stacked > li > a {
-  margin-bottom: 3px;
+  margin-bottom: 1px;
 }
 
 .nav-pills.nav-stacked > li:last-child > a {
