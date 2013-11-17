@@ -6275,8 +6275,6 @@ a.badge:focus {
 }
 /* header */
 #header {
-	margin: 0;
-	padding: 12px 50px 12px 0;
  	background: #438EB9;
 	color: #FFF;
 }
