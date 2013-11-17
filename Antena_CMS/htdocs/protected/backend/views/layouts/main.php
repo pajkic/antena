@@ -21,37 +21,35 @@
 <body>
 
 <div class="container-fluid" id="page">
-<div id="header">		  	 
-	<div class="navbar navbar-inverse nav">
-	    <div class="navbar-inner">
-	        <div class="container">
-	            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	            </a>
-	           <div class="brand"><?php echo CHtml::encode(Yii::app()->name); ?></div>			    
-	          	<div class="nav-collapse collapse">				
-				<div class="pull-right">
-	                <ul class="nav pull-right">
-	                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
-	                        <ul class="dropdown-menu">
-	                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
-	                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
-	                            <li class="divider"></li>
-	                            <li><a href="/auth/logout"><i class="icon-off"></i> Odjavi me</a></li>
-	                        </ul>
-	                    </li>
-	                </ul>
-	              </div>
-	     	 </div>
-	      </div>	
-	    </div>	
-	</div>	
-</div><!-- header -->	
+	<div id="header">		  	 
+		<div class="navbar navbar-inverse nav">
+		    <div class="navbar-inner">
+		        <div class="container">
+		            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </a>
+		           <div class="brand"><?php echo CHtml::encode(Yii::app()->name); ?></div>			    
+		          	<div class="nav-collapse collapse">				
+					<div class="pull-right">
+		                <ul class="nav pull-right">
+		                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
+		                        <ul class="dropdown-menu">
+		                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
+		                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
+		                            <li class="divider"></li>
+		                            <li><a href="/auth/logout"><i class="icon-off"></i> Odjavi me</a></li>
+		                        </ul>
+		                    </li>
+		                </ul>
+		              </div>
+		     	 </div>
+		      </div>	
+		    </div>	
+		</div>	
+	</div><!-- header -->	
          
-       
-
 <div class="sidebar">  			
 		<?php $this->widget('bootstrap.widgets.TbNav', array(
 	    'type'=>TbHtml::NAV_TYPE_PILLS, // '', 'tabs', 'pills' (or 'list')
@@ -66,14 +64,11 @@
 	    ),
 	)); ?>		
 </div>	<!-- sidebar -->
-
-
 	
 	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array(
     'links' => $this->breadcrumbs, 'homeUrl' => 'index')); ?>
 
 	<?php echo $content; ?>
-
 
 	<div class="clear"></div>
 	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
