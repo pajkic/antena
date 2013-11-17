@@ -28,8 +28,10 @@
 	<div class="navbar navbar-inverse nav">		
 		<div class="pull-right">
                 <ul class="nav pull-right">
+                
                 	<?php echo TbHtml::textField('appendedInputButton', '',
-   			 array('append' => TbHtml::button('Go!'), 'span' => 2)); ?>
+   					 array('append' => TbHtml::ICON_SEARCH ('icon-search'), 'span' => 2)); ?>
+   			 
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
