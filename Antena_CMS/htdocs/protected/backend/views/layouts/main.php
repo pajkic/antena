@@ -21,42 +21,36 @@
 <body>
 
 <div class="container-fluid" id="page">
-	<div id="header">
-		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		</div>	
-				 
-    	</div><!-- header -->
-<div class="navbar navbar-inverse nav">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-           <span><?php echo CHtml::encode(Yii::app()->name); ?></span> 	
-    		
-          	<div class="nav-collapse collapse">
- 
-			
-			<div class="pull-right">
-                <ul class="nav pull-right">
-                	 <li><?php echo TbHtml::textField('appendedInputButton', '',
-   					 array('append' => TbHtml::button('<i class="icon-search"></i>'), 'span' => 2)); ?></li> 
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
-                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/auth/logout"><i class="icon-off"></i> Odjavi me</a></li>
-                        </ul>
-                    </li>
-                </ul>
-              </div>
-     	 </div>
-      </div>	
-    </div>	
-</div>	
-	
+<div id="header">		  	 
+	<div class="navbar navbar-inverse nav">
+	    <div class="navbar-inner">
+	        <div class="container">
+	            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </a>
+	           <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>			    
+	          	<div class="nav-collapse collapse">				
+				<div class="pull-right">
+	                <ul class="nav pull-right">
+	                	 <li><?php echo TbHtml::textField('appendedInputButton', '',
+	   					 array('append' => TbHtml::button('<i class="icon-search"></i>'), 'span' => 2)); ?></li> 
+	                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
+	                        <ul class="dropdown-menu">
+	                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
+	                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
+	                            <li class="divider"></li>
+	                            <li><a href="/auth/logout"><i class="icon-off"></i> Odjavi me</a></li>
+	                        </ul>
+	                    </li>
+	                </ul>
+	              </div>
+	     	 </div>
+	      </div>	
+	    </div>	
+	</div>	
+</div><!-- header -->	
          
        
 
