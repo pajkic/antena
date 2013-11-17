@@ -28,7 +28,23 @@
 
 <div class="sidebar">  	
 	<div id="mainmenu-backend">
-		 <?php $this->widget('zii.widgets.CMenu',array(  
+		
+		<?php $this->widget('bootstrap.widgets.TbNav', array(
+	    'type'=>TbHtml::NAV_TYPE_TABS, // '', 'tabs', 'pills' (or 'list')
+	    'stacked'=>true, // whether this is a stacked menu
+	    'items'=>array(
+	        		array('label'=>'Početna', 'url'=>array('/site/index')),  
+					array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>'Kontakt', 'url'=>array('/site/contact')),
+					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			
+	    ),
+	)); ?>
+		
+		
+		
+		 <?php /*$this->widget('zii.widgets.CMenu',array(  
 			'items'=>array(
 				array('label'=>'Početna', 'url'=>array('/site/index')),  
 				array('label'=>'O nama', 'url'=>array('/site/page', 'view'=>'about')),
@@ -36,15 +52,14 @@
 				array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
-		)); ?> 
+		)); */?> 
 	</div>  <!-- mainmenu -->
 </div>	<!-- sidebar -->
 
-	<?php if(isset($this->breadcrumbs)):?>  
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+
+	
+	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array(
+    'links' => $this->breadcrumbs, 'homeUrl' => 'index')); ?>
 
 	<?php echo $content; ?>
 
