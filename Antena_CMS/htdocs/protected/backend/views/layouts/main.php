@@ -30,7 +30,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </a>
-	           <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>			    
+	           <div class="brand"><?php echo CHtml::encode(Yii::app()->name); ?></div>			    
 	          	<div class="nav-collapse collapse">				
 				<div class="pull-right">
 	                <ul class="nav pull-right">
