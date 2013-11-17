@@ -22,14 +22,6 @@
 
 <div class="container-fluid" id="page">
 
-<?php $this->widget('bootstrap.widgets.TbNavbar', array(
-    'brandLabel' => 'Title',
-    'collapse' => true,
-    'items' => array(	
-					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)	
-	),
-)); ?>
-
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>	
 	</div><!-- header -->
