@@ -22,7 +22,7 @@
 
 <div class="container-fluid" id="page">
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?> 		
+		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		
 		<div class="pull-right">
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
