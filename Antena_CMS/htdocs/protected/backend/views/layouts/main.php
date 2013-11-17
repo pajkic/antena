@@ -23,6 +23,7 @@
 <div class="container-fluid" id="page">
 	<div id="header">
 		<div id="logo"><span><?php echo CHtml::encode(Yii::app()->name); ?></span> 		
+	<div class="navbar navbar-inverse nav">		
 		<div class="pull-right">
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
@@ -35,6 +36,7 @@
                     </li>
                 </ul>
               </div>
+      </div>	
          </div>	
 	</div><!-- header -->
 
