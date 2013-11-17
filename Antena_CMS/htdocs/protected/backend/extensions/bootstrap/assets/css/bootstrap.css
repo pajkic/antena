@@ -6294,3 +6294,7 @@ a.badge:focus {
     line-height: 20px;
     margin-top: 4px;
 }
+#header .input-append {
+	 margin-top: 5px;
+	 margin-bottom: 0;
+}
