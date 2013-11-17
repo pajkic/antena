@@ -6280,7 +6280,14 @@ a.badge:focus {
  	background: #438EB9;
 	color: #FFF;
 }
-#header #logo span {
+#header #logo {
 	padding: 10px 20px;
 	font-size: 200%;
+}
+#header .navbar-inverse .navbar-inner {
+	background-color: transparent;
+	background-image: none;
+}
+#header .navbar {
+	margin: 0;
 }
