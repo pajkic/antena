@@ -26,21 +26,7 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>	
 	</div><!-- header -->
 
-<?php $this->widget('bootstrap.widgets.TbNavbar', array(
-    'brandLabel' => 'Title',
-    'collapse' => true,
-    'items' => array(
-    	  
-        array('label' => 'Dropdown', 'items' => array(
-            array('label' => 'Action', 'url' => '#'),
-            array('label' => 'Another action', 'url' => '#'),
-            array('label' => 'Something else here', 'url' => '#'),
-            TbHtml::menuDivider(),
-            array('label' => 'Separate link', 'url' => '#'),
-        ),
-    ),
-), 
-)); ?>
+
  
 
 <div class="sidebar">  			
