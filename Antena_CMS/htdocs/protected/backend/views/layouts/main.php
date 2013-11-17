@@ -34,8 +34,6 @@
 	          	<div class="nav-collapse collapse">				
 				<div class="pull-right">
 	                <ul class="nav pull-right">
-	                	 <li><?php echo TbHtml::textField('appendedInputButton', '',
-	   					 array('append' => TbHtml::button('<i class="icon-search"></i>'), 'span' => 2)); ?></li> 
 	                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Korisnik User <b class="caret"></b></a>
 	                        <ul class="dropdown-menu">
 	                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
