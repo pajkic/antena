@@ -6174,7 +6174,7 @@ a.badge:focus {
 .login-single #content {
 	margin-left: 0;
 }
-#page.container.login-single {
+#page.container-fluid.login-single {
 	margin: 5% auto 10%;
 }
 #login-form, .account-wall  {
