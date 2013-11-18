@@ -35,7 +35,7 @@ class UserIdentity extends CUserIdentity
 		return !$this->errorCode;
 		 * 
 		 */
-		 $user = User::model()->findByAttributes(array('login'=>$this->username));
+		 $user = User::model()->findByAttributes(array('login'=>$this->username,'status'=>1));
 		 
 		 if ($user===null) { // No user found!
 			    $this->errorCode=self::ERROR_USERNAME_INVALID;
@@ -45,9 +45,11 @@ class UserIdentity extends CUserIdentity
 	    	  $this->errorCode=self::ERROR_NONE;
 			  $this->_id = $user->id;
 			  $this->_name = $user->display_name;
-			  $this->setState('__role', $user->role->name);
-			  $this->setState('__language',$user->language->lang);
-			  
+			  $this->setState('role', $user->role->name);
+			  $this->setState('language',$user->language->lang);
+			  User::model()->updateByPk($user->id, array(
+    			'last_login' => new CDbExpression('NOW()')
+			  ));
 			  return !$this->errorCode;
 			  
 			  

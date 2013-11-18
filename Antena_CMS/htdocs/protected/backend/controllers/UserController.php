@@ -14,7 +14,7 @@ class UserController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -51,6 +51,7 @@ class UserController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(ADMINISTRATOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,13 +63,18 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->allowUser(ADMINISTRATOR);
 		$model=new User;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['User'])) {
-			$model->attributes=$_POST['User'];
+			$user = $_POST['User'];
+			$user['created'] = new CDbExpression('NOW()');
+			$user['updated'] = new CDbExpression('NOW()');
+			$user['pass'] = md5($user['pass']);
+			$model->attributes=$user;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -86,13 +92,23 @@ class UserController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->allowUser(ADMINISTRATOR);
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['User'])) {
-			$model->attributes=$_POST['User'];
+			$user = $_POST['User'];
+			
+			if ($user['pass']=='') { 
+				$user['pass'] = User::model()->findByPk($id)->pass;
+			} else {
+				$user['pass'] = md5($user['pass']);
+			}
+			$user['updated'] = new CDbExpression('NOW()');
+			
+			$model->attributes = $user;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -110,6 +126,7 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -128,7 +145,9 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User');
+		$this->allowUser(ADMINISTRATOR);
+		$dataProvider=new CActiveDataProvider('User',array('criteria'=>array(
+		'condition' => 'id>1')));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,6 +158,7 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->allowUser(ADMINISTRATOR);
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
 		if (isset($_GET['User'])) {

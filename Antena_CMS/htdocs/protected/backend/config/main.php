@@ -16,8 +16,8 @@ return array(
 	'basePath'=>$frontend,
 	'name'=>'Antena CMS',
 	'homeUrl' => '/backend.php/login',
-	'sourceLanguage' => 'sr',
-	'Language' => 'sr',
+	//'sourceLanguage' => 'sr',
+	//'Language' => 'sr',
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
@@ -54,6 +54,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>false,
+			
 		),
 		// uncomment the following to enable URLs in path-format
 		
