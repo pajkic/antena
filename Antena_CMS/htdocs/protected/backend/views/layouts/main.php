@@ -67,7 +67,7 @@
 	
 	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array('links' => $this->breadcrumbs,'homeUrl' => Yii::app()->getBaseUrl().'/backend.php/site/index'));?>
 	
-	<p>Jezik:<code><?php echo Yii::app()->language;?></code>Uloga:<code><?php echo Yii::app()->user->role;?></code></p>
+	
 	
 	
 	<?php echo $content; ?>
