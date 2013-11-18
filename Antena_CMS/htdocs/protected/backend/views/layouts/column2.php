@@ -1,7 +1,7 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 
-<div id="content">
+<div class="section">
 <div class="span-19">
 		<?php echo $content; ?>	 
 </div>
@@ -17,5 +17,5 @@
 		$this->endWidget();
 	?>
 </div>
-</div><!-- content -->
+</div><!-- section -->
 <?php $this->endContent(); ?>
