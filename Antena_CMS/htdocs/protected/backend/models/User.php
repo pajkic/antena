@@ -63,7 +63,7 @@ class User extends CActiveRecord
 			array('created, updated, last_login', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, lang_id, login, pass, email, display_name, status, activation_key, created, updated, last_login, avatar, role_id, level', 'safe', 'on'=>'search'),
+			array('login, email, display_name', 'safe', 'on'=>'search'),
 		);
 	}
 
