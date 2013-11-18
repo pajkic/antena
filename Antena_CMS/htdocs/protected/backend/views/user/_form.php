@@ -45,7 +45,7 @@
 
             <?php echo $form->dropDownListControlGroup($model,'role_id', CHtml::listData(Role::model()->findAll('id>1'), 'id', 'name')); ?>
 
-            <?php echo $form->hiddenField($model,'level',array()); ?>
+            <?php echo $form->hiddenField($model,'level',array('value'=>'30')); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
