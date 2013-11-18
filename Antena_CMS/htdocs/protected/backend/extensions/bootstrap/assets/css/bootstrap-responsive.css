@@ -127,6 +127,9 @@
     min-height: 1px;
     margin-left: 30px;
   }
+  	section [class*="span"]:first-child {
+  		margin-left: 0;
+  	}
   .container,
   .navbar-static-top .container,
   .navbar-fixed-top .container,
