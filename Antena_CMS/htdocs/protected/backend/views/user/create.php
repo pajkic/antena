@@ -5,13 +5,13 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Korisnici'=>array('index'),
-	'Kreiraj',
+	Yii::t('app','Korisnici')=>array('index'),
+	Yii::t('app','Kreiraj'),
 );
 
 $this->menu=array(
-	array('label'=>'Pregledaj korisnike', 'url'=>array('index')),
-	array('label'=>'Upravljaj korisnicima', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Pregledaj korisnike'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Upravljaj korisnicima'), 'url'=>array('admin')),
 );
 ?>
 

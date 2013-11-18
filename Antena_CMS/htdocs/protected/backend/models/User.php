@@ -89,19 +89,19 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'lang_id' => 'Jezik',
-			'login' => 'Korisničko ime',
-			'pass' => 'Lozinka',
-			'email' => 'Email',
-			'display_name' => 'Ime na prikazu',
-			'status' => 'Status',
+			'lang_id' => Yii::t('app','Jezik'),
+			'login' => Yii::t('app','Korisničko ime'),
+			'pass' => Yii::t('app','Lozinka'),
+			'email' => Yii::t('app','Email'),
+			'display_name' => Yii::t('app','Ime na prikazu'),
+			'status' => Yii::t('app','Status'),
 			'activation_key' => 'Activation Key',
-			'created' => 'Kreiran',
-			'updated' => 'Izmenjen',
-			'last_login' => 'Viđen',
-			'avatar' => 'Avatar',
-			'role_id' => 'Uloga',
-			'level' => 'Nivo',
+			'created' => Yii::t('app','Kreiran'),
+			'updated' => Yii::t('app','Izmenjen'),
+			'last_login' => Yii::t('app','Viđen'),
+			'avatar' => Yii::t('app','Avatar'),
+			'role_id' => Yii::t('app','Uloga'),
+			'level' => Yii::t('app','Nivo'),
 		);
 	}
 

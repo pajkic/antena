@@ -36,10 +36,10 @@
 		                <ul class="nav pull-right">
 		                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo Yii::app()->user->name;?> <b class="caret"></b></a>
 		                        <ul class="dropdown-menu">
-		                            <li><a href="/backend.php/user/view/<?php echo Yii::app()->user->id;?>"><i class="icon-cog"></i> Podaci o korisniku</a></li>
-		                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
+		                            <li><a href="/backend.php/user/view/<?php echo Yii::app()->user->id;?>"><i class="icon-cog"></i> <?php echo Yii::t('app','Podaci o korisniku');?></a></li>
+		                            <li><a href="/help/support"><i class="icon-envelope"></i> <?php echo Yii::t('app','Podrška');?></a></li>
 		                            <li class="divider"></li>
-		                            <li><a href="/backend.php/site/logout"><i class="icon-off"></i> Odjavi me</a></li>
+		                            <li><a href="/backend.php/site/logout"><i class="icon-off"></i> <?php echo Yii::t('app','Odjavi me');?></a></li>
 		                        </ul>
 		                    </li>
 		                </ul>
@@ -55,12 +55,12 @@
 	    'type'=>TbHtml::NAV_TYPE_PILLS, // '', 'tabs', 'pills' (or 'list')
 	    'stacked'=>true, // whether this is a stacked menu
 	    'items'=>array(
-	        		array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
-	        		array('label'=>'Korisnici', 'icon'=>'user', 'url'=>array('/user'), 'visible' => $this->userData->level>=30),
-					array('label'=>'O nama', 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
-					array('label'=>'Kontakt', 'icon'=>'envelope', 'url'=>array('/site/contact')),
-					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)			
+	        		array('label'=>Yii::t('app','Početna'), 'icon'=>'home', 'url'=>array('/site/index')),  
+	        		array('label'=>Yii::t('app','Korisnici'), 'icon'=>'user', 'url'=>array('/user'), 'visible' => $this->userData->level>=30),
+					array('label'=>Yii::t('app','O nama'), 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>Yii::t('app','Kontakt'), 'icon'=>'envelope', 'url'=>array('/site/contact')),
+					array('label'=>'Prijava', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>Yii::t('app','Odjava') . ' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)			
 	    ),
 	)); ?>		
 </div>	<!-- sidebar -->

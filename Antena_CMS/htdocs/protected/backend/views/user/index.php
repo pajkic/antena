@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Korisnici',
+	Yii::t('app','Korisnici'),
 );
 
 $this->menu=array(
-	array('label'=>'Kreiraj korisnika','url'=>array('create')),
-	array('label'=>'Upravljaj korisnicima','url'=>array('admin')),
+	array('label'=>Yii::t('app','Kreiraj korisnika'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Upravljaj korisnicima'),'url'=>array('admin')),
 );
 ?>
 
-<h1>Korisnici</h1>
+<h1><?php echo Yii::t('app','Korisnici');?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
