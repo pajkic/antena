@@ -57,6 +57,7 @@
 	    'items'=>array(
 	        		array('label'=>Yii::t('app','Početna'), 'icon'=>'home', 'url'=>array('/site/index')),  
 	        		array('label'=>Yii::t('app','Korisnici'), 'icon'=>'user', 'url'=>array('/user'), 'visible' => $this->userData->level>=30),
+	        		array('label'=>Yii::t('app','Kategorije članaka'), 'icon'=>'category', 'url'=>array('/term'), 'visible' => $this->userData->level>=40),
 					array('label'=>Yii::t('app','O nama'), 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>Yii::t('app','Kontakt'), 'icon'=>'envelope', 'url'=>array('/site/contact')),
 					array('label'=>'Prijava', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
