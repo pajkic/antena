@@ -6262,12 +6262,16 @@ a.badge:focus {
 	border: 1px solid #ccc;
 	border-width:0 1px 0 0;
 }
- 
 #content {
 	float: left;
     min-height: 100%;
     padding: 0 20px 50px 0;
+    overflow: hidden;
 }  
+#section {
+	overflow: hidden;
+	margin: 0 0 50px 0;
+}
 /* header */
 #header {
  	background: #438EB9;
