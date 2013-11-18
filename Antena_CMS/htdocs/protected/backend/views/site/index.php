@@ -20,12 +20,14 @@ the <a href="http://www.yiiframework.com/doc/">documentation</a>.
 Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
 should you have any questions.</p>
 <?php
+/*
 $_SESSION['KCFINDER']['disabled'] = false; // enables the file browser in the admin
 $_SESSION['KCFINDER']['uploadURL'] = Yii::app()->baseUrl."/uploads/".Yii::app()->user->id; // URL for the uploads folder
 $_SESSION['KCFINDER']['uploadDir'] = Yii::app()->basePath."/../uploads/".Yii::app()->user->id; // path to the uploads folder
+*/
 ?>
 
-
+<!--
 <script src="<?php echo Yii::app()->baseUrl.'/ckeditor/ckeditor.js'; ?>"></script>
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array( 
@@ -57,3 +59,4 @@ $_SESSION['KCFINDER']['uploadDir'] = Yii::app()->basePath."/../uploads/".Yii::ap
          language: '<?php echo Yii::app()->language;?>'
     });
 </script>
+-->

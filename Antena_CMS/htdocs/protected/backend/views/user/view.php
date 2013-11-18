@@ -4,21 +4,22 @@
 ?>
 
 <?php
+
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	$model->id,
+	Yii::t('app','Korisnici')=>array('index'),
+	$model->display_name,
 );
 
 $this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Create User', 'url'=>array('create')),
-	array('label'=>'Update User', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete User', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage User', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista korisnika'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj korisnika'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','Izmeni korisnika'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Obriši korisnika'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t('app','Upravljaj korisnicima'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>View User #<?php echo $model->id; ?></h1>
+<h1>Pregled korisnika <?php echo $model->display_name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
@@ -26,18 +27,21 @@ $this->menu=array(
     ),
     'data'=>$model,
     'attributes'=>array(
-		'id',
-		'lang_id',
+		
+		array(
+		'label' => 'Jezik',
+		'value' => $model->language->name),
 		'login',
-		'pass',
 		'email',
 		'display_name',
 		'status',
-		'activation_key',
 		'created',
 		'updated',
 		'last_login',
 		'avatar',
-		'role_id',
+		array(
+		'label' => 'Uloga',
+		'value' => $model->role->name
+		),
 	),
 )); ?>

@@ -5,20 +5,16 @@
 
 <div class="view">
 
-    	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
+    <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<?php echo CHtml::encode($data->id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('lang_id')); ?>:</b>
-	<?php echo CHtml::encode($data->lang_id); ?>
+	<?php echo CHtml::encode($data->language->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('login')); ?>:</b>
-	<?php echo CHtml::encode($data->login); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pass')); ?>:</b>
-	<?php echo CHtml::encode($data->pass); ?>
+	<?php echo CHtml::link(CHtml::encode($data->login),array('view','id'=>$data->id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
@@ -30,7 +26,9 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
-	<?php echo CHtml::encode($data->status); ?>
+	<?php $status = 'Neaktivan';
+	if ($data->status==1) $status = 'Aktivan';?>
+	<?php echo CHtml::encode($status); ?>
 	<br />
 
 	<?php /*
@@ -53,9 +51,13 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('avatar')); ?>:</b>
 	<?php echo CHtml::encode($data->avatar); ?>
 	<br />
-
+	*/ ?>
 	<b><?php echo CHtml::encode($data->getAttributeLabel('role_id')); ?>:</b>
-	<?php echo CHtml::encode($data->role_id); ?>
+	<?php echo CHtml::encode($data->role->name); ?>
+	<br />
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('level')); ?>:</b>
+	<?php echo CHtml::encode($data->level); ?>
 	<br />
 
 	*/ ?>

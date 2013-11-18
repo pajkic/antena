@@ -17,9 +17,11 @@
  * @property string $last_login
  * @property string $avatar
  * @property integer $role_id
+ * @property integer $level
  *
  * The followings are the available model relations:
  * @property Post[] $posts
+ * @property Role $role
  * @property UserMeta[] $userMetas
  */
 class User extends CActiveRecord
@@ -50,15 +52,18 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, pass, email, display_name, role_id', 'required'),
-			array('lang_id, status, role_id', 'numerical', 'integerOnly'=>true),
+			array('login, email, display_name, role_id, level, lang_id', 'required'),
+			array('login, email, display_name', 'unique'),
+			array('email','email'),
+			array('pass','required','on'=>'insert'),
+			array('lang_id, status, role_id, level', 'numerical', 'integerOnly'=>true),
 			array('login, pass, email, display_name', 'length', 'max'=>128),
 			array('activation_key', 'length', 'max'=>60),
 			array('avatar', 'length', 'max'=>255),
 			array('created, updated, last_login', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, lang_id, login, pass, email, display_name, status, activation_key, created, updated, last_login, avatar, role_id', 'safe', 'on'=>'search'),
+			array('id, lang_id, login, pass, email, display_name, status, activation_key, created, updated, last_login, avatar, role_id, level', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,10 +76,10 @@ class User extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'posts' => array(self::HAS_MANY, 'Post', 'users_id'),
-			'userMetas' => array(self::HAS_MANY, 'UserMeta', 'user_id'),
 			'role' => array(self::BELONGS_TO, 'Role', 'role_id'),
 			'language' => array(self::BELONGS_TO, 'Language', 'lang_id'),
-			);
+			'userMetas' => array(self::HAS_MANY, 'UserMeta', 'user_id'),
+		);
 	}
 
 	/**
@@ -84,18 +89,19 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'lang_id' => 'Lang',
-			'login' => 'Login',
-			'pass' => 'Pass',
+			'lang_id' => 'Jezik',
+			'login' => 'Korisničko ime',
+			'pass' => 'Lozinka',
 			'email' => 'Email',
-			'display_name' => 'Display Name',
+			'display_name' => 'Ime na prikazu',
 			'status' => 'Status',
 			'activation_key' => 'Activation Key',
-			'created' => 'Created',
-			'updated' => 'Updated',
-			'last_login' => 'Last Login',
+			'created' => 'Kreiran',
+			'updated' => 'Izmenjen',
+			'last_login' => 'Viđen',
 			'avatar' => 'Avatar',
-			'role_id' => 'Role',
+			'role_id' => 'Uloga',
+			'level' => 'Nivo',
 		);
 	}
 
@@ -123,6 +129,7 @@ class User extends CActiveRecord
 		$criteria->compare('last_login',$this->last_login,true);
 		$criteria->compare('avatar',$this->avatar,true);
 		$criteria->compare('role_id',$this->role_id);
+		$criteria->compare('level',$this->level);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

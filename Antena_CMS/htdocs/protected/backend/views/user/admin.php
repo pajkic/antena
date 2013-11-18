@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Manage',
+	'Korisnici'=>array('index'),
+	'Upravljaj',
 );
 
 $this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Create User', 'url'=>array('create')),
+	array('label'=>'Pregledaj korisnike', 'url'=>array('index')),
+	array('label'=>'Kreiraj korisnika', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,20 +27,21 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Users</h1>
+<h1>Upravljaj korisnicima</h1>
 
 <p>
-    You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
+    Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
         &lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
+
+<?php //echo CHtml::link('Napredna pretraga','#',array('class'=>'search-button btn')); ?>
+<!-- <div class="search-form" style="display:none"> -->
+<?php /*$this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+)); */?>
+<!-- </div> --><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'user-grid',
@@ -48,9 +49,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'lang_id',
+		//'lang_id',
 		'login',
-		'pass',
+		//'pass',
 		'email',
 		'display_name',
 		/*
@@ -61,6 +62,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'last_login',
 		'avatar',
 		'role_id',
+		'level',
 		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

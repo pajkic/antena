@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Create',
+	'Korisnici'=>array('index'),
+	'Kreiraj',
 );
 
 $this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Manage User', 'url'=>array('admin')),
+	array('label'=>'Pregledaj korisnike', 'url'=>array('index')),
+	array('label'=>'Upravljaj korisnicima', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create User</h1>
+<h1>Kreiraj korisnika</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

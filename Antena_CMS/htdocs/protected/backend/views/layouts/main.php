@@ -36,7 +36,7 @@
 		                <ul class="nav pull-right">
 		                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo Yii::app()->user->name;?> <b class="caret"></b></a>
 		                        <ul class="dropdown-menu">
-		                            <li><a href="/user/preferences"><i class="icon-cog"></i> Podaci o korisniku</a></li>
+		                            <li><a href="/backend.php/user/view/<?php echo Yii::app()->user->id;?>"><i class="icon-cog"></i> Podaci o korisniku</a></li>
 		                            <li><a href="/help/support"><i class="icon-envelope"></i> Podrška</a></li>
 		                            <li class="divider"></li>
 		                            <li><a href="/backend.php/site/logout"><i class="icon-off"></i> Odjavi me</a></li>
@@ -56,7 +56,7 @@
 	    'stacked'=>true, // whether this is a stacked menu
 	    'items'=>array(
 	        		array('label'=>'Početna', 'icon'=>'home', 'url'=>array('/site/index')),  
-	        		array('label' => 'Test naslov'),
+	        		array('label'=>'Korisnici', 'icon'=>'user', 'url'=>array('/user'), 'visible' => $this->userData->level>=30),
 					array('label'=>'O nama', 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>'Kontakt', 'icon'=>'envelope', 'url'=>array('/site/contact')),
 					array('label'=>'Login', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
@@ -65,13 +65,15 @@
 	)); ?>		
 </div>	<!-- sidebar -->
 	
-	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array(
-    'links' => $this->breadcrumbs, 'homeUrl' => 'index')); ?>
-
+	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array('links' => $this->breadcrumbs,'homeUrl' => Yii::app()->getBaseUrl().'/backend.php/site/index'));?>
+	
+	<p>Jezik:<code><?php echo Yii::app()->language;?></code>Uloga:<code><?php echo Yii::app()->user->role;?></code></p>
+	
+	
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
-	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
+	
 	<div id="footer" class="modal-footer">
 		Copyright &copy; <?php echo date('Y'); ?> <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 	</div><!-- footer -->
