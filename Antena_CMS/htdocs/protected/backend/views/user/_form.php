@@ -3,9 +3,14 @@
 /* @var $model User */
 /* @var $form TbActiveForm */
 ?>
-
+<?php if (isset($model->level)) {
+	$level = $model->level;
+} else {
+	$level = 30;
+}
+?>
 <div class="form">
-
+	
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'user-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -45,7 +50,7 @@
 
             <?php echo $form->dropDownListControlGroup($model,'role_id', CHtml::listData(Role::model()->findAll('id>1'), 'id', 'name')); ?>
 
-            <?php echo $form->hiddenField($model,'level',array('value'=>$model->level)); ?>
+            <?php echo $form->hiddenField($model,'level',array('value'=> $level)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
