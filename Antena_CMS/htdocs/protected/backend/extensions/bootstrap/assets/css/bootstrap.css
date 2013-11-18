@@ -1237,17 +1237,17 @@ input[type="checkbox"]:focus {
 
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #999999;
+  color: #b2b2b2;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #999999;
+  color: #b2b2b2;
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #999999;
+  color: #b2b2b2;
 }
 
 .radio,
@@ -6189,7 +6189,7 @@ a.badge:focus {
 }
 #login-form .form-control {
     position: relative;
-    font-size: 16px;
+    font-size: 15px;
     height: auto;
     width: 100%;
     padding: 10px;
