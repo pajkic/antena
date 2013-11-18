@@ -4,8 +4,8 @@
 
 
 $this->breadcrumbs=array(
-	'Korisnici'=>array('index'),
-	'Upravljaj',
+	Yii::t('app','Korisnici')=>array('index'),
+	Yii::t('app','Upravljaj'),
 );
 
 $this->menu=array(
@@ -27,12 +27,10 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Upravljaj korisnicima</h1>
+<h1><?php echo Yii::t('app','Upravljaj korisnicima');?></h1>
 
 <p>
-    Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
-        &lt;&gt;</b>
-or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.
+   <?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?>
 </p>
 
 
