@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends Controller
+class TermController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class UserController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -51,7 +51,7 @@ class UserController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->allowUser(ADMINISTRATOR);
+		$this->allowUser(SUPERADMINISTRATOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -63,18 +63,14 @@ class UserController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$this->allowUser(ADMINISTRATOR);
-		$model=new User;
+		$this->allowUser(SUPERADMINISTRATOR);
+		$model=new Term;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['User'])) {
-			$user = $_POST['User'];
-			$user['created'] = new CDbExpression('NOW()');
-			$user['updated'] = new CDbExpression('NOW()');
-			$user['pass'] = md5($user['pass']);
-			$model->attributes=$user;
+		if (isset($_POST['Term'])) {
+			$model->attributes=$_POST['Term'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -92,23 +88,14 @@ class UserController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->allowUser(ADMINISTRATOR);
+		$this->allowUser(SUPERADMINISTRATOR);
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['User'])) {
-			$user = $_POST['User'];
-			
-			if ($user['pass']=='') { 
-				$user['pass'] = User::model()->findByPk($id)->pass;
-			} else {
-				$user['pass'] = md5($user['pass']);
-			}
-			$user['updated'] = new CDbExpression('NOW()');
-			
-			$model->attributes = $user;
+		if (isset($_POST['Term'])) {
+			$model->attributes=$_POST['Term'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -145,9 +132,8 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->allowUser(ADMINISTRATOR);
-		$dataProvider=new CActiveDataProvider('User',array('criteria'=>array(
-		'condition' => 'id>1')));
+		$this->allowUser(SUPERADMINISTRATOR);
+		$dataProvider=new CActiveDataProvider('Term');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -158,11 +144,11 @@ class UserController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->allowUser(ADMINISTRATOR);
-		$model=new User('search');
+		$this->allowUser(SUPERADMINISTRATOR);
+		$model=new Term('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['User'])) {
-			$model->attributes=$_GET['User'];
+		if (isset($_GET['Term'])) {
+			$model->attributes=$_GET['Term'];
 		}
 
 		$this->render('admin',array(
@@ -174,12 +160,12 @@ class UserController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return User the loaded model
+	 * @return Term the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model=Term::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -188,11 +174,11 @@ class UserController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param User $model the model to be validated
+	 * @param Term $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='user-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='term-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
