@@ -21,7 +21,7 @@
 
 <body>
 
-<div class="container login-single" id="page">
+<div class="container-fluid login-single" id="page">
 
 	<?php echo $content; ?>
 
