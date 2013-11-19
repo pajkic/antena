@@ -16,15 +16,15 @@ $label = $this->pluralize($this->class2name($this->modelClass));
 echo "\$this->breadcrumbs=array(
 	'$label'=>array('index'),
 	\$model->{$nameColumn}=>array('view','id'=>\$model->{$this->tableSchema->primaryKey}),
-	'Update',
+	Yii::t('app','Izmeni'),
 );\n";
 ?>
 
 $this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>', 'url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>', 'url'=>array('create')),
-	array('label'=>'View <?php echo $this->modelClass; ?>', 'url'=>array('view', 'id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista ') . '<?php echo $this->modelClass; ?>', 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj ') . '<?php echo $this->modelClass; ?>', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Pregledaj ') . '<?php echo $this->modelClass; ?>', 'url'=>array('view', 'id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
+	array('label'=>Yii::t('app','Upravljaj ') . '<?php echo $this->modelClass; ?>', 'url'=>array('admin')),
 );
 ?>
 
