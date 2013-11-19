@@ -130,9 +130,10 @@ class User extends CActiveRecord
 		$criteria->compare('avatar',$this->avatar,true);
 		$criteria->compare('role_id',$this->role_id);
 		$criteria->compare('level',$this->level);
-
+		$criteria->condition = 'id>1';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			
 		));
 	}
 }
