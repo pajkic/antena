@@ -6,12 +6,12 @@
 <?php
 $this->breadcrumbs=array(
 	'Terms'=>array('index'),
-	'Create',
+	Yii::t('app','Kreiraj'),
 );
 
 $this->menu=array(
-	array('label'=>'List Term', 'url'=>array('index')),
-	array('label'=>'Manage Term', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista ') . 'Term', 'url'=>array('index')),
+	array('label'=>Yii::t('app','Upravljaj ') . 'Term', 'url'=>array('admin')),
 );
 ?>
 

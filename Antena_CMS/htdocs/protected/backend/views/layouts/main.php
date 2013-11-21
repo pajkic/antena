@@ -67,7 +67,6 @@
 	    ),
 	)); ?>		
 </div>	<!-- sidebar -->
-	
 	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array('links' => $this->breadcrumbs,'homeUrl' => Yii::app()->getBaseUrl().'/backend.php/site/index'));?>
 	
 	

@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Term','url'=>array('create')),
-	array('label'=>'Manage Term','url'=>array('admin')),
+	array('label'=>Yii::t('app','Kreiraj ') . 'Term','url'=>array('create')),
+	array('label'=>Yii::t('app','Upravljaj ') . 'Term','url'=>array('admin')),
 );
 ?>
 
