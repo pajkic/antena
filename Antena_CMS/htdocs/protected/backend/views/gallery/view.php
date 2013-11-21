@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista galerija'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Lista galerija'),'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj galeriju'),'url'=>array('create')),
 	array('label'=>Yii::t('app','Izmeni galeriju'), 'url'=>array('gallerydescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši galeriju'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
@@ -32,7 +32,8 @@ $this->menu=array(
 	),
 ));  ?>
 
-    <?php 
+    <?php
+     
     	$this->widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
 	    'name' => 'file_name',
 	    'uploadAction' => $this->createUrl('galleryitem/upload', array('gallery_id' => $model->id)),
@@ -42,24 +43,34 @@ $this->menu=array(
 			),
 	    	'validation'=>array(
 	    		'allowedExtensions' => array('jpeg', 'jpg')
-	    		)
-	    	)
-    )); 
-    ?>
-
-
-<?php	$items = GalleryItem::model()->findAllByAttributes(array('gallery_id' => $model->id)); ?>
-	
-	
-	<?php 
+	    		),
+	    	
+	    	),
+	    'events'=>array(
+	    
+	   
+        
+    ),
+    ));
+	 
+	 ?>
+    
+<?php 
+	$items = GalleryItem::model()->findAllByAttributes(array('gallery_id' => $model->id));
+	 
 	$images = array();
 	 foreach($items as $item){
 		array_push($images, array(
-		'image' => '/uploads/gallery/'.$model->id.'/thumb/'.$item->name,
-		'label' => 'SDD',
-		'url' => Yii::app()->getBaseUrl(true).'/backend.php/galleryitemdescription/update/'.$item->id,
+		'image' => '/uploads/gallery/'.$model->id.'/thumbs/'.$item->name,
+		//'caption' => TbHtml::linkButton('Obriši', array('submit'=>array('/galleryitem/delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?')) ,
+		'url'=>'/backend.php/galleryitemdescription/update/'.$item->id,
+		//array('label'=>'Uredi','url'=>'/backend.php/galleryitemdescription/update/'.$item->id),
+		//array('label'=>'Obriši',array('url'=>'/backend.php/galleryitem', 'linkOptions'=>array('submit'=>array('delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?')))
+		
+		
 		));
 		
 	} 
 	echo TbHtml::thumbnails($images, array('span' => 2)); 
-	?>
+?>
+

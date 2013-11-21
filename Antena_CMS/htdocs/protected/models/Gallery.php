@@ -42,7 +42,7 @@ class Gallery extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, description', 'safe', 'on'=>'search'),
+			array('id, name, description', 'safe'),
 		);
 	}
 

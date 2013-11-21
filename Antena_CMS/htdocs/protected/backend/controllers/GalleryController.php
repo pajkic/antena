@@ -53,6 +53,7 @@ class GalleryController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			
 		));
 	}
 
@@ -76,7 +77,7 @@ class GalleryController extends Controller
             		'gallery_id' => $model->primaryKey,
             		'language_id'=>$language['id'],
             		'title'=>$model->name,
-            		'description'=>''
+            		'description'=>$model->description
 					);
 					
 					$description->save();
