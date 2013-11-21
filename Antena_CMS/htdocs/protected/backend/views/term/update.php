@@ -7,14 +7,14 @@
 $this->breadcrumbs=array(
 	'Terms'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	'Update',
+	Yii::t('app','Izmeni'),
 );
 
 $this->menu=array(
-	array('label'=>'List Term', 'url'=>array('index')),
-	array('label'=>'Create Term', 'url'=>array('create')),
-	array('label'=>'View Term', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Term', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista ') . 'Term', 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj ') . 'Term', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Pregledaj ') . 'Term', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Upravljaj ') . 'Term', 'url'=>array('admin')),
 );
 ?>
 

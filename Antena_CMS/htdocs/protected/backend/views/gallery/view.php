@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>Yii::t('app','Lista galerija'),'url'=>array('create')),
 	array('label'=>Yii::t('app','Kreiraj galeriju'),'url'=>array('create')),
-	array('label'=>Yii::t('app','Izmeni galeriju'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Izmeni galeriju'), 'url'=>array('gallerydescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši galeriju'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>Yii::t('app','Upravljaj galerijama'), 'url'=>array('admin')),
 );

@@ -20,7 +20,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-    <p class="help-block"><?php echo Yii::t('app','Polja sa <span class="required">*</span> su obavezna.</p>');?>
+    <p class="help-block"><?php echo Yii::t('app','Polja sa <span class="required">*</span> su obavezna.');?></p>
 
     <?php echo $form->errorSummary($model); ?>
 
