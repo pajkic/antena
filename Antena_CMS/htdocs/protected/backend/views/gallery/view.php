@@ -31,7 +31,7 @@ $this->menu=array(
 		'description',
 	),
 ));  ?>
-
+<input type="hidden" id="aaa" value="0"/>
     <?php
      
     	$this->widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
@@ -48,6 +48,20 @@ $this->menu=array(
 	    	),
 	    'events'=>array(
 	    
+		'submit'=>"function(){
+			var a=$('#aaa').val();
+			a++;
+			$('#aaa').val(a);
+			
+		}",
+	    	'complete' => "function(data){
+	    		var a=$('#aaa').val();
+				a--;
+				$('#aaa').val(a);
+				if (a==0) {
+					window.location.assign('/backend.php/gallery/".$model->id."')
+				}
+	    	}"
 	   
         
     ),
