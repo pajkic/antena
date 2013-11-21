@@ -74,10 +74,12 @@ $this->menu=array(
 	 
 	$images = array();
 	 foreach($items as $item){
+	 	$caption=TbHtml::linkButton('Obriši', array('submit'=>array('/galleryitem/delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?'));
+	 	$caption.=TbHtml::linkButton('Uredi', array('submit'=>array('/galleryitemdescription/update','id'=>$item->id)));
 		array_push($images, array(
 		'image' => '/uploads/gallery/'.$model->id.'/thumbs/'.$item->name,
-		//'caption' => TbHtml::linkButton('Obriši', array('submit'=>array('/galleryitem/delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?')) ,
-		'url'=>'/backend.php/galleryitemdescription/update/'.$item->id,
+		
+		'caption' => $caption,
 		//array('label'=>'Uredi','url'=>'/backend.php/galleryitemdescription/update/'.$item->id),
 		//array('label'=>'Obriši',array('url'=>'/backend.php/galleryitem', 'linkOptions'=>array('submit'=>array('delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?')))
 		
@@ -85,6 +87,7 @@ $this->menu=array(
 		));
 		
 	} 
+
 	echo TbHtml::thumbnails($images, array('span' => 2)); 
 ?>
 
