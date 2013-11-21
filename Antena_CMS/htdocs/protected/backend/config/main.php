@@ -33,7 +33,8 @@ return array(
 		'application.messages.*',
 		'backend.models.*',
 		'backend.components.*',
-		'bootstrap.helpers.TbHtml'
+		'backend.extensions.galleria.*',
+		'bootstrap.helpers.TbHtml',
 		
 	),
 
@@ -46,7 +47,9 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 			'generatorPaths' => array('bootstrap.gii'),
+	
 		),
+	
 	),
 
 	// application components
@@ -82,10 +85,10 @@ return array(
 			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
-			/*
+			
 			 'username' => 'root',
 			 'password' => '',
-			*/
+			
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),
@@ -112,8 +115,8 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				 * 
 				 */
+				
 				
 			),
 		),
@@ -132,6 +135,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'info@implementacija.rs',
+		
 	),
 	
 
