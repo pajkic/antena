@@ -23,25 +23,14 @@ $this->menu=array(
 
     <h1>Update GalleryItemDescription <?php //echo $model->id; ?></h1>
 
+
 <?php
 
-$tabs = array();
-foreach ($model as $lm) {
-	$language_id = $lm->attributes['language_id'];
-	$language = Language::model()->findByPk($language_id);
-	$content = $this->renderPartial('_form', array('model' => $lm), true);
-	if ($language['main'] == 1) {
-		$active = true;
-	} else $active = false;
-	$tabs[] = array(
-		'label' => $language['name'],
-		'content' => $content,
-		'active' => $active
-	);
-}
-
+	echo TbHtml::imageRounded($image);
 	$this->widget('bootstrap.widgets.TbTabs', array(
-    'tabs' => $tabs
+    'tabs' => $tabs,
+    'htmlOptions' => array('span'=>6)
     )); 
 
 ?>
+
