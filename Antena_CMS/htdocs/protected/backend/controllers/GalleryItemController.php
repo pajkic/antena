@@ -116,9 +116,10 @@ class GalleryItemController extends Controller
 			
 			$file = GalleryItem::model()->findByPk($id);
 			
-			if (unlink(Yii::app()->basePath.'/../uploads/gallery/'.$file->gallery_id.'/'.$file->name) AND unlink(Yii::app()->basePath.'/../uploads/gallery/'.$file->gallery_id.'/thumbs/'.$file->name))
-			{
+			if (is_file(Yii::app()->basePath.'/../uploads/gallery/'.$file->gallery_id.'/'.$file->name))	unlink(Yii::app()->basePath.'/../uploads/gallery/'.$file->gallery_id.'/'.$file->name);
 			
+			
+			if (is_file(Yii::app()->basePath.'/../uploads/gallery/'.$file->gallery_id.'/thumbs/'.$file->name)) unlink(Yii::app()->basePath.'/../uploads/gallery/'.$file->gallery_id.'/thumbs/'.$file->name);
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
 
@@ -127,7 +128,7 @@ class GalleryItemController extends Controller
 				$this->redirect('/backend.php/gallery/'.$file->gallery_id);
 				//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 			}
-			}
+			
 		} else {
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 		}
