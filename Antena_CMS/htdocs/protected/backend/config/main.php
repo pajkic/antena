@@ -16,8 +16,7 @@ return array(
 	'basePath'=>$frontend,
 	'name'=>'Antena CMS',
 	'homeUrl' => '/backend.php/login',
-	//'sourceLanguage' => 'sr',
-	//'Language' => 'sr',
+
 	
 	'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
@@ -81,14 +80,15 @@ return array(
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=antena',
+			
 			'emulatePrepare' => true,
 			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
-			
+			/*
 			 'username' => 'root',
 			 'password' => '',
-			
+			*/
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),
