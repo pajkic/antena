@@ -78,7 +78,7 @@ $this->menu=array(
 	 	$caption.=TbHtml::linkButton('Uredi', array('submit'=>array('/GalleryItemDescription/update','id'=>$item->id)));
 		array_push($images, array(
 		'image' => '/uploads/gallery/'.$model->id.'/thumbs/'.$item->name,
-		
+		'title' => $item->name,
 		'caption' => $caption,
 		//array('label'=>'Uredi','url'=>'/backend.php/galleryitemdescription/update/'.$item->id),
 		//array('label'=>'Obriši',array('url'=>'/backend.php/galleryitem', 'linkOptions'=>array('submit'=>array('delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?')))
