@@ -102,8 +102,24 @@ class GalleryDescriptionController extends Controller
 			$parentmodel[] = $this->loadModel($description['id']);
 			
 		}
+		$tabs = array();
+		foreach ($parentmodel as $lm) {
+			$language_id = $lm->attributes['language_id'];
+			$language = Language::model()->findByPk($language_id);
+			$content = $this->renderPartial('_form', array('model' => $lm), true);
+			if ($language['main'] == 1) {
+				$active = true;
+			} else $active = false;
+			$tabs[] = array(
+				'label' => $language['name'],
+				'content' => $content,
+				'active' => $active
+			);
+		}
+		
 		$this->render('update',array(
 			'model'=>$parentmodel,
+			'tabs'=>$tabs,
 		));
 	}
 

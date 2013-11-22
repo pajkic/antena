@@ -27,7 +27,7 @@
 
             <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>8)); ?>
+            <?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6,'span'=>5)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
