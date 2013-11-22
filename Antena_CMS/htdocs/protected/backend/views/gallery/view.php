@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>Yii::t('app','Lista galerija'),'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj galeriju'),'url'=>array('create')),
-	array('label'=>Yii::t('app','Izmeni galeriju'), 'url'=>array('gallerydescription/update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Izmeni galeriju'), 'url'=>array('GalleryDescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši galeriju'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>Yii::t('app','Upravljaj galerijama'), 'url'=>array('admin')),
 );
@@ -36,7 +36,7 @@ $this->menu=array(
      
     	$this->widget('yiiwheels.widgets.fineuploader.WhFineUploader', array(
 	    'name' => 'file_name',
-	    'uploadAction' => $this->createUrl('galleryitem/upload', array('gallery_id' => $model->id)),
+	    'uploadAction' => $this->createUrl('GalleryItem/upload', array('gallery_id' => $model->id)),
 	    'pluginOptions' => array(
 	    	'request' =>array(
 				
@@ -59,7 +59,7 @@ $this->menu=array(
 				a--;
 				$('#aaa').val(a);
 				if (a==0) {
-					/*window.location.assign('/backend.php/gallery/".$model->id."')*/
+					window.location.assign('/backend.php/gallery/".$model->id."')
 				}
 	    	}"
 	   
@@ -74,8 +74,8 @@ $this->menu=array(
 	 
 	$images = array();
 	 foreach($items as $item){
-	 	$caption=TbHtml::linkButton('Obriši', array('submit'=>array('/galleryitem/delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?'));
-	 	$caption.=TbHtml::linkButton('Uredi', array('submit'=>array('/galleryitemdescription/update','id'=>$item->id)));
+	 	$caption=TbHtml::linkButton('Obriši', array('submit'=>array('/GalleryItem/delete','id'=>$item->id),'confirm'=>'Are you sure you want to delete this item?'));
+	 	$caption.=TbHtml::linkButton('Uredi', array('submit'=>array('/GalleryItemDescription/update','id'=>$item->id)));
 		array_push($images, array(
 		'image' => '/uploads/gallery/'.$model->id.'/thumbs/'.$item->name,
 		
