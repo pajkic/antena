@@ -59,7 +59,7 @@ $this->menu=array(
 				a--;
 				$('#aaa').val(a);
 				if (a==0) {
-					window.location.assign('/backend.php/gallery/".$model->id."')
+					/*window.location.assign('/backend.php/gallery/".$model->id."')*/
 				}
 	    	}"
 	   
