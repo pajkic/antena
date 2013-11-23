@@ -6248,7 +6248,7 @@ a.badge:focus {
 	border:1px solid #ccc;
 	border-width: 0 1px 0 0;
 	background-color: #f2f2f2;
-	margin-right: 28px;
+	/* margin-right: 28px; */
 }
 .sidebar:before {
 	content:"";
@@ -6263,10 +6263,11 @@ a.badge:focus {
 	border-width:0 1px 0 0;
 }
 #content {
-	float: left;
+	/* float: left; */
     min-height: 100%;
-    padding: 0 20px 50px 0;
+    padding: 0 20px 50px 28px;
     overflow: hidden;
+    margin: 0 0 50px 0;
 }  
 section {
 	overflow: hidden;
