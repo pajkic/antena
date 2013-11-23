@@ -51,6 +51,7 @@ class GalleryController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 			
@@ -63,6 +64,7 @@ class GalleryController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$model=new Gallery;
 		$languages = Language::model()->findAllByAttributes(array('active'=>1));
 		// Uncomment the following line if AJAX validation is needed
@@ -99,6 +101,7 @@ class GalleryController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -123,9 +126,13 @@ class GalleryController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(SUPER_EDITOR);
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+			if ($this->loadModel($id)->delete()){
+				$galleryPath = Yii::app()->basePath.'/../uploads/gallery/'.$id;
+				$this->deleteGallery($galleryPath);
+			}
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax'])) {
@@ -141,6 +148,7 @@ class GalleryController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$dataProvider=new CActiveDataProvider('Gallery');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -152,6 +160,7 @@ class GalleryController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$model=new Gallery('search');
 		$model->unsetAttributes();  // clear any default values
 		if (isset($_GET['Gallery'])) {
@@ -192,4 +201,38 @@ class GalleryController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	protected function deleteGallery($directory,$empty=false) 
+	{
+		$this->allowUser(SUPER_EDITOR);
+		if(substr($directory,-1) == '/'){
+			$directory = substr($directory,0,-1);
+		}
+		if(!file_exists($directory) || !is_dir($directory))	{
+			return FALSE;
+	    }
+		elseif(!is_readable($directory)) {
+			return FALSE;
+		}
+		else {
+			$handle = opendir($directory);
+			while (FALSE !== ($item = readdir($handle))) {
+				if($item != '.' && $item != '..') {
+					$path = $directory.'/'.$item;
+					if(is_dir($path)) {
+						$this->deleteGallery($path);
+	                } else {
+	                	unlink($path);
+					}
+				}
+			}
+			closedir($handle);
+			if($empty == FALSE)	{
+				if(!rmdir($directory)) {
+						return FALSE;
+					}
+				}
+			return TRUE;
+			}
+}
 }

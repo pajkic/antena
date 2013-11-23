@@ -187,8 +187,9 @@ class GalleryItemController extends Controller
 			'name' => $_GET['file_name'],
 			);
             $model->attributes=$attributes;
-            if($model->save())
-            {
+            try {
+            	$model->save();
+            
             	if (!is_dir(Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'])) {
             		mkdir(Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'],0777);
 					mkdir(Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/thumbs',0777);
@@ -220,6 +221,9 @@ class GalleryItemController extends Controller
             	} 
 				   
                 echo json_encode(array('success'=>'true','filename'=>$_FILES['file_name']['name']));
+            } 
+            catch (Exception $e) {
+            	echo 'Error!';
             }
         } 
 	}
