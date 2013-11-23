@@ -65,8 +65,8 @@ class GalleryItem extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'gallery_id' => 'Gallery',
-			'name' => 'Name',
+			'gallery_id' => Yii::t('app','Galerija'),
+			'name' => Yii::t('app','Naziv'),
 		);
 	}
 

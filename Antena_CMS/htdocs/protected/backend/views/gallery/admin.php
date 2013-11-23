@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Gallery', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Gallery', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Lista galerija'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj galeriju'), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('app','Upravljaj');?> Galleries</h1>
+<h1><?php echo Yii::t('app','Upravljaj galerijama');?></h1>
 
 <p><?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?></p>
 
