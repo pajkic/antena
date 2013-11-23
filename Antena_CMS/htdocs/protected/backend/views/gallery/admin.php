@@ -4,7 +4,7 @@
 
 
 $this->breadcrumbs=array(
-	'Galleries'=>array('index'),
+	Yii::t('app','Galerije')=>array('index'),
 	Yii::t('app','Upravljaj'),
 );
 
@@ -44,7 +44,7 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
 		'name',
 		'description',
 		array(

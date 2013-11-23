@@ -54,7 +54,7 @@ $this->menu=array(
 			$('#aaa').val(a);
 			
 		}",
-	    	'complete' => "function(data){
+	    'complete' => "function(){
 	    		var a=$('#aaa').val();
 				a--;
 				$('#aaa').val(a);

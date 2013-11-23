@@ -49,19 +49,22 @@ class GalleryItemDescriptionController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
+	/*
 	public function actionView($id)
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+	*/
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$model=new GalleryItemDescription;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -86,7 +89,7 @@ class GalleryItemDescriptionController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		
+		$this->allowUser(SUPER_EDITOR);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		
@@ -143,8 +146,10 @@ class GalleryItemDescriptionController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
+	 /*
 	public function actionDelete($id)
 	{
+		$this->allowUser(SUPER_EDITOR);	
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -157,21 +162,24 @@ class GalleryItemDescriptionController extends Controller
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 		}
 	}
-
+	*/
 	/**
 	 * Lists all models.
 	 */
+	 /*
 	public function actionIndex()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$dataProvider=new CActiveDataProvider('GalleryItemDescription');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
-
+	*/
 	/**
 	 * Manages all models.
 	 */
+	 /*
 	public function actionAdmin()
 	{
 		$model=new GalleryItemDescription('search');
@@ -184,7 +192,7 @@ class GalleryItemDescriptionController extends Controller
 			'model'=>$model,
 		));
 	}
-
+	*/
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.

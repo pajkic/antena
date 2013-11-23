@@ -85,10 +85,10 @@ return array(
 			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
-			/*
+			
 			 'username' => 'root',
 			 'password' => '',
-			*/
+			
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),
