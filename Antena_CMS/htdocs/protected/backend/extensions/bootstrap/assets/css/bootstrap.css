@@ -4949,8 +4949,8 @@ input[type="submit"].btn.btn-mini {
 }
 
 .breadcrumb {
-  padding: 8px 15px 8px 0;
-  margin: 1px 0 0 0;
+  padding: 8px 15px 8px 28px;
+  margin: 1px 0 0 190px;
   list-style: none;
   background-color: #F9F9F9;
   border-bottom: 1px solid #f2f2f2;
@@ -6248,7 +6248,6 @@ a.badge:focus {
 	border:1px solid #ccc;
 	border-width: 0 1px 0 0;
 	background-color: #f2f2f2;
-	/* margin-right: 28px; */
 }
 .sidebar:before {
 	content:"";
@@ -6263,7 +6262,6 @@ a.badge:focus {
 	border-width:0 1px 0 0;
 }
 #content {
-	/* float: left; */
     min-height: 100%;
     padding: 0 20px 50px 28px;
     overflow: hidden;
