@@ -57,7 +57,7 @@ class GalleryItemDescriptionController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-	*/
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -104,6 +104,21 @@ class GalleryItemDescriptionController extends Controller
 		}
 		
 		$descriptions = GalleryItemDescription::model()->findAllByAttributes(array('gallery_item_id' => $id));
+		
+		$ld = array();
+		foreach($descriptions as $d) {
+			$ld[] = $d->attributes['language_id'];
+		}
+		$languages = Language::model()->findAllByAttributes(array('active' => 1));
+		foreach ($languages as $l) {
+			if (!in_array($l->attributes['id'],$ld)) {
+				$new_model = new GalleryItemDescription;
+				$new_model->attributes = array('gallery_item_id' => $id, 'language_id' => $l->attributes['id']);
+				$new_model->save();
+				$descriptions = GalleryItemDescription::model()->findAllByAttributes(array('gallery_item_id' => $id));
+			}
+		}
+		
 		$parentmodel = array();
 		foreach($descriptions as $description) {
 			$parentmodel[] = $this->loadModel($description['id']);
@@ -114,18 +129,26 @@ class GalleryItemDescriptionController extends Controller
 		$image = '/uploads/gallery/'.$item->gallery_id.'/thumbs/'.$item->name;
 		
 		$tabs = array();
+		
+		
+		
+		
 		foreach ($parentmodel as $lm) {
 			$language_id = $lm->attributes['language_id'];
 			$language = Language::model()->findByPk($language_id);
 			$content = $this->renderPartial('_form', array('model' => $lm), true);
 			if ($language['main'] == 1) {
 				$active = true;
-			} else $active = false;
+			} else {
+				$active = false;
+			}
+			if ($language['active'] == 1) {
 			$tabs[] = array(
 				'label' => $language['name'],
 				'content' => $content,
 				'active' => $active
 			);
+			}
 		}
 
 		$gallery = Gallery::model()->findByPk($item->gallery_id);

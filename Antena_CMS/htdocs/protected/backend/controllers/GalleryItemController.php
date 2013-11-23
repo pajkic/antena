@@ -187,6 +187,7 @@ class GalleryItemController extends Controller
 			'name' => $_GET['file_name'],
 			);
             $model->attributes=$attributes;
+			
             try {
             	$model->save();
             

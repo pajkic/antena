@@ -97,6 +97,22 @@ class GalleryDescriptionController extends Controller
 		}
 
 		$descriptions = GalleryDescription::model()->findAllByAttributes(array('gallery_id' => $id));
+		
+		$ld = array();
+		foreach($descriptions as $d) {
+			$ld[] = $d->attributes['language_id'];
+		}
+		$languages = Language::model()->findAllByAttributes(array('active' => 1));
+		foreach ($languages as $l) {
+			if (!in_array($l->attributes['id'],$ld)) {
+				$new_model = new GalleryDescription;
+				$new_model->attributes = array('gallery_id' => $id, 'language_id' => $l->attributes['id']);
+				$new_model->save();
+				$descriptions = GalleryDescription::model()->findAllByAttributes(array('gallery_id' => $id));
+			}
+		}
+		
+		
 		$parentmodel = array();
 		foreach($descriptions as $description) {
 			$parentmodel[] = $this->loadModel($description['id']);
