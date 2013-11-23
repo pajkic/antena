@@ -51,8 +51,13 @@ class GalleryItemController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		$image = '/uploads/gallery/'.$model->attributes['gallery_id'].'/'.$model->attributes['name'];
+		$description = GalleryItemDescription::model()->findByAttributes(array('gallery_item_id'=> $model->attributes['id']));
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'image'=>$image,
+			'description'=>$description,
 		));
 	}
 
@@ -214,7 +219,7 @@ class GalleryItemController extends Controller
 					$description->save();
             	} 
 				   
-                echo json_encode(array('success'=>'true'));
+                echo json_encode(array('success'=>'true','filename'=>$_FILES['file_name']['name']));
             }
         } 
 	}
@@ -319,6 +324,8 @@ class GalleryItemController extends Controller
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
+		
+		
 		return $model;
 	}
 

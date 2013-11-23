@@ -65,10 +65,10 @@ class GalleryDescription extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'gallery_id' => 'Gallery',
-			'language_id' => 'Language',
-			'title' => 'Title',
-			'description' => 'Description',
+			'gallery_id' => Yii::t('app','Galerija'),
+			'language_id' => Yii::t('app','Jezik'),
+			'title' => Yii::t('app','Naziv'),
+			'description' => Yii::t('app','Opis'),
 		);
 	}
 

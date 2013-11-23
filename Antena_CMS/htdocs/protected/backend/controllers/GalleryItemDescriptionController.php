@@ -124,13 +124,17 @@ class GalleryItemDescriptionController extends Controller
 				'active' => $active
 			);
 		}
+
+		$gallery = Gallery::model()->findByPk($item->gallery_id);
 		
 		
 		
 		$this->render('update',array(
 			'model'=>$parentmodel,
 			'image'=>$image,
-			'tabs'=>$tabs
+			'tabs'=>$tabs,
+			'item' => $item,
+			'gallery' => $gallery
 		));
 	}
 

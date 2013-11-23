@@ -117,9 +117,11 @@ class GalleryDescriptionController extends Controller
 			);
 		}
 		
+		$gallery = Gallery::model()->findByPk($id);
 		$this->render('update',array(
 			'model'=>$parentmodel,
 			'tabs'=>$tabs,
+			'gallery'=>$gallery
 		));
 	}
 

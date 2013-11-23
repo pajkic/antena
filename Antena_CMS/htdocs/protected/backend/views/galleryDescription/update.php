@@ -4,24 +4,22 @@
 ?>
 
 <?php
-/*
+
 $this->breadcrumbs=array(
-	'Gallery Descriptions'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	Yii::t('app','Izmeni'),
+	'Galerije'=>array('/Gallery/index'),
+	$gallery->name=>array('Gallery/view','id'=>$gallery->id),
+	Yii::t('app','Uredi'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'GalleryDescription', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'GalleryDescription', 'url'=>array('create')),
-	array('label'=>Yii::t('app','Pregledaj ') . 'GalleryDescription', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>Yii::t('app','Upravljaj ') . 'GalleryDescription', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista galerija'), 'url'=>array('/Gallery/index')),
+	array('label'=>Yii::t('app','Kreiraj galeriju'), 'url'=>array('/Gallery/create')),
+	array('label'=>Yii::t('app','Pregledaj galeriju'), 'url'=>array('Gallery/view', 'id'=>$gallery->id)),
+	array('label'=>Yii::t('app','Upravljaj galerijama'), 'url'=>array('Gallery/admin')),
 );
- * 
- */
 ?>
 
-    <h1>Update GalleryDescription</h1>
+    <h1>Uredi galeriju <?php echo $gallery->name;?></h1>
 
 <?php
 

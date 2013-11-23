@@ -31,3 +31,17 @@ $this->menu=array(
 		'name',
 	),
 )); ?>
+
+<?php $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$description,
+    'attributes'=>array(
+		'title',
+		'description',
+	),
+)); ?>
+<?php echo TbHtml::imageRounded($image);?>
+
+<?php var_dump($description);?>
