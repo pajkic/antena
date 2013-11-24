@@ -76,7 +76,7 @@ class LanguageController extends Controller
 				
 				
 				if (is_object($model->flagpath)) $model->flagpath->saveAs(Yii::app()->basePath.'/../images/backend/languages/'.$model->flagpath);
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 			}
 		}
 
@@ -107,7 +107,7 @@ class LanguageController extends Controller
 			
 			if ($model->save()) {
 				if (is_object($model->flagpath)) $model->flagpath->saveAs(Yii::app()->basePath.'/../images/backend/languages/'.$model->flagpath);
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index'));
 			}
 		}
 
