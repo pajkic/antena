@@ -93,7 +93,7 @@ thead th {background:#82AF6F;}
   text-align: right;
   min-width: 50px;
 }
-.grid-view .summary {
+.grid-view .summary, .span6 .summary {
   color: #999999;
   font-size: 12px;
   padding: 6px 0;
