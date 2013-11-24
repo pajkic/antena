@@ -39,11 +39,11 @@ thead th {background:#82AF6F;}
 .grid-view .table th > .sort-link:before {
 	font-size: 14px;
 	content: " ";
-	padding: 0 23px 0 0;
+	padding: 2px 23px 0 0;
 	background-image: url("/images/backend/glyphicons-halflings-white.png");
 	background-repeat: no-repeat;
 	background-position: -408px -144px;
-	vertical-align: middle;
+	vertical-align: text-bottom;
 	width: 14px;
 	line-height: 10px;
 	height: 14px;
