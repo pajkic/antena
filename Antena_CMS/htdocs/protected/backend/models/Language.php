@@ -13,6 +13,7 @@
  */
 class Language extends CActiveRecord
 {
+	public $flagpath;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -39,14 +40,15 @@ class Language extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, lang, flagpath, active, main', 'required'),
+			array('flagpath','file','types'=>'jpg, jpeg','allowEmpty'=>true),
+			array('name, lang, active, main', 'required'),
 			array('active, main', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>20),
 			array('lang', 'length', 'max'=>2),
-			array('flagpath', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, lang, flagpath, active, main', 'safe', 'on'=>'search'),
+			array('id, name, lang, active, main', 'safe',),
+			
 		);
 	}
 
@@ -68,11 +70,11 @@ class Language extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'lang' => 'Lang',
-			'flagpath' => 'Flagpath',
-			'active' => 'Active',
-			'main' => 'Main',
+			'name' => Yii::t('app','Naziv'),
+			'lang' => Yii::t('app','Skraćeni naziv'),
+			'flagpath' => Yii::t('app','Zastavica'),
+			'active' => Yii::t('app','Aktivan'),
+			'main' => Yii::t('app','Osnovni'),
 		);
 	}
 
