@@ -5,9 +5,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1><?php echo Yii::t('app','Dobrodošli u ');?> <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p>Congratulations! You have successfully created your Yii application.</p>
+<h1><?php echo Yii::t('app','Dobrodošli u ');?> <?php echo CHtml::encode(Yii::app()->name); ?></h1>
 
 <p>You may change the content of this page by modifying the following two files:</p>
 <ul>
