@@ -28,7 +28,7 @@
 
             <?php echo $form->dropDownListControlGroup($model,'active',array('0'=>'Nije aktivan','1'=>'Aktivan'),array('span'=>5)); ?>
 
-            <?php echo $form->hiddenField($model,'main',array('value'=>0,'span'=>5)); ?>
+            <?php echo $form->hiddenField($model,'main',array('span'=>5)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
