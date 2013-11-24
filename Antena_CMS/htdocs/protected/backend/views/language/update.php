@@ -6,7 +6,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Jezici'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
+	$model->name=>array('update','id'=>$model->id),
 	Yii::t('app','Uredi'),
 );
 
