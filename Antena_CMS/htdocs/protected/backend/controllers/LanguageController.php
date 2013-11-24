@@ -1,6 +1,6 @@
 <?php
 
-class GalleryDescriptionController extends Controller
+class LanguageController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class GalleryDescriptionController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -62,14 +62,20 @@ class GalleryDescriptionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new GalleryDescription;
+		$model=new Language;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
-		if (isset($_POST['GalleryDescription'])) {
-			$model->attributes=$_POST['GalleryDescription'];
+		
+		if (isset($_POST['Language'])) {
+		
+			$model->attributes=$_POST['Language'];
+			$model->flagpath=CUploadedFile::getInstance($model,'flagpath');
+			
 			if ($model->save()) {
+				
+				
+				if (is_object($model->flagpath)) $model->flagpath->saveAs(Yii::app()->basePath.'/../images/backend/languages/'.$model->flagpath);
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -86,62 +92,27 @@ class GalleryDescriptionController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		if (isset($_POST['GalleryDescription'])) {
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if (isset($_POST['Language'])) {
+			$model->attributes=$_POST['Language'];
+			$flagpath = CUploadedFile::getInstance($model,'flagpath');
+			if (is_object($flagpath) && get_class($flagpath)==='CUploadedFile') {
+				$model->flagpath = $flagpath;
+			}
 			
-			$d_id = $_POST['GalleryDescription']['id'];
-			$model = $this->loadModel($d_id);
-			$model->attributes = $_POST['GalleryDescription'];
+			
 			if ($model->save()) {
-				//$this->redirect(array('view','id'=>$model->id));
+				if (is_object($model->flagpath)) $model->flagpath->saveAs(Yii::app()->basePath.'/../images/backend/languages/'.$model->flagpath);
+				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
-		$descriptions = GalleryDescription::model()->findAllByAttributes(array('gallery_id' => $id));
-		
-		$ld = array();
-		foreach($descriptions as $d) {
-			$ld[] = $d->attributes['language_id'];
-		}
-		$languages = Language::model()->findAllByAttributes(array('active' => 1));
-		foreach ($languages as $l) {
-			if (!in_array($l->attributes['id'],$ld)) {
-				$new_model = new GalleryDescription;
-				$new_model->attributes = array('gallery_id' => $id, 'language_id' => $l->attributes['id']);
-				$new_model->save();
-				$descriptions = GalleryDescription::model()->findAllByAttributes(array('gallery_id' => $id));
-			}
-		}
-		
-		
-		$parentmodel = array();
-		foreach($descriptions as $description) {
-			$parentmodel[] = $this->loadModel($description['id']);
-			
-		}
-		$tabs = array();
-		foreach ($parentmodel as $lm) {
-			$language_id = $lm->attributes['language_id'];
-			$language = Language::model()->findByPk($language_id);
-			$content = $this->renderPartial('_form', array('model' => $lm), true);
-			if ($language['main'] == 1) {
-				$active = true;
-			} else {
-			$active = false; 
-			}
-			if ($language['active'] == 1) {
-				$tabs[] = array(
-				'label' => $language['name'],
-				'content' => $content,
-				'active' => $active
-			);
-			}
-		}
-		
-		$gallery = Gallery::model()->findByPk($id);
 		$this->render('update',array(
-			'model'=>$parentmodel,
-			'tabs'=>$tabs,
-			'gallery'=>$gallery
+			'model'=>$model,
 		));
 	}
 
@@ -170,9 +141,11 @@ class GalleryDescriptionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('GalleryDescription');
+		$model=Language::model()->findAll();
+		$dataProvider=new CActiveDataProvider('Language');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'model'=>$model
 		));
 	}
 
@@ -181,27 +154,43 @@ class GalleryDescriptionController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new GalleryDescription('search');
+		$model=new Language('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['GalleryDescription'])) {
-			$model->attributes=$_GET['GalleryDescription'];
+		if (isset($_GET['Language'])) {
+			$model->attributes=$_GET['Language'];
 		}
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
+	
+	public function actionSetActive($id)
+	{
+		$model=$this->loadModel($id);
+		$model->attributes = array('active'=>$_POST['active']);
+		$model->save();
+		echo Yii::t('app','Izmena uspešno izvršena.');
+	}
 
+	public function actionSetMain($id)
+	{
+		Language::model()->updateAll(array("main"=>0));
+		$model=$this->loadModel($id);
+		$model->attributes=array('main'=>1);
+		$model->save();
+		echo Yii::t('app','Izmena uspešno izvršena.');
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return GalleryDescription the loaded model
+	 * @return Language the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=GalleryDescription::model()->findByPk($id);
+		$model=Language::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -210,11 +199,11 @@ class GalleryDescriptionController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param GalleryDescription $model the model to be validated
+	 * @param Language $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='gallery-description-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='language-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
