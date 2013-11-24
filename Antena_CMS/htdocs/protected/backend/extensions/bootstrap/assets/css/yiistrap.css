@@ -60,12 +60,12 @@ thead th {background:#82AF6F;}
   right: 5px;
 }
 .grid-view .table th > .sort-link.asc .caret {
-  border-bottom-color: #fff;
+  border-bottom-color: #ddd;
   display: block;
   top: 4px;
 }
 .grid-view .table th > .sort-link.desc .caret {
-  border-top-color: #333;
+  border-top-color: #ddd;
   display: block;
   top: 8px;
 }
