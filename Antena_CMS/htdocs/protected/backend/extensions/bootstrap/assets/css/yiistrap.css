@@ -36,6 +36,18 @@ thead th {background:#82AF6F;}
   font-weight: normal;
   position: relative;
 }
+.grid-view .table th > .sort-link:before {
+	font-size: 14px;
+	content: " ";
+	padding: 0 23px 0 0;
+	background-image: url("/images/backend/glyphicons-halflings-white.png");
+	background-repeat: no-repeat;
+	background-position: -408px -144px;
+	vertical-align: middle;
+	width: 14px;
+	line-height: 10px;
+	height: 14px;
+}
 .grid-view .table th > .sort-link:hover {
   text-decoration: none;
 }
@@ -48,7 +60,7 @@ thead th {background:#82AF6F;}
   right: 5px;
 }
 .grid-view .table th > .sort-link.asc .caret {
-  border-bottom-color: #333;
+  border-bottom-color: #fff;
   display: block;
   top: 4px;
 }
