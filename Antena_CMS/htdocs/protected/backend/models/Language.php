@@ -41,7 +41,7 @@ class Language extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('flagpath','file','types'=>'jpg, jpeg','allowEmpty'=>true),
-			array('name, lang, active, main', 'required'),
+			array('name, lang, active', 'required'),
 			array('active, main', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>20),
 			array('lang', 'length', 'max'=>2),
