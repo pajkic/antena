@@ -13,7 +13,11 @@
 
                     <?php echo $form->textFieldControlGroup($model,'id',array('span'=>5,'maxlength'=>20)); ?>
 
+                    <?php echo $form->textFieldControlGroup($model,'order',array('span'=>5,'maxlength'=>45)); ?>
+
                     <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>200)); ?>
+
+                    <?php echo $form->textFieldControlGroup($model,'parent_id',array('span'=>5,'maxlength'=>20)); ?>
 
                     <?php echo $form->textAreaControlGroup($model,'description_url',array('rows'=>6,'span'=>8)); ?>
 

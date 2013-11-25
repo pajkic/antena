@@ -1,6 +1,6 @@
 <?php
 
-class TermController extends Controller
+class BlockController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class TermController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -62,13 +62,14 @@ class TermController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Term;
+		$model=new Block;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Term'])) {
-			$model->attributes=$_POST['Term'];
+		if (isset($_POST['Block'])) {
+			var_dump($_POST);die();
+			$model->attributes=$_POST['Block'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -91,8 +92,8 @@ class TermController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Term'])) {
-			$model->attributes=$_POST['Term'];
+		if (isset($_POST['Block'])) {
+			$model->attributes=$_POST['Block'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -128,7 +129,7 @@ class TermController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Term');
+		$dataProvider=new CActiveDataProvider('Block');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,10 +140,10 @@ class TermController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Term('search');
+		$model=new Block('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['Term'])) {
-			$model->attributes=$_GET['Term'];
+		if (isset($_GET['Block'])) {
+			$model->attributes=$_GET['Block'];
 		}
 
 		$this->render('admin',array(
@@ -150,16 +151,35 @@ class TermController extends Controller
 		));
 	}
 
+	public function actionGetTypeContent()
+	{
+		$type=$_POST['id'];
+		switch($type) 
+		{
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			default:
+				break;
+		}
+		
+		echo '<input type="text" Name="BlockType[nesto]"/>';
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Term the loaded model
+	 * @return Block the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Term::model()->findByPk($id);
+		$model=Block::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -168,11 +188,11 @@ class TermController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Term $model the model to be validated
+	 * @param Block $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='term-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='block-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
