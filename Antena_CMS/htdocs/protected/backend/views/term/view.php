@@ -27,7 +27,9 @@ $this->menu=array(
     'data'=>$model,
     'attributes'=>array(
 		'id',
+		'order',
 		'name',
+		'parent_id',
 		'description_url',
 		'group',
 	),

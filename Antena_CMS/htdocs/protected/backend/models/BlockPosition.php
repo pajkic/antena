@@ -1,25 +1,18 @@
 <?php
 
 /**
- * This is the model class for table "{{term}}".
+ * This is the model class for table "{{block_position}}".
  *
- * The followings are the available columns in table '{{term}}':
- * @property string $id
- * @property string $order
+ * The followings are the available columns in table '{{block_position}}':
+ * @property integer $id
  * @property string $name
- * @property string $parent_id
- * @property string $description_url
- * @property string $group
- *
- * The followings are the available model relations:
- * @property TermTaxonomy[] $termTaxonomies
  */
-class Term extends CActiveRecord
+class BlockPosition extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Term the static model class
+	 * @return BlockPosition the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +24,7 @@ class Term extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{term}}';
+		return '{{block_position}}';
 	}
 
 	/**
@@ -43,13 +36,10 @@ class Term extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('order', 'length', 'max'=>45),
-			array('name', 'length', 'max'=>200),
-			array('parent_id', 'length', 'max'=>20),
-			
+			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, order, name, parent_id', 'safe'),
+			array('id, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,7 +51,6 @@ class Term extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'termTaxonomies' => array(self::HAS_MANY, 'TermTaxonomy', 'term_id'),
 		);
 	}
 
@@ -72,11 +61,7 @@ class Term extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'order' => 'Order',
 			'name' => 'Name',
-			'parent_id' => 'Parent',
-			'description_url' => 'Description Url',
-			'group' => 'Group',
 		);
 	}
 
@@ -91,12 +76,8 @@ class Term extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('order',$this->order,true);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('parent_id',$this->parent_id,true);
-		$criteria->compare('description_url',$this->description_url,true);
-		$criteria->compare('group',$this->group,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

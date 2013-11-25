@@ -11450,3 +11450,132 @@ HTTP_REFERER=http://yii.localhost/backend.php/language/index
 2013/11/24 01:36:53 [warning] [application] Failed to set unsafe attribute "flagpath" of "Language".
 in D:\www\antena\htdocs\protected\backend\controllers\LanguageController.php (72)
 in D:\www\antena\htdocs\backend.php (13)
+2013/11/25 11:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "block/view".' in D:\app_www\antena\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('block/view')
+#1 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 D:\app_www\antena\htdocs\backend.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/backend.php/block/1
+HTTP_REFERER=http://antena.localhost/backend.php/block/index
+---
+2013/11/25 12:24:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Sistem ne može da pronađe zahtevanu akciju "getTypeContent".' in D:\app_www\antena\framework\web\CController.php:483
+Stack trace:
+#0 D:\app_www\antena\framework\web\CController.php(270): CController->missingAction('getTypeContent')
+#1 D:\app_www\antena\framework\web\CWebApplication.php(282): CController->run('getTypeContent')
+#2 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('block/getTypeCo...')
+#3 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 D:\app_www\antena\htdocs\backend.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/backend.php/block/getTypeContent
+HTTP_REFERER=http://antena.localhost/backend.php/block/create
+---
+2013/11/25 12:29:32 [error] [php] Missing argument 3 for CHtml::listData(), called in D:\app_www\antena\htdocs\protected\backend\views\block\_form.php on line 29 and defined (D:\app_www\antena\framework\web\helpers\CHtml.php:1836)
+Stack trace:
+#0 D:\app_www\antena\framework\web\CBaseController.php(95): BlockController->renderInternal()
+#1 D:\app_www\antena\framework\web\CController.php(869): BlockController->renderFile()
+#2 D:\app_www\antena\htdocs\protected\backend\views\block\create.php(20): BlockController->renderPartial()
+#3 D:\app_www\antena\framework\web\CBaseController.php(126): require()
+#4 D:\app_www\antena\framework\web\CBaseController.php(95): BlockController->renderInternal()
+#5 D:\app_www\antena\framework\web\CController.php(869): BlockController->renderFile()
+#6 D:\app_www\antena\framework\web\CController.php(782): BlockController->renderPartial()
+#7 D:\app_www\antena\htdocs\protected\backend\controllers\BlockController.php(79): BlockController->render()
+#8 D:\app_www\antena\framework\web\actions\CInlineAction.php(49): BlockController->actionCreate()
+#9 D:\app_www\antena\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\app_www\antena\framework\web\filters\CFilterChain.php(133): BlockController->runAction()
+#11 D:\app_www\antena\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\app_www\antena\framework\web\CController.php(265): BlockController->runActionWithFilters()
+#13 D:\app_www\antena\framework\web\CWebApplication.php(282): BlockController->run()
+#14 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 D:\app_www\antena\htdocs\backend.php(13): CWebApplication->run()
+REQUEST_URI=/backend.php/block/create
+in D:\app_www\antena\htdocs\protected\backend\views\block\_form.php (29)
+in D:\app_www\antena\htdocs\protected\backend\views\block\create.php (20)
+in D:\app_www\antena\htdocs\protected\backend\controllers\BlockController.php (79)
+2013/11/25 12:30:09 [error] [php] Missing argument 2 for CHtml::listData(), called in D:\app_www\antena\htdocs\protected\backend\views\block\_form.php on line 29 and defined (D:\app_www\antena\framework\web\helpers\CHtml.php:1836)
+Stack trace:
+#0 D:\app_www\antena\framework\web\CBaseController.php(95): BlockController->renderInternal()
+#1 D:\app_www\antena\framework\web\CController.php(869): BlockController->renderFile()
+#2 D:\app_www\antena\htdocs\protected\backend\views\block\create.php(20): BlockController->renderPartial()
+#3 D:\app_www\antena\framework\web\CBaseController.php(126): require()
+#4 D:\app_www\antena\framework\web\CBaseController.php(95): BlockController->renderInternal()
+#5 D:\app_www\antena\framework\web\CController.php(869): BlockController->renderFile()
+#6 D:\app_www\antena\framework\web\CController.php(782): BlockController->renderPartial()
+#7 D:\app_www\antena\htdocs\protected\backend\controllers\BlockController.php(79): BlockController->render()
+#8 D:\app_www\antena\framework\web\actions\CInlineAction.php(49): BlockController->actionCreate()
+#9 D:\app_www\antena\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 D:\app_www\antena\framework\web\filters\CFilterChain.php(133): BlockController->runAction()
+#11 D:\app_www\antena\framework\web\CController.php(291): CFilterChain->run()
+#12 D:\app_www\antena\framework\web\CController.php(265): BlockController->runActionWithFilters()
+#13 D:\app_www\antena\framework\web\CWebApplication.php(282): BlockController->run()
+#14 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 D:\app_www\antena\htdocs\backend.php(13): CWebApplication->run()
+REQUEST_URI=/backend.php/block/create
+in D:\app_www\antena\htdocs\protected\backend\views\block\_form.php (29)
+in D:\app_www\antena\htdocs\protected\backend\views\block\create.php (20)
+in D:\app_www\antena\htdocs\protected\backend\controllers\BlockController.php (79)
+2013/11/25 12:33:03 [error] [php] Undefined variable: POST (D:\app_www\antena\htdocs\protected\backend\controllers\BlockController.php:71)
+Stack trace:
+#0 D:\app_www\antena\framework\web\filters\CFilterChain.php(133): BlockController->runAction()
+#1 D:\app_www\antena\framework\web\CController.php(291): CFilterChain->run()
+#2 D:\app_www\antena\framework\web\CController.php(265): BlockController->runActionWithFilters()
+#3 D:\app_www\antena\framework\web\CWebApplication.php(282): BlockController->run()
+#4 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 D:\app_www\antena\htdocs\backend.php(13): CWebApplication->run()
+REQUEST_URI=/backend.php/block/create
+in D:\app_www\antena\htdocs\protected\backend\controllers\BlockController.php (71)
+in D:\app_www\antena\htdocs\backend.php (13)
+2013/11/25 13:02:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in D:\app_www\antena\htdocs\protected\backend\controllers\TermController.php:164
+Stack trace:
+#0 D:\app_www\antena\htdocs\protected\backend\controllers\TermController.php(55): TermController->loadModel('5')
+#1 [internal function]: TermController->actionView('5')
+#2 D:\app_www\antena\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TermController), Array)
+#3 D:\app_www\antena\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TermController), Object(ReflectionMethod), Array)
+#4 D:\app_www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\app_www\antena\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\app_www\antena\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\app_www\antena\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\app_www\antena\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\app_www\antena\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\app_www\antena\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\app_www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\app_www\antena\framework\web\CWebApplication.php(282): CController->run('view')
+#13 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('term/view')
+#14 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 D:\app_www\antena\htdocs\backend.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/backend.php/term/5
+HTTP_REFERER=http://antena.localhost/backend.php/term/create
+---
+2013/11/25 13:04:00 [error] [exception.CException] exception 'CException' with message 'TermController and its behaviors do not have a method or closure named "model".' in D:\app_www\antena\framework\base\CComponent.php:265
+Stack trace:
+#0 D:\app_www\antena\htdocs\protected\backend\views\term\_form.php(24): CComponent->__call('model', Array)
+#1 D:\app_www\antena\htdocs\protected\backend\views\term\_form.php(24): TermController->model()
+#2 D:\app_www\antena\framework\web\CBaseController.php(126): require('D:\app_www\ante...')
+#3 D:\app_www\antena\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\app_www\ante...', Array, true)
+#4 D:\app_www\antena\framework\web\CController.php(869): CBaseController->renderFile('D:\app_www\ante...', Array, true)
+#5 D:\app_www\antena\htdocs\protected\backend\views\term\create.php(20): CController->renderPartial('_form', Array)
+#6 D:\app_www\antena\framework\web\CBaseController.php(126): require('D:\app_www\ante...')
+#7 D:\app_www\antena\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\app_www\ante...', Array, true)
+#8 D:\app_www\antena\framework\web\CController.php(869): CBaseController->renderFile('D:\app_www\ante...', Array, true)
+#9 D:\app_www\antena\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 D:\app_www\antena\htdocs\protected\backend\controllers\TermController.php(79): CController->render('create', Array)
+#11 D:\app_www\antena\framework\web\actions\CInlineAction.php(49): TermController->actionCreate()
+#12 D:\app_www\antena\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\app_www\antena\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 D:\app_www\antena\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 D:\app_www\antena\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 D:\app_www\antena\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 D:\app_www\antena\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\app_www\antena\framework\web\CController.php(291): CFilterChain->run()
+#19 D:\app_www\antena\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\app_www\antena\framework\web\CWebApplication.php(282): CController->run('create')
+#21 D:\app_www\antena\framework\web\CWebApplication.php(141): CWebApplication->runController('term/create')
+#22 D:\app_www\antena\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 D:\app_www\antena\htdocs\backend.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/backend.php/term/create
+---

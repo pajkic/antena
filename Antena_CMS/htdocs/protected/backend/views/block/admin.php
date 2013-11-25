@@ -1,16 +1,16 @@
 <?php
-/* @var $this TermController */
-/* @var $model Term */
+/* @var $this BlockController */
+/* @var $model Block */
 
 
 $this->breadcrumbs=array(
-	'Terms'=>array('index'),
+	'Blocks'=>array('index'),
 	Yii::t('app','Upravljaj'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Term', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Term', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Lista ') . 'Block', 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj ') . 'Block', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -19,7 +19,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#term-grid').yiiGridView('update', {
+	$('#block-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('app','Upravljaj');?> Terms</h1>
+<h1><?php echo Yii::t('app','Upravljaj');?> Blocks</h1>
 
 <p><?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?></p>
 
@@ -40,16 +40,16 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'term-grid',
+	'id'=>'block-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'order',
 		'name',
-		'parent_id',
-		'description_url',
-		'group',
+		'block_position_id',
+		'block_type_id',
+		'content',
+		'visible',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

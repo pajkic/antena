@@ -20,9 +20,13 @@
 
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>200)); ?>
 
-            <?php echo $form->textAreaControlGroup($model,'description_url',array('rows'=>6,'span'=>8)); ?>
+            
+			<?php echo $form->dropDownListControlGroup($model,'parent_id', CHtml::listData(Term::model()->findAll(), 'id', 'name'),array('empty'=>'Bez nadređene kategorije')); ?>
+			<?php echo $form->textFieldControlGroup($model,'order',array('span'=>5,'maxlength'=>45)); ?>
+            
+            <?php //echo $form->textAreaControlGroup($model,'description_url',array('rows'=>6,'span'=>8)); ?>
 
-            <?php echo $form->textFieldControlGroup($model,'group',array('span'=>5,'maxlength'=>10)); ?>
+            <?php //echo $form->textFieldControlGroup($model,'group',array('span'=>5,'maxlength'=>10)); ?>
 
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
