@@ -5,18 +5,22 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Terms',
+	'Kategorije',
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Kreiraj ') . 'Term','url'=>array('create')),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Term','url'=>array('admin')),
+	array('label'=>Yii::t('app','Kreiraj kategoriju'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Upravljaj kategorijama'),'url'=>array('admin')),
 );
 ?>
 
-<h1>Terms</h1>
+<h1>Kategorije</h1>
 
-<?php $this->widget('bootstrap.widgets.TbListView',array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<?php
+$this->widget('CTreeView',
+    array(
+    'url' => array('ajaxFillTree'),
+	
+	)
+);
+?>

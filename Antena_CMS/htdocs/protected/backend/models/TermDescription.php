@@ -1,25 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "{{term}}".
+ * This is the model class for table "{{term_description}}".
  *
- * The followings are the available columns in table '{{term}}':
- * @property string $id
- * @property string $order
- * @property string $name
- * @property string $parent_id
- * @property string $description_url
- * @property string $group
- *
- * The followings are the available model relations:
- * @property TermTaxonomy[] $termTaxonomies
+ * The followings are the available columns in table '{{term_description}}':
+ * @property integer $id
+ * @property integer $term_id
+ * @property integer $language_id
+ * @property string $title
  */
-class Term extends CActiveRecord
+class TermDescription extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Term the static model class
+	 * @return TermDescription the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +26,7 @@ class Term extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{term}}';
+		return '{{term_description}}';
 	}
 
 	/**
@@ -42,14 +37,12 @@ class Term extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('order', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>200),
-			//array('parent_id', 'length', 'max'=>20),
-			
+			array('term_id, language_id, title', 'required'),
+			array('term_id, language_id', 'numerical', 'integerOnly'=>true),
+			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, order, name, parent_id', 'safe'),
+			array('id, term_id, language_id, title', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,7 +54,6 @@ class Term extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'termTaxonomies' => array(self::HAS_MANY, 'TermTaxonomy', 'term_id'),
 		);
 	}
 
@@ -72,11 +64,9 @@ class Term extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'order' => Yii::t('app','Redosled'),
-			'name' => Yii::t('app','Naziv'),
-			'parent_id' => Yii::t('app','Nadređena'),
-			'description_url' => Yii::t('app','Opisni URL'),
-			'group' => Yii::t('app','Grupa'),
+			'term_id' => 'Term',
+			'language_id' => 'Language',
+			'title' => 'Title',
 		);
 	}
 
@@ -91,12 +81,10 @@ class Term extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('order',$this->order,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('parent_id',$this->parent_id,true);
-		$criteria->compare('description_url',$this->description_url,true);
-		$criteria->compare('group',$this->group,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('term_id',$this->term_id);
+		$criteria->compare('language_id',$this->language_id);
+		$criteria->compare('title',$this->title,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

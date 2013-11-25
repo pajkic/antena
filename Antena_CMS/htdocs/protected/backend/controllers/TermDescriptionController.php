@@ -1,6 +1,6 @@
 <?php
 
-class TermController extends Controller
+class TermDescriptionController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -64,27 +64,14 @@ class TermController extends Controller
 	public function actionCreate()
 	{
 		$this->allowUser(SUPERADMINISTRATOR);
-		$model=new Term;
-		$languages = Language::model()->findAllByAttributes(array('active'=>1));
+		$model=new TermDescription;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Term'])) {
-			$attributes=$_POST['Term'];
-			if ($attributes['parent_id']=="") $attributes['parent_id'] = null;
-			$model->attributes = $attributes;
+		if (isset($_POST['TermDescription'])) {
+			$model->attributes=$_POST['TermDescription'];
 			if ($model->save()) {
-				foreach($languages as $language) {
-            		$description = new TermDescription;
-            		$description->attributes =  array(
-            		'term_id' => $model->primaryKey,
-            		'language_id'=>$language['id'],
-            		'title'=>$model->name,
-					);
-					
-					$description->save();
-            	}  
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -102,20 +89,62 @@ class TermController extends Controller
 	public function actionUpdate($id)
 	{
 		$this->allowUser(SUPERADMINISTRATOR);
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if (isset($_POST['Term'])) {
-			$model->attributes=$_POST['Term'];
+		if (isset($_POST['TermDescription'])) {
+			
+			$d_id = $_POST['TermDescription']['id'];
+			$model = $this->loadModel($d_id);
+			$model->attributes = $_POST['TermDescription'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				//$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
+		$descriptions = TermDescription::model()->findAllByAttributes(array('term_id' => $id));
+		
+		$ld = array();
+		foreach($descriptions as $d) {
+			$ld[] = $d->attributes['language_id'];
+		}
+		$languages = Language::model()->findAllByAttributes(array('active' => 1));
+		foreach ($languages as $l) {
+			if (!in_array($l->attributes['id'],$ld)) {
+				$new_model = new TermDescription;
+				$new_model->attributes = array('term_id' => $id, 'language_id' => $l->attributes['id']);
+				$new_model->save();
+				$descriptions = TermDescription::model()->findAllByAttributes(array('term_id' => $id));
+			}
+		}
+		
+		
+		$parentmodel = array();
+		foreach($descriptions as $description) {
+			$parentmodel[] = $this->loadModel($description['id']);
+			
+		}
+		$tabs = array();
+		foreach ($parentmodel as $lm) {
+			$language_id = $lm->attributes['language_id'];
+			$language = Language::model()->findByPk($language_id);
+			$content = $this->renderPartial('_form', array('model' => $lm), true);
+			if ($language['main'] == 1) {
+				$active = true;
+			} else {
+			$active = false; 
+			}
+			if ($language['active'] == 1) {
+				$tabs[] = array(
+				'label' => $language['name'],
+				'content' => $content,
+				'active' => $active
+			);
+			}
+		}
+		
+		$term = Term::model()->findByPk($id);
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$parentmodel,
+			'tabs'=>$tabs,
+			'term'=>$term
 		));
 	}
 
@@ -145,37 +174,11 @@ class TermController extends Controller
 	 */
 	public function actionIndex()
 	{
-		
-		/*
-		$depth = Yii::app()->db->createCommand('SELECT MAX(parent_id) FROM cms_term')->queryScalar();
-		$table = 'cms_term';
-		
-		$sql = "SELECT root.name as root_name";
-		for ($i=1;$i<=$depth;$i++) {
-			$sql .= ', down'.$i.'.name as down'.$i.'_name';
-		}
-		$sql .= ' from '. $table . ' as root';
-		$i = 1;
-		$sql .= ' left outer join '.$table.' as down'.$i.' on down'.$i.'.parent_id = root.id';
-		for ($i=2;$i<=$depth;$i++) {
-			$sql .= ' left outer join '.$table.' as down'.$i.' on down'.$i.'.parent_id = down'.($i-1).'.id';
-		}
-		$sql .= ' where root.parent_id=0 order by root_name';
-		for ($i=1;$i<=$depth;$i++) {
-			$sql .= ', down'.$i.'_name';
-		}
-		
-		
-		
-		//$dataProvider=new CSqlDataProvider($sql);
-		
-		//$terms = $dataProvider->getData();
-		
-		$dataProvider=new CActiveDataProvider('Term');
-		
-		 */ 
-		 $this->render('index');
-		
+		$this->allowUser(SUPERADMINISTRATOR);
+		$dataProvider=new CActiveDataProvider('TermDescription');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
 	}
 
 	/**
@@ -184,10 +187,10 @@ class TermController extends Controller
 	public function actionAdmin()
 	{
 		$this->allowUser(SUPERADMINISTRATOR);
-		$model=new Term('search');
+		$model=new TermDescription('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['Term'])) {
-			$model->attributes=$_GET['Term'];
+		if (isset($_GET['TermDescription'])) {
+			$model->attributes=$_GET['TermDescription'];
 		}
 
 		$this->render('admin',array(
@@ -199,12 +202,12 @@ class TermController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Term the loaded model
+	 * @return TermDescription the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Term::model()->findByPk($id);
+		$model=TermDescription::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -213,54 +216,13 @@ class TermController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Term $model the model to be validated
+	 * @param TermDescription $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='term-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='term-description-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-	
-	/**
-     * Fills the JS tree on an AJAX request.
-     * Should receive parent node ID in $_GET['root'],
-     *  with 'source' when there is no parent.
-     */
-    public function actionAjaxFillTree()
-    {
-    	$this->allowUser(SUPERADMINISTRATOR);
-        // accept only AJAX request (comment this when debugging)
-        if (!Yii::app()->request->isAjaxRequest) {
-            exit();
-        }
-        // parse the user input
-        $parentId = "NULL";
-        if (isset($_GET['root']) && $_GET['root'] !== 'source') {
-            $parentId = (int) $_GET['root'];
-        }
-        // read the data (this could be in a model)
-        $children = Yii::app()->db->createCommand(
-            "SELECT m1.id, m1.name AS text, m2.id IS NOT NULL AS hasChildren "
-            . "FROM cms_term AS m1 LEFT JOIN cms_term AS m2 ON m1.id=m2.parent_id "
-            . "WHERE m1.parent_id <=> $parentId "
-            . "GROUP BY m1.id ORDER BY m1.order ASC"
-        )->queryAll();
-		
-		$cnt = 0;
-		foreach ($children as $child){
-			if ($child['hasChildren']==0) {
-				$children[$cnt]['text'] = '<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$child['id'].'">'.$child['text'].'</a>';
-			}	
-			$cnt++;	
-		}
-		
-		
-        echo str_replace(
-            '"hasChildren":"0"',
-            '"hasChildren":false',
-            CTreeView::saveDataAsJson($children)
-        );
-    }
 }
