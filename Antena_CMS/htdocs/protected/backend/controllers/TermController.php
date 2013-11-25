@@ -145,10 +145,13 @@ class TermController extends Controller
 	 */
 	public function actionIndex()
 	{
-		
 		/*
-		$depth = Yii::app()->db->createCommand('SELECT MAX(parent_id) FROM cms_term')->queryScalar();
+		
+		$count = Yii::app()->db->createCommand('SELECT parent_id FROM cms_term GROUP BY parent_id')->queryAll();
+		$depth = count($count);
+		
 		$table = 'cms_term';
+		
 		
 		$sql = "SELECT root.name as root_name";
 		for ($i=1;$i<=$depth;$i++) {
@@ -160,20 +163,22 @@ class TermController extends Controller
 		for ($i=2;$i<=$depth;$i++) {
 			$sql .= ' left outer join '.$table.' as down'.$i.' on down'.$i.'.parent_id = down'.($i-1).'.id';
 		}
-		$sql .= ' where root.parent_id=0 order by root_name';
+		$sql .= ' where root.parent_id<=>NULL order by root_name';
 		for ($i=1;$i<=$depth;$i++) {
 			$sql .= ', down'.$i.'_name';
 		}
 		
 		
 		
-		//$dataProvider=new CSqlDataProvider($sql);
+		$dataProvider=new CSqlDataProvider($sql);
 		
-		//$terms = $dataProvider->getData();
+		$array = $dataProvider->getData();
 		
+		$terms = array();
+
 		$dataProvider=new CActiveDataProvider('Term');
 		
-		 */ 
+		*/  
 		 $this->render('index');
 		
 	}
@@ -250,9 +255,12 @@ class TermController extends Controller
 		
 		$cnt = 0;
 		foreach ($children as $child){
-			if ($child['hasChildren']==0) {
-				$children[$cnt]['text'] = '<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$child['id'].'">'.$child['text'].'</a>';
-			}	
+		//	if ($child['hasChildren']==0) {
+		//		$children[$cnt]['text'] = '<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$child['id'].'">'.$child['text'].'</a>';
+		//	} else {
+				$children[$cnt]['text'] = $child['text']
+				.'<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$child['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
+				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/TermDescription/update/'.$child['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>';
 			$cnt++;	
 		}
 		
