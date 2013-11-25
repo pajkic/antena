@@ -32,11 +32,11 @@ $('.search-form form').submit(function(){
 <p><?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?></p>
 
 
-<?php echo CHtml::link(Yii::t('app','Napredna pretraga'),'#',array('class'=>'search-button btn')); ?>
+<?php /*echo CHtml::link(Yii::t('app','Napredna pretraga'),'#',array('class'=>'search-button btn')); */?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
+<?php /*$this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
+)); */?>
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
