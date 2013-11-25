@@ -108,7 +108,9 @@ class TermController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Term'])) {
-			$model->attributes=$_POST['Term'];
+			$term = $_POST['Term'];
+			if ($term['parent_id'] == '') unset($term['parent_id']);
+			$model->attributes=$term;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
