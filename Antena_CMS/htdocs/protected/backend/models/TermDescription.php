@@ -37,12 +37,12 @@ class TermDescription extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('term_id, language_id, title', 'required'),
+			array('term_id, language_id', 'required'),
 			array('term_id, language_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, term_id, language_id, title', 'safe', 'on'=>'search'),
+			array('id, term_id, language_id, title', 'safe'),
 		);
 	}
 
