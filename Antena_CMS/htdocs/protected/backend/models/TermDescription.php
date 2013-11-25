@@ -64,9 +64,9 @@ class TermDescription extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'term_id' => 'Term',
-			'language_id' => 'Language',
-			'title' => 'Title',
+			'term_id' => Yii::t('app','Kategorija'),
+			'language_id' => Yii::t('app','Jezik'),
+			'title' => Yii::t('app','Naziv'),
 		);
 	}
 
