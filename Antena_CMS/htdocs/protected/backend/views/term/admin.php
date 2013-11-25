@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'Terms'=>array('index'),
+	'Kategorije'=>array('index'),
 	Yii::t('app','Upravljaj'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Term', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Term', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Lista kategorija'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj kategoriju'), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('app','Upravljaj');?> Terms</h1>
+<h1><?php echo Yii::t('app','Upravljaj');?> kategorijama</h1>
 
 <p><?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?></p>
 
@@ -44,12 +44,13 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'order',
+		//'id',
+		
 		'name',
 		'parent_id',
-		'description_url',
-		'group',
+		'order',
+		//'description_url',
+		//'group',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
