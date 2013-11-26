@@ -272,6 +272,7 @@ class TermController extends Controller
 		//	if ($child['hasChildren']==0) {
 		//		$children[$cnt]['text'] = '<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$child['id'].'">'.$child['text'].'</a>';
 		//	} else {
+			
 				$children[$cnt]['text'] = $child['text']
 				.'<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$child['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
 				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/TermDescription/update/'.$child['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>';

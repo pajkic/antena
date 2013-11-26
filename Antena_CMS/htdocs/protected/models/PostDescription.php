@@ -1,25 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "{{term}}".
+ * This is the model class for table "{{post_description}}".
  *
- * The followings are the available columns in table '{{term}}':
+ * The followings are the available columns in table '{{post_description}}':
  * @property string $id
- * @property string $order
- * @property string $name
- * @property string $parent_id
- * @property string $description_url
- * @property string $group
+ * @property string $post_id
+ * @property integer $language_id
+ * @property string $title
+ * @property string $excerpt
+ * @property string $content
  *
  * The followings are the available model relations:
- * @property TermTaxonomy[] $termTaxonomies
+ * @property Post $post
  */
-class Term extends CActiveRecord
+class PostDescription extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Term the static model class
+	 * @return PostDescription the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +31,7 @@ class Term extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{term}}';
+		return '{{post_description}}';
 	}
 
 	/**
@@ -42,14 +42,13 @@ class Term extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('order', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>200),
-			//array('parent_id', 'length', 'max'=>20),
-			
+			array('post_id, language_id, title', 'required'),
+			array('language_id', 'numerical', 'integerOnly'=>true),
+			array('post_id', 'length', 'max'=>20),
+			array('content', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, order, name, parent_id', 'safe'),
+			array('id, post_id, language_id, title, excerpt, content', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,9 +60,7 @@ class Term extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		'terms' => array(self::HAS_MANY, 'Term', 'parent_id'),
-		'terms' => array(self::BELONGS_TO, 'Term', 'parent_id'),
-			
+			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
 		);
 	}
 
@@ -74,11 +71,11 @@ class Term extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'order' => Yii::t('app','Redosled'),
-			'name' => Yii::t('app','Naziv'),
-			'parent_id' => Yii::t('app','Nadređena'),
-			'description_url' => Yii::t('app','Opisni URL'),
-			'group' => Yii::t('app','Grupa'),
+			'post_id' => 'Post',
+			'language_id' => Yii::t('app','Jezik'),
+			'title' => Yii::t('app','Naslov'),
+			'excerpt' => Yii::t('app','Uvod'),
+			'content' => Yii::t('app','Sadržaj'),
 		);
 	}
 
@@ -94,11 +91,11 @@ class Term extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('order',$this->order,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('parent_id',$this->parent_id,true);
-		$criteria->compare('description_url',$this->description_url,true);
-		$criteria->compare('group',$this->group,true);
+		$criteria->compare('post_id',$this->post_id,true);
+		$criteria->compare('language_id',$this->language_id);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('excerpt',$this->excerpt,true);
+		$criteria->compare('content',$this->content,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

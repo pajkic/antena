@@ -62,6 +62,7 @@
 	        		array('label'=>Yii::t('app','Galerije'), 'icon'=>'picture', 'url'=>array('/gallery'), 'visible' => $this->userData->level>=20),
 	        		array('label'=>Yii::t('app','Jezici'), 'icon'=>'leaf', 'url'=>array('/language'), 'visible' => $this->userData->level>=40),
 	        		array('label'=>Yii::t('app','Kategorije'), 'icon'=>'list', 'url'=>array('/term'), 'visible' => $this->userData->level>=40),
+	        		array('label'=>Yii::t('app','Stranice'), 'icon'=>'book', 'url'=>array('/page'), 'visible' => $this->userData->level>=30),
 	        		//array('label'=>Yii::t('app','Meniji'), 'icon'=>'th', 'url'=>array('/menu'), 'visible' => !$this->userData->level<30),
 	        		//array('label'=>Yii::t('app','Kategorije članaka'), 'icon'=>'category', 'url'=>array('/term'), 'visible' => $this->userData->level>=40),
 					array('label'=>Yii::t('app','O nama'), 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),

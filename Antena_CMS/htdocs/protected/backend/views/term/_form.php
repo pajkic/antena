@@ -19,8 +19,6 @@
     <?php echo $form->errorSummary($model); ?>
 
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>200)); ?>
-
-            
 			<?php echo $form->dropDownListControlGroup($model,'parent_id', CHtml::listData(Term::model()->findAll(), 'id', 'name'),array('empty'=>'Bez nadređene kategorije')); ?>
 			<?php echo $form->textFieldControlGroup($model,'order',array('span'=>1,'maxlength'=>45)); ?>
             

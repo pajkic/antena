@@ -9,6 +9,9 @@ Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
 Yii::setPAthOfAlias('yiiwheels',$yiiwheels);
 
+$_SESSION['KCFINDER'] = array();
+$_SESSION['KCFINDER']['disabled'] = false;
+
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -115,7 +118,7 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				 */
+				*/
 				
 				
 			),
