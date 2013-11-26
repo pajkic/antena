@@ -30,7 +30,11 @@ $this->menu=array(
 		'id',
 		'order',
 		'name',
-		'parent_id',
+		array(
+		'label' => Yii::t('app','Nadređena kategorija'),
+		'value' => $model->terms->name
+		),
+		//'parent_id',
 		//'description_url',
 		//'group',
 	),

@@ -20,11 +20,10 @@ $this->menu=array(
 $this->widget('CTreeView',
     array(
     'url' => array('ajaxFillTree'),
-	
 	)
 );
- * 
- */
+
+*/
 ?>
 
 <?php
@@ -34,4 +33,4 @@ $this->widget('CTreeView',
 	
 	)
 );
-?>
+

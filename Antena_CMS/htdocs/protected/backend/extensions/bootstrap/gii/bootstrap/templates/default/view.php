@@ -20,7 +20,7 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . '<?php echo $this->modelClass; ?>','url'=>array('create')),
+	array('label'=>Yii::t('app','Lista ') . '<?php echo $this->modelClass; ?>','url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj ') . '<?php echo $this->modelClass; ?>','url'=>array('create')),
 	array('label'=>Yii::t('app','Izmeni ') . '<?php echo $this->modelClass; ?>', 'url'=>array('update', 'id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
 	array('label'=>Yii::t('app','Obriši ') . '<?php echo $this->modelClass; ?>', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'confirm'=>'Are you sure you want to delete this item?')),
