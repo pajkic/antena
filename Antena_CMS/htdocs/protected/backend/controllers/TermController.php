@@ -177,11 +177,23 @@ class TermController extends Controller
 		$array = $dataProvider->getData();
 		
 		$terms = array();
-
-		$dataProvider=new CActiveDataProvider('Term');
+		*/
 		
-		*/  
-		 $this->render('index');
+		
+		$terms = Term::model()->findAll();
+		$array = array();
+		foreach($terms as $term) {
+			$array[] = array(
+			'id'=>$term['id'],
+			'text'=>$term['name']
+			.'<a href='.Yii::app()->baseUrl.'"/backend.php/term/update/'.$term['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
+				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/TermDescription/update/'.$term['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>',
+			'parent_id'=>$term['parent_id']);
+
+		}
+		$tree = $this->buildTree($array);
+		
+		 $this->render('index',array('terms'=>$tree));
 		
 	}
 
@@ -273,4 +285,21 @@ class TermController extends Controller
             CTreeView::saveDataAsJson($children)
         );
     }
+
+	private function buildTree(array $elements, $parentId = 0) {
+	    $branch = array();
+	
+	    foreach ($elements as $element) {
+	        if ($element['parent_id'] == $parentId) {
+	            $children = $this->buildTree($elements, $element['id']);
+	            if ($children) {
+	                $element['children'] = $children;
+	            }
+	            $branch[] = $element;
+	        }
+	    }
+	
+	    return $branch;
+	}
+
 }
