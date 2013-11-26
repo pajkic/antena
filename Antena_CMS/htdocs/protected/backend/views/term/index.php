@@ -16,10 +16,21 @@ $this->menu=array(
 
 <h1>Kategorije</h1>
 
-<?php
+<?php /*
 $this->widget('CTreeView',
     array(
     'url' => array('ajaxFillTree'),
+	
+	)
+);
+ * 
+ */
+?>
+
+<?php
+$this->widget('CTreeView',
+    array(
+    'data' => $terms
 	
 	)
 );
