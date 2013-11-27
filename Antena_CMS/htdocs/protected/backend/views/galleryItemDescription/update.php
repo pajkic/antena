@@ -13,8 +13,6 @@
 	Yii::t('app','Izmeni'),
 );
 
-
-
 $this->menu=array(
 /*	array('label'=>Yii::t('app','Lista ') . 'GalleryItemDescription', 'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj ') . 'GalleryItemDescription', 'url'=>array('create')),
@@ -24,9 +22,7 @@ $this->menu=array(
 	 
 );
 ?>
-
     <h1>Uredi sliku <?php //echo $model->id; ?></h1>
-
 
 <?php
 
