@@ -6336,5 +6336,6 @@ section {
 	text-decoration: none;
 }
 .operations li a:hover {
-	background: #80CFFF;
+	background: #E09385;
+	color: #FFFFFF;
 }
