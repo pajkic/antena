@@ -48,7 +48,7 @@ class PostDescription extends CActiveRecord
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, post_id, language_id, title, excerpt, content', 'safe', 'on'=>'search'),
+			array('id, post_id, language_id, title, excerpt, content', 'safe'),
 		);
 	}
 

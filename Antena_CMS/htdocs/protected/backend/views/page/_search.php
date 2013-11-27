@@ -25,7 +25,7 @@
 
                     <?php echo $form->textFieldControlGroup($model,'gallery_id',array('span'=>5,'maxlength'=>10)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'status',array('span'=>5)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'status_id',array('span'=>5)); ?>
                     
                     <?php echo $form->textFieldControlGroup($model,'image',array('span'=>5,'maxlength'=>255)); ?>
 
