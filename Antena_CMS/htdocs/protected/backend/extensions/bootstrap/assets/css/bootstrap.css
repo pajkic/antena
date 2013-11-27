@@ -6329,14 +6329,11 @@ section {
 }
 .operations li a {
 	/* font: bold 12px Arial; */
-	color: #0066A4;
+	color: #555;
 	display: block;
 	padding: 2px 0 2px 8px;
 	line-height: 15px;
 	text-decoration: none;
-}
-.operations li a:visited {
-	color: #0066A4;
 }
 .operations li a:hover {
 	background: #80CFFF;
