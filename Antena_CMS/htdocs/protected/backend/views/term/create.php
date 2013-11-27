@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Term</h1>
+<h1>Napravi kategoriju</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
