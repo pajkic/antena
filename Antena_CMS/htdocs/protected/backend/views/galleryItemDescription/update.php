@@ -30,7 +30,7 @@ $this->menu=array(
 	echo TbHtml::imageRounded($image);
 	$this->widget('bootstrap.widgets.TbTabs', array(
     'tabs' => $tabs,
-    'htmlOptions' => array('span'=>6)
+    'htmlOptions' => array('span'=>7)
     )); 
 
 ?>
