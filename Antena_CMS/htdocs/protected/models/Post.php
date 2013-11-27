@@ -72,7 +72,7 @@ class Post extends CActiveRecord
 			'postDescriptions' => array(self::HAS_MANY, 'PostDescription', 'post_id'),
 			'postStatuses' => array(self::BELONGS_TO, 'PostStatus', 'status_id'),
 			'users'=>array(self::BELONGS_TO,'User','user_id'),
-			'galleries'=>array(self::BELONGS_TO,'User','gallery_id'),
+			'galleries'=>array(self::BELONGS_TO,'Gallery','gallery_id'),
 			
 			'posts' => array(self::HAS_MANY, 'Post', 'parent_id'),
 			'posts' => array(self::BELONGS_TO, 'Post', 'parent_id'),
