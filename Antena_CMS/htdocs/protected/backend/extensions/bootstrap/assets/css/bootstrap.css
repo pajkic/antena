@@ -6306,7 +6306,7 @@ section {
 }
 .portlet-content {
 	margin: 0 0 15px 0;
-	padding: 5px 8px;
+	/* padding: 5px 8px; */
 	background:#FAEAE7;
 }
 .portlet-content ul {
@@ -6317,7 +6317,7 @@ section {
 	padding: 0;
 }
 .portlet-content li {
-	padding: 2px 0 4px 0px;
+	/* padding: 2px 0 4px 0px; */
 }
 .operations {
 	list-style-type: none;
