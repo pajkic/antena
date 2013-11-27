@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'Posts'=>array('index'),
+	'Stranice'=>array('index'),
 	Yii::t('app','Upravljaj'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Post', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Post', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Lista stranica'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj stranicu'), 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,29 +27,29 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('app','Upravljaj');?> Posts</h1>
+<h1><?php echo Yii::t('app','Upravljaj stranicama');?></h1>
 
 <p><?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?></p>
 
-
-<?php echo CHtml::link(Yii::t('app','Napredna pretraga'),'#',array('class'=>'search-button btn')); ?>
+<?php // echo CHtml::link(Yii::t('app','Napredna pretraga'),'#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
+<?php /* $this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
+)); */ ?>
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'post-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->search(2),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
 		'name',
-		'user_id',
-		'post_type_id',
-		'term_id',
-		'parent_id',
+		
+		//'user_id',
+		//'post_type_id',
+		//'term_id',
+		//'parent_id',
 		/*
 		'gallery_id',
 		'status',

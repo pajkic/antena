@@ -2,6 +2,13 @@
 
 class PageController extends Controller
 {
+		
+	/*
+	public function __construct() {
+		$_SESSION['KCFINDER'] = array();
+		$_SESSION['KCFINDER']['disabled'] = false;
+	}
+	 * */
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -77,6 +84,7 @@ class PageController extends Controller
 			$attributes['post_type_id'] = 2;
 			$attributes['term_id'] = 0;
 			if ($attributes['parent_id']=="") $attributes['parent_id'] = null;
+			
 			$model->attributes=$attributes;
 			
 			if ($model->save()) {
@@ -94,6 +102,10 @@ class PageController extends Controller
 				$this->redirect(array('update','id'=>$model->id));
 			}
 		}
+		$_SESSION['KCFINDER'] = array();
+		$_SESSION['KCFINDER']['disabled'] = false;
+		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/pages"; 
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -113,12 +125,19 @@ class PageController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Post'])) {
-			$model->attributes=$_POST['Post'];
+			$attributes = $_POST['Post'];
+			if ($attributes['parent_id']=="") $attributes['parent_id'] = null;
+			$attributes['modified'] = new CDbExpression('NOW()');
+			
+			
+			$model->attributes=$attributes;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/users"; 
+		$_SESSION['KCFINDER'] = array();
+		$_SESSION['KCFINDER']['disabled'] = false;
+		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/pages"; 
 		$this->render('update',array(
 			'model'=>$model,
 		));

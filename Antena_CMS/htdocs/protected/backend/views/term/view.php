@@ -21,6 +21,12 @@ $this->menu=array(
 
 <h1>Pogledaj kategoriju <?php echo $model->name; ?></h1>
 
+<?php if(!$model->terms) {
+		$parent='Bez nadređene kategorije.';
+	} else {
+		$parent = $model->terms->name;
+	}
+?>
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
         'class' => 'table table-striped table-condensed table-hover',
@@ -32,7 +38,7 @@ $this->menu=array(
 		'name',
 		array(
 		'label' => Yii::t('app','Nadređena kategorija'),
-		'value' => $model->terms->name
+		'value' => $parent
 		),
 		//'parent_id',
 		//'description_url',
