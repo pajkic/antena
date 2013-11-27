@@ -23,41 +23,26 @@
     <p class="help-block"><?php echo Yii::t('app','Polja sa <span class="required">*</span> su obavezna.');?></p>
 
     <?php echo $form->errorSummary($model); ?>
-
-            <?$model->pass = '';?>
-            
-			<?php echo $form->dropDownListControlGroup($model,'lang_id', CHtml::listData(Language::model()->findAll(), 'id', 'name')); ?>
-            
+            <?$model->pass = '';?>           
+			<?php echo $form->dropDownListControlGroup($model,'lang_id', CHtml::listData(Language::model()->findAll(), 'id', 'name')); ?>          
             <?php echo $form->textFieldControlGroup($model,'login',array('span'=>5,'maxlength'=>128)); ?>
-
             <?php echo $form->textFieldControlGroup($model,'pass',array('span'=>5,'maxlength'=>128)); ?>
-
             <?php echo $form->textFieldControlGroup($model,'email',array('span'=>5,'maxlength'=>128)); ?>
-
             <?php echo $form->textFieldControlGroup($model,'display_name',array('span'=>5,'maxlength'=>128)); ?>
-
             <?php echo $form->dropDownListControlGroup($model,'status', array('1'=>'Aktivan', '0'=>'Neaktivan')); ?>
 
             <?php //echo $form->textFieldControlGroup($model,'activation_key',array('span'=>5,'maxlength'=>60)); ?>
-
             <?php //echo $form->textFieldControlGroup($model,'created',array('span'=>5)); ?>
-
             <?php //echo $form->textFieldControlGroup($model,'updated',array('span'=>5)); ?>
-
             <?php //echo $form->textFieldControlGroup($model,'last_login',array('span'=>5)); ?>
-
             <?php //echo $form->textFieldControlGroup($model,'avatar',array('span'=>5,'maxlength'=>255)); ?>
-
+           
             <?php echo $form->dropDownListControlGroup($model,'role_id', CHtml::listData(Role::model()->findAll('id>1'), 'id', 'name')); ?>
-
             <?php echo $form->hiddenField($model,'level',array('value'=> $level)); ?>
-
-        <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
-    </div>
 
     <?php $this->endWidget(); ?>
 
