@@ -6288,11 +6288,9 @@ section {
 	margin: 0;
 }
 /* dodatna navigacija */
-.portlet
-{
+.portlet {
 
 }
-
 .portlet-decoration {
 	padding: 6px 15px;
 	background: #D15B47;
@@ -6306,57 +6304,40 @@ section {
 	margin: 0;
 	color: #fff;
 }
-
-.portlet-content
-{
-	font-size:0.9em;
+.portlet-content {
 	margin: 0 0 15px 0;
 	padding: 5px 8px;
-	background:#EFFDFF;
+	background:#FAEAE7;
 }
-
-.portlet-content ul
-{
+.portlet-content ul {
 	list-style-image:none;
 	list-style-position:outside;
 	list-style-type:none;
 	margin: 0;
 	padding: 0;
 }
-
-.portlet-content li
-{
+.portlet-content li {
 	padding: 2px 0 4px 0px;
 }
-
-.operations
-{
+.operations {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-
-.operations li
-{
+.operations li {
 	padding-bottom: 2px;
 }
-
-.operations li a
-{
-	font: bold 12px Arial;
+.operations li a {
+	/* font: bold 12px Arial; */
 	color: #0066A4;
 	display: block;
 	padding: 2px 0 2px 8px;
 	line-height: 15px;
 	text-decoration: none;
 }
-
-.operations li a:visited
-{
+.operations li a:visited {
 	color: #0066A4;
 }
-
-.operations li a:hover
-{
+.operations li a:hover {
 	background: #80CFFF;
 }
