@@ -24,6 +24,7 @@ $this->menu=array(
 ?>
     <h1>Uredi sliku <?php //echo $model->id; ?></h1>
 
+<div class="uredi_sliku">
 <?php
 
 	echo TbHtml::imageRounded($image);
@@ -33,4 +34,4 @@ $this->menu=array(
     )); 
 
 ?>
-
+</div>
