@@ -23,8 +23,6 @@ $this->menu=array(
 
 <?php
 
-
-
 	$this->widget('bootstrap.widgets.TbTabs', array(
     'tabs' => $tabs
     )); 
