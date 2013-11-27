@@ -28,7 +28,9 @@ return array (
 'Viđen' => 'Last seen',
 'Uloga' => 'Role',
 'Nivo' => 'Level',
-'Polja sa <span class="required">*</span> su obavezna.</p>' => 'Fields with <span class="required">*</span> are required.</p>',
-'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.' => 'You may optionally enter a comparison operator (<, <=, >, >=, <> or =) at the beginning of each of your search values to specify how the comparison should be done.' 
+'Polja sa <span class="required">*</span> su obavezna.' => 'Fields with <span class="required">*</span> are required.',
+'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.' => 'You may optionally enter a comparison operator (<, <=, >, >=, <> or =) at the beginning of each of your search values to specify how the comparison should be done.', 
+
+'Naziv'=>'Name',
 );
 ?>
