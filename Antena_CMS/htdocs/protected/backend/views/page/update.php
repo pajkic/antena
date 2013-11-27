@@ -14,6 +14,7 @@ $this->menu=array(
 	array('label'=>Yii::t('app','Lista stranica'), 'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj stranicu'), 'url'=>array('create')),
 	array('label'=>Yii::t('app','Pregledaj stranicu'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Sadržaj stranice'), 'url'=>array('PageDescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Upravljaj stranicama'), 'url'=>array('admin')),
 );
 ?>

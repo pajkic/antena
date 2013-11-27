@@ -36,7 +36,7 @@
             
             <?php echo $form->textFieldControlGroup($model,'guid',array('span'=>5,'maxlength'=>255)); ?>
             
-			<?php echo $form->dropDownListControlGroup($model,'status',array('0'=>'Neobjavljena','1'=>'Objavljena')); ?>            
+			<?php echo $form->dropDownListControlGroup($model,'status_id',CHtml::listData(PostStatus::model()->findAll(), 'id', 'name')); ?>            
 			
             <?php //echo $form->hiddenField($model,'created',array('span'=>5)); ?>
 
@@ -53,65 +53,7 @@
 
 </div><!-- form -->
 
-<style type="text/css">
-/*
-#image {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #000;
-    color: #fff;
-}
-#image img {
-    visibility: hidden;
-}
-*/
-</style>
-
-
-<script type="text/javascript">
-/*
-function openKCFinder(div) {
-    window.KCFinder = {
-        callBack: function(url) {
-            window.KCFinder = null;
-            div.innerHTML = '<div style="margin:5px">Loading...</div>';
-            var img = new Image();
-            img.src = url;
-            img.onload = function() {
-                div.innerHTML = '<div style="margin:5px"><img id="img" src="' + url + '" /></div>';
-                $('#image_path').val(url);
-                var img = document.getElementById('img');
-  
-                var o_w = img.offsetWidth;
-                var o_h = img.offsetHeight;
-                var f_w = div.offsetWidth;
-                var f_h = div.offsetHeight;
-                if ((o_w > f_w) || (o_h > f_h)) {
-                    if ((f_w / f_h) > (o_w / o_h))
-                        f_w = parseInt((o_w * f_h) / o_h);
-                    else if ((f_w / f_h) < (o_w / o_h))
-                        f_h = parseInt((o_h * f_w) / o_w);
-                    img.style.width = f_w + "px";
-                    img.style.height = f_h + "px";
-                } else {
-                    f_w = o_w;
-                    f_h = o_h;
-                }
-                img.style.marginLeft = parseInt((div.offsetWidth - f_w) / 2) + 'px';
-                img.style.marginTop = parseInt((div.offsetHeight - f_h) / 2) + 'px';
-  
-                img.style.visibility = "visible";
-            }
-        }
-    };
-    window.open('/kcfinder/browse.php?type=images&dir=users',
-        'image_path', 'status=0, toolbar=0, location=0, menubar=0, ' +
-        'directories=0, resizable=1, scrollbars=0, width=800, height=600'
-    );
-}
-*/
+<script>
 
 $('#image').click(function(){
 

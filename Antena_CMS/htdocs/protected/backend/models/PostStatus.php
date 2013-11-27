@@ -1,21 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "{{gallery}}".
+ * This is the model class for table "{{post_status}}".
  *
- * The followings are the available columns in table '{{gallery}}':
+ * The followings are the available columns in table '{{post_status}}':
  * @property integer $id
  * @property string $name
- * @property string $description
+ *
+ * The followings are the available model relations:
+ * @property Post[] $posts
  */
-class Gallery extends CActiveRecord
+class PostStatus extends CActiveRecord
 {
-	
-	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Gallery the static model class
+	 * @return PostStatus the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +27,7 @@ class Gallery extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{gallery}}';
+		return '{{post_status}}';
 	}
 
 	/**
@@ -38,11 +38,12 @@ class Gallery extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
-			array('name', 'length', 'max'=>255),
+			array('id', 'required'),
+			array('id', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, description', 'safe'),
+			array('id, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +55,7 @@ class Gallery extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		
+			'posts' => array(self::HAS_MANY, 'Post', 'status_id'),
 		);
 	}
 
@@ -65,8 +66,7 @@ class Gallery extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => Yii::t('app', 'Naziv'),
-			'description' => Yii::t('app', 'Opis'),
+			'name' => Yii::t('app','Status'),
 		);
 	}
 
@@ -83,7 +83,6 @@ class Gallery extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

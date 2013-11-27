@@ -33,6 +33,11 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_id')); ?>:</b>
 	<?php echo CHtml::encode($parent); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
+	<?php echo CHtml::encode($data->postStatuses->name); ?>
+	<br />
+
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('gallery_id')); ?>:</b>
 	<?php echo CHtml::encode($data->gallery_id); ?>

@@ -11,7 +11,7 @@
  * @property string $term_id
  * @property string $parent_id
  * @property string $gallery_id
- * @property integer $status
+ * @property integer $status_id
  * @property string $image
  * @property string $guid
  * @property string $created
@@ -49,7 +49,7 @@ class Post extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, user_id, post_type_id', 'required'),
-			array('post_type_id, status', 'numerical', 'integerOnly'=>true),
+			array('post_type_id, status_id', 'numerical', 'integerOnly'=>true),
 			array('name, guid, image', 'length', 'max'=>255),
 			array('user_id, term_id', 'length', 'max'=>19),
 			array('parent_id', 'length', 'max'=>20),
@@ -57,7 +57,7 @@ class Post extends CActiveRecord
 			array('modified', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, user_id, post_type_id, term_id, parent_id, gallery_id, status,  image, guid, created, modified', 'safe', 'on'=>'search'),
+			array('id, name, user_id, post_type_id, term_id, parent_id, gallery_id, status_id,  image, guid, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,7 +70,10 @@ class Post extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'postDescriptions' => array(self::HAS_MANY, 'PostDescription', 'post_id'),
+			'postStatuses' => array(self::BELONGS_TO, 'PostStatus', 'status_id'),
 			'users'=>array(self::BELONGS_TO,'User','user_id'),
+			'galleries'=>array(self::BELONGS_TO,'User','gallery_id'),
+			
 			'posts' => array(self::HAS_MANY, 'Post', 'parent_id'),
 			'posts' => array(self::BELONGS_TO, 'Post', 'parent_id'),
 			
@@ -90,7 +93,7 @@ class Post extends CActiveRecord
 			'term_id' => Yii::t('app','Kategorija'),
 			'parent_id' => Yii::t('app','Nadređena'),
 			'gallery_id' => Yii::t('app','Galerija'),
-			'status' => Yii::t('app','Status'),
+			'status_id' => Yii::t('app','Status'),
 			'image' => Yii::t('app','Slika'),
 			'guid' => Yii::t('app','Url'),
 			'created' => Yii::t('app','Kreiran'),
@@ -116,7 +119,7 @@ class Post extends CActiveRecord
 		$criteria->compare('term_id',$this->term_id,true);
 		$criteria->compare('parent_id',$this->parent_id,true);
 		$criteria->compare('gallery_id',$this->gallery_id,true);
-		$criteria->compare('status',$this->status);
+		$criteria->compare('status_id',$this->status_id);
 		$criteria->compare('image',$this->image);
 		$criteria->compare('guid',$this->guid,true);
 		$criteria->compare('created',$this->created,true);

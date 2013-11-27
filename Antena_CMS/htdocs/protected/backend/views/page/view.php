@@ -13,17 +13,25 @@ $this->menu=array(
 	array('label'=>Yii::t('app','Lista stranica'),'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj stranicu'),'url'=>array('create')),
 	array('label'=>Yii::t('app','Izmeni stranicu'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Sadržaj stranice'), 'url'=>array('PageDescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši stranicu'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>Yii::t('app','Upravljaj straicama'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Upravljaj stranicama'), 'url'=>array('admin')),
 );
 ?>
 
 <h1>Pogledaj stranicu <?php echo $model->name; ?></h1>
 
 <?php if(!$model->posts) {
-		$parent='Bez nadređene stranice.';
+		$parent=Yii::t('app','Bez nadređene stranice.');
 	} else {
 		$parent = $model->posts->name;
+	}
+?>
+
+<?php if(!$model->galleries) {
+		$gallery=Yii::t('app','Bez Galerije.');
+	} else {
+		$gallery = $model->galleries->name;
 	}
 ?>
 
@@ -38,18 +46,26 @@ $this->menu=array(
 		
 		array(
 		'label' => Yii::t('app','Korisnik'),
-		'value' => $model->users->attributes['display_name']),
+		'value' => $model->users->display_name),
 		//'post_type_id',
 		//'term_id',
 		array(
 		'label' => Yii::t('app','Nadređena stranica'),
 		'value' => $parent
 		),
-		'gallery_id',
-		'status',
+		array(
+		'label'=>Yii::t('app','Galerija'),
+		'value'=>$gallery
+		),
 		'image',
 		'guid',
 		'created',
 		'modified',
+		array(
+		'label'=>Yii::t('app','Status'),
+		'value'=> $model->postStatuses->name
+		),
+		
 	),
 )); ?>
+
