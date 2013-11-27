@@ -6288,9 +6288,6 @@ section {
 	margin: 0;
 }
 /* dodatna navigacija */
-.portlet {
-
-}
 .portlet-decoration {
 	padding: 6px 15px;
 	background: #D15B47;
@@ -6306,7 +6303,6 @@ section {
 }
 .portlet-content {
 	margin: 0 0 15px 0;
-	/* padding: 5px 8px; */
 	background:#FAEAE7;
 }
 .portlet-content ul {
@@ -6315,9 +6311,6 @@ section {
 	list-style-type:none;
 	margin: 0;
 	padding: 0;
-}
-.portlet-content li {
-	/* padding: 2px 0 4px 0px; */
 }
 .operations {
 	list-style-type: none;
@@ -6328,7 +6321,6 @@ section {
 	padding-bottom: 2px;
 }
 .operations li a {
-	/* font: bold 12px Arial; */
 	color: #555;
 	display: block;
 	padding: 8PX 15PX;
@@ -6338,4 +6330,8 @@ section {
 .operations li a:hover {
 	background: #E09385;
 	color: #FFFFFF;
+}
+/* uredi sliku */
+.uredi_sliku img {
+	float: left;
 }
