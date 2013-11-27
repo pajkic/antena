@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>Yii::t('app','Lista stranica'),'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj stranicu'),'url'=>array('create')),
-	array('label'=>Yii::t('app','Izmeni stranicu'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Uredi stranicu'), 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Sadržaj stranice'), 'url'=>array('PageDescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši stranicu'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>Yii::t('app','Upravljaj stranicama'), 'url'=>array('admin')),
