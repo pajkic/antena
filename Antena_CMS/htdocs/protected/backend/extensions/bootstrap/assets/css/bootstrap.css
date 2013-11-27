@@ -6304,6 +6304,7 @@ section {
 .portlet-content {
 	margin: 0 0 15px 0;
 	background:#FAEAE7;
+	border-radius: 0 0 5px 5px;
 }
 .portlet-content ul {
 	list-style-image:none;
@@ -6318,12 +6319,12 @@ section {
 	padding: 0;
 }
 .operations li {
-	padding-bottom: 2px;
+	border-bottom: 1px solid #F8E2DE;
 }
 .operations li a {
 	color: #555;
 	display: block;
-	padding: 8PX 15PX;
+	padding: 9px 15px;
 	line-height: 15px;
 	text-decoration: none;
 }
