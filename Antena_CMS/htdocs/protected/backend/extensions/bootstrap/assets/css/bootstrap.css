@@ -6305,6 +6305,7 @@ section {
 	margin: 0 0 15px 0;
 	background:#FAEAE7;
 	border-radius: 0 0 5px 5px;
+	border-bottom: 1px solid #F8E2DE;
 }
 .portlet-content ul {
 	list-style-image:none;
@@ -6319,7 +6320,7 @@ section {
 	padding: 0;
 }
 .operations li {
-	border-bottom: 1px solid #F8E2DE;
+	border-top: 1px solid #F8E2DE;
 }
 .operations li a {
 	color: #555;
