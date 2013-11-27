@@ -30,15 +30,14 @@
 
             <?php echo $form->dropDownListControlGroup($model,'gallery_id',CHtml::listData(Gallery::model()->findAll(), 'id', 'name'),array('empty'=>'Bez galerije')); ?>
 
-			<!-- <div id="image" onclick="openKCFinder(this)"><div style="margin:5px"><img src="<?php echo $model->attributes['image'];?>"/></div></div>-->
-			
-			<?php echo $form->textFieldControlGroup($model,'image', array('span'=>5,'maxlength'=>255,'id'=>'image')); ?>
+			<?php echo $form->textFieldControlGroup($model,'image', array('span'=>5,'maxlength'=>255,'id'=>'image', 'placeholder'=>'Kliknite da izaberete sliku')); ?>
             
-                        
+            <?php echo Chtml::button('Ukloni sliku',array('id'=>'img_remove'));?>                        
+            
             <?php echo $form->textFieldControlGroup($model,'guid',array('span'=>5,'maxlength'=>255)); ?>
             
 			<?php echo $form->dropDownListControlGroup($model,'status',array('0'=>'Neobjavljena','1'=>'Objavljena')); ?>            
-
+			
             <?php //echo $form->hiddenField($model,'created',array('span'=>5)); ?>
 
             <?php //echo $form->textFieldControlGroup($model,'modified',array('span'=>5)); ?>
@@ -109,7 +108,7 @@ function openKCFinder(div) {
     };
     window.open('/kcfinder/browse.php?type=images&dir=users',
         'image_path', 'status=0, toolbar=0, location=0, menubar=0, ' +
-        'directories=1, resizable=1, scrollbars=0, width=800, height=600'
+        'directories=0, resizable=1, scrollbars=0, width=800, height=600'
     );
 }
 */
@@ -119,13 +118,18 @@ $('#image').click(function(){
    		window.KCFinder = {};
     	window.KCFinder.callBack = function(url) {
     		$('#image').val(url);
-        // Actions with url parameter here
-        window.KCFinder = null;
-    };
-    window.open('/kcfinder/browse.php', 'kcfinder_single');
+        	window.KCFinder = null;
+    	};
+	    window.open('/kcfinder/browse.php?type=images',
+	        'kcfinder_single', 'status=0, toolbar=0, location=0, menubar=0, ' +
+	        'directories=0, resizable=1, scrollbars=0, width=800, height=600'
+			);
 
 });
 
+$('#img_remove').click(function(){
+	$('#image').val('');
+})
 
 </script>    
  

@@ -5,19 +5,19 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Posts'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
+	'Stranice'=>array('index'),
+	$model->name=>array('view','id'=>$model->name),
 	Yii::t('app','Izmeni'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Post', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Post', 'url'=>array('create')),
-	array('label'=>Yii::t('app','Pregledaj ') . 'Post', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Post', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista stranica'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj stranicu'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','Pregledaj stranicu'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Upravljaj stranicama'), 'url'=>array('admin')),
 );
 ?>
 
-    <h1>Update Post <?php echo $model->id; ?></h1>
+    <h1>Uredi stranicu <?php echo $model->name; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

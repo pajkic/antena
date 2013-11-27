@@ -57,7 +57,7 @@ class Post extends CActiveRecord
 			array('modified', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, user_id, post_type_id, term_id, parent_id, gallery_id, status, image, guid, created, modified', 'safe', 'on'=>'search'),
+			array('id, name, user_id, post_type_id, term_id, parent_id, gallery_id, status,  image, guid, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +70,10 @@ class Post extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'postDescriptions' => array(self::HAS_MANY, 'PostDescription', 'post_id'),
+			'users'=>array(self::BELONGS_TO,'User','user_id'),
+			'posts' => array(self::HAS_MANY, 'Post', 'parent_id'),
+			'posts' => array(self::BELONGS_TO, 'Post', 'parent_id'),
+			
 		);
 	}
 
@@ -98,7 +102,7 @@ class Post extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($merge=null)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
@@ -108,7 +112,7 @@ class Post extends CActiveRecord
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('post_type_id',$this->post_type_id);
+		$criteria->compare('post_type_id',$merge,true);
 		$criteria->compare('term_id',$this->term_id,true);
 		$criteria->compare('parent_id',$this->parent_id,true);
 		$criteria->compare('gallery_id',$this->gallery_id,true);
@@ -117,7 +121,8 @@ class Post extends CActiveRecord
 		$criteria->compare('guid',$this->guid,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
-
+		
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
