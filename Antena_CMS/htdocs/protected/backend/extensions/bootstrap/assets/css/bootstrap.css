@@ -6232,7 +6232,9 @@ a.badge:focus {
 	padding: 10px 16px;
 	font-size: 18px;
 	line-height: 1.33;
-	border-radius: 6px;
+	-webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
 }
 .login-title {
     color: #555;
@@ -6292,13 +6294,14 @@ section {
 }
 
 .portlet-decoration {
-	padding: 3px 8px;
+	padding: 6px 15px;
 	background: #D15B47;
+	-webkit-border-radius: 5px 5px 0 0;
+     -moz-border-radius:5px 5px 0 0;
+          border-radius: 5px 5px 0 0;
 }
-
-.portlet-title
-{
-	font-size: 12px;
+.portlet-title {
+	font-size: 14px;
 	padding: 0;
 	margin: 0;
 	color: #fff;
