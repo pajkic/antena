@@ -26,7 +26,7 @@
 
             <?php //echo $form->textFieldControlGroup($model,'group',array('span'=>5,'maxlength'=>10)); ?>
 
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Save',array(
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Snimi',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
