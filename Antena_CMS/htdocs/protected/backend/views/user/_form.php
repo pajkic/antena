@@ -39,7 +39,7 @@
            
             <?php echo $form->dropDownListControlGroup($model,'role_id', CHtml::listData(Role::model()->findAll('id>1'), 'id', 'name')); ?>
             <?php echo $form->hiddenField($model,'level',array('value'=> $level)); ?>
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Sačuvaj' : 'Save',array(
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
