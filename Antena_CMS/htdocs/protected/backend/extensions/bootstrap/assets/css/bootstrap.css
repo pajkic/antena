@@ -6334,4 +6334,9 @@ section {
 /* uredi sliku */
 .uredi_sliku img {
 	float: left;
+	width: 18%;
+}
+
+.uredi_sliku .span7 {
+	width: 88%;
 }
