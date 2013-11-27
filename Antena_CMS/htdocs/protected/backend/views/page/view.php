@@ -69,3 +69,11 @@ $this->menu=array(
 	),
 )); ?>
 
+<?php foreach ($model->postDescriptions as $description): ?>
+
+<?php $page = '<h1>'.$description->title.'</h1>'.'<p><i>'.$description->excerpt.'</i></p><p>'.$description->content.'</p>'; ?>
+<legend><?php echo Language::model()->findByPk($description->language_id)->name;?></legend>
+<?php echo TbHtml::well($page, array('size' => TbHtml::WELL_SIZE_SMALL)); ?>
+
+	
+<?php endforeach; ?>
