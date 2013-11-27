@@ -6331,7 +6331,7 @@ section {
 	/* font: bold 12px Arial; */
 	color: #555;
 	display: block;
-	padding: 2px 0 2px 8px;
+	padding: 8PX 15PX;
 	line-height: 15px;
 	text-decoration: none;
 }
