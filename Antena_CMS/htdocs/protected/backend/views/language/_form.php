@@ -21,21 +21,15 @@
     <?php echo $form->errorSummary($model); ?>
 
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>20)); ?>
-
             <?php echo $form->textFieldControlGroup($model,'lang',array('span'=>5,'maxlength'=>2)); ?>
-
             <?php echo $form->fileFieldControlGroup($model,'flagpath',array('span'=>5,'maxlength'=>45)); ?>
-
             <?php echo $form->dropDownListControlGroup($model,'active',array('0'=>'Nije aktivan','1'=>'Aktivan'),array('span'=>5)); ?>
-
             <?php echo $form->hiddenField($model,'main',array('span'=>5)); ?>
 
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
-    </div>
 
     <?php $this->endWidget(); ?>
 
