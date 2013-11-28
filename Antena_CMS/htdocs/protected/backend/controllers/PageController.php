@@ -170,6 +170,7 @@ class PageController extends Controller
 	 */
 	public function actionIndex()
 	{
+		/*
 		$this->allowUser(SUPER_EDITOR);
 		$dataProvider=new CActiveDataProvider('Post', array(
     	'criteria'=>array(
@@ -184,6 +185,24 @@ class PageController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		*/
+		
+		$pages = Post::model()->findAllbyAttributes(array('post_type_id'=>2));
+		$array = array();
+		foreach($pages as $page) {
+			$array[] = array(
+			'id'=>$page['id'],
+			'text'=>$page['name']
+			.'<a href='.Yii::app()->baseUrl.'"/backend.php/page/update/'.$page['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
+				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/PageDescription/update/'.$page['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>',
+			'parent_id'=>$page['parent_id']);
+
+		}
+		$tree = $this->buildTree($array);
+		
+		$this->render('index',array('pages'=>$tree));
+		
+		
 	}
 
 	/**
@@ -230,4 +249,20 @@ class PageController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	private function buildTree(array $elements, $parentId = 0) {
+    $branch = array();
+
+    foreach ($elements as $element) {
+        if ($element['parent_id'] == $parentId) {
+            $children = $this->buildTree($elements, $element['id']);
+            if ($children) {
+                $element['children'] = $children;
+        	    }
+            $branch[] = $element;
+		    }
+	    }
+	    return $branch;
+	}
+	
 }

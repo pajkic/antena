@@ -194,7 +194,7 @@ class TermController extends Controller
 		}
 		$tree = $this->buildTree($array);
 		
-		 $this->render('index',array('terms'=>$tree));
+		$this->render('index',array('terms'=>$tree));
 		
 	}
 
