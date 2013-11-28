@@ -5,7 +5,7 @@
 <?php if(!$data->posts) {
 		$parent='Bez nadređene stranice.';
 	} else {
-		$parent = $model->posts->name;
+		$parent = $data->posts->name;
 	}
 ?>
 <div class="view">
