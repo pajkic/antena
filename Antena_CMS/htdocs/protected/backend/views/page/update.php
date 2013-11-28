@@ -6,7 +6,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Stranice'=>array('index'),
-	$model->name=>array('view','id'=>$model->name),
+	$model->name=>array('view','id'=>$model->id),
 	Yii::t('app','Izmeni'),
 );
 
