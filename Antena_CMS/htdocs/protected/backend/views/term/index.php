@@ -33,4 +33,5 @@ $this->widget('CTreeView',
 	
 	)
 );
+?>
 
