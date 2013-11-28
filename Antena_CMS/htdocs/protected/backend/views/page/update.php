@@ -7,7 +7,7 @@
 $this->breadcrumbs=array(
 	'Stranice'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
-	Yii::t('app','Izmeni'),
+	Yii::t('app','Uredi'),
 );
 
 $this->menu=array(
