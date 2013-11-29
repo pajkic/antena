@@ -14,7 +14,7 @@ class PostController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -51,6 +51,7 @@ class PostController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(EDITOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,18 +63,42 @@ class PostController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->allowUser(EDITOR);
 		$model=new Post;
-
+		$languages = Language::model()->findAllByAttributes(array('active'=>1));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if (isset($_POST['Post'])) {
-			$model->attributes=$_POST['Post'];
+			$attributes = $_POST['Post'];
+			$attributes['created'] = new CDbExpression('NOW()');
+			$attributes['updated'] = new CDbExpression('NOW()');
+			$attributes['user_id'] = Yii::app()->user->id;
+			$attributes['post_type_id'] = 1;
+			$attributes['parent_id'] = null;
+			
+			
+			$model->attributes=$attributes;
+			
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+			foreach($languages as $language) {
+            		$description = new PostDescription;
+            		$description->attributes =  array(
+            		'post_id' => $model->primaryKey,
+            		'language_id'=>$language['id'],
+            		'title'=>$model->name,
+					);
+					
+					$description->save();
+            	}    
+				
+				$this->redirect(array('update','id'=>$model->id));
 			}
 		}
-
+		$_SESSION['KCFINDER'] = array();
+		$_SESSION['KCFINDER']['disabled'] = false;
+		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id); 
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -86,18 +111,26 @@ class PostController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->allowUser(EDITOR);
 		$model=$this->loadModel($id);
+		
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Post'])) {
-			$model->attributes=$_POST['Post'];
+			$attributes = $_POST['Post'];
+			$attributes['modified'] = new CDbExpression('NOW()');
+			$model->attributes=$attributes;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-
+		
+		
+		$_SESSION['KCFINDER'] = array();
+		$_SESSION['KCFINDER']['disabled'] = false;
+		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id); 
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -110,6 +143,8 @@ class PostController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(EDITOR);
+		
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -128,10 +163,40 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->allowUser(EDITOR);
+		/*
 		$dataProvider=new CActiveDataProvider('Post');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		*/
+		
+		$terms = Term::model()->findAll();
+		$array = array();
+		foreach($terms as $term) {
+			$array[] = array(
+				'id'=>$term['id'],
+				'text'=>'<b>'.$term['name'].'</b>',
+				'parent_id'=>$term['parent_id']);
+		}
+		$posts = Post::model()->findAllByAttributes(array('post_type_id' => 1));
+		foreach($posts as $post){
+			$array[]=array(
+				'id'=>$post['id'],
+				'text'=>$post['name']
+				.'<a href='.Yii::app()->baseUrl.'"/backend.php/post/update/'.$post['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
+				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/PostDescription/update/'.$post['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>',
+				'parent_id'=>explode(',', $post['term_id'])
+			);
+		}
+			
+		//var_dump($array);die();
+		
+		$tree = $this->buildTree($array);
+		
+	
+		$this->render('index',array('posts'=>$tree));
+		
 	}
 
 	/**
@@ -139,6 +204,7 @@ class PostController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->allowUser(EDITOR);
 		$model=new Post('search');
 		$model->unsetAttributes();  // clear any default values
 		if (isset($_GET['Post'])) {
@@ -159,6 +225,7 @@ class PostController extends Controller
 	 */
 	public function loadModel($id)
 	{
+		
 		$model=Post::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
@@ -172,9 +239,38 @@ class PostController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
+		
 		if (isset($_POST['ajax']) && $_POST['ajax']==='post-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
+	
+	private function buildTree(array $elements, $parentId = 0) {
+	    $branch = array();
+		
+	    foreach ($elements as $element) {
+	    	if (!$element['parent_id']) {
+	    		$element['parent_id'] = array(0);
+			} else {
+				if (!is_array($element['parent_id'])) {
+					$element['parent_id'] = explode(',',$element['parent_id']);
+				}
+			}
+	        if (in_array($parentId, $element['parent_id'])) {
+	            $children = $this->buildTree($elements, $element['id']);
+	            if ($children) {
+	                $element['children'] = $children;
+	            }
+	            $branch[] = $element;
+	        }
+	    }
+		
+	    return $branch;
+	}
+	
+	
+
+	
+	
 }

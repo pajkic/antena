@@ -32,5 +32,14 @@ return array (
 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.' => 'You may optionally enter a comparison operator (<, <=, >, >=, <> or =) at the beginning of each of your search values to specify how the comparison should be done.', 
 
 'Naziv'=>'Name',
+'Opis'=>'Description',
+'Sadržaj'=>'Content',
+'Uvod'=>'Excerpt',
+'Naslov'=>'Title',
+'Galerija'=>'Gallery',
+'Korisnik'=>'User',
+'Slika'=>'Image',
+'Nadređena stranica' => 'Parent page',
+'Nadređena kategorija' => 'Parent category'
 );
 ?>

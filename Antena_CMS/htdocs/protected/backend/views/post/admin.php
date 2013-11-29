@@ -52,7 +52,8 @@ $('.search-form form').submit(function(){
 		'parent_id',
 		/*
 		'gallery_id',
-		'status',
+		'status_id',
+		'image',
 		'guid',
 		'created',
 		'modified',
