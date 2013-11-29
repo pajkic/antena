@@ -48,16 +48,16 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, user_id, post_type_id', 'required'),
+			array('name, user_id, post_type_id, term_id', 'required'),
 			array('post_type_id, status_id', 'numerical', 'integerOnly'=>true),
 			array('name, guid, image', 'length', 'max'=>255),
-			array('user_id, term_id', 'length', 'max'=>19),
+			array('user_id', 'length', 'max'=>19),
 			array('parent_id', 'length', 'max'=>20),
 			array('gallery_id', 'length', 'max'=>10),
 			array('modified', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, user_id, post_type_id, term_id, parent_id, gallery_id, status_id,  image, guid, created, modified', 'safe', 'on'=>'search'),
+			array('id, name, user_id, user.display_name, post_type_id, term_id, parent_id, gallery_id, status_id,  image, guid, created, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -111,20 +111,32 @@ class Post extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id,true);
+		
+		
+		
+		//$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('post_type_id',$merge,true);
+		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('status_id',$this->status_id);
+		/*
 		$criteria->compare('term_id',$this->term_id,true);
 		$criteria->compare('parent_id',$this->parent_id,true);
 		$criteria->compare('gallery_id',$this->gallery_id,true);
-		$criteria->compare('status_id',$this->status_id);
+		
 		$criteria->compare('image',$this->image);
 		$criteria->compare('guid',$this->guid,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('modified',$this->modified,true);
 		
+		$criteria->together = true; 
+        $criteria->compare('post.id',$this->id,true);
+		$criteria->with = array('users');
+        $criteria->compare('display_name',$this->users,true,"OR");
+		 
+		$criteria->with=array('users');
+		$criteria->addSearchCondition('users.display_name',$this->users,true,"OR");
+		*/
 		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

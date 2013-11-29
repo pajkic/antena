@@ -110,7 +110,7 @@ class PageDescriptionController extends Controller
 		$languages = Language::model()->findAllByAttributes(array('active' => 1));
 		foreach ($languages as $l) { 
 			if (!in_array($l->attributes['id'],$ld)) {
-				$new_model = new PageDescription;
+				$new_model = new PostDescription;
 				$new_model->attributes = array('post_id' => $id, 'language_id' => $l->attributes['id']);
 				$new_model->save();
 				$descriptions = PostDescription::model()->findAllByAttributes(array('post_id' => $id));
@@ -143,10 +143,10 @@ class PageDescriptionController extends Controller
 		}
 		
 		$page = Post::model()->findByPk($id);
-		
+		$_SESSION['KCFINDER'] = array();
 		$_SESSION['KCFINDER']['disabled'] = false; // enables the file browser in the admin
 		$_SESSION['KCFINDER']['uploadURL'] = Yii::app()->baseUrl."/uploads/"; // URL for the uploads folder
-		$_SESSION['KCFINDER']['uploadDir'] = Yii::app()->basePath."/../uploads/"; // path to the uploads folder
+		//$_SESSION['KCFINDER']['uploadDir'] = Yii::app()->basePath."/../uploads/"; // path to the uploads folder
 		
 		$this->render('update',array(
 			'model'=>$parentmodel,
