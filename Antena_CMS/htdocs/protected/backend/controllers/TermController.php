@@ -192,6 +192,7 @@ class TermController extends Controller
 			'parent_id'=>$term['parent_id']);
 
 		}
+
 		$tree = $this->buildTree($array);
 		
 		$this->render('index',array('terms'=>$tree));
@@ -292,6 +293,7 @@ class TermController extends Controller
 	    $branch = array();
 	
 	    foreach ($elements as $element) {
+
 	        if ($element['parent_id'] == $parentId) {
 	            $children = $this->buildTree($elements, $element['id']);
 	            if ($children) {
@@ -300,7 +302,6 @@ class TermController extends Controller
 	            $branch[] = $element;
 	        }
 	    }
-	
 	    return $branch;
 	}
 

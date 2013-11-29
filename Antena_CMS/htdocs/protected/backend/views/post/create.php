@@ -10,11 +10,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Post', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Post', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista članaka'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Upravljaj člancima'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Post</h1>
+<h1>Kreiraj članak</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

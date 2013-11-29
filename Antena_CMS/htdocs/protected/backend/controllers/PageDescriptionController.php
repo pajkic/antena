@@ -86,7 +86,7 @@ class PageDescriptionController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		
+		$this->allowUser(SUPER_EDITOR);
 		if (isset($_POST['PostDescription'])) {
 		
 				
