@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Posts'=>array('index'),
+	'Članci'=>array('index'),
 	Yii::t('app','Kreiraj'),
 );
 
@@ -17,4 +17,4 @@ $this->menu=array(
 
 <h1>Kreiraj članak</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'terms'=>$terms)); ?>

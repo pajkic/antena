@@ -26,6 +26,8 @@
 
             <?php echo $form->hiddenField($model,'parent_id',array('value'=>null)); ?>
 
+			<?php echo $form->checkBoxListControlGroup($model, 'term_id', $terms); ?>
+			
             <?php if ($this->userData->level >= 30): ?>
             <?php echo $form->dropDownListControlGroup($model,'gallery_id',CHtml::listData(Gallery::model()->findAll(), 'id', 'name'),array('empty'=>'Bez galerije')); ?>
 			<?php else: ?>
@@ -42,13 +44,17 @@
             <?php //echo $form->hiddenField($model,'created',array('span'=>5)); ?>
 
             <?php //echo $form->textFieldControlGroup($model,'modified',array('span'=>5)); ?>
-
+		
+		<?php if ((!$model->user_id OR $model->user_id == Yii::app()->user->id) OR $this->userData->level >= 20):?>
+			
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
-    </div>
+    	</div>
+    	
+    	<?php endif;?>
 
     <?php $this->endWidget(); ?>
 

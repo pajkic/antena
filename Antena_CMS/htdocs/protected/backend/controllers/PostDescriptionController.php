@@ -14,7 +14,7 @@ class PostDescriptionController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -86,20 +86,72 @@ class PostDescriptionController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
+		$this->allowUser(EDITOR);
 		if (isset($_POST['PostDescription'])) {
-			$model->attributes=$_POST['PostDescription'];
+		
+				
+			
+			$d_id = $_POST['PostDescription']['id'];
+			$model = $this->loadModel($d_id);
+			
+			$model->attributes = $_POST['PostDescription'];
+			
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				//$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
+		$descriptions = PostDescription::model()->findAllByAttributes(array('post_id' => $id));
+		
+		$ld = array();
+		foreach($descriptions as $d) {
+			$ld[] = $d->attributes['language_id'];
+		}
+		$languages = Language::model()->findAllByAttributes(array('active' => 1));
+		foreach ($languages as $l) { 
+			if (!in_array($l->attributes['id'],$ld)) {
+				$new_model = new PostDescription;
+				$new_model->attributes = array('post_id' => $id, 'language_id' => $l->attributes['id']);
+				$new_model->save();
+				$descriptions = PostDescription::model()->findAllByAttributes(array('post_id' => $id));
+			}
+		}
+		
+		
+		$parentmodel = array();
+		foreach($descriptions as $description) {
+			$parentmodel[] = $this->loadModel($description['id']);
+			
+		}
+		$tabs = array();
+		foreach ($parentmodel as $lm) {
+			$language_id = $lm->attributes['language_id'];
+			$language = Language::model()->findByPk($language_id);
+			$content = $this->renderPartial('_form', array('model' => $lm), true);
+			if ($language['main'] == 1) {
+				$active = true;
+			} else {
+			$active = false; 
+			}
+			if ($language['active'] == 1) {
+				$tabs[] = array(
+				'label' => $language['name'],
+				'content' => $content,
+				'active' => $active
+			);
+			}
+		}
+		
+		$post = Post::model()->findByPk($id);
+		
+		$_SESSION['KCFINDER']['disabled'] = false; // enables the file browser in the admin
+		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id);
+		
+		
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$parentmodel,
+			'tabs'=>$tabs,
+			'post'=>$post
 		));
 	}
 

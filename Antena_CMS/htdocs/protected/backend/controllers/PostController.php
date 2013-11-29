@@ -70,13 +70,18 @@ class PostController extends Controller
 		// $this->performAjaxValidation($model);
 		
 		if (isset($_POST['Post'])) {
+			
 			$attributes = $_POST['Post'];
 			$attributes['created'] = new CDbExpression('NOW()');
 			$attributes['updated'] = new CDbExpression('NOW()');
 			$attributes['user_id'] = Yii::app()->user->id;
 			$attributes['post_type_id'] = 1;
 			$attributes['parent_id'] = null;
-			
+			if (!is_array($attributes['term_id'])) {
+				$attributes['term_id']=null;
+			} else {
+				$attributes['term_id']=implode(',',$attributes['term_id']);
+			}
 			
 			$model->attributes=$attributes;
 			
@@ -98,9 +103,21 @@ class PostController extends Controller
 		$_SESSION['KCFINDER'] = array();
 		$_SESSION['KCFINDER']['disabled'] = false;
 		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id); 
+		$terms = Term::model()->findAll();
 		
+		$ids = array();
+		$names=array();
+		foreach ($terms as $term) {
+			$ids[] = $term['id'];
+			$names[] = $term['name'];
+		}
+		$array = array_combine($ids, $names);
+		
+		
+		$model['term_id'] = explode(',',$model['term_id']);
 		$this->render('create',array(
 			'model'=>$model,
+			'terms'=>$array
 		));
 	}
 
@@ -121,6 +138,12 @@ class PostController extends Controller
 		if (isset($_POST['Post'])) {
 			$attributes = $_POST['Post'];
 			$attributes['modified'] = new CDbExpression('NOW()');
+			if (!is_array($attributes['term_id'])) {
+				$attributes['term_id']=null;
+			} else {
+				$attributes['term_id']=implode(',',$attributes['term_id']);
+			}
+			
 			$model->attributes=$attributes;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
@@ -131,8 +154,21 @@ class PostController extends Controller
 		$_SESSION['KCFINDER'] = array();
 		$_SESSION['KCFINDER']['disabled'] = false;
 		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id); 
+		$terms = Term::model()->findAll();
+		
+		$ids = array();
+		$names=array();
+		foreach ($terms as $term) {
+			$ids[] = $term['id'];
+			$names[] = $term['name'];
+		}
+		$array = array_combine($ids, $names);
+		
+		
+		$model['term_id'] = explode(',',$model['term_id']);
 		$this->render('update',array(
 			'model'=>$model,
+			'terms'=>$array
 		));
 	}
 
@@ -144,6 +180,8 @@ class PostController extends Controller
 	public function actionDelete($id)
 	{
 		$this->allowUser(EDITOR);
+		$model = $this->loadModel($id);
+		if (($model->user_id == Yii::app()->user->id) OR $this->userData->level >= 20) {
 		
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
@@ -155,6 +193,9 @@ class PostController extends Controller
 			}
 		} else {
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+		}
+		} else {
+			throw new CHttpException(400,Yii::t('app','Nemate prava da izvršite ovu akciju.'));
 		}
 	}
 
@@ -177,7 +218,8 @@ class PostController extends Controller
 			$array[] = array(
 				'id'=>$term['id'],
 				'text'=>'<b>'.$term['name'].'</b>',
-				'parent_id'=>$term['parent_id']);
+				'parent_id'=>$term['parent_id'],
+				'parent'=>true);
 		}
 		$posts = Post::model()->findAllByAttributes(array('post_type_id' => 1));
 		foreach($posts as $post){
@@ -186,7 +228,8 @@ class PostController extends Controller
 				'text'=>$post['name']
 				.'<a href='.Yii::app()->baseUrl.'"/backend.php/post/update/'.$post['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
 				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/PostDescription/update/'.$post['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>',
-				'parent_id'=>explode(',', $post['term_id'])
+				'parent_id'=>explode(',', $post['term_id']),
+				'parent'=>false
 			);
 		}
 			
@@ -258,10 +301,12 @@ class PostController extends Controller
 				}
 			}
 	        if (in_array($parentId, $element['parent_id'])) {
-	            $children = $this->buildTree($elements, $element['id']);
-	            if ($children) {
-	                $element['children'] = $children;
-	            }
+	            	if ($element['parent']) {
+	            	$children = $this->buildTree($elements, $element['id']);
+	            	if ($children) {
+	                	$element['children'] = $children;
+	            		}
+					}
 	            $branch[] = $element;
 	        }
 	    }
