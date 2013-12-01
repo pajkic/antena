@@ -5,20 +5,20 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Menus'=>array('index'),
+	'Navigacija'=>array('index'),
 	$model->name,
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Menu','url'=>array('create')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Menu','url'=>array('create')),
-	array('label'=>Yii::t('app','Izmeni ') . 'Menu', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('app','Obriši ') . 'Menu', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Menu', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista stavki'),'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj stavku'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Izmeni stavku'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Obriši stavku'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t('app','Upravljaj menijem'), 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Menu #<?php echo $model->id; ?></h1>
+<h1>Pogledaj stavku <?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
@@ -26,11 +26,12 @@ $this->menu=array(
     ),
     'data'=>$model,
     'attributes'=>array(
-		'id',
-		'lang_id',
+		//'id',
 		'name',
-		'decription',
-		'guid',
 		'order',
+		'parent_id',
+		'level',
+		'type',
+		'content',
 	),
 )); ?>

@@ -5,19 +5,19 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Menus'=>array('index'),
+	'Navigacija'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
 	Yii::t('app','Izmeni'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Menu', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Menu', 'url'=>array('create')),
-	array('label'=>Yii::t('app','Pregledaj ') . 'Menu', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Menu', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista stavki'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj stavku'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','Pregledaj stavku'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Upravljaj menijem'), 'url'=>array('admin')),
 );
 ?>
 
-    <h1>Update Menu <?php echo $model->id; ?></h1>
+    <h1>Izmeni stavku <?php echo $model->name; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

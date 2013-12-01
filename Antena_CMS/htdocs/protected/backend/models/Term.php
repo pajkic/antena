@@ -43,13 +43,13 @@ class Term extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('order', 'numerical', 'integerOnly'=>true),
+			array('sort', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>200),
 			//array('parent_id', 'length', 'max'=>20),
 			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, order, name, parent_id', 'safe'),
+			array('id, sort, name, parent_id', 'safe'),
 		);
 	}
 
@@ -74,7 +74,7 @@ class Term extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'order' => Yii::t('app','Redosled'),
+			'sort' => Yii::t('app','Redosled'),
 			'name' => Yii::t('app','Naziv'),
 			'parent_id' => Yii::t('app','Nadređena'),
 			'description_url' => Yii::t('app','Opisni URL'),
@@ -94,7 +94,7 @@ class Term extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('order',$this->order,true);
+		$criteria->compare('sort',$this->sort,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('parent_id',$this->parent_id,true);
 		$criteria->compare('description_url',$this->description_url,true);
