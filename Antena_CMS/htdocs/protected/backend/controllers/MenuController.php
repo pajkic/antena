@@ -51,6 +51,7 @@ class MenuController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(SUPER_EDITOR);		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,15 +63,55 @@ class MenuController extends Controller
 	 */
 	public function actionCreate()
 	{
+	
+		$this->allowUser(SUPER_EDITOR);
 		$model=new Menu;
+		$languages = Language::model()->findAllByAttributes(array('active'=>1));
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Menu'])) {
-			$model->attributes=$_POST['Menu'];
+			$attributes=$_POST['Menu'];
+			if ($attributes['parent_id']=="") {
+				$attributes['parent_id'] = null;
+				$attributes['level'] = 0;
+			} else {
+				$parent = Menu::model()->findByPk($attributes['parent_id']);
+				$attributes['level'] = $parent->level+1;
+				}
+			switch ($attributes['type']) {
+				case 'page':
+					$attributes['content'] = '/post/'.$attributes['content'];
+					break;
+				case 'post':
+					$attributes['content'] = '/post/'.$attributes['content'];
+					break;
+				case 'term':
+					$attributes['content'] = '/term/'.$attributes['content'];
+					break;
+				case 'link':
+					$attributes['content'] = 'http://'.$attributes['content'];
+				default:
+					break;
+			}
+			
+		
+			
+			
+			$model->attributes = $attributes;
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				foreach($languages as $language) {
+            		$description = new menuDescription;
+            		$description->attributes =  array(
+            		'menu_id' => $model->primaryKey,
+            		'language_id'=>$language['id'],
+            		'title'=>$model->name,
+					);
+					
+					$description->save();
+            	}  
+				$this->redirect(array('/MenuDescription/update','id'=>$model->id));
 			}
 		}
 
@@ -78,7 +119,6 @@ class MenuController extends Controller
 			'model'=>$model,
 		));
 	}
-
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -92,12 +132,54 @@ class MenuController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Menu'])) {
-			$model->attributes=$_POST['Menu'];
+			$attributes=$_POST['Menu'];
+			if ($attributes['parent_id']=="") {
+				$attributes['parent_id'] = null;
+				$attributes['level'] = 0;
+			} else {
+				$parent = Menu::model()->findByPk($attributes['parent_id']);
+				$attributes['level'] = $parent->level+1;
+				}
+			switch ($attributes['type']) {
+				case 'page':
+					$attributes['content'] = '/post/'.$attributes['content'];
+					break;
+				case 'post':
+					$attributes['content'] = '/post/'.$attributes['content'];
+					break;
+				case 'term':
+					$attributes['content'] = '/term/'.$attributes['content'];
+					break;
+				case 'link':
+					$attributes['content'] = 'http://'.$attributes['content'];
+				default:
+					break;
+			}
+		
+			
+			
+			$model->attributes = $attributes;
+
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
+		
+		switch ($model['type']) {
+			case ('page'):
+				$model['content'] = substr($model['content'], strrpos($model['content'],'/')+1);
+			break;
+			case ('post'):
+				$model['content'] = substr($model['content'], strrpos($model['content'],'/')+1);
+			break;
+			case ('term'):
+				$model['content'] = substr($model['content'], strrpos($model['content'],'/')+1);
+			break;
+			default:
+				break;
+		}
 
+		
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -128,11 +210,21 @@ class MenuController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Menu');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
+		$menus = Menu::model()->findAll(array('order'=>'sort'));
+		$array = array();
+		foreach($menus as $menu) {
+			$array[] = array(
+			'id'=>$menu['id'],
+			'text'=>$menu['name']
+			.'<a href='.Yii::app()->baseUrl.'"/backend.php/menu/update/'.$menu['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
+				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/MenuDescription/update/'.$menu['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>',
+			'parent_id'=>$menu['parent_id']);
+
+		}
+
+		$tree = $this->buildTree($array);
+		
+		$this->render('index',array('menus'=>$tree));	}
 
 	/**
 	 * Manages all models.
@@ -177,4 +269,22 @@ class MenuController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+	private function buildTree(array $elements, $parentId = 0) {
+	    $branch = array();
+	
+	    foreach ($elements as $element) {
+
+	        if ($element['parent_id'] == $parentId) {
+	            $children = $this->buildTree($elements, $element['id']);
+	            if ($children) {
+	                $element['children'] = $children;
+	            }
+	            $branch[] = $element;
+	        }
+	    }
+	    return $branch;
+	}
+
+
 }

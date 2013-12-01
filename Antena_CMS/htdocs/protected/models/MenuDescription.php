@@ -1,26 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "{{menu}}".
+ * This is the model class for table "{{menu_description}}".
  *
- * The followings are the available columns in table '{{menu}}':
+ * The followings are the available columns in table '{{menu_description}}':
  * @property string $id
- * @property string $name
- * @property string $sort
- * @property string $parent_id
- * @property string $level
- * @property string $type
- * @property string $content
+ * @property string $menu_id
+ * @property string $language_id
+ * @property string $title
  *
  * The followings are the available model relations:
- * @property MenuDescription[] $menuDescriptions
+ * @property Menu $menu
  */
-class Menu extends CActiveRecord
+class MenuDescription extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Menu the static model class
+	 * @return MenuDescription the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -32,7 +29,7 @@ class Menu extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{menu}}';
+		return '{{menu_description}}';
 	}
 
 	/**
@@ -43,14 +40,13 @@ class Menu extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, type', 'required'),
-			array('name, content', 'length', 'max'=>255),
-			array('sort, level', 'length', 'max'=>10),
-			array('parent_id', 'length', 'max'=>20),
-			array('type', 'length', 'max'=>45),
+			array('menu_id, language_id', 'required'),
+			array('menu_id', 'length', 'max'=>19),
+			array('language_id', 'length', 'max'=>10),
+			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, sort, parent_id, level, type, content', 'safe', 'on'=>'search'),
+			array('id, menu_id, language_id, title', 'safe'),
 		);
 	}
 
@@ -62,9 +58,7 @@ class Menu extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'menuDescriptions' => array(self::HAS_MANY, 'MenuDescription', 'menu_id'),
-			'menus' => array(self::HAS_MANY,'Menu','parent_id'),
-			'menus' => array(self::BELONGS_TO,'Menu','parent_id'),
+			'menu' => array(self::BELONGS_TO, 'Menu', 'menu_id'),
 		);
 	}
 
@@ -75,12 +69,9 @@ class Menu extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => Yii::t('app','Naziv'),
-			'sort' => Yii::t('app','Redosled'),
-			'parent_id' => Yii::t('app','Nadređeni'),
-			'level' => Yii::t('app','Nivo'),
-			'type' => Yii::t('app','Tip'),
-			'content' => Yii::t('app','Sadržaj'),
+			'menu_id' => Yii::t('app','Stavka'),
+			'language_id' => Yii::t('app','Jezik'),
+			'title' => Yii::t('app','Naziv'),
 		);
 	}
 
@@ -96,12 +87,9 @@ class Menu extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('sort',$this->sort,true);
-		$criteria->compare('parent_id',$this->parent_id,true);
-		$criteria->compare('level',$this->level,true);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('content',$this->content,true);
+		$criteria->compare('menu_id',$this->menu_id,true);
+		$criteria->compare('language_id',$this->language_id,true);
+		$criteria->compare('title',$this->title,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

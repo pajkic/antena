@@ -133,7 +133,21 @@ class TermController extends Controller
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
+			Term::model()->updateAll(array('parent_id'=>null),'parent_id="'.$id.'"');
+					
+			$affected_posts = Post::model()->findAllByAttributes(array('post_type_id'=>1));
+			foreach($affected_posts as $affected_post) {
 
+				$terms = implode(',',$this->arrayDelete(explode(',',$affected_post['term_id']),explode(',',$id)));
+				if ($terms != $affected_post['term_id']) {
+					$post = Post::model()->findByPk($affected_post['id']);
+					$post->term_id = $terms;
+					$post->save();
+				}
+				
+				
+			}
+			
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax'])) {
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -148,40 +162,8 @@ class TermController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
 		
-		$count = Yii::app()->db->createCommand('SELECT parent_id FROM cms_term GROUP BY parent_id')->queryAll();
-		$depth = count($count);
-		
-		$table = 'cms_term';
-		
-		
-		$sql = "SELECT root.name as root_name";
-		for ($i=1;$i<=$depth;$i++) {
-			$sql .= ', down'.$i.'.name as down'.$i.'_name';
-		}
-		$sql .= ' from '. $table . ' as root';
-		$i = 1;
-		$sql .= ' left outer join '.$table.' as down'.$i.' on down'.$i.'.parent_id = root.id';
-		for ($i=2;$i<=$depth;$i++) {
-			$sql .= ' left outer join '.$table.' as down'.$i.' on down'.$i.'.parent_id = down'.($i-1).'.id';
-		}
-		$sql .= ' where root.parent_id<=>NULL order by root_name';
-		for ($i=1;$i<=$depth;$i++) {
-			$sql .= ', down'.$i.'_name';
-		}
-		
-		
-		
-		$dataProvider=new CSqlDataProvider($sql);
-		
-		$array = $dataProvider->getData();
-		
-		$terms = array();
-		*/
-		
-		
-		$terms = Term::model()->findAll();
+		$terms = Term::model()->findAll(array('order'=>'sort'));
 		$array = array();
 		foreach($terms as $term) {
 			$array[] = array(
@@ -303,6 +285,10 @@ class TermController extends Controller
 	        }
 	    }
 	    return $branch;
+	}
+	
+	private function arrayDelete($array, $element) {
+	    return array_diff($array, $element);
 	}
 
 }

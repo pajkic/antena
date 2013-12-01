@@ -1,14 +1,7 @@
 <?php
 
-class PageController extends Controller
+class MenuDescriptionController extends Controller
 {
-		
-	/*
-	public function __construct() {
-		$_SESSION['KCFINDER'] = array();
-		$_SESSION['KCFINDER']['disabled'] = false;
-	}
-	 * */
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -58,7 +51,6 @@ class PageController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->allowUser(SUPER_EDITOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -70,42 +62,18 @@ class PageController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$this->allowUser(SUPER_EDITOR);
-		$model=new Post;
-		$languages = Language::model()->findAllByAttributes(array('active'=>1));
+		$model=new MenuDescription;
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
-		if (isset($_POST['Post'])) {
-			$attributes = $_POST['Post'];
-			$attributes['created'] = new CDbExpression('NOW()');
-			$attributes['updated'] = new CDbExpression('NOW()');
-			$attributes['user_id'] = Yii::app()->user->id;
-			$attributes['post_type_id'] = 2;
-			$attributes['term_id'] = 0;
-			if ($attributes['parent_id']=="") $attributes['parent_id'] = null;
-			
-			$model->attributes=$attributes;
-			
+
+		if (isset($_POST['MenuDescription'])) {
+			$model->attributes=$_POST['MenuDescription'];
 			if ($model->save()) {
-			foreach($languages as $language) {
-            		$description = new PostDescription;
-            		$description->attributes =  array(
-            		'post_id' => $model->primaryKey,
-            		'language_id'=>$language['id'],
-            		'title'=>$model->name,
-					);
-					
-					$description->save();
-            	}    
-				
-				$this->redirect(array('/PageDescription/update','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-		$_SESSION['KCFINDER'] = array();
-		$_SESSION['KCFINDER']['disabled'] = false;
-		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/pages"; 
-		
+
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -119,28 +87,62 @@ class PageController extends Controller
 	public function actionUpdate($id)
 	{
 		$this->allowUser(SUPER_EDITOR);
-		$model=$this->loadModel($id);
-		
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if (isset($_POST['Post'])) {
-			$attributes = $_POST['Post'];
-			if ($attributes['parent_id']=="") $attributes['parent_id'] = null;
-			$attributes['modified'] = new CDbExpression('NOW()');
-			$model->attributes=$attributes;
+		if (isset($_POST['MenuDescription'])) {
+			
+			$d_id = $_POST['MenuDescription']['id'];
+			$model = $this->loadModel($d_id);
+			$model->attributes = $_POST['MenuDescription'];
 			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
+				//$this->redirect(array('view','id'=>$model->id));
+			}
+		}
+
+		$descriptions = MenuDescription::model()->findAllByAttributes(array('menu_id' => $id));
+		
+		$ld = array();
+		foreach($descriptions as $d) {
+			$ld[] = $d->attributes['language_id'];
+		}
+		$languages = Language::model()->findAllByAttributes(array('active' => 1));
+		foreach ($languages as $l) {
+			if (!in_array($l->attributes['id'],$ld)) {
+				$new_model = new MenuDescription;
+				$new_model->attributes = array('menu_id' => $id, 'language_id' => $l->attributes['id']);
+				$new_model->save();
+				$descriptions = MenuDescription::model()->findAllByAttributes(array('menu_id' => $id));
 			}
 		}
 		
 		
-		$_SESSION['KCFINDER'] = array();
-		$_SESSION['KCFINDER']['disabled'] = false;
-		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/pages"; 
+		$parentmodel = array();
+		foreach($descriptions as $description) {
+			$parentmodel[] = $this->loadModel($description['id']);
+			
+		}
+		$tabs = array();
+		foreach ($parentmodel as $lm) {
+			$language_id = $lm->attributes['language_id'];
+			$language = Language::model()->findByPk($language_id);
+			$content = $this->renderPartial('_form', array('model' => $lm), true);
+			if ($language['main'] == 1) {
+				$active = true;
+			} else {
+			$active = false; 
+			}
+			if ($language['active'] == 1) {
+				$tabs[] = array(
+				'label' => $language['name'],
+				'content' => $content,
+				'active' => $active
+			);
+			}
+		}
+		
+		$menu = Menu::model()->findByPk($id);
 		$this->render('update',array(
-			'model'=>$model,
+			'model'=>$parentmodel,
+			'tabs'=>$tabs,
+			'menu'=>$menu
 		));
 	}
 
@@ -151,11 +153,10 @@ class PageController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->allowUser(SUPER_EDITOR);
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
-			Page::model()->updateAll(array('parent_id'=>null),'parent_id="'.$id.'"');
+
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax'])) {
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -170,39 +171,10 @@ class PageController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
-		$this->allowUser(SUPER_EDITOR);
-		$dataProvider=new CActiveDataProvider('Post', array(
-    	'criteria'=>array(
-	        'condition'=>'post_type_id=2',
-	        'order'=>'created DESC',
-    	),
-    	'pagination'=>array(
-        	'pageSize'=>20,
-    	),
-		));
-		
+		$dataProvider=new CActiveDataProvider('MenuDescription');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-		*/
-		
-		$pages = Post::model()->findAllbyAttributes(array('post_type_id'=>2));
-		$array = array();
-		foreach($pages as $page) {
-			$array[] = array(
-			'id'=>$page['id'],
-			'text'=>$page['name']
-			.'<a href='.Yii::app()->baseUrl.'"/backend.php/page/update/'.$page['id'].'"> '.TbHtml::icon(TbHtml::ICON_PENCIL)
-				.'</a> <a href='.Yii::app()->baseUrl.'"/backend.php/PageDescription/update/'.$page['id'].'"> '.TbHtml::icon(TbHtml::ICON_EDIT).'</a>',
-			'parent_id'=>$page['parent_id']);
-
-		}
-		$tree = $this->buildTree($array);
-		
-		$this->render('index',array('pages'=>$tree));
-		
-		
 	}
 
 	/**
@@ -210,11 +182,10 @@ class PageController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->allowUser(SUPER_EDITOR);
-		$model=new Post('search');
+		$model=new MenuDescription('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['Post'])) {
-			$model->attributes=$_GET['Post'];
+		if (isset($_GET['MenuDescription'])) {
+			$model->attributes=$_GET['MenuDescription'];
 		}
 
 		$this->render('admin',array(
@@ -226,12 +197,12 @@ class PageController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Post the loaded model
+	 * @return MenuDescription the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Post::model()->findByAttributes(array('id'=>$id,'post_type_id'=>2));
+		$model=MenuDescription::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -240,29 +211,13 @@ class PageController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Post $model the model to be validated
+	 * @param MenuDescription $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='post-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='menu-description-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-	
-	private function buildTree(array $elements, $parentId = 0) {
-    $branch = array();
-
-    foreach ($elements as $element) {
-        if ($element['parent_id'] == $parentId) {
-            $children = $this->buildTree($elements, $element['id']);
-            if ($children) {
-                $element['children'] = $children;
-        	    }
-            $branch[] = $element;
-		    }
-	    }
-	    return $branch;
-	}
-	
 }

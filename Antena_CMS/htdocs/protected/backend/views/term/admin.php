@@ -48,7 +48,7 @@ $('.search-form form').submit(function(){
 		
 		'name',
 		'parent_id',
-		'order',
+		'sort',
 		//'description_url',
 		//'group',
 		array(

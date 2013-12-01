@@ -9,24 +9,28 @@
 	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('lang_id')); ?>:</b>
-	<?php echo CHtml::encode($data->lang_id); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('decription')); ?>:</b>
-	<?php echo CHtml::encode($data->decription); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('guid')); ?>:</b>
-	<?php echo CHtml::encode($data->guid); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('order')); ?>:</b>
 	<?php echo CHtml::encode($data->order); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('parent_id')); ?>:</b>
+	<?php echo CHtml::encode($data->parent_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('level')); ?>:</b>
+	<?php echo CHtml::encode($data->level); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
+	<?php echo CHtml::encode($data->type); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
+	<?php echo CHtml::encode($data->content); ?>
 	<br />
 
 

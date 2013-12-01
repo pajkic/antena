@@ -5,18 +5,22 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Meniji',
+	'Navigacija',
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Kreiraj meni'),'url'=>array('create')),
-	array('label'=>Yii::t('app','Upravljaj menijima'),'url'=>array('admin')),
+	array('label'=>Yii::t('app','Kreiraj stavku'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Upravljaj menijem'),'url'=>array('admin')),
 );
 ?>
 
-<h1>Meniji</h1>
+<h1>Stavke menija</h1>
 
-<?php $this->widget('bootstrap.widgets.TbListView',array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<?php
+$this->widget('CTreeView',
+    array(
+    'data' => $menus
+	
+	)
+);
+?>
