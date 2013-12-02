@@ -126,6 +126,7 @@ class MenuController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -192,9 +193,11 @@ class MenuController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(SUPER_EDITOR);
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
+			Menu::model()->updateAll(array('parent_id'=>null),'parent_id="'.$id.'"');
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax'])) {
@@ -210,6 +213,7 @@ class MenuController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$menus = Menu::model()->findAll(array('order'=>'sort'));
 		$array = array();
 		foreach($menus as $menu) {
@@ -231,6 +235,7 @@ class MenuController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->allowUser(SUPER_EDITOR);
 		$model=new Menu('search');
 		$model->unsetAttributes();  // clear any default values
 		if (isset($_GET['Menu'])) {
