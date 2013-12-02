@@ -31,7 +31,7 @@ $this->menu=array(
 		'name',
 		'order',
 		'parent_id',
-		'level',
+		//'level',
 		'type',
 		'content',
 	),
