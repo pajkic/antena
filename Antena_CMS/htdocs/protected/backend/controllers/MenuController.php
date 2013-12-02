@@ -102,7 +102,7 @@ class MenuController extends Controller
 			$model->attributes = $attributes;
 			if ($model->save()) {
 				foreach($languages as $language) {
-            		$description = new menuDescription;
+            		$description = new MenuDescription;
             		$description->attributes =  array(
             		'menu_id' => $model->primaryKey,
             		'language_id'=>$language['id'],
