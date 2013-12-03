@@ -68,7 +68,10 @@ class BlockController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Block'])) {
-			var_dump($_POST);die();
+			var_dump($_POST);
+			$arr = json_decode($_POST['Block']['options']);
+			var_dump($arr);
+			die();
 			$model->attributes=$_POST['Block'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
@@ -151,25 +154,6 @@ class BlockController extends Controller
 		));
 	}
 
-	public function actionGetTypeContent()
-	{
-		$type=$_POST['id'];
-		switch($type) 
-		{
-			case 1:
-				break;
-			case 2:
-				break;
-			case 3:
-				break;
-			case 4:
-				break;
-			default:
-				break;
-		}
-		
-		echo '<input type="text" Name="BlockType[nesto]"/>';
-	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -196,5 +180,49 @@ class BlockController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionOptions(){
+		if (Yii::app()->request->isPostRequest) {
+			// we only allow deletion via POST request
+			$type = $_POST['type'];
+			
+			switch($type) {
+				case 1:
+					$this->renderPartial('forms/_news');
+					break;
+				case 2:
+					$gallery_name = array();
+					$gallery_id = array();
+					$galleries = Gallery::model()->findAll();
+					foreach($galleries as $gallery){
+						$gallery_name[$gallery->id] = $gallery->name;
+						$gallery_id[$gallery->id] = true;
+					}
+
+					$this->renderPartial('forms/_gallery',array('galleries'=>array('id'=>$gallery_id,'name'=>$gallery_name)));
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				case 6:
+					break;
+				case 7: 
+					break;
+				case 8:
+					break;
+			}
+
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if (!isset($_GET['ajax'])) {
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('create'));
+			}
+		} else {
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+		}
+		
 	}
 }

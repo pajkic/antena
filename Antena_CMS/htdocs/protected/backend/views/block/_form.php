@@ -20,35 +20,54 @@
 
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>255)); ?>
 
-            <?php echo $form->dropDownListControlGroup($model,'block_position_id',CHtml::listData(BlockPosition::model()->findAll(), 'id', 'name')); ?>
+            <?php echo $form->dropDownListControlGroup($model,'block_position_id', CHtml::listData(BlockPosition::model()->findAll(), 'id', 'name')); ?>
 
-            <?php echo $form->dropDownListControlGroup($model,'block_type_id',CHtml::listData(BlockType::model()->findAll(), 'id', 'name')); ?>
+            <?php echo $form->dropDownListControlGroup($model,'status_id', CHtml::listData(BlockStatus::model()->findAll(), 'id', 'name')); ?>
 
-            <?php echo $form->hiddenField($model,'content',array('value'=>0)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'block_type_id', CHtml::listData(BlockType::model()->findAll(), 'id', 'name')); ?>	
 
-            <?php echo $form->hiddenField($model,'visible',array('value'=>0)); ?>
-		
-		<div id="form_addition"></div>
-        
-        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Save',array(
+            <?php echo $form->textAreaControlGroup($model,'options',array('rows'=>6,'span'=>8, 'class'=>'hidden')); ?>
+            <?php //echo $form->textFieldControlGroup($model,'created',array('span'=>5)); ?>
+            <?php //echo $form->textFieldControlGroup($model,'updated',array('span'=>5)); ?>
+            <?php echo $form->hiddenField($model,'user_id',array('value'=>Yii::app()->user->id)); ?>
+			<div id="opts">
+				
+			</div>
+        <div class="form-actions">
+        <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
 		    'size'=>TbHtml::BUTTON_SIZE_LARGE,
 		)); ?>
+    </div>
 
     <?php $this->endWidget(); ?>
-    
 
 </div><!-- form -->
-
 <script type="text/javascript">
 	$('#Block_block_type_id').change(function(){
+		var type = $(this).val();
 		$.ajax({
-			'url':'getTypeContent',
-			'type':'post',
-			'data':{'id':$(this).val()},
+			'url': '<?php echo Yii::app()->baseUrl . "/backend.php/Block/options/ajax";?>',
+			'type': 'post',
+			'data': {
+				'type': type
+			},
 			'success':function(data){
-				$('#form_addition').html(data);
+				$('#opts').html(data);
 			}
 		})
+	});
+	
+	$('#block-form').submit(function(){
+		var options = new String;
+		options = "{";
+		$("#opts :input").each(function() {
+			options += '"'+this.name+'" :'+this.value+","
+    		
+		});
+		options = options.substring(0,options.length - 1);
+		options += "}";
+		$('#Block_options').val(options);
+
 	})
 </script>

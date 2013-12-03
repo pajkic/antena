@@ -4,12 +4,20 @@
  * This is the model class for table "{{block}}".
  *
  * The followings are the available columns in table '{{block}}':
- * @property integer $id
+ * @property string $id
  * @property string $name
+ * @property string $block_type_id
  * @property integer $block_position_id
- * @property integer $block_type_id
- * @property string $content
- * @property integer $visible
+ * @property integer $status_id
+ * @property string $options
+ * @property string $created
+ * @property string $updated
+ * @property string $user_id
+ *
+ * The followings are the available model relations:
+ * @property BlockPosition $blockPosition
+ * @property BlockType $blockType
+ * @property BlockDescription[] $blockDescriptions
  */
 class Block extends CActiveRecord
 {
@@ -39,12 +47,15 @@ class Block extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, block_position_id, block_type_id, content', 'required'),
-			array('block_position_id, block_type_id, visible', 'numerical', 'integerOnly'=>true),
+			array('block_type_id, user_id, name', 'required'),
+			array('block_position_id, status_id', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
+			array('block_type_id', 'length', 'max'=>10),
+			array('user_id', 'length', 'max'=>20),
+			array('options, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, block_position_id, block_type_id, content, visible', 'safe', 'on'=>'search'),
+			array('id, name, block_type_id, block_position_id, status_id, options, created, updated, user_id', 'safe'),
 		);
 	}
 
@@ -56,6 +67,9 @@ class Block extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'blockPosition' => array(self::BELONGS_TO, 'BlockPosition', 'block_position_id'),
+			'blockType' => array(self::BELONGS_TO, 'BlockType', 'block_type_id'),
+			'blockDescriptions' => array(self::HAS_MANY, 'BlockDescription', 'block_id'),
 		);
 	}
 
@@ -66,11 +80,14 @@ class Block extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'block_position_id' => 'Block Position',
-			'block_type_id' => 'Block Type',
-			'content' => 'Content',
-			'visible' => 'Visible',
+			'name' => Yii::t('app','Naziv'),
+			'block_type_id' => Yii::t('app','Tip'),
+			'block_position_id' => Yii::t('app','Pozicija'),
+			'status' => Yii::t('app','Status'),
+			'options' => Yii::t('app','Opcije'),
+			'created' => 'Created',
+			'updated' => 'Updated',
+			'user_id' => 'User',
 		);
 	}
 
@@ -85,12 +102,15 @@ class Block extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('block_type_id',$this->block_type_id,true);
 		$criteria->compare('block_position_id',$this->block_position_id);
-		$criteria->compare('block_type_id',$this->block_type_id);
-		$criteria->compare('content',$this->content,true);
-		$criteria->compare('visible',$this->visible);
+		$criteria->compare('status_id',$this->status_id);
+		$criteria->compare('options',$this->options,true);
+		$criteria->compare('created',$this->created,true);
+		$criteria->compare('updated',$this->updated,true);
+		$criteria->compare('user_id',$this->user_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

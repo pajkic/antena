@@ -6,6 +6,9 @@
  * The followings are the available columns in table '{{block_position}}':
  * @property integer $id
  * @property string $name
+ *
+ * The followings are the available model relations:
+ * @property Block[] $blocks
  */
 class BlockPosition extends CActiveRecord
 {
@@ -51,6 +54,7 @@ class BlockPosition extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'blocks' => array(self::HAS_MANY, 'Block', 'block_position_id'),
 		);
 	}
 

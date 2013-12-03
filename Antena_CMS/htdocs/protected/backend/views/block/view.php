@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Block','url'=>array('create')),
+	array('label'=>Yii::t('app','Lista ') . 'Block','url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj ') . 'Block','url'=>array('create')),
 	array('label'=>Yii::t('app','Izmeni ') . 'Block', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši ') . 'Block', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
@@ -28,9 +28,12 @@ $this->menu=array(
     'attributes'=>array(
 		'id',
 		'name',
-		'block_position_id',
 		'block_type_id',
-		'content',
-		'visible',
+		'block_position_id',
+		'status_id',
+		'options',
+		'created',
+		'updated',
+		'user_id',
 	),
 )); ?>

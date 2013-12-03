@@ -46,10 +46,15 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'name',
-		'block_position_id',
 		'block_type_id',
-		'content',
-		'visible',
+		'block_position_id',
+		'status_id',
+		'options',
+		/*
+		'created',
+		'updated',
+		'user_id',
+		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
