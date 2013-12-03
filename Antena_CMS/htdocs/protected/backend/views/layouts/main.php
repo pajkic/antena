@@ -72,7 +72,14 @@
 					array('label'=>'Prijava', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>Yii::t('app','Odjava') . ' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)			
 	    ),
-	)); ?>		
+	)); ?>	
+	
+	
+		<?php 
+			$this->widget('application.extensions.widgets.bGallery',array(
+				'data' => array('gallery_id'=>2)
+			));		
+		?>	
 </div>	<!-- sidebar -->
 	<?php $this->widget('bootstrap.widgets.TbBreadcrumb', array('links' => $this->breadcrumbs,'homeUrl' => Yii::app()->getBaseUrl().'/backend.php/site/index'));?>
 	
