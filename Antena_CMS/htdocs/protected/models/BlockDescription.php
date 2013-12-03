@@ -1,19 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "{{block_type}}".
+ * This is the model class for table "{{block_description}}".
  *
- * The followings are the available columns in table '{{block_type}}':
- * @property integer $id
- * @property string $name
- * @property string $rules
+ * The followings are the available columns in table '{{block_description}}':
+ * @property string $id
+ * @property string $block_id
+ * @property string $language_id
+ * @property string $title
+ * @property string $content
+ *
+ * The followings are the available model relations:
+ * @property Block $block
  */
-class BlockType extends CActiveRecord
+class BlockDescription extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return BlockType the static model class
+	 * @return BlockDescription the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -25,7 +30,7 @@ class BlockType extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{block_type}}';
+		return '{{block_description}}';
 	}
 
 	/**
@@ -36,11 +41,14 @@ class BlockType extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, rules', 'required'),
-			array('name', 'length', 'max'=>255),
+			array('block_id, language_id, title', 'required'),
+			array('block_id', 'length', 'max'=>19),
+			array('language_id', 'length', 'max'=>10),
+			array('title', 'length', 'max'=>255),
+			array('content', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, rules', 'safe', 'on'=>'search'),
+			array('id, block_id, language_id, title, content', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,6 +60,7 @@ class BlockType extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'block' => array(self::BELONGS_TO, 'Block', 'block_id'),
 		);
 	}
 
@@ -62,8 +71,10 @@ class BlockType extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'rules' => 'Rules',
+			'block_id' => 'Block',
+			'language_id' => 'Language',
+			'title' => 'Title',
+			'content' => 'Content',
 		);
 	}
 
@@ -78,9 +89,11 @@ class BlockType extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('rules',$this->rules,true);
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('block_id',$this->block_id,true);
+		$criteria->compare('language_id',$this->language_id,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('content',$this->content,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

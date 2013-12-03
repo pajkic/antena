@@ -13,20 +13,35 @@
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('block_position_id')); ?>:</b>
-	<?php echo CHtml::encode($data->block_position_id); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('block_type_id')); ?>:</b>
 	<?php echo CHtml::encode($data->block_type_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
-	<?php echo CHtml::encode($data->content); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('block_position_id')); ?>:</b>
+	<?php echo CHtml::encode($data->block_position_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('visible')); ?>:</b>
-	<?php echo CHtml::encode($data->visible); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
+	<?php echo CHtml::encode($data->status_id); ?>
 	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('options')); ?>:</b>
+	<?php echo CHtml::encode($data->options); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created')); ?>:</b>
+	<?php echo CHtml::encode($data->created); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('updated')); ?>:</b>
+	<?php echo CHtml::encode($data->updated); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('user_id')); ?>:</b>
+	<?php echo CHtml::encode($data->user_id); ?>
+	<br />
+
+	*/ ?>
 
 </div>
