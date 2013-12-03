@@ -4,6 +4,7 @@ $frontend = dirname($backend);
 $bootstrap = realpath(__DIR__) . '/../extensions/bootstrap';
 $yiiwheels = realpath(__DIR__) . '/../extensions/yiiwheels';
 
+
 // uncomment the following to define a path alias
 Yii::setPathOfAlias('backend',$backend);
 Yii::setPAthOfAlias('bootstrap',$bootstrap);
@@ -36,6 +37,7 @@ return array(
 		'backend.components.*',
 		'backend.extensions.galleria.*',
 		'bootstrap.helpers.TbHtml',
+		'application.extensions.widgets.*'
 		
 	),
 
