@@ -68,10 +68,7 @@ class BlockController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Block'])) {
-			var_dump($_POST);
-			$arr = json_decode($_POST['Block']['options']);
-			var_dump($arr);
-			die();
+			
 			$model->attributes=$_POST['Block'];
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
