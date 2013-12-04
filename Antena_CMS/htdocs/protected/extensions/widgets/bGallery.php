@@ -5,10 +5,13 @@ class bGallery extends CWidget
      * @var $data
      */
     public $data;
-
+	
+	
     public function run()
     {
-    	$gallery = GalleryItem::model()->findAllByAttributes(array('gallery_id'=>$this->data['gallery_id']));
+    	
+		$galleries = "(" . implode(',',$this->data['params']) . ")";
+    	$gallery = GalleryItem::model()->findAll("gallery_id IN ".$galleries);
 		$images = array();
 		foreach ($gallery as $item){
 			array_push($images, array(

@@ -59,15 +59,18 @@
 	});
 	
 	$('#block-form').submit(function(){
-		var options = new String;
-		options = "{";
+		//var options = new String;
+		//options = "{";
+		var options = new Object();
+		var params = new Array();
 		$("#opts :input").each(function() {
-			options += '"'+this.name+'" :'+this.value+","
-    		
+			if (this.type == 'checkbox') {
+				params.push(this.value);
+			} else {
+				options[this.name] = this.value;
+			}   		
 		});
-		options = options.substring(0,options.length - 1);
-		options += "}";
-		$('#Block_options').val(options);
-
+		options['params'] = params;
+		$('#Block_options').val(JSON.stringify(options));
 	})
 </script>

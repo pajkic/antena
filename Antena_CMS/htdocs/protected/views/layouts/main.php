@@ -39,12 +39,46 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+
+	<div class="sidebar">
+		
+	<?php 
+	
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>4));
+		foreach ($blocks as $block) {
+			
+			switch ($block['block_type_id']){
+				case 1:
+					break;
+				case 2:
+					
+					$this->widget('application.extensions.widgets.bGallery',array(
+						'data' => json_decode($block['options'],true)
+						));
+					break;
+				case 3:
+					break;
+				case 4: 
+					break;
+				case 5:
+					break;
+				case 6: 
+					break;
+				case 7:
+					break;
+				default:
+					break;
+			}
+		}
+	?>
+	
+	</div>
+	
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
-
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
