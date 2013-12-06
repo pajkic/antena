@@ -55,7 +55,7 @@ class Block extends CActiveRecord
 			array('options, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, block_type_id, block_position_id, status_id, options, created, updated, user_id', 'safe'),
+			array('id, name, block_type.name, block_position.name, status_id, options, created, updated, user_id', 'safe'),
 		);
 	}
 
@@ -69,7 +69,9 @@ class Block extends CActiveRecord
 		return array(
 			'blockPosition' => array(self::BELONGS_TO, 'BlockPosition', 'block_position_id'),
 			'blockType' => array(self::BELONGS_TO, 'BlockType', 'block_type_id'),
+			'blockStatus' => array(self::BELONGS_TO, 'BlockStatus', 'status_id'),
 			'blockDescriptions' => array(self::HAS_MANY, 'BlockDescription', 'block_id'),
+			
 		);
 	}
 
@@ -83,7 +85,7 @@ class Block extends CActiveRecord
 			'name' => Yii::t('app','Naziv'),
 			'block_type_id' => Yii::t('app','Tip'),
 			'block_position_id' => Yii::t('app','Pozicija'),
-			'status' => Yii::t('app','Status'),
+			'status_id' => Yii::t('app','Status'),
 			'options' => Yii::t('app','Opcije'),
 			'created' => 'Created',
 			'updated' => 'Updated',
@@ -102,16 +104,17 @@ class Block extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
+		//$criteria->compare('id',$this->id,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('block_type_id',$this->block_type_id,true);
 		$criteria->compare('block_position_id',$this->block_position_id);
 		$criteria->compare('status_id',$this->status_id);
+		/*
 		$criteria->compare('options',$this->options,true);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('updated',$this->updated,true);
 		$criteria->compare('user_id',$this->user_id,true);
-
+		*/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

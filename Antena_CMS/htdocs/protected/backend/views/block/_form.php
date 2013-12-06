@@ -4,6 +4,10 @@
 /* @var $form TbActiveForm */
 ?>
 
+
+
+
+
 <div class="form">
 
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
@@ -24,15 +28,18 @@
 
             <?php echo $form->dropDownListControlGroup($model,'status_id', CHtml::listData(BlockStatus::model()->findAll(), 'id', 'name')); ?>
 
+			<?php if (!$model->id):?>
             <?php echo $form->dropDownListControlGroup($model,'block_type_id', CHtml::listData(BlockType::model()->findAll(), 'id', 'name')); ?>	
-
+			
             <?php echo $form->textAreaControlGroup($model,'options',array('rows'=>6,'span'=>8, 'class'=>'hidden')); ?>
             <?php //echo $form->textFieldControlGroup($model,'created',array('span'=>5)); ?>
             <?php //echo $form->textFieldControlGroup($model,'updated',array('span'=>5)); ?>
             <?php echo $form->hiddenField($model,'user_id',array('value'=>Yii::app()->user->id)); ?>
 			<div id="opts">
-				
+			<?php $this->renderPartial('forms/_news',array('terms'=>$terms)); ?>
+			
 			</div>
+			<?php endif; ?>
         <div class="form-actions">
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,
@@ -58,19 +65,4 @@
 		})
 	});
 	
-	$('#block-form').submit(function(){
-		//var options = new String;
-		//options = "{";
-		var options = new Object();
-		var params = new Array();
-		$("#opts :input").each(function() {
-			if (this.type == 'checkbox') {
-				params.push(this.value);
-			} else {
-				options[this.name] = this.value;
-			}   		
-		});
-		options['params'] = params;
-		$('#Block_options').val(JSON.stringify(options));
-	})
 </script>
