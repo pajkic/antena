@@ -25,52 +25,17 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		<!-- Header -->
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-
-	<div class="sidebar">
+		<?php $this->actionBlocks(2); ?>
 		
-	<?php 
+	</div><!-- mainmenu -->
 	
-		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>4));
-		foreach ($blocks as $block) {
-			
-			switch ($block['block_type_id']){
-				case 1:
-					break;
-				case 2:
-					
-					$this->widget('application.extensions.widgets.bGallery',array(
-						'data' => json_decode($block['options'],true)
-						));
-					break;
-				case 3:
-					break;
-				case 4: 
-					break;
-				case 5:
-					break;
-				case 6: 
-					break;
-				case 7:
-					break;
-				default:
-					break;
-			}
-		}
-	?>
+	<div class="sidebar">
+	<?php $this->actionBlocks(4); ?>	
+	
 	
 	</div>
 	
