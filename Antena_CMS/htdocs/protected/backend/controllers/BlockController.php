@@ -62,21 +62,42 @@ class BlockController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		$model=new Block;
-
+		$languages = Language::model()->findAllByAttributes(array('active'=>1));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Block'])) {
-			
 			$model->attributes=$_POST['Block'];
 			if ($model->save()) {
+			foreach($languages as $language) {
+            		$description = new BlockDescription;
+            		$description->attributes =  array(
+            		'block_id' => $model->primaryKey,
+            		'language_id'=>$language['id'],
+            		'title'=>$model->name,
+            		//'description'=>$model->description
+					);
+					
+					$description->save();
+            	}    
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
+		$term_name = array();
+		$term_id = array();
+		$terms = Term::model()->findAll();
+		foreach ($terms as $term) {
+			$term_name[$term->id] = $term->name;
+			$term_id[$term->id] = true;
+		}
+
 
 		$this->render('create',array(
 			'model'=>$model,
+			'terms'=>array('id'=>$term_id,'name'=>$term_name)
 		));
 	}
 
@@ -186,7 +207,15 @@ class BlockController extends Controller
 			
 			switch($type) {
 				case 1:
-					$this->renderPartial('forms/_news');
+					$term_name = array();
+					$term_id = array();
+					$terms = Term::model()->findAll();
+					foreach ($terms as $term) {
+						$term_name[$term->id] = $term->name;
+						$term_id[$term->id] = true;
+					}
+					
+					$this->renderPartial('forms/_news',array('terms'=>array('id'=>$term_id,'name'=>$term_name)));
 					break;
 				case 2:
 					$gallery_name = array();
@@ -196,14 +225,16 @@ class BlockController extends Controller
 						$gallery_name[$gallery->id] = $gallery->name;
 						$gallery_id[$gallery->id] = true;
 					}
-
 					$this->renderPartial('forms/_gallery',array('galleries'=>array('id'=>$gallery_id,'name'=>$gallery_name)));
 					break;
 				case 3:
+					$this->renderPartial('forms/_menu');					
 					break;
 				case 4:
+					$this->renderPartial('forms/_submenu');
 					break;
 				case 5:
+					$this->renderPartial('forms/_breadcrumbs');
 					break;
 				case 6:
 					break;

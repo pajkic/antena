@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Blocks',
+	'Blokovi',
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Kreiraj ') . 'Block','url'=>array('create')),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Block','url'=>array('admin')),
+	array('label'=>Yii::t('app','Kreiraj blok'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Upravljaj blokovima'),'url'=>array('admin')),
 );
 ?>
 
-<h1>Blocks</h1>
+<h1><?php echo Yii::t('app','Blokovi'); ?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,

@@ -5,27 +5,27 @@
 
 <div class="view">
 
-    	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+    	<?php /* echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id),array('view','id'=>$data->id)); ?>
 	<br />
-
+	*/ ?>
 	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?>
+	<?php echo CHtml::link(CHtml::encode($data->name),array('view','id'=>$data->id)); ?>
 	<br />
-
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('block_type_id')); ?>:</b>
-	<?php echo CHtml::encode($data->block_type_id); ?>
+	<?php echo CHtml::encode($data->blockType->name); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('block_position_id')); ?>:</b>
-	<?php echo CHtml::encode($data->block_position_id); ?>
+	<?php echo CHtml::encode($data->blockPosition->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
-	<?php echo CHtml::encode($data->status_id); ?>
+	<b><?php  echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
+	<?php echo CHtml::encode($data->blockStatus->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('options')); ?>:</b>
+	<b><?php /* echo CHtml::encode($data->getAttributeLabel('options')); ?>:</b>
 	<?php echo CHtml::encode($data->options); ?>
 	<br />
 

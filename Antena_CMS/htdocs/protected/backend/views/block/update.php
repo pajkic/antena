@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Blocks'=>array('index'),
+	'Blokovi'=>array('index'),
 	$model->name=>array('view','id'=>$model->id),
 	Yii::t('app','Izmeni'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Block', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Block', 'url'=>array('create')),
-	array('label'=>Yii::t('app','Pregledaj ') . 'Block', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Block', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Lista blokova'), 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj blok'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','Pregledaj blok'), 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Upravljaj blokovima'), 'url'=>array('admin')),
 );
 ?>
 
