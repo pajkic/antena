@@ -216,6 +216,7 @@ class MenuController extends Controller
 		$this->allowUser(SUPER_EDITOR);
 		$menus = Menu::model()->findAll(array('order'=>'sort'));
 		$array = array();
+		
 		foreach($menus as $menu) {
 			$array[] = array(
 			'id'=>$menu['id'],
@@ -225,9 +226,8 @@ class MenuController extends Controller
 			'parent_id'=>$menu['parent_id']);
 
 		}
-
+		 
 		$tree = $this->buildTree($array);
-		
 		$this->render('index',array('menus'=>$tree));	}
 
 	/**

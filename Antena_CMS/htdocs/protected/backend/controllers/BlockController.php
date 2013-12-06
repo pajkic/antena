@@ -69,7 +69,11 @@ class BlockController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Block'])) {
-			$model->attributes=$_POST['Block'];
+			$attributes = $_POST['Block'];
+			$attributes['created'] = new CDbExpression('NOW()');
+			$attributes['updated'] = new CDbExpression('NOW()');
+			
+			$model->attributes=$attributes;
 			if ($model->save()) {
 			foreach($languages as $language) {
             		$description = new BlockDescription;
@@ -114,7 +118,9 @@ class BlockController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if (isset($_POST['Block'])) {
-			$model->attributes=$_POST['Block'];
+			$attributes = $_POST['Block'];
+			$attributes['updated'] = new CDbExpression('NOW()');
+			$model->attributes=$attributes;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -237,10 +243,11 @@ class BlockController extends Controller
 					$this->renderPartial('forms/_breadcrumbs');
 					break;
 				case 6:
+					$this->renderPartial('forms/_custom');
 					break;
-				case 7: 
-					break;
-				case 8:
+				case 7:
+					$this->renderPartial('forms/_cmenu');
+				default:
 					break;
 			}
 

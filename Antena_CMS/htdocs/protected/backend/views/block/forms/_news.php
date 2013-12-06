@@ -11,32 +11,3 @@
 	
 	
 ?>
-
-<script type="text/javascript">
-		$('#block-form').submit(function(){
-		//var options = new String;
-		//options = "{";
-		var options = new Object();
-		var terms = new Array();
-		
-		$("#opts :input").each(function() {
-			
-			switch(this.type) {
-				case 'checkbox':
-					if (this.name="terms" && this.checked) terms.push(this.value);
-					if (this.name="image" && this.checked) {
-						options['image'] = "1";
-					} else {
-						options['image'] = "0";
-					}
-					break;
-				default:
-					options[this.name] = this.value;
-					break;
-			}
-			
-		});
-		options['terms'] = terms;
-		$('#Block_options').val(JSON.stringify(options));
-	})
-</script>
