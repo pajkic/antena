@@ -25,7 +25,7 @@
 	<?php echo CHtml::encode($data->blockStatus->name); ?>
 	<br />
 
-	<b><?php /* echo CHtml::encode($data->getAttributeLabel('options')); ?>:</b>
+	<?php /* echo CHtml::encode($data->getAttributeLabel('options')); ?>:</b>
 	<?php echo CHtml::encode($data->options); ?>
 	<br />
 

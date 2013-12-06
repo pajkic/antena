@@ -12,24 +12,3 @@
 	
 	
 ?>
-
-<script type="text/javascript">
-		$('#block-form').submit(function(){
-		//var options = new String;
-		//options = "{";
-		var options = new Object();
-		var params = new Array();
-		$("#opts :input").each(function(i,ei,zz) {
-			if (this.type == 'checkbox' && this.checked) {
-				
-				params.push(this.value);
-			} else {
-				options[this.name] = this.value;
-			}   		
-		});
-		options['galleries'] = params;
-		$('#Block_options').val(JSON.stringify(options));
-		alert(JSON.stringify(options));
-		return false;
-	})
-</script>

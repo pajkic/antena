@@ -36,7 +36,6 @@
             <?php //echo $form->textFieldControlGroup($model,'updated',array('span'=>5)); ?>
             <?php echo $form->hiddenField($model,'user_id',array('value'=>Yii::app()->user->id)); ?>
 			<div id="opts">
-			<?php $this->renderPartial('forms/_news',array('terms'=>$terms)); ?>
 			
 			</div>
 			<?php endif; ?>
@@ -51,18 +50,116 @@
 
 </div><!-- form -->
 <script type="text/javascript">
+	$(document).ready(function(){
+		var type = $('#Block_block_type_id').val();
+		setContent(type);
+		
+	});
+
 	$('#Block_block_type_id').change(function(){
 		var type = $(this).val();
+		setContent(type);
+	});
+
+	$('#block-form').submit(function(){
+		
+		var type = $('#Block_block_type_id').val();
+		switch(type) {
+
+			case "1":
+
+			news = {};
+			news.options = new Object();
+			terms = new Array();
+			
+			$("#opts :input").each(function() {
+				
+				switch(this.type) {
+					case 'checkbox':
+						if (this.name.substr(0,5)=="terms" && this.checked) terms.push(this.value);
+						if (this.name=="image" && this.checked) {
+							news.options['image'] = "1";
+						} else {
+							news.options['image'] = "0";
+						}
+						break;
+					default:
+						news.options[this.name] = this.value;
+						break;
+				}
+				
+			});
+			news.options['terms'] = terms;
+			$('#Block_options').val(JSON.stringify(news.options));
+			break;
+			
+			case "2":
+			
+			gallery={};
+			gallery.options = new Object();
+			params = new Array();
+			$("#opts :input").each(function() {
+				switch(this.type) {
+					case 'checkbox':
+						if (this.checked) params.push(this.value);
+						break;
+					default:
+						gallery.options[this.name] = this.value;
+						break;
+				}
+			});
+			gallery.options['galleries'] = params;
+			$('#Block_options').val(JSON.stringify(gallery.options));
+			break;
+			
+			case "6":
+			
+			custom = {};
+			custom.options = new Object();
+			$("#opts :input").each(function() {
+				
+				switch(this.type) {
+					case 'checkbox':
+						if (this.name=="title" && this.checked) {
+							custom.options['title'] = "1";
+						} else {
+							custom.options['title'] = "0";
+						}
+						break;
+					default:
+						custom.options[this.name] = this.value;
+						break;
+				}
+			});
+			
+			$('#Block_options').val(JSON.stringify(custom.options));	
+			
+			case "7":
+			ids = $('#custom_menu_id').val();
+			ids = ids.substr(0,ids.length-1);
+			jstring = '['+ids+']';
+			$('#Block_options').val(jstring);				
+			break;
+			default:
+			break;
+		}
+		
+	});
+	
+	function setContent(type) { 
+	
+		
+		$('#opts').html('');
+		$('#Block_options').val('');
 		$.ajax({
 			'url': '<?php echo Yii::app()->baseUrl . "/backend.php/Block/options/ajax";?>',
 			'type': 'post',
 			'data': {
-				'type': type
-			},
+				'type': type,
+					},
 			'success':function(data){
 				$('#opts').html(data);
 			}
-		})
-	});
-	
+		});
+	}
 </script>
