@@ -10,7 +10,7 @@ class bGallery extends CWidget
     public function run()
     {
     	
-		$galleries = "(" . implode(',',$this->data['params']) . ")";
+		$galleries = "(" . implode(',',$this->data['galleries']) . ")";
     	$gallery = GalleryItem::model()->findAll("gallery_id IN ".$galleries);
 		$images = array();
 		foreach ($gallery as $item){
