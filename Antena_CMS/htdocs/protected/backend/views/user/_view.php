@@ -3,7 +3,7 @@
 /* @var $data User */
 ?>
 
-<div class="view lista-korisnici">
+<div class="view pregled-korisnici">
 
     <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::encode($data->id); ?>
