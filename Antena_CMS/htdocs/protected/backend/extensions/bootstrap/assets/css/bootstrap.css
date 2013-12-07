@@ -6355,7 +6355,8 @@ section {
 }
 /* pregled korisnika */
 div.view.pregled-korisnici {
-    background: none repeat scroll 0 0 #82AF6F;
+    /* background: none repeat scroll 0 0 #82AF6F; */
+    background: none repeat scroll 0 0 #FFB752;
     border-radius: 5px;
     color: #FFFFFF;
     float: left;
@@ -6364,7 +6365,9 @@ div.view.pregled-korisnici {
     min-width: 300px;
     padding: 10px 20px;
     width: 28%;
+    border: 0;
 }
 div.view.pregled-korisnici:hover {
-    background: none repeat scroll 0 0 #87B87F;
+    /* background: none repeat scroll 0 0 #87B87F; */
+    background: none repeat scroll 0 0 #E59729;
 }
