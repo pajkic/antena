@@ -5533,7 +5533,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .thumbnails {
-  margin-left: -20px;
+ /* margin-left: -20px; */
   list-style: none;
   *zoom: 1;
 }
@@ -5556,7 +5556,10 @@ input[type="submit"].btn.btn-mini {
 .thumbnails > li {
   float: left;
   margin-bottom: 20px;
-  margin-left: 20px;
+ /*  margin-left: 20px; */
+}
+.thumbnails .span2 {
+	margin-left:0;
 }
 
 .thumbnail {
