@@ -5599,6 +5599,11 @@ a.thumbnail:focus {
 .thumbnail .caption {
   padding: 9px;
   color: #555555;
+  text-align: center;
+}
+
+.thumbnail .caption .btn:first-child {
+    margin-right: 10px;
 }
 
 .media,
