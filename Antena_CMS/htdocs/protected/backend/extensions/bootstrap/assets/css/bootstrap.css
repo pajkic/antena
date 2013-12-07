@@ -6356,8 +6356,8 @@ section {
 /* pregled korisnika */
 div.view.pregled-korisnici {
     background: none repeat scroll 0 0 #82AF6F;
+    background: none repeat scroll 0 0 #D6E9C6;
     border-radius: 5px;
-    color: #FFFFFF; 
     float: left;
     margin-right: 20px;
     min-height: 150px;
@@ -6368,6 +6368,7 @@ div.view.pregled-korisnici {
 }
 div.view.pregled-korisnici:hover {
     background: none repeat scroll 0 0 #87B87F; 
+    color: #FFFFFF; 
 }
 div.view.pregled-korisnici a, div.view.pregled-korisnici a:hover {
 	color: #FFB752;
