@@ -37,15 +37,17 @@ thead th {background:#82AF6F;}
   position: relative;
 }
 .grid-view .table th > .sort-link:before {
-	font-size: 14px;
+	/*font-size: 14px; */
+	font-size: 8px;
 	content: " ";
 	padding: 1px 23px 0 0;
 	background-image: url("/images/backend/glyphicons-halflings-white.png");
 	background-repeat: no-repeat;
 	background-position: -408px -144px;
-	vertical-align: text-bottom;
+	vertical-align: middle;
 	width: 14px;
-	line-height: 10px;
+	/* vertical-align: text-bottom;
+	 line-height: 10px; */
 	height: 14px;
 }
 .grid-view .table th > .sort-link:hover {
