@@ -6370,6 +6370,9 @@ div.view.pregled-korisnici:hover {
     background: none repeat scroll 0 0 #87B87F; 
     color: #FFFFFF; 
 }
-div.view.pregled-korisnici a, div.view.pregled-korisnici a:hover {
+div.view.pregled-korisnici a {
 	color: #FFB752;
+}
+div.view.pregled-korisnici a:hover {
+	color: #D15B47;
 }
