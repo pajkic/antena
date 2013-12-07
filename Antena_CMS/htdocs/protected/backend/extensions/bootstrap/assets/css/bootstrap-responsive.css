@@ -453,7 +453,8 @@
     margin-left: -30px;
   }
   .thumbnails > li {
-    margin-left: 30px;
+   /* margin-left: 30px; */
+    margin-left: 20px;
   }
   .row-fluid .thumbnails {
     margin-left: 0;
