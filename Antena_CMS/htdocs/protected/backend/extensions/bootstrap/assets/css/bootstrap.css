@@ -5559,7 +5559,10 @@ input[type="submit"].btn.btn-mini {
  /*  margin-left: 20px; */
 }
 .thumbnails .span2, .span-19 .thumbnails {
-	margin-left:0;
+	margin-left: 0;
+}
+.thumbnails .span2 {
+	margin-right: 20px;
 }
 .thumbnail {
   display: block;
