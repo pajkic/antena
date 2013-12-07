@@ -88,6 +88,6 @@ $this->menu=array(
 		
 	} 
 
-	echo TbHtml::thumbnails($images); 
+	echo TbHtml::thumbnails($images, array('' => 2)); 
 ?>
 
