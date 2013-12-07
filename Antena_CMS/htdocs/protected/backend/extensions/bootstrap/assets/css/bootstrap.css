@@ -6354,7 +6354,7 @@ section {
 	margin-left: 3%;
 }
 /* pregled korisnika */
-div.view.pregled-korisnici {
+div.view.pregled-kartica {
     background: none repeat scroll 0 0 #82AF6F;
     background: none repeat scroll 0 0 #D6E9C6;
     border-radius: 5px;
@@ -6366,10 +6366,10 @@ div.view.pregled-korisnici {
     width: 28%;
     border: 0;
 }
-div.view.pregled-korisnici:hover {
+div.view.pregled-kartica:hover {
     background: none repeat scroll 0 0 #87B87F; 
     color: #FFFFFF; 
 }
-div.view.pregled-korisnici:hover a {
+div.view.pregled-kartica:hover a {
 	color: #FFB752;
 }
