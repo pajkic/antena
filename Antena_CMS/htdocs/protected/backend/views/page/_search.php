@@ -35,9 +35,7 @@
 
                     <?php echo $form->textFieldControlGroup($model,'modified',array('span'=>5)); ?>
 
-        <div class="form-actions">
-        <?php echo TbHtml::submitButton('Search',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
-    </div>
+        <?php echo TbHtml::submitButton('Traži',  array('color' => TbHtml::BUTTON_COLOR_PRIMARY,));?>
 
     <?php $this->endWidget(); ?>
 

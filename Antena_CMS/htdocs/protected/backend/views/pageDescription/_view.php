@@ -29,5 +29,4 @@
 	<?php echo CHtml::encode($data->content); ?>
 	<br />
 
-
 </div>
