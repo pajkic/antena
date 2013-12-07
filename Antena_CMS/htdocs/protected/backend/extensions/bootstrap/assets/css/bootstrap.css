@@ -6358,7 +6358,7 @@ div.view.pregled-korisnici {
     /* background: none repeat scroll 0 0 #82AF6F; */
     background: none repeat scroll 0 0 #FFB752;
     border-radius: 5px;
-    color: #FFFFFF;
+   /* color: #FFFFFF; */
     float: left;
     margin-right: 20px;
     min-height: 150px;
