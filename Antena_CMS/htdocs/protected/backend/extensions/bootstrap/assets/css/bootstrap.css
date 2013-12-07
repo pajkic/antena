@@ -6354,6 +6354,17 @@ section {
 	margin-left: 3%;
 }
 /* pregled korisnika */
-div.pregled-korisnici {
-	border: green;
+div.view.pregled-korisnici {
+    background: none repeat scroll 0 0 #82AF6F;
+    border-radius: 5px;
+    color: #FFFFFF;
+    float: left;
+    margin-right: 20px;
+    min-height: 150px;
+    min-width: 300px;
+    padding: 10px 20px;
+    width: 28%;
+}
+div.view.pregled-korisnici:hover {
+    background: none repeat scroll 0 0 #87B87F;
 }
