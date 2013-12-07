@@ -45,7 +45,7 @@
 		                    </li>
 		                </ul>
 		              </div>
-		     	 </div>
+		     	 	</div>
 		      </div>	
 		    </div>	
 		</div>	
@@ -65,14 +65,14 @@
 	        		array('label'=>Yii::t('app','Stranice'), 'icon'=>'book', 'url'=>array('/page'), 'visible' => $this->userData->level>=30),
 	        		array('label'=>Yii::t('app','Članci'), 'icon'=>'file', 'url'=>array('/post'), 'visible' => $this->userData->level>=10),
 	        		array('label'=>Yii::t('app','Navigacija'), 'icon'=>'tasks', 'url'=>array('/menu'), 'visible' => $this->userData->level>=20),
-	        		array('label'=>Yii::t('app','Blokovi'), 'icon'=>'blocks', 'url'=>array('/block'), 'visible' => $this->userData->level>=40),
+	        		array('label'=>Yii::t('app','Blokovi'), 'icon'=>'magnet', 'url'=>array('/block'), 'visible' => $this->userData->level>=40),
 	        		
 	        		//array('label'=>Yii::t('app','Meniji'), 'icon'=>'th', 'url'=>array('/menu'), 'visible' => !$this->userData->level<30),
 	        		//array('label'=>Yii::t('app','Kategorije članaka'), 'icon'=>'category', 'url'=>array('/term'), 'visible' => $this->userData->level>=40),
-					array('label'=>Yii::t('app','O nama'), 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
+					// array('label'=>Yii::t('app','O nama'), 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
 					array('label'=>Yii::t('app','Kontakt'), 'icon'=>'envelope', 'url'=>array('/site/contact')),
-					array('label'=>'Prijava', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>Yii::t('app','Odjava') . ' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)			
+					array('label'=>'Prijava', 'url'=>array('/login'), 'visible'=>Yii::app()->user->isGuest)
+					// array('label'=>Yii::t('app','Odjava') . ' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)			
 	    ),
 	)); ?>	
 
