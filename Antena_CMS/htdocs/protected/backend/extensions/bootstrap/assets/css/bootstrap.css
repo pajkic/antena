@@ -6370,6 +6370,3 @@ div.view.pregled-kartica:hover {
     background: none repeat scroll 0 0 #82AF6F; 
     color: #FFFFFF; 
 }
-div.view.pregled-kartica:hover a {
-	color: #FFB752;
-}
