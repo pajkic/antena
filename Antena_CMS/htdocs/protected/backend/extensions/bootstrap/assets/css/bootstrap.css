@@ -6349,8 +6349,11 @@ section {
 	float: left;
 	width: 18%;
 }
-
 .uredi_sliku .span7 {
 	width: 79%;
 	margin-left: 3%;
+}
+/* pregled korisnika */
+div.pregled-korisnici {
+	border: green;
 }
