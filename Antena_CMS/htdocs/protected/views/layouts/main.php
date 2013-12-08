@@ -24,13 +24,14 @@
 
 <div class="container" id="page">
 
-	<div id="header">
-		<!-- Header -->
-	</div><!-- header -->
+	<header>
+		 <div class="header_blocks">
+		 	header blocks
+		 </div> 
+	</header><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->actionBlocks(2); ?>
-		
+		<?php $this->actionBlocks(2); ?>	
 	</div><!-- mainmenu -->
 	
 	<div class="sidebar">
@@ -44,14 +45,18 @@
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
+	
 	<?php echo $content; ?>
+  
 
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+	<footer>
+		<div class="footer_blocks">
+			footer blocks
+		</div>
+		<div class="site_info">
+			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
+		</div>	
+	</footer><!-- footer -->
 
 </div><!-- page -->
 
