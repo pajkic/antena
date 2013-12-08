@@ -25,6 +25,7 @@
 <div class="container" id="page">
 
 	<div id="header">
+		<?php $this->actionBlocks(1); ?>
 		<!-- Header -->
 	</div><!-- header -->
 
@@ -34,7 +35,7 @@
 	</div><!-- mainmenu -->
 	
 	<div class="sidebar">
-	<?php $this->actionBlocks(4); ?>	
+		<?php $this->actionBlocks(4); ?>	
 	
 	
 	</div>
