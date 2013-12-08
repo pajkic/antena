@@ -6374,4 +6374,7 @@ div.view.pregled-kartica a {
      background: none repeat scroll 0 0 #438EB9;
      color: #FFFFFF; 
      padding: 0 7px;
+     -webkit-border-radius: 5px;
+     -moz-border-radius:5px;
+          border-radius: 5px;
 }
