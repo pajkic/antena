@@ -34,7 +34,7 @@
 			<?php $this->actionBlocks(2); ?>	
 		</div><!-- main top blocks -->
 		
-		<aside class="left">
+		<aside class="aside_left">
 			<?php $this->actionBlocks(4); ?>	
 		</aside> <!-- aside left blocks --
 		
@@ -47,8 +47,8 @@
 		<?php echo $content; ?>
 	  
 
-		<aside class="right">
-			<?php $this->actionBlocks(4); ?>	
+		<aside class="aside_right">
+			aside right blocks 	
 		</aside> <!-- aside right blocks -->
 		
 		<div class="main_bottom">
