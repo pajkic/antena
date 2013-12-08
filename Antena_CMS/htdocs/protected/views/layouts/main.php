@@ -28,12 +28,12 @@
 		 <div class="header_blocks">
 		 	header blocks
 		 </div> 
+		 <nav>
+			<?php $this->actionBlocks(2); ?>	
+		</nav><!-- mainmenu -->
 	</header><!-- header -->
 
-	<div id="mainmenu">
-		<?php $this->actionBlocks(2); ?>	
-	</div><!-- mainmenu -->
-	
+
 	<div class="sidebar">
 		<?php $this->actionBlocks(4); ?>	
 	
