@@ -3,7 +3,7 @@
 /* @var $data Gallery */
 ?>
 
-<div class="view">
+<div class="view pregled-kartica">
 
     	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::encode($data->id); ?>
