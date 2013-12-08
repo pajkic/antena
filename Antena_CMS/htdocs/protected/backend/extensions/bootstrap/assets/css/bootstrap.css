@@ -6371,6 +6371,7 @@ div.view.pregled-kartica:hover {
     color: #FFFFFF; 
 }
 div.view.pregled-kartica a {
-     background: none repeat scroll 0 0 #D15B47;
+     background: none repeat scroll 0 0 #438EB9;
      color: #FFFFFF; 
+     padding: 0 7px;
 }
