@@ -41,7 +41,7 @@
 		</aside> <!-- aside left blocks -->
 		
 		
-		<div id="content" role="main">
+		<div id="content">
 			 <div class="content_top">
 			 	content top blocks
 			 </div> <!-- content top blocks -->
