@@ -31,10 +31,12 @@
 
 	<div id="main"> 
 		<div class="main_top">
+			main top blocks
 			<?php $this->actionBlocks(2); ?>	
 		</div><!-- main top blocks -->
 		
 		<aside class="aside_left">
+			aside left blocks
 			<?php $this->actionBlocks(4); ?>	
 		</aside> <!-- aside left blocks --
 		
