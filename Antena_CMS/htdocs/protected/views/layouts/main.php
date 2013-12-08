@@ -24,41 +24,46 @@
 <div class="container" id="page">
 
 	<header>
-		 <div class="header_blocks">
+		<div class="h_blocks">
 		 	header blocks
-		 </div> <!-- header blocks -->
-		
-		<nav>
-			<?php $this->actionBlocks(2); ?>	
-		</nav><!-- main top blocks -->
-	</header><!-- header -->
+		</div> <!-- header blocks -->
+	</header> <!-- header -->
 
 	<div id="main"> 
+		<div class="main_top">
+			<?php $this->actionBlocks(2); ?>	
+		</div><!-- main top blocks -->
+		
+		<aside class="left">
+			<?php $this->actionBlocks(4); ?>	
+		</aside> <!-- aside left blocks --
+		
+		<?php if(isset($this->breadcrumbs)):?>
+			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+				'links'=>$this->breadcrumbs,
+			)); ?><!-- breadcrumbs -->
+		<?php endif?>
+		
+		<?php echo $content; ?>
+	  
 
-	<div class="sidebar">
-		<?php $this->actionBlocks(4); ?>	
-	</div>
-	
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
-	
-	<?php echo $content; ?>
-  
-
-
+		<aside class="right">
+			<?php $this->actionBlocks(4); ?>	
+		</aside> <!-- aside right blocks -->
+		
+		<div class="main_bottom">
+			main bottom blocks
+		</div> <!-- main bottom blocks -->
 	</div> <!-- main -->
 	
 	<footer>
-		<div class="footer_blocks">
+		<div class="f_blocks">
 			footer blocks
 		</div>
 		<div class="site_info">
 			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
 		</div>	
-	</footer><!-- footer -->
+	</footer> <!-- footer -->
 
 </div><!-- page -->
 </body>
