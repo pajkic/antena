@@ -25,7 +25,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<?php $this->actionBlocks(1); ?>
+		<?php $this->actionBlocks(4); ?>
 		<!-- Header -->
 	</div><!-- header -->
 
