@@ -24,9 +24,9 @@
 <div class="container" id="page">
 
 	<header>
-		<div class="h_blocks">
+		<hgroup>
 		 	header blocks
-		</div> <!-- header blocks -->
+		</hgroup> <!-- header blocks -->
 	</header> <!-- header -->
 
 	<div id="main"> 
@@ -38,15 +38,31 @@
 		<aside class="aside_left">
 			aside left blocks
 			<?php $this->actionBlocks(4); ?>	
-		</aside> <!-- aside left blocks --
+		</aside> <!-- aside left blocks -->
 		
-		<?php if(isset($this->breadcrumbs)):?>
+		
+		<div id="content" role="main">
+			 <div class="content_top">
+			 	content top blocks
+			 </div> <!-- content top blocks -->
+			 
+			 <article>
+			 	tekst sa stranice
+			 </article> <!-- page content -->
+			 
+			 <div class="content_bottom">
+				content top blocks
+			 </div> <!-- content bottom blocks -->
+		</div> <!-- content -->
+		
+		<!--	
+			<?php if(isset($this->breadcrumbs)):?>
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 				'links'=>$this->breadcrumbs,
 			)); ?><!-- breadcrumbs -->
-		<?php endif?>
-		
-		<?php echo $content; ?>
+		<!--	<?php endif?>
+			
+			<?php echo $content; ?> -->
 	  
 
 		<aside class="aside_right">
