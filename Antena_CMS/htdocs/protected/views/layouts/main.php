@@ -60,9 +60,9 @@
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 				'links'=>$this->breadcrumbs,
 			)); ?><!-- breadcrumbs -->
-		<!--	<?php endif?>
+		<!--	<?php endif?> -->
 			
-			<?php echo $content; ?> -->
+		<!--	<?php echo $content; ?> -->
 	  
 
 		<aside class="aside_right">
