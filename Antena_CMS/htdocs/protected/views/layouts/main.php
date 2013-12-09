@@ -50,18 +50,18 @@
 			
 		<div id="content">
 				<div class="content_top">
-					 	content top blocks
-					 	<?php $this->actionBlocks(5); ?>
+					 	content top blocks - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis ante et est convallis, in pharetra dolor cursus. Donec ut ligula sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tellus at dolor ullamcorper tincidunt eu sed mi. Aliquam condimentum mattis elit in accumsan. Pellentesque accumsan hendrerit elit et imperdiet. Vivamus aliquam quis purus ultricies laoreet. Pellentesque vestibulum semper quam ac elementum. Nullam ornare nulla at lorem semper, ut condimentum eros semper. Cras et dui eget libero semper egestas ac quis erat. Suspendisse eu felis nunc. Donec nisi tellus, bibendum sed velit at, semper mollis sem. Cras condimentum est nec aliquet iaculis. Mauris sed ligula ut tortor egestas ullamcorper ac id sapien.
+					 	 
 					 </div> <!-- content top blocks -->
 					 
 				 <article>			 	
 			 
-				 	tekst sa stranice
+				 	tekst sa stranice - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis ante et est convallis, in pharetra dolor cursus. Donec ut ligula sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tellus at dolor ullamcorper tincidunt eu sed mi. Aliquam condimentum mattis elit in accumsan. Pellentesque accumsan hendrerit elit et imperdiet. Vivamus aliquam quis purus ultricies laoreet. Pellentesque vestibulum semper quam ac elementum. Nullam ornare nulla at lorem semper, ut condimentum eros semper. Cras et dui eget libero semper egestas ac quis erat. Suspendisse eu felis nunc. Donec nisi tellus, bibendum sed velit at, semper mollis sem. Cras condimentum est nec aliquet iaculis. Mauris sed ligula ut tortor egestas ullamcorper ac id sapien.
 			 
 				 </article> <!-- page content -->
 				
 				 <div class="content_bottom">
-						content bottom blocks
+						content bottom blocks / Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis ante et est convallis, in pharetra dolor cursus. Donec ut ligula sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tellus at dolor ullamcorper tincidunt eu sed mi. Aliquam condimentum mattis elit in accumsan. Pellentesque accumsan hendrerit elit et imperdiet. Vivamus aliquam quis purus ultricies laoreet. Pellentesque vestibulum semper quam ac elementum. Nullam ornare nulla at lorem semper, ut condimentum eros semper. Cras et dui eget libero semper egestas ac quis erat. Suspendisse eu felis nunc. Donec nisi tellus, bibendum sed velit at, semper mollis sem. Cras condimentum est nec aliquet iaculis. Mauris sed ligula ut tortor egestas ullamcorper ac id sapien.
 				 </div> <!-- content bottom blocks -->
 		</div> <!-- content -->
 		 			 	
