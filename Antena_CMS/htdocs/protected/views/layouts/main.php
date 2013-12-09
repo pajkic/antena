@@ -29,12 +29,12 @@
 		<hgroup>
 		 	header blocks
 		</hgroup> <!-- header blocks -->
+		<?php $this->actionBlocks(2); ?>
 	</header> <!-- header -->
 	
 	<div id="main"> 		
 		<div class="main_top">
-			main top blocks
-			<?php $this->actionBlocks(2); ?>	
+			main top blocks	
 		</div><!-- main top blocks -->
 		
 		<aside class="aside_left">
