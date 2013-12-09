@@ -6176,7 +6176,7 @@ a.badge:focus {
   position: fixed;
 }
 /* blokovi */
-footer {
+footer, .main_bottom {
 	clear: both;
 }
 aside[class*="span"] {
