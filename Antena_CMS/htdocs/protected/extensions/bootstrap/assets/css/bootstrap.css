@@ -6182,6 +6182,7 @@ footer, .main_bottom {
 aside[class*="span4"] {
 	margin-left: 0;
 	float: left;
+	margin-right: 25px;
 }
 aside[class*="span2"] {
 	float: right;
