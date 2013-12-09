@@ -35,7 +35,7 @@
 	<div id="main"> 		
 		<div class="main_top">
 			main top blocks	
-			<?php $this->actionBlocks(5); ?>
+			<?php $this->actionBlocks(4); ?>
 		</div><!-- main top blocks -->
 		
 			<aside class="span4">
@@ -45,12 +45,14 @@
 			
 			<aside class="span2"> 
 				aside right blocks 	
-				<?php $this->actionBlocks(5); ?>
+				<?php $this->actionBlocks(4); ?>
 			</aside> <!-- aside right blocks -->
 			
 		<div id="content">
 				<div class="content_top">
-					 	content top blocks - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis ante et est convallis, in pharetra dolor cursus. Donec ut ligula sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tellus at dolor ullamcorper tincidunt eu sed mi. Aliquam condimentum mattis elit in accumsan. Pellentesque accumsan hendrerit elit et imperdiet. Vivamus aliquam quis purus ultricies laoreet. Pellentesque vestibulum semper quam ac elementum. Nullam ornare nulla at lorem semper, ut condimentum eros semper. Cras et dui eget libero semper egestas ac quis erat. Suspendisse eu felis nunc. Donec nisi tellus, bibendum sed velit at, semper mollis sem. Cras condimentum est nec aliquet iaculis. Mauris sed ligula ut tortor egestas ullamcorper ac id sapien.
+					 	content top blocks -
+					 	<?php $this->actionBlocks(4); ?>
+					 	 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis ante et est convallis, in pharetra dolor cursus. Donec ut ligula sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis tellus at dolor ullamcorper tincidunt eu sed mi. Aliquam condimentum mattis elit in accumsan. Pellentesque accumsan hendrerit elit et imperdiet. Vivamus aliquam quis purus ultricies laoreet. Pellentesque vestibulum semper quam ac elementum. Nullam ornare nulla at lorem semper, ut condimentum eros semper. Cras et dui eget libero semper egestas ac quis erat. Suspendisse eu felis nunc. Donec nisi tellus, bibendum sed velit at, semper mollis sem. Cras condimentum est nec aliquet iaculis. Mauris sed ligula ut tortor egestas ullamcorper ac id sapien.
 					 	 
 					 </div> <!-- content top blocks -->
 					 
@@ -76,14 +78,14 @@
 		
 		<div class="main_bottom">
 			main bottom blocks
-			<?php $this->actionBlocks(5); ?>
+			<?php $this->actionBlocks(4); ?>
 		</div> <!-- main bottom blocks -->
 	</div> <!-- main -->
 	
 	<footer>
 		<div class="f_blocks">
 			footer blocks
-			<?php $this->actionBlocks(5); ?>
+			<?php $this->actionBlocks(4); ?>
 		</div>
 		<div class="modal-footer">
 			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
