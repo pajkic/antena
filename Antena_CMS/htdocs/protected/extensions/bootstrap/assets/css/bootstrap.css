@@ -6194,6 +6194,6 @@ aside[class*="span4"], aside[class*="span2"] {
           border-radius: 4px;  
     padding: 20px;
 }
-.content_top {
+#content .content_top, #content .content_bottom {
 	overflow: hidden;
 }
