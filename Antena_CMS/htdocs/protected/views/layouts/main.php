@@ -42,6 +42,10 @@
 			<?php $this->actionBlocks(4); ?>	
 		</aside> <!-- aside left blocks -->
 		
+		<aside class="span3"> 
+				aside right blocks 	
+		</aside> <!-- aside right blocks -->
+			
 		<div id="content">
 			 <div class="content_top">
 			 	content top blocks
@@ -54,6 +58,7 @@
 			 <div class="content_bottom">
 				content top blocks
 			 </div> <!-- content bottom blocks -->
+			 
 		</div> <!-- content -->
 		 	
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
@@ -64,10 +69,6 @@
 		<!--	<?php endif?>  -->
 			
 		<!-- 	<?php echo $content; ?> -->
-	  
-		<aside class="span3"> 
-			aside right blocks 	
-		</aside> <!-- aside right blocks -->
 		
 		<div class="main_bottom">
 			main bottom blocks
