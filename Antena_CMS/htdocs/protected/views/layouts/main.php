@@ -43,29 +43,34 @@
 			<?php $this->actionBlocks(4); ?>	
 		</aside> <!-- aside left blocks -->
 		
-		<div id="content">
-			 <div class="content_top">
-			 	content top blocks
-			 	<?php $this->actionBlocks(5); ?>
-			 </div> <!-- content top blocks -->
-			 
-				 <article>
-				 	tekst sa stranice
-				 </article> <!-- page content -->
-			 
-			 <div class="content_bottom">
-				content bottom blocks
-				<?php $this->actionBlocks(5); ?>
-			 </div> <!-- content bottom blocks -->
-			 
-		</div> <!-- content -->
-		 	
 		<aside class="span2"> 
 			aside right blocks 	
 			<?php $this->actionBlocks(5); ?>
 		</aside> <!-- aside right blocks -->
-			
-			 	
+		
+		<div id="content">
+			  
+			 
+				 <article>
+				 	
+				 	<div class="content_top">
+					 	content top blocks
+					 	<?php $this->actionBlocks(5); ?>
+					 </div> <!-- content top blocks -->
+			 
+				 	tekst sa stranice
+				 	
+				 	 <div class="content_bottom">
+						content bottom blocks
+						<?php $this->actionBlocks(5); ?>
+					 </div> <!-- content bottom blocks -->
+			 
+				 </article> <!-- page content -->
+			 
+			 
+			 
+		</div> <!-- content -->
+		 			 	
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
 		 		'links'=>$this->breadcrumbs,  
