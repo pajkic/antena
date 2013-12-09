@@ -37,7 +37,7 @@
 			main top blocks	
 		</div><!-- main top blocks -->
 		
-		<aside class="aside_left">
+		<aside class="spna4">
 			aside left blocks
 			<?php $this->actionBlocks(4); ?>	
 		</aside> <!-- aside left blocks -->
@@ -65,7 +65,7 @@
 			
 		<!-- 	<?php echo $content; ?> -->
 	  
-		<aside class="aside_right">
+		<aside class="span3"> 
 			aside right blocks 	
 		</aside> <!-- aside right blocks -->
 		
