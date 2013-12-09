@@ -616,8 +616,11 @@ a:focus {
 
 .container {
   padding: 25px;	
-  margin: 10px auto;
+  margin: 15px auto;
   background: #fff;
+  box-shadow: 0px 0px 10px #dddddd; 
+  	-moz-box-shadow: 0px 0px 10px #dddddd; 
+  	-webkit-box-shadow: 0px 0px 10px #dddddd;
   *zoom: 1;
 }
 
