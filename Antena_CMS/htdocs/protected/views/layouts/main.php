@@ -44,7 +44,7 @@
 		
 		<aside class="span3"> 
 			aside right blocks 	
-			<?php $this->actionBlocks(4); ?>
+			<?php $this->actionBlocks(5); ?>
 		</aside> <!-- aside right blocks -->
 			
 		<div id="content">
