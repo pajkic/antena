@@ -325,7 +325,7 @@ a:focus {
 }
 
 .span4 {
-  width: 280px;
+  width: 240px;
 }
 
 .span3 {
@@ -6185,6 +6185,8 @@ aside[class*="span4"] {
 }
 aside[class*="span2"] {
 	float: right;
+}
+aside[class*="span4"], aside[class*="span2"] {
 	border: 1px solid #DEDEDE;
 	-webkit-border-radius: 4px;
      -moz-border-radius: 4px;
