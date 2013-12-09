@@ -77,7 +77,7 @@
 		<div class="f_blocks">
 			footer blocks
 		</div>
-		<div class="site_info">
+		<div class="modal-footer">
 			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
 		</div>	
 	</footer> <!-- footer -->
