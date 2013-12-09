@@ -62,7 +62,6 @@
 				 	
 				 	 <div class="content_bottom">
 						content bottom blocks
-						<?php $this->actionBlocks(5); ?>
 					 </div> <!-- content bottom blocks -->
 			 
 				 </article> <!-- page content -->
