@@ -50,6 +50,7 @@
 		<div id="content">
 			 <div class="content_top">
 			 	content top blocks
+			 	<?php $this->actionBlocks(3); ?>
 			 </div> <!-- content top blocks -->
 			 
 				 <article>
