@@ -325,7 +325,7 @@ a:focus {
 }
 
 .span4 {
-  width: 300px;
+  width: 280px;
 }
 
 .span3 {
@@ -4079,10 +4079,6 @@ input[type="submit"].btn.btn-mini {
   padding-top: 8px;
   padding-bottom: 8px;
   line-height: 20px;
- /* border: 1px solid transparent;
-  -webkit-border-radius: 4px 4px 0 0;
-     -moz-border-radius: 4px 4px 0 0;
-          border-radius: 4px 4px 0 0; */
 }
 
 .nav-tabs > li > a:hover,
@@ -4096,8 +4092,6 @@ input[type="submit"].btn.btn-mini {
   color: #555555;
   cursor: default;
   background-color: #ffffff;
-  /* border: 1px solid #ddd;
-  border-bottom-color: transparent; */
 }
 
 .nav-pills > li > a {
