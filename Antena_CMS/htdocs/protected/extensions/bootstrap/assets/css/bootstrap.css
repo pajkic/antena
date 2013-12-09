@@ -6179,6 +6179,10 @@ a.badge:focus {
 footer, .main_bottom {
 	clear: both;
 }
-aside[class*="span"] {
+aside[class*="span4"] {
 	margin-left: 0;
+	float: left;
+}
+aside[class*="span3"] {
+	float: right;
 }
