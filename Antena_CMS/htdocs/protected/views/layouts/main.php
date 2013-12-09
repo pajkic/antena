@@ -59,7 +59,7 @@
 				 </article> <!-- page content -->
 			 
 			 <div class="content_bottom">
-				content top blocks
+				content bottom blocks
 				<?php $this->actionBlocks(5); ?>
 			 </div> <!-- content bottom blocks -->
 			 
