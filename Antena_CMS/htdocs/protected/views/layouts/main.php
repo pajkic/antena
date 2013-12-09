@@ -28,13 +28,15 @@
 	<header>
 		<hgroup>
 		 	header blocks
+		 	<?php $this->actionBlocks(1); ?>
 		</hgroup> <!-- header blocks -->
-		<?php $this->actionBlocks(2); ?>
+		
 	</header> <!-- header -->
 	
 	<div id="main"> 		
 		<div class="main_top">
 			main top blocks	
+			<?php $this->actionBlocks(2); ?>
 		</div><!-- main top blocks -->
 		
 			<aside class="span4">
@@ -50,6 +52,7 @@
 		<div id="content">
 			<div class="content_top">
 				 content top blocks 
+				 <?php $this->actionBlocks(3); ?>
 				 <hr />
 			</div> <!-- content top blocks -->
 					 
@@ -59,6 +62,7 @@
 				
 			<div class="content_bottom">
 				<hr />
+				<?php $this->actionBlocks(6); ?>
 				content bottom blocks
 			</div> <!-- content bottom blocks -->
 		</div> <!-- content -->
@@ -73,12 +77,14 @@
 		<!-- 	<?php echo $content; ?> -->
 		
 		<div class="main_bottom">
+			<?php $this->actionBlocks(7); ?>
 			main bottom blocks
 		</div> <!-- main bottom blocks -->
 	</div> <!-- main -->
 	
 	<footer>
 		<div class="f_blocks">
+			<?php $this->actionBlocks(8); ?>
 			footer blocks
 		</div>
 		<div class="modal-footer">

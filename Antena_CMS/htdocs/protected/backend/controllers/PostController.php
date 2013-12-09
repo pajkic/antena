@@ -80,6 +80,7 @@ class PostController extends Controller
 			if (!is_array($attributes['term_id'])) {
 				$attributes['term_id']=null;
 			} else {
+				$term_has_post = $attributes['term_id']; 
 				$attributes['term_id']=implode(',',$attributes['term_id']);
 			}
 			
@@ -96,6 +97,18 @@ class PostController extends Controller
 					
 					$description->save();
             	}    
+			if ($term_has_post) {
+				foreach($term_has_post as $term) {
+					$thp = new TermHasPost;
+					$thp->attributes = array(
+					'term_id' => $term,
+					'post_id'=>$model->primaryKey
+					);
+					
+					$thp->save();
+				}
+			}
+			
 				
 				$this->redirect(array('update','id'=>$model->id));
 			}
@@ -141,11 +154,27 @@ class PostController extends Controller
 			if (!is_array($attributes['term_id'])) {
 				$attributes['term_id']=null;
 			} else {
+				$term_has_post = $attributes['term_id']; 
 				$attributes['term_id']=implode(',',$attributes['term_id']);
 			}
 			
 			$model->attributes=$attributes;
 			if ($model->save()) {
+					
+				TermHasPost::model()->deleteAll("post_id = $id");
+				
+				if ($term_has_post) {
+				foreach($term_has_post as $term) {
+					$thp = new TermHasPost;
+					$thp->attributes = array(
+					'term_id' => $term,
+					'post_id'=>$id
+					);
+					
+					$thp->save();
+				}
+			}
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
