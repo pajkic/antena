@@ -223,11 +223,11 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 15px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #EEEEEE;
 }
 
 a {
@@ -615,8 +615,9 @@ a:focus {
 }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
+  padding: 25px;	
+  margin: 10px auto;
+  background: #fff;
   *zoom: 1;
 }
 
