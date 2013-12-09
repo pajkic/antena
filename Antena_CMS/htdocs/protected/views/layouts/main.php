@@ -50,6 +50,7 @@
 		<div id="content">
 			<div class="content_top">
 				 content top blocks 
+				 <hr />
 			</div> <!-- content top blocks -->
 					 
 			<article>			 			 
@@ -57,6 +58,7 @@
 			</article> <!-- page content -->
 				
 			<div class="content_bottom">
+				<hr />
 				content bottom blocks
 			</div> <!-- content bottom blocks -->
 		</div> <!-- content -->
