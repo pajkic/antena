@@ -43,11 +43,6 @@
 			<?php $this->actionBlocks(4); ?>	
 		</aside> <!-- aside left blocks -->
 		
-		<aside class="span2"> 
-			aside right blocks 	
-			<?php $this->actionBlocks(5); ?>
-		</aside> <!-- aside right blocks -->
-			
 		<div id="content">
 			 <div class="content_top">
 			 	content top blocks
@@ -65,6 +60,12 @@
 			 
 		</div> <!-- content -->
 		 	
+		<aside class="span2"> 
+			aside right blocks 	
+			<?php $this->actionBlocks(5); ?>
+		</aside> <!-- aside right blocks -->
+			
+			 	
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
 		 		'links'=>$this->breadcrumbs,  
