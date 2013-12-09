@@ -6185,4 +6185,8 @@ aside[class*="span4"] {
 }
 aside[class*="span3"] {
 	float: right;
+	border: 1px solid #DEDEDE;
+	-webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
 }
