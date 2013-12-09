@@ -35,6 +35,7 @@
 	<div id="main"> 		
 		<div class="main_top">
 			main top blocks	
+			<?php $this->actionBlocks(5); ?>
 		</div><!-- main top blocks -->
 		
 		<aside class="span4">
@@ -50,7 +51,7 @@
 		<div id="content">
 			 <div class="content_top">
 			 	content top blocks
-			 	<?php $this->actionBlocks(3); ?>
+			 	<?php $this->actionBlocks(5); ?>
 			 </div> <!-- content top blocks -->
 			 
 				 <article>
@@ -59,6 +60,7 @@
 			 
 			 <div class="content_bottom">
 				content top blocks
+				<?php $this->actionBlocks(5); ?>
 			 </div> <!-- content bottom blocks -->
 			 
 		</div> <!-- content -->
@@ -74,12 +76,14 @@
 		
 		<div class="main_bottom">
 			main bottom blocks
+			<?php $this->actionBlocks(5); ?>
 		</div> <!-- main bottom blocks -->
 	</div> <!-- main -->
 	
 	<footer>
 		<div class="f_blocks">
 			footer blocks
+			<?php $this->actionBlocks(5); ?>
 		</div>
 		<div class="modal-footer">
 			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
