@@ -38,19 +38,13 @@
 			<?php $this->actionBlocks(5); ?>
 		</div><!-- main top blocks -->
 		
-		<aside class="span4">
-			aside left blocks
-			<?php $this->actionBlocks(4); ?>	
-		</aside> <!-- aside left blocks -->
-		
-		<aside class="span2"> 
-			aside right blocks 	
-			<?php $this->actionBlocks(5); ?>
-		</aside> <!-- aside right blocks -->
 		
 		<div id="content">
 			  
-			 
+			<aside class="span4">
+				aside left blocks
+				<?php $this->actionBlocks(4); ?>	
+			</aside> <!-- aside left blocks --> 
 				 <article>
 				 	
 				 	<div class="content_top">
@@ -66,7 +60,10 @@
 			 
 				 </article> <!-- page content -->
 			 
-			 
+			 <aside class="span2"> 
+				aside right blocks 	
+				<?php $this->actionBlocks(5); ?>
+			</aside> <!-- aside right blocks -->
 			 
 		</div> <!-- content -->
 		 			 	
