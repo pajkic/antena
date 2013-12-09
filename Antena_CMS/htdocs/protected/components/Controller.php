@@ -23,14 +23,34 @@ class Controller extends CController
 	
 	public function actionBlocks($position_id) 
 	{
-		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id));
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
 		foreach ($blocks as $block) {
 			
 			switch ($block['block_type_id']){
 				case 1:
+					$params = json_decode($block['options'],true);
+					$criteria = new CDbCriteria;
+					$criteria->group='post_id';
+					$criteria->condition = "term_id IN (" . implode(',',$params['terms']) . ")";
+					$posts = TermHasPost::model()->findAll($criteria);
+					$p = array();
+					foreach($posts as $post) {
+						$p[] = $post['post_id'];
+					}
+					$criteria2 = new CDbCriteria;
+					$criteria2->condition = "id IN (" . implode(',',$p) . ") AND status_id = 1 AND post_type_id=1";
+					$criteria2->limit = $params['post_count'];
+					$criteria2->order = 'created DESC'; 
+					$news = Post::model()->findAll($criteria2);
+					
+					$this->widget('application.extensions.widgets.bNews', array(
+						'data' => $news,
+						'image'=> $params['image'],
+						'date'=> $params['date'],
+						'excerpt'=> $params['excerpt']
+						));
 					break;
 				case 2:
-					
 					$this->widget('application.extensions.widgets.bGallery',array(
 						'data' => json_decode($block['options'],true)
 						));

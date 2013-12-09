@@ -69,8 +69,11 @@
 
 			news = {};
 			news.options = new Object();
+			news.options['image']="0";
+			news.options['date']="0";
+			news.options['excerpt']="0";
 			terms = new Array();
-			
+						
 			$("#opts :input").each(function() {
 				
 				switch(this.type) {
@@ -78,9 +81,14 @@
 						if (this.name.substr(0,5)=="terms" && this.checked) terms.push(this.value);
 						if (this.name=="image" && this.checked) {
 							news.options['image'] = "1";
-						} else {
-							news.options['image'] = "0";
-						}
+						} 
+						if (this.name=="excerpt" && this.checked) {
+							news.options['excerpt'] = "1";
+						} 
+						if (this.name=="date" && this.checked) {
+							news.options['date'] = "1";
+						} 
+
 						break;
 					default:
 						news.options[this.name] = this.value;
