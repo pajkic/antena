@@ -60,10 +60,12 @@ class Controller extends CController
 					$array = array();
 					
 					foreach($menus as $menu) {
+						if (strpos($menu['content'],'post/') !== false) 
+							$menu['content'] .= '/'.urlencode($menu['name']);
 						$array[] = array(
 						'id'=>$menu['id'],
 						'label'=>$menu['name'],
-						'url'=> $menu['content'].'/'.urlencode($menu['name']),
+						'url'=> $menu['content'],
 						'parent_id'=>$menu['parent_id']
 						);
 			
