@@ -11,17 +11,24 @@ class bGallery extends CWidget
     {
     	
 		$galleries = "(" . implode(',',$this->data['galleries']) . ")";
-    	$gallery = GalleryItem::model()->findAll("gallery_id IN ".$galleries);
+		$criteria = new CDbCriteria;
+		$criteria->select = "*, rand() as rand";
+		$criteria->condition = "gallery_id IN ".$galleries;
+		$criteria->order = "rand";
+		$criteria->limit = $this->data['picture_count'];
+		
+		
+    	$gallery = GalleryItem::model()->findAll($criteria);
 		$images = array();
 		foreach ($gallery as $item){
 			array_push($images, array(
-				'image' => '/uploads/gallery/'.$item->gallery_id.'/thumbs/'.$item->name,
-				'title' => $item->name,
-				'caption' => '',
+				'thumb' => '/uploads/gallery/'.$item->gallery_id.'/thumbs/'.$item->name,
+				'image' => '/uploads/gallery/'.$item->gallery_id.'/'.$item->name,
 			));
 		}
-		 
-        $this->render('bGallery', array('data'=>$images));
+		
+		//var_dump($this->data);die(); 
+        $this->render('bGallery', array('data'=>$images, 'w' => $this->data['thumb_w'], 'h'=>$this->data['thumb_h']));
     }
 }
 ?>
