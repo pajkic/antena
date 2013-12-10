@@ -63,20 +63,31 @@ class Controller extends CController
 						$array[] = array(
 						'id'=>$menu['id'],
 						'label'=>$menu['name'],
-						'url'=> $menu['content'],
+						'url'=> $menu['content'].'/'.urlencode($menu['name']),
 						'parent_id'=>$menu['parent_id']
 						);
 			
 					}
-					 
+					$menu = array(
+					0 => array(
+					'label' => TbHtml::icon(TbHtml::ICON_HOME),
+					'url'=>'http://'.$_SERVER['HTTP_HOST'],
+					));
 					$tree = $this->buildTree($array);
+					foreach($tree as $branch){
+						array_push($menu,$branch);
+					}
+					
 					$this->widget('application.extensions.widgets.bMenu',array(
-						'data' => $tree
+						'data' => $menu
 						));
 					break;
 				case 4: 
 					break;
 				case 5:
+					$this->widget('zii.widgets.CBreadcrumbs', array(  
+		 				'links'=>$this->breadcrumbs,  
+		 			));
 					break;
 				case 6: 
 					break;

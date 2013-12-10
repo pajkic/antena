@@ -27,7 +27,6 @@
 
 	<header>
 		<hgroup>
-		 	header blocks
 		 	<?php $this->actionBlocks(1); ?>
 		</hgroup> <!-- header blocks -->
 		
@@ -35,35 +34,30 @@
 	
 	<div id="main"> 		
 		<div class="main_top">
-			main top blocks	
 			<?php $this->actionBlocks(2); ?>
 		</div><!-- main top blocks -->
 		
 			<aside class="span4">
-				aside left blocks
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 			
 			<aside class="span2"> 
-				aside right blocks 	
 				<?php $this->actionBlocks(5); ?>
 			</aside> <!-- aside right blocks -->
 			
 		<div id="content">
 			<div class="content_top">
-				 content top blocks 
 				 <?php $this->actionBlocks(3); ?>
 				 <hr />
 			</div> <!-- content top blocks -->
 					 
 			<article>			 			 
-				tekst sa stranice - page content
+				<?php echo $content; ?>
 			</article> <!-- page content -->
 				
 			<div class="content_bottom">
 				<hr />
 				<?php $this->actionBlocks(6); ?>
-				content bottom blocks
 			</div> <!-- content bottom blocks -->
 		</div> <!-- content -->
 		 			 	
@@ -78,14 +72,12 @@
 		
 		<div class="main_bottom">
 			<?php $this->actionBlocks(7); ?>
-			main bottom blocks
 		</div> <!-- main bottom blocks -->
 	</div> <!-- main -->
 	
 	<footer>
 		<div class="f_blocks">
 			<?php $this->actionBlocks(8); ?>
-			footer blocks
 		</div>
 		<div class="modal-footer">
 			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
