@@ -25,6 +25,7 @@ return array(
 		'application.components.*',
 		'application.messages.*',
 		'bootstrap.helpers.TbHtml',
+		
 	),
 
 	// application modules
@@ -113,8 +114,12 @@ return array(
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
+	
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'info@implementacija.rs',
 	),
+	
+	
+	
 );

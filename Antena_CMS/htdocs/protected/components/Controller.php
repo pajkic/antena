@@ -21,6 +21,7 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 	
+	
 	public function actionBlocks($position_id) 
 	{
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
@@ -87,8 +88,10 @@ class Controller extends CController
 				case 4: 
 					break;
 				case 5:
+					
 					$this->widget('zii.widgets.CBreadcrumbs', array(  
-		 				'links'=>$this->breadcrumbs,  
+		 				'links'=>$this->breadcrumbs,
+		 				'homeLink'=>CHtml::link(Yii::app()->name, Yii::app()->homeUrl),   
 		 			));
 					break;
 				case 6: 
