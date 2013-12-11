@@ -24,11 +24,13 @@ class bGallery extends CWidget
 			array_push($images, array(
 				'thumb' => '/uploads/gallery/'.$item->gallery_id.'/thumbs/'.$item->name,
 				'image' => '/uploads/gallery/'.$item->gallery_id.'/'.$item->name,
+				'title'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'gallery_item_id'=>$item->id))->title,
+				'description'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'gallery_item_id'=>$item->id))->description
 			));
 		}
 		
-		//var_dump($this->data);die(); 
-        $this->render('bGallery', array('data'=>$images, 'w' => $this->data['thumb_w'], 'h'=>$this->data['thumb_h']));
+		
+        $this->render('bGallery', array('data'=>$images, 'w' => $this->data['thumb_w'], 'h'=>$this->data['thumb_h'], 'gid'=>md5($galleries)));
     }
 }
 ?>

@@ -9,6 +9,7 @@ $this->breadcrumbs=array(
 	$model->name,
 );
 
+
 $this->menu=array(
 	array('label'=>Yii::t('app','Lista ') . 'GalleryItem','url'=>array('create')),
 	array('label'=>Yii::t('app','Kreiraj ') . 'GalleryItem','url'=>array('create')),
