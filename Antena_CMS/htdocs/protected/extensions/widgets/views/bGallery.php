@@ -4,7 +4,7 @@ $this->beginWidget('application.extensions.prettyPhoto.PrettyPhoto', array(
   // prettyPhoto options
   'options'=>array(
     'opacity'=>0.80,
-    'modal'=>true,
+    'modal'=>false,
     
   ),
   'gallery'=>false,
