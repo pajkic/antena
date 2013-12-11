@@ -9,6 +9,8 @@ class PostController extends Controller
 	
 	public function actionView($id)
 	{
+		// Post content
+		
 		$post = $this->loadModel($id);
 		$content = array();
 		foreach ($post->postDescriptions as $descriptions) {
@@ -19,18 +21,17 @@ class PostController extends Controller
 			}
 		} 
 		
+		// Gallery
 		
-		$gallery = GalleryItem::model()->findAllByAttributes(array('gallery_id'=>$post->gallery_id));
-		$images = array();
-		foreach ($gallery as $item){
-			array_push($images, array(
-				'thumb' => '/uploads/gallery/'.$item->gallery_id.'/thumbs/'.$item->name,
-				'image' => '/uploads/gallery/'.$item->gallery_id.'/'.$item->name,
-				'title'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'gallery_item_id'=>$item->id))->title,
-				'description'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'gallery_item_id'=>$item->id))->description
-				
-			));
-		}
+		$gallery_id = array($post['gallery_id']);
+		$gallery = array(
+			'galleries' => $gallery_id,
+			'thumb_w' => "80",
+			'thumb_h'=> "60",
+			'picture_count'=>999,
+		);
+
+		// Breadcrumbs
 		
 		$breadcrumbs = array();
 		
@@ -61,7 +62,7 @@ class PostController extends Controller
 		$this->render('view',array(
 			'post'=> $post,
 			'content' => $content,
-			'gallery' => $images,
+			'gallery' => $gallery,
 			'breadcrumbs'=>$breadcrumbs,
 		));
 	}
