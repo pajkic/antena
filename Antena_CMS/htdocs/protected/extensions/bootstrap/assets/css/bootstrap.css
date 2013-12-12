@@ -6194,6 +6194,9 @@ aside[class*="span4"] {
 	aside[class*="span4"] p {
 		font-size: 14px;
 	}
+	aside[class*="span4"] .news_info {
+		clear: both;
+	}
 aside[class*="span2"] {
 	float: right;
 }
