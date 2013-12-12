@@ -6206,7 +6206,7 @@ aside[class*="span4"] {
 		float: left;
 		margin-right: 10px;
 		width: 70px;
-		height: 65px;
+		height: 65px
 	}
 	aside[class*="span4"] .news_info:last-child {
 		padding-bottom: 0;
