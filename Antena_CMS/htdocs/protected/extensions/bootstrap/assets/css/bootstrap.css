@@ -6197,6 +6197,12 @@ aside[class*="span4"] {
 	aside[class*="span4"] .news_info {
 		clear: both;
 	}
+	aside[class*="span4"] .news_info img {
+		float: left;
+		margin-right: 10px;
+		width: 70px;
+		height: 60px;
+	}
 aside[class*="span2"] {
 	float: right;
 }
