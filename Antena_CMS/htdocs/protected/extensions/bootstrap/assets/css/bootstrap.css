@@ -6209,7 +6209,7 @@ aside[class*="span4"] {
 		height: 65px;
 	}
 	aside[class*="span4"] .news_info:last-child {
-		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 aside[class*="span2"] {
 	float: right;
