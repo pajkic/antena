@@ -5,5 +5,3 @@
 	<img src="<?php echo $d['image'];?>" />
 	<p><?php echo $d['excerpt'];?></p>
 <?php endforeach; ?>
-
-<hr/>
