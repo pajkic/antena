@@ -231,14 +231,14 @@ body {
 }
 
 a {
-  color: #0088cc;
+  color: #2898D4;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
   color: #005580;
-  text-decoration: underline;
+ /* text-decoration: underline; */
 }
 
 .img-rounded {
@@ -764,7 +764,7 @@ h6 small {
 h1,
 h2,
 h3 {
-  line-height: 40px;
+  line-height: 20px;
 }
 
 h1 {
