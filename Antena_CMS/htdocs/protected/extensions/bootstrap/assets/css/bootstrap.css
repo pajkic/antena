@@ -744,7 +744,7 @@ h5,
 h6 {
   margin: 10px 0;
   font-family: inherit;
-  font-weight: bold;
+ /* font-weight: bold; */
   line-height: 20px;
   color: inherit;
   text-rendering: optimizelegibility;
@@ -758,7 +758,7 @@ h5 small,
 h6 small {
   font-weight: normal;
   line-height: 1;
-  color: #999999;
+  color: #999;
 }
 
 h1,
@@ -768,19 +768,19 @@ h3 {
 }
 
 h1 {
-   font-size: 38.5px; 
+   font-size: 30px; 
 }
 
 h2 {
-  font-size: 31.5px;
+  font-size: 25px;
 }
 
 h3 {
-  font-size: 24.5px;
+  font-size: 16px;
 }
 
 h4 {
-  font-size: 17.5px;
+  font-size: 15px;
 }
 
 h5 {
