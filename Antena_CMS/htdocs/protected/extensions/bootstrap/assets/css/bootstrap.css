@@ -6190,15 +6190,17 @@ aside[class*="span4"] {
 	}
 	aside[class*="span4"] h3 {
 		margin: 0;
+		clear: both;
 	}
 	aside[class*="span4"] p {
 		font-size: 14px;
-		margin: -3px 0 10px;
+		margin: -3px 0 0;
 		line-height: 18px;
 	}
 	aside[class*="span4"] .news_info {
 		clear: both;
-		padding: 5px 0;
+		padding: 5px 0 15px 0;
+		overflow: hidden;
 	}
 	aside[class*="span4"] .news_info img {
 		float: left;
