@@ -6193,15 +6193,18 @@ aside[class*="span4"] {
 	}
 	aside[class*="span4"] p {
 		font-size: 14px;
+		margin: -3px 0 10px;
+		line-height: 18px;
 	}
 	aside[class*="span4"] .news_info {
 		clear: both;
+		padding: 5px 0;
 	}
 	aside[class*="span4"] .news_info img {
 		float: left;
 		margin-right: 10px;
 		width: 70px;
-		height: 60px;
+		height: 65px;
 	}
 aside[class*="span2"] {
 	float: right;
