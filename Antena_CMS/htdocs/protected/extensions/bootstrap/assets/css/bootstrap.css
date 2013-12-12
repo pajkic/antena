@@ -6208,7 +6208,7 @@ aside[class*="span4"] {
 		width: 70px;
 		height: 65px;
 	}
-	aside[class*="span4"] .news_info:last-child p {
+	aside[class*="span4"] .news_info:last-child {
 		margin-bottom: 0;
 	}
 aside[class*="span2"] {
