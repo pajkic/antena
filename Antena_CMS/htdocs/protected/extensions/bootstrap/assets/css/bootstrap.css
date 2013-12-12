@@ -6183,6 +6183,17 @@ aside[class*="span4"] {
 	float: left;
 	margin-right: 25px;
 }
+	aside[class*="span4"] small {
+		color: #999;
+		font-size: 12px; 
+		line-height: 25px;
+	}
+	aside[class*="span4"] h3 {
+		margin: 0;
+	}
+	aside[class*="span4"] p {
+		font-size: 14px;
+	}
 aside[class*="span2"] {
 	float: right;
 }
@@ -6195,12 +6206,4 @@ aside[class*="span4"], aside[class*="span2"] {
 }
 #content .content_top, #content .content_bottom {
 	overflow: hidden;
-}
-.span4 small {
-	color: #999;
-	font-size: 12px; 
-	line-height: 25px;
-}
-.span4 h3 {
-	margin: 0;
 }
