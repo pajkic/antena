@@ -6229,6 +6229,9 @@ aside[class*="span4"], aside[class*="span2"] {
 	border-bottom: 1px solid #eee;
 	margin-bottom: 20px;
 }
+	#content .content_top h3 {
+		font-size: 27px;
+	}
 #content .content_bottom {
 	border-top: 1px solid #eee;
 	margin-top: 20px;
