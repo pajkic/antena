@@ -95,11 +95,12 @@ class Controller extends CController
 						);
 			
 					}
-					$menu = array(
+					$menu = array(/*
 					0 => array(
 					'label' => TbHtml::icon(TbHtml::ICON_HOME),
 					'url'=>'http://'.$_SERVER['HTTP_HOST'],
-					));
+					)
+					*/);
 					$tree = $this->buildTree($array);
 					foreach($tree as $branch){
 						array_push($menu,$branch);
