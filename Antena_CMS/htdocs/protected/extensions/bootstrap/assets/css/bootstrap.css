@@ -6224,3 +6224,8 @@ aside[class*="span4"], aside[class*="span2"] {
 #content .content_top, #content .content_bottom {
 	overflow: hidden;
 }
+.breadcrumbs {
+	background: #eee;
+	padding: 10px;
+	margin-bottom: 10px;
+} 
