@@ -6194,6 +6194,9 @@ aside:before, aside:after {
 	background-color: red;
 	display: block;
 }
+	#content aside {
+		height: 100%;
+	}
 	aside[class*="span4"] small {
 		color: #ccc;
 		font-size: 12px; 
