@@ -27,9 +27,9 @@ class bNews extends CWidget
 				$content[$news['id']]['image'] = '';
 			}
 			
-			$content[$news['id']]['title'] = $news->postDescriptions[0]['title'];
+			$content[$news['id']]['title'] = $news->postDescription->title;
 			if ($this->excerpt == 1) {
-				$content[$news['id']]['excerpt'] = $news->postDescriptions[0]['excerpt'];
+				$content[$news['id']]['excerpt'] = $news->postDescription->excerpt;
 			} else {
 				$content[$news['id']]['excerpt'] = '';
 			}

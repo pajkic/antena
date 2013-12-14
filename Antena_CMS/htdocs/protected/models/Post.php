@@ -70,7 +70,7 @@ class Post extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'postDescriptions' => array(self::HAS_MANY, 'PostDescription', 'post_id'),
-			'postDescription'=>array(self::HAS_MANY,'PostDescription','post_id','condition'=>'language_id='.Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id),
+			'postDescription'=>array(self::HAS_ONE,'PostDescription','post_id','condition'=>'language_id='.Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id),
 			'postStatuses' => array(self::BELONGS_TO, 'PostStatus', 'status_id'),
 			'users'=>array(self::BELONGS_TO,'User','user_id'),
 			'galleries'=>array(self::BELONGS_TO,'Gallery','gallery_id'),
