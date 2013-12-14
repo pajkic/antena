@@ -24,8 +24,8 @@ class bGallery extends CWidget
 			array_push($images, array(
 				'thumb' => '/uploads/gallery/'.$item->gallery_id.'/thumbs/'.$item->name,
 				'image' => '/uploads/gallery/'.$item->gallery_id.'/'.$item->name,
-				'title'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'gallery_item_id'=>$item->id))->title,
-				'description'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'gallery_item_id'=>$item->id))->description
+				'title'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'gallery_item_id'=>$item->id))->title,
+				'description'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'gallery_item_id'=>$item->id))->description
 			));
 		}
 		

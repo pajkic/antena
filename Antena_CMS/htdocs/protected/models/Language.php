@@ -1,25 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "{{post_description}}".
+ * This is the model class for table "{{language}}".
  *
- * The followings are the available columns in table '{{post_description}}':
- * @property string $id
- * @property string $post_id
- * @property integer $language_id
- * @property string $title
- * @property string $excerpt
- * @property string $content
- *
- * The followings are the available model relations:
- * @property Post $post
+ * The followings are the available columns in table '{{language}}':
+ * @property integer $id
+ * @property string $name
+ * @property string $lang
+ * @property string $flagpath
+ * @property integer $active
+ * @property integer $main
  */
-class PostDescription extends CActiveRecord
+class Language extends CActiveRecord
 {
+	public $flagpath;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return PostDescription the static model class
+	 * @return Language the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +29,7 @@ class PostDescription extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{post_description}}';
+		return '{{language}}';
 	}
 
 	/**
@@ -42,13 +40,15 @@ class PostDescription extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('post_id, language_id, title', 'required'),
-			array('language_id', 'numerical', 'integerOnly'=>true),
-			array('post_id', 'length', 'max'=>20),
-			array('content', 'safe'),
+			array('flagpath','file','types'=>'jpg, jpeg','allowEmpty'=>true),
+			array('name, lang, active', 'required'),
+			array('active, main', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>20),
+			array('lang', 'length', 'max'=>2),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, post_id, language_id, title, excerpt, content', 'safe'),
+			array('id, name, lang, active, main', 'safe',),
+			
 		);
 	}
 
@@ -60,8 +60,6 @@ class PostDescription extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'posts' => array(self::BELONGS_TO, 'Post', 'post_id'),
-			'languages' => array(self::BELONGS_TO, 'Language','language_id'),
 		);
 	}
 
@@ -72,11 +70,11 @@ class PostDescription extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'post_id' => 'Post',
-			'language_id' => Yii::t('app','Jezik'),
-			'title' => Yii::t('app','Naslov'),
-			'excerpt' => Yii::t('app','Uvod'),
-			'content' => Yii::t('app','Sadržaj'),
+			'name' => Yii::t('app','Naziv'),
+			'lang' => Yii::t('app','Skraćeni naziv'),
+			'flagpath' => Yii::t('app','Zastavica'),
+			'active' => Yii::t('app','Aktivan'),
+			'main' => Yii::t('app','Osnovni'),
 		);
 	}
 
@@ -91,12 +89,12 @@ class PostDescription extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('post_id',$this->post_id,true);
-		$criteria->compare('language_id',$this->language_id);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('excerpt',$this->excerpt,true);
-		$criteria->compare('content',$this->content,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('lang',$this->lang,true);
+		$criteria->compare('flagpath',$this->flagpath,true);
+		$criteria->compare('active',$this->active);
+		$criteria->compare('main',$this->main);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

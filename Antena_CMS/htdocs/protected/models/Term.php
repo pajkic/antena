@@ -63,6 +63,7 @@ class Term extends CActiveRecord
 		return array(
 		'terms' => array(self::HAS_MANY, 'Term', 'parent_id'),
 		'terms' => array(self::BELONGS_TO, 'Term', 'parent_id'),
+		'termDescriptions' => array(self::HAS_MANY,'TermDescription', 'term_id'),
 			
 		);
 	}

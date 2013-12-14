@@ -61,11 +61,11 @@ class Controller extends CController
 					$array = array();
 					
 					foreach($menus as $menu) {
-						if (strpos($menu['content'],'post/') !== false) 
+						if (strpos($menu['content'],'post/') !== false OR strpos($menu['content'],'term/') !== false) 
 							$menu['content'] .= '/'.urlencode($menu['name']);
 						$array[] = array(
 						'id'=>$menu['id'],
-						'label'=>$menu['name'],
+						'label'=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu['id']))->title,
 						'url'=> $menu['content'],
 						'parent_id'=>$menu['parent_id']
 						);
