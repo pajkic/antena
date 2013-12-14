@@ -28,7 +28,7 @@ class bNews extends CWidget
 			}
 			
 			foreach($news->postDescriptions as $descriptions) {
-				if ($descriptions->language_id == Yii::app()->language){
+				if ($descriptions->language_id == Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id){
 					$content[$news['id']]['title'] = $descriptions->title;
 					if ($this->excerpt == 1) {	
 						$content[$news['id']]['excerpt'] = $descriptions->excerpt;

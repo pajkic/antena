@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Antena Site',
 	'sourceLanguage' => 'sr',
-	'Language' => 1,
+	'Language' => 'sr',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -62,11 +62,15 @@ return array(
 			
 			 	'post/<id:\d+>/<title:.*?>'=>'post/view',
                 'posts/<tag:.*?>'=>'post/index',
+			 	'term/<id:\d+>/<title:.*?>'=>'term/view',
+                'terms/<tag:.*?>'=>'term/index',
+                
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			  
+			  /*
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+			   */ 
 			),
 		),
 		/*
@@ -103,10 +107,12 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				
+				/*
 				array(
 					'class'=>'CWebLogRoute',
 				),
+				 * 
+				 */
 				
 			),
 		),

@@ -14,7 +14,7 @@ class PostController extends Controller
 		$post = $this->loadModel($id);
 		$content = array();
 		foreach ($post->postDescriptions as $descriptions) {
-			if ($descriptions->language_id == Yii::app()->language){
+			if ($descriptions->language_id == Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id){
 				$content['title'] = $descriptions->title;
 				$content['excerpt'] = $descriptions->excerpt;
 				$content['content'] = $descriptions->content;
@@ -39,7 +39,7 @@ class PostController extends Controller
 			$parent = $post->parent_id;
 			while ($parent != null)
 			{
-				$title = PostDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'post_id'=>$parent))->title;
+				$title = PostDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'post_id'=>$parent))->title;
 				$breadcrumbs[$title] = array('/post/'.$parent.'/'.urlencode($title));
 				$parent = Post::model()->findByPk($parent)->parent_id;
 			}
@@ -50,7 +50,7 @@ class PostController extends Controller
 			
 			while ($parent != null)
 			{
-				$title = TermDescription::model()->findByAttributes(array('language_id'=>Yii::app()->language,'term_id'=>$parent))->title;
+				$title = TermDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'term_id'=>$parent))->title;
 				$breadcrumbs[$title] = array('/term/'.$parent.'/'.urlencode($title));
 				$parent = Term::model()->findByPk($parent)->parent_id;
 			} 	
