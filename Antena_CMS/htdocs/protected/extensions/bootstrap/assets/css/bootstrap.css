@@ -6197,7 +6197,10 @@ aside[class*="span4"] {
 	#content aside {
 		height: 100%;
 	}*/
-
+	
+aside[class*="span4"] #content .aside_left_active {
+	border: 1px solid red;
+}
 	aside[class*="span4"] small {
 		color: #ccc;
 		font-size: 12px; 
