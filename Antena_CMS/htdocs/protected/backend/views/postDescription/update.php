@@ -5,8 +5,8 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Članci'=>array('index'),
-	$post->name=>array('view','id'=>$post->id),
+	'Članci'=>array('/Post/index'),
+	$post->name=>array('/Post/view','id'=>$post->id),
 	Yii::t('app','Izmeni'),
 );
 
@@ -25,5 +25,4 @@ $this->menu=array(
 	$this->widget('bootstrap.widgets.TbTabs', array(
     'tabs' => $tabs
     )); 
-
 ?>
