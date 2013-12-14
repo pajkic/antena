@@ -21,6 +21,30 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
 	
+	function init()
+	{
+		
+		parent::init();
+		$app = Yii::app();
+		$languages = Language::model()->findAllByAttributes(array('active'=>1));
+		$langs =array();
+
+		foreach ($languages as $lang){
+			$langs[]=$lang['lang'];
+		}
+
+        if (isset($_GET['_lang']) AND in_array($_GET['_lang'],$langs))
+        {
+        	$app->language = $_GET['_lang'];
+			$app->session['_lang'] = $app->language;
+		}
+        else if (isset($app->session['_lang']))
+        {
+            $app->language = $app->session['_lang'];
+        }
+	}
+	
+	
 	
 	public function actionBlocks($position_id) 
 	{
