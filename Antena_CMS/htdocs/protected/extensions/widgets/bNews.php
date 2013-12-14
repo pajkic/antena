@@ -27,6 +27,13 @@ class bNews extends CWidget
 				$content[$news['id']]['image'] = '';
 			}
 			
+			$content[$news['id']]['title'] = $news->postDescriptions[0]['title'];
+			if ($this->excerpt == 1) {
+				$content[$news['id']]['excerpt'] = $news->postDescriptions[0]['excerpt'];
+			} else {
+				$content[$news['id']]['excerpt'] = '';
+			}
+			/*
 			foreach($news->postDescriptions as $descriptions) {
 				if ($descriptions->language_id == Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id){
 					$content[$news['id']]['title'] = $descriptions->title;
@@ -37,6 +44,8 @@ class bNews extends CWidget
 					}
 				}
 			}
+			 * 
+			 */
 		}
 		
 		
