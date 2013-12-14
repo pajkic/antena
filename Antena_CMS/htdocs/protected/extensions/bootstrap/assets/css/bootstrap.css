@@ -6188,8 +6188,10 @@ aside[class*="span4"] {
 	float: left;
 	margin-right: 25px;
 }
-aside[class*="span4"]:before {
+aside[class*="span4"]:before, aside[class*="span4"]:after {
 	height: 100%;
+	content: "";
+	background-color: red;
 }
 	aside[class*="span4"] small {
 		color: #ccc;
