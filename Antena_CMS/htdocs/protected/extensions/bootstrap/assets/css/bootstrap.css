@@ -6198,7 +6198,7 @@ aside[class*="span4"] {
 		height: 100%;
 	}*/
 	
-aside[class*="span4"] .aside_left_active {
+#main aside[class*="span4"] .aside_left_active {
 	border: 1px solid red;
 }
 	aside[class*="span4"] small {
