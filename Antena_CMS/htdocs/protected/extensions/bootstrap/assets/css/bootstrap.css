@@ -6185,7 +6185,7 @@ aside[class*="span4"] {
 	margin-right: 25px;
 }
 	aside[class*="span4"] small {
-		color: #999;
+		color: #ccc;
 		font-size: 12px; 
 		line-height: 25px;
 	}
@@ -6224,6 +6224,14 @@ aside[class*="span4"], aside[class*="span2"] {
 }
 #content .content_top, #content .content_bottom {
 	overflow: hidden;
+}
+#content .content_top {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 20px;
+}
+#content .content_bottom {
+	border-top: 1px solid #eee;
+	margin-top: 20px;
 }
 .breadcrumbs {
 	background: #eee;
