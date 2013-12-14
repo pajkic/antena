@@ -48,7 +48,6 @@
 		<div id="content">
 			<div class="content_top">
 				 <?php $this->actionBlocks(3); ?>
-				 <hr />
 			</div> <!-- content top blocks -->
 					 
 			<article>			 			 
@@ -56,7 +55,6 @@
 			</article> <!-- page content -->
 				
 			<div class="content_bottom">
-				<hr />
 				<?php $this->actionBlocks(6); ?>
 			</div> <!-- content bottom blocks -->
 		</div> <!-- content -->
