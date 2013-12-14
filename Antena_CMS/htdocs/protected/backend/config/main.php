@@ -72,9 +72,11 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		
 		'coreMessages'=>array(
             'basePath'=>null,
         ),
+		
 		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -89,10 +91,10 @@ return array(
 			
 			'username' => 'antena',
 			'password' => 'f6511080a9',
-			/*
+			
 			 'username' => 'root',
 			 'password' => '',
-			*/
+			
 			'charset' => 'utf8',
 			'tablePrefix' => 'cms_',
 		),
