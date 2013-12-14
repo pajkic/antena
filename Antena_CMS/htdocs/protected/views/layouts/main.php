@@ -46,7 +46,7 @@
 			</aside> <!-- aside right blocks -->
 			
 		<div id="content" class="aside_left_active">
-			 
+			
 			<div class="content_top">
 				 <?php $this->actionBlocks(3); ?>
 			</div> <!-- content top blocks -->
