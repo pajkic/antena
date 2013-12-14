@@ -241,15 +241,8 @@ class PostController extends Controller
 		));
 		*/
 		
-		$terms = Term::model()->findAll();
 		$array = array();
-		foreach($terms as $term) {
-			$array[] = array(
-				'id'=>$term['id'],
-				'text'=>'<b>'.$term['name'].'</b>',
-				'parent_id'=>$term['parent_id'],
-				'parent'=>true);
-		}
+		
 		$posts = Post::model()->findAllByAttributes(array('post_type_id' => 1));
 		foreach($posts as $post){
 			$array[]=array(
@@ -260,6 +253,16 @@ class PostController extends Controller
 				'parent_id'=>explode(',', $post['term_id']),
 				'parent'=>false
 			);
+		}
+				
+		$terms = Term::model()->findAll();
+		
+		foreach($terms as $term) {
+			$array[] = array(
+				'id'=>$term['id'],
+				'text'=>'<b>'.$term['name'].'</b>',
+				'parent_id'=>$term['parent_id'],
+				'parent'=>true);
 		}
 			
 		//var_dump($array);die();
