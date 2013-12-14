@@ -6188,7 +6188,7 @@ aside[class*="span4"] {
 	float: left;
 	margin-right: 25px;
 }
-aside[class*="span4"]:after {
+aside[class*="span4"]:before {
 	height: 100%;
 }
 	aside[class*="span4"] small {
