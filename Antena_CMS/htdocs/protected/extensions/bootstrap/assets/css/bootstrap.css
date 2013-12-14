@@ -6188,19 +6188,6 @@ aside[class*="span4"] {
 	float: left;
 	margin-right: 25px;
 }
-/*aside:before, aside:after {
-	height: 100%;
-	content: "";
-	background-color: red;
-	display: block;
-}
-	#content aside {
-		height: 100%;
-	}*/
-	
-#main #content.aside_left_active {
-	border: 1px solid red;
-}
 	aside[class*="span4"] small {
 		color: #ccc;
 		font-size: 12px; 
