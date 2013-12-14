@@ -31,18 +31,9 @@
 		</hgroup> <!-- header blocks -->
 		
 	<?php $languages = Language::model()->findAllByAttributes(array('active'=>1));?>
-		
-	
-	
 	<?php foreach($languages as $language):?>
-		
 		<?php echo TbHtml::link($language['name'],'?_lang='.$language['lang']);?>
-		
 	<?php endforeach; ?>
-	
-	    
-	
-		
 	</header> <!-- header -->
 	
 	<div id="main"> 		
