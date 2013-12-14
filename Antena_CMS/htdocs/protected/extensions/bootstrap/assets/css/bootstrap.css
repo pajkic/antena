@@ -6188,6 +6188,9 @@ aside[class*="span4"] {
 	float: left;
 	margin-right: 25px;
 }
+aside[class*="span4"]:after {
+	height: 100%;
+}
 	aside[class*="span4"] small {
 		color: #ccc;
 		font-size: 12px; 
