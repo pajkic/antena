@@ -97,6 +97,10 @@ class Controller extends CController
 				case 6: 
 					break;
 				case 7:
+					$params = json_decode($block['options'],true);
+					$this->widget('application.extensions.widgets.bCustomNav',array(
+						'data'=>$params
+					));
 					break;
 				default:
 					break;
