@@ -3,8 +3,7 @@
 <label>
     <select>
         <option selected><?php echo TbHtml::link($v,'?_lang='.$k);?></option>
-        <option>Srpski</option>
-        <option>Hrvatski</option>
+     
     </select>
 </label>
 </div>
