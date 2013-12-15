@@ -29,6 +29,7 @@
 	<header>
 		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
 		<hgroup>
+		  <?php $this->actionBlocks(1); ?>
 		  
 <div id="cssmenu">
 <ul>
