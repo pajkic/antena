@@ -65,7 +65,8 @@
 		</div><!-- main top blocks -->
 					  		
 		<div id="content">
-			 
+			
+			<div class="aside_block">
 				<aside class="span4">
 					<?php $this->actionBlocks(4); ?>	
 				</aside> <!-- aside left blocks --> 
@@ -84,9 +85,8 @@
 						
 					<div class="content_bottom">
 						<?php $this->actionBlocks(6); ?>
-					</div> <!-- content bottom blocks -->
-				 
-	  	
+					</div> <!-- content bottom blocks -->		 
+			</div>	 	
 		 	 
 		</div> <!-- content -->
 		 			
