@@ -1,4 +1,4 @@
-<label>
+<label class="lang">
     <select>
         <option selected> Select Box </option>
         <option>Short Option</option>
