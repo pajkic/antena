@@ -6180,7 +6180,7 @@ a.badge:focus {
 hgroup, footer, .main_bottom {
 	clear: both;
 }
-.aside_block asside {
+.aside_block aside {
 	border: 1px solid red;
 }
 .main_bottom {
