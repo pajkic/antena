@@ -23,17 +23,15 @@
 	<?php Yii::app()->bootstrap->register(); ?>
 </head>
 <body>
+	
 <div class="container" id="page">
-
+	
 	<header>
 		<hgroup>
 		 	<?php $this->actionBlocks(1); ?>
 		</hgroup> <!-- header blocks -->
-		
-	<?php $languages = Language::model()->findAllByAttributes(array('active'=>1));?>
-	<?php foreach($languages as $language):?>
-		<?php echo TbHtml::link(TbHtml::imageButton('/images/backend/languages/'.$language['flagpath']),'?_lang='.$language['lang']);?>
-	<?php endforeach; ?>
+	<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
+	
 	</header> <!-- header -->
 	
 	<div id="main"> 		
