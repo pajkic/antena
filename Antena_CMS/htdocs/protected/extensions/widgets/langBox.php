@@ -20,7 +20,7 @@ class langBox extends CWidget
 				$data[$language['lang']] = '<img src="/images/backend/languages/'.$language['flagpath'].'"/>';
 				break;
 			default:
-				$data[$language['lang']] = $language['name'].'<img src="/images/backend/languages/'.$language['flagpath'].'"/>';;
+				$data[$language['lang']] = '<img src="/images/backend/languages/'.$language['flagpath'].'"/>'. $language['name'];;
 				break;
 			}
 		}
