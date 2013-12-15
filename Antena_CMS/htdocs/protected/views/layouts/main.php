@@ -27,10 +27,10 @@
 <div class="container" id="page">
 	
 	<header>
+		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
 		<hgroup>
 		 	<?php $this->actionBlocks(1); ?>
 		</hgroup> <!-- header blocks -->
-	<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
 	
 	</header> <!-- header -->
 	
