@@ -67,21 +67,24 @@
 			  		
 			  		
 		<div id="content">
+			<div class="left_block">
 			<aside class="span4">
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 			 	
-			<div class="content_top">
-				 <?php $this->actionBlocks(3); ?>
-			</div> <!-- content top blocks -->
-					 
-			<article>			 			 
-				<?php echo $content; ?>
-			</article> <!-- page content -->
-				
-			<div class="content_bottom">
-				<?php $this->actionBlocks(6); ?>
-			</div> <!-- content bottom blocks -->
+				<div class="content_top">
+					 <?php $this->actionBlocks(3); ?>
+				</div> <!-- content top blocks -->
+						 
+				<article>			 			 
+					<?php echo $content; ?>
+				</article> <!-- page content -->
+					
+				<div class="content_bottom">
+					<?php $this->actionBlocks(6); ?>
+				</div> <!-- content bottom blocks -->
+			
+			</div>
 			
 			<aside class="span2"> 
 				<?php $this->actionBlocks(5); ?>		
