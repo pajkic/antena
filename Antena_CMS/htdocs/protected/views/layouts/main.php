@@ -66,6 +66,7 @@
 			
 			<aside class="span4">
 				<?php $this->actionBlocks(4); ?>	
+			 </aside> <!-- aside left blocks --> 	 		
 			  		
 		<div id="content" class="aside_left_active">
 			
@@ -86,7 +87,7 @@
 				<?php $this->actionBlocks(5); ?>		
 		 	</aside> <!-- aside right blocks -->	
 		 		 
-		 	</aside> <!-- aside left blocks --> 	
+		 	 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
 		 		'links'=>$this->breadcrumbs,  
