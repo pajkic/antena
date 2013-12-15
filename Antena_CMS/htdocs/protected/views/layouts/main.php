@@ -64,12 +64,12 @@
 			<?php $this->actionBlocks(2); ?>
 		</div><!-- main top blocks -->
 			
+			  		
+			  		
+		<div id="content">
 			<aside class="span4">
 				<?php $this->actionBlocks(4); ?>	
-			 </aside> <!-- aside left blocks --> 	 		
-			  		
-		<div id="content" class="aside_left_active">
-			
+			 </aside> <!-- aside left blocks --> 	
 			<div class="content_top">
 				 <?php $this->actionBlocks(3); ?>
 			</div> <!-- content top blocks -->
@@ -81,11 +81,13 @@
 			<div class="content_bottom">
 				<?php $this->actionBlocks(6); ?>
 			</div> <!-- content bottom blocks -->
-		</div> <!-- content -->
-		 			
-		 	<aside class="span2"> 
+			
+			<aside class="span2"> 
 				<?php $this->actionBlocks(5); ?>		
 		 	</aside> <!-- aside right blocks -->	
+		</div> <!-- content -->
+		 			
+		 	 
 		 		 
 		 	 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
