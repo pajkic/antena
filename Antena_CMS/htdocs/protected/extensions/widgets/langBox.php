@@ -15,10 +15,10 @@ class langBox extends CWidget
 		switch ($this->type){
 			case 'text':
 				$data[$language['lang']] = $language['name'];
-				break;
+				 
 			case 'flag':
 				$data[$language['lang']] = '<img src="/images/backend/languages/'.$language['flagpath'].'"/>';
-				break;
+				 
 			default:
 				$data[$language['lang']] = $language['name'].'<br> <img src="/images/backend/languages/'.$language['flagpath'].'"/>';;
 				break;
