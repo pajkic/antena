@@ -6177,7 +6177,7 @@ a.badge:focus {
   position: fixed;
 }
 /* blokovi */
-footer, .main_bottom {
+hgroup, footer, .main_bottom {
 	clear: both;
 }
 .main_bottom {
@@ -6251,13 +6251,16 @@ aside[class*="span4"], aside[class*="span2"] {
           border-radius: 4px;
 } 
 
-
 /* lang */
 #lang {
 	float: right;
+	font-size: 14px;
+}
+#lang a {
+	color: #999;
 }
 #lang select {
- 	width: 120px;
+ 	width: 125px;
 }
 #lang img {
 	margin-right: 5px;
