@@ -1,8 +1,8 @@
 <label class="lang">
     <select>
-        <option selected> Select Box </option>
-        <option>Short Option</option>
-        <option>This Is A Longer Option</option>
+        <option selected> English </option>
+        <option>Srpski</option>
+        <option>Hrvatski</option>
     </select>
 </label>
 
