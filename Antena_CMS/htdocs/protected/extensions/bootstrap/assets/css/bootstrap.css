@@ -6272,7 +6272,7 @@ aside[class*="span4"], aside[class*="span2"] {
 }
 
 label .lang {position:relative}
-label .lang:after {
+label.lang:after {
     content:'<>';
     font:11px "Consolas", monospace;
     color:#aaa;
@@ -6286,7 +6286,7 @@ label .lang:after {
     position:absolute;
     pointer-events:none;
 }
-label .lang:before {
+label.lang:before {
     content:'';
     right:6px; top:0px;
     width:20px; height:20px;
