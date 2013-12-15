@@ -13,12 +13,12 @@ class langBox extends CWidget
 	$data = array();
 	foreach($languages as $language) {
 		switch ($this->type){
-			case 'text':
-				$data[$language['lang']] = $language['name'];
+			 
 				 
 			case 'flag':
 				$data[$language['lang']] = '<img src="/images/backend/languages/'.$language['flagpath'].'"/>';
-				 
+			case 'text':
+				$data[$language['lang']] = $language['name'];	 
 			default:
 				$data[$language['lang']] = $language['name'].'<br> <img src="/images/backend/languages/'.$language['flagpath'].'"/>';;
 				break;
