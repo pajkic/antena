@@ -6342,6 +6342,7 @@ aside[class*="span4"], aside[class*="span2"] {
   display: block;
   line-height: 120%;
   padding: 10px;
+  font-size: 15px;
 }
 #cssmenu .has-sub .has-sub:hover > ul {
   display: block;
