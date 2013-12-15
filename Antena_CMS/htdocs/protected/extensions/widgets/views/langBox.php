@@ -1,3 +1,11 @@
+<label>
+    <select>
+        <option selected> Select Box </option>
+        <option>Short Option</option>
+        <option>This Is A Longer Option</option>
+    </select>
+</label>
+
 <div>
 <?php foreach ($data as $k=>$v):?>
 <div>
