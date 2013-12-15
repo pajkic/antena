@@ -69,7 +69,8 @@
 		<div id="content">
 			<aside class="span4">
 				<?php $this->actionBlocks(4); ?>	
-				
+			</aside> <!-- aside left blocks --> 
+			 	
 			<div class="content_top">
 				 <?php $this->actionBlocks(3); ?>
 			</div> <!-- content top blocks -->
@@ -86,7 +87,7 @@
 				<?php $this->actionBlocks(5); ?>		
 		 	</aside> <!-- aside right blocks -->	
 		 	
-		 	 </aside> <!-- aside left blocks --> 
+		 	 
 		</div> <!-- content -->
 		 			
 		 	 
