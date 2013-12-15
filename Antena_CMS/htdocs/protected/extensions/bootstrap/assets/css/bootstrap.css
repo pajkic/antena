@@ -6295,9 +6295,6 @@ aside[class*="span4"], aside[class*="span2"] {
   padding: 8px 10px;
   text-decoration: none;
 }
-#cssmenu a:first-child {
-	margin-left: 10px;
-}
 #cssmenu ul {
   list-style: none;
 }
