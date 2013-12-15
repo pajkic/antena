@@ -54,7 +54,7 @@
    <li class="last"><a href="#"><span>Stranica</span></a></li>
 </ul>
 </div>	
-	
+
 		</hgroup> <!-- header blocks -->
 	
 	</header> <!-- header -->
@@ -64,30 +64,28 @@
 			<?php $this->actionBlocks(2); ?>
 		</div><!-- main top blocks -->
 					  		
-		<div id="content">
-			
-			<div class="aside_block">
-				<aside class="span4">
-					<?php $this->actionBlocks(4); ?>	
-				</aside> <!-- aside left blocks --> 
-				 
-				<aside class="span2"> 
-					<?php $this->actionBlocks(5); ?>		
-			 	</aside> <!-- aside right blocks -->
+		<div id="main_content">
 			 	 	
+			 <div class="page_content">	 	
 					<div class="content_top">
 						 <?php $this->actionBlocks(3); ?>
 					</div> <!-- content top blocks -->
-							 
-					 			 			 
+							  			 			 
 						<?php echo $content; ?>
-					 
-						
+										
 					<div class="content_bottom">
 						<?php $this->actionBlocks(6); ?>
 					</div> <!-- content bottom blocks -->		 
-			</div>	 	
-		 	 
+  			</div>
+  			
+		 	<aside class="span4">
+					<?php $this->actionBlocks(4); ?>	
+			</aside> <!-- aside left blocks --> 
+			
+			<aside class="span2"> 
+					<?php $this->actionBlocks(5); ?>		
+			</aside> <!-- aside right blocks -->
+				
 		</div> <!-- content -->
 		 			
 		 	 

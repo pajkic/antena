@@ -6177,6 +6177,20 @@ a.badge:focus {
   position: fixed;
 }
 /* blokovi */
+body {
+	display: flex;
+	flex-direction: column;
+}
+#main_content {
+	display: flex;
+	flex: 1;
+}
+.page_content {
+	flex: 1;
+}
+aside[class*="span4"] {
+	order: -1;
+}
 hgroup, footer, .main_bottom {
 	clear: both;
 }
