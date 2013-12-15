@@ -6268,7 +6268,7 @@ aside[class*="span4"], aside[class*="span2"] {
     cursor:pointer;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-    .lang select {padding-right:18px}
+   select {padding-right:18px}
 }
 
 label .lang {position:relative}
