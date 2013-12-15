@@ -6353,7 +6353,7 @@ aside[class*="span4"], aside[class*="span2"] {
   margin-left: -10px;
 }
 #cssmenu > ul > li.active > a {
-  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+ /* -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
   background: #ececec;
@@ -6362,11 +6362,12 @@ aside[class*="span4"], aside[class*="span2"] {
   background: -webkit-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
   background: -o-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
   background: -ms-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
-  background: linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: linear-gradient(top, #ececec 0%, #ffeeff ef 100%); */
+	color: #D8D8D8;
 }
 #cssmenu > ul > li:hover > a {
-  background: #ececec;
-  background: -moz-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+ 	background: #ececec;
+  /* background: -moz-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #ffeeff ef));
   background: -webkit-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
   background: -o-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
@@ -6374,7 +6375,8 @@ aside[class*="span4"], aside[class*="span2"] {
   background: linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
   -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); */
+  color: #D8D8D8;
 }
 #cssmenu .has-sub {
   z-index: 1;
@@ -6396,7 +6398,7 @@ aside[class*="span4"], aside[class*="span2"] {
   background: #2898d4;
   border-bottom: 1px dotted #51adde;
   filter: none;
-  font-size: 11px;
+ /* font-size: 11px; */
   display: block;
   line-height: 120%;
   padding: 10px;
