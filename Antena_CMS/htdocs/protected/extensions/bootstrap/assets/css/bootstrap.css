@@ -6292,9 +6292,11 @@ aside[class*="span4"], aside[class*="span2"] {
   display: inline-block;
  	font-family: 'Source Sans Pro',sans-serif;
     font-size: 17px;
-  line-height: 49px;
-  padding: 0 20px;
+  padding: 8px 10px;
   text-decoration: none;
+}
+#cssmenu a:first-child {
+	margin-left: 10px;
 }
 #cssmenu ul {
   list-style: none;
