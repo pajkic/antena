@@ -6281,6 +6281,7 @@ aside[class*="span4"], aside[class*="span2"] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   width: auto;
+  padding: 0 10px;
 }
 #cssmenu:after,
 #cssmenu ul:after {
@@ -6312,7 +6313,10 @@ aside[class*="span4"], aside[class*="span2"] {
 #cssmenu > ul > li.active > a {
 	color: #D8D8D8;
 }
-#cssmenu > ul > li:hover > a, #cssmenu .has-sub ul li:hover a, #cssmenu .has-sub .has-sub ul li a {
+#cssmenu > ul > li:hover > a {
+	color: #eee;
+}
+#cssmenu .has-sub ul li:hover a, #cssmenu .has-sub .has-sub ul li a {
  	background: #2079a9;
 }
 #cssmenu .has-sub {
