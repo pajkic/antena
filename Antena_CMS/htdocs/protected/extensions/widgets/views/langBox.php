@@ -1,10 +1,12 @@
-<label class="lang">
+<div id="lang"> 
+<label>
     <select>
         <option selected> English </option>
         <option>Srpski</option>
         <option>Hrvatski</option>
     </select>
 </label>
+</div>
 
 <div>
 <?php foreach ($data as $k=>$v):?>
