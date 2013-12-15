@@ -29,9 +29,7 @@
 	<header>
 		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
 		<hgroup>
-		 	<?php $this->actionBlocks(1); ?>
-		 
-	<br /><br />
+		  
 <div id="cssmenu">
 <ul>
    <li class="active"><a href="#"><span>EU CBC IP</span></a></li>
