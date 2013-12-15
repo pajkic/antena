@@ -21,7 +21,7 @@ class langBox extends CWidget
 				$data[$language['lang']] = $language['name'];	 
 			default:
 				$data[$language['lang']] = $language['name'].'<br> <img src="/images/backend/languages/'.$language['flagpath'].'"/>';;
-				break;
+				 
 			}
 		}
 	$this->render('langBox',array('data'=>$data));
