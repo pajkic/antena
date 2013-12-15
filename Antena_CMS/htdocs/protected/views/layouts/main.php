@@ -30,8 +30,8 @@
 		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
 		<hgroup>
 		 	<?php $this->actionBlocks(1); ?>
-		</hgroup> <!-- header blocks -->
-	
+		 
+	<br /><br />
 <div id="cssmenu">
 <ul>
    <li class="active"><a href="#"><span>EU CBC IP</span></a></li>
@@ -56,6 +56,7 @@
 </ul>
 </div>	
 	
+		</hgroup> <!-- header blocks -->
 	
 	</header> <!-- header -->
 	
