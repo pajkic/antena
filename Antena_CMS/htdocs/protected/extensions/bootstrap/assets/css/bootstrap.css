@@ -6254,7 +6254,8 @@ aside[class*="span4"], aside[class*="span2"] {
 
 /* lang */
  .lang select {
-    padding:3px;
+ 	width: auto;
+   /* padding:3px;
     margin: 0;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -6265,12 +6266,14 @@ aside[class*="span4"], aside[class*="span2"] {
     -webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;
-    cursor:pointer;
+    cursor:pointer; */
 }
+/*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
    select {padding-right:18px}
-}
+}  */
 
+/*
 label .lang {position:relative}
 label.lang:after {
     content:'<>';
@@ -6294,4 +6297,4 @@ label.lang:before {
     position:absolute;
     pointer-events:none;
     display:block;
-}
+} */
