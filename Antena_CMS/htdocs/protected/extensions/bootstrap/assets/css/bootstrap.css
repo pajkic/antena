@@ -6318,7 +6318,7 @@ aside[class*="span4"], aside[class*="span2"] {
   float: left;
 }
 #cssmenu > ul > li > a {
-  /* color: #000; */
+  color: #fff; 
  /* font-size: 12px; */
 }
 #cssmenu > ul > li:hover:after {
