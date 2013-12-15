@@ -34,24 +34,24 @@
 <div id="cssmenu">
 <ul>
    <li class="active"><a href="#"><span>EU CBC IP</span></a></li>
-   <li class="has-sub"><a href="#"><span>Products</span></a>
+   <li class="has-sub"><a href="#"><span>Investments profile</span></a>
       <ul>
-         <li class="has-sub"><a href="#"><span>Product 1</span></a>
+         <li class="has-sub"><a href="#"><span>Drugi nivo</span></a>
             <ul>
-               <li><a href="#"><span>Sub Item</span></a></li>
-               <li class="last"><a href="#"><span>Sub Item</span></a></li>
+               <li><a href="#"><span>Treći nivo</span></a></li>
+               <li class="last"><a href="#"><span>Treći nivo dva</span></a></li>
             </ul>
          </li>
-         <li class="has-sub"><a href="#"><span>Product 2</span></a>
+         <li class="has-sub"><a href="#"><span>Drugi nivo 2</span></a>
             <ul>
-               <li><a href="#"><span>Sub Item</span></a></li>
-               <li class="last"><a href="#"><span>Sub Item</span></a></li>
+               <li><a href="#"><span>Treći nivo drugog nivoa</span></a></li>
+               <li class="last"><a href="#"><span>Treći nivo drugog nivoa 2</span></a></li>
             </ul>
          </li>
       </ul>
    </li>
-   <li><a href="#"><span>About</span></a></li>
-   <li class="last"><a href="#"><span>Contact</span></a></li>
+   <li><a href="#"><span>Stranica</span></a></li>
+   <li class="last"><a href="#"><span>Stranica</span></a></li>
 </ul>
 </div>	
 	
