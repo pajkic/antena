@@ -21,9 +21,16 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
+	
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-	
+	<script>
+$( "td:empty" )
+  .text( "Was empty!" )
+  .css( "background", "rgb(255,220,200)" );
+</script>
+
 <div class="container" id="page">
 	
 	<header>
