@@ -22,14 +22,14 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
 </head>
-<body style="height:100%;">
+<body>
 	
-<div class="container" id="page" style="display: table;">
+<div class="container" id="page">
 	
 	<header>
 		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
 		<hgroup>
-		  <?php $this->actionBlocks(1); ?>
+			<?php $this->actionBlocks(1); ?>
 		  
 <div id="cssmenu">
 <ul>
@@ -55,41 +55,34 @@
 </ul>
 </div>	
 
-		</hgroup> <!-- header blocks -->
-	
+		</hgroup> <!-- header blocks -->	
 	</header> <!-- header -->
 	
 	<div id="main"> 		
 		<div class="main_top">
 			<?php $this->actionBlocks(2); ?>
 		</div><!-- main top blocks -->
-					  		
-					  		
+					  						  		
 		<div id="main_content">
-			<aside class="span4" style="display: table-cell; vertical-align: top;">
-					<?php $this->actionBlocks(4); ?>	
+			<aside class="span4">
+				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
-				 	
-			<aside class="span2" style="display: table-cell; vertical-align: top;"> 
-					<?php $this->actionBlocks(5); ?>		
+							 	
+			<aside class="span2"> 
+				<?php $this->actionBlocks(5); ?>		
 			</aside> <!-- aside right blocks -->
 				 	
-			 <div class="page_content" style="display: table-cell; vertical-align: top;">	 	
-					<div class="content_top">
-						 <?php $this->actionBlocks(3); ?>
-					</div> <!-- content top blocks -->
-							  			 			 
-						<?php echo $content; ?>
-										
-					<div class="content_bottom">
-						<?php $this->actionBlocks(6); ?>
-					</div> <!-- content bottom blocks -->		 
-  			</div>
-			
+			<div class="page_content">	 	
+				<div class="content_top">
+					 <?php $this->actionBlocks(3); ?>
+				</div> <!-- content top blocks -->						  			 			 
+					<?php echo $content; ?>										
+				<div class="content_bottom">
+					<?php $this->actionBlocks(6); ?>
+				</div> <!-- content bottom blocks -->		 
+  			</div>		
 		</div> <!-- content -->
-		 			
-		 	 
-		 		 
+		 				 
 		 	 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
@@ -103,8 +96,7 @@
 		<div class="main_bottom">
 			<?php $this->actionBlocks(7); ?>
 		</div> <!-- main bottom blocks -->
-	</div> <!-- main -->
-	
+	</div> <!-- main -->	
 	<footer>
 		<div class="f_blocks">
 			<?php $this->actionBlocks(8); ?>
@@ -113,7 +105,6 @@
 			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
 		</div>	
 	</footer> <!-- footer -->
-
 </div><!-- page -->
 </body>
 </html>

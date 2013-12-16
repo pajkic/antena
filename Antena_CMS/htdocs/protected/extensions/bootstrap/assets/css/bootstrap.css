@@ -228,6 +228,7 @@ body {
   line-height: 21px;
   color: #444444;
   background-color: #EEEEEE;
+  height:100%;
 }
 
 a {
@@ -288,7 +289,8 @@ a:focus {
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 940px;
+ /* width: 940px; */
+	width: 1100px;
 }
 
 .span12 {
@@ -614,6 +616,7 @@ a:focus {
 }
 
 .container {
+	display: table;
   padding: 25px;	
   margin: 15px auto;
   background: #fff;
@@ -6180,11 +6183,12 @@ a.badge:focus {
 hgroup, footer, .main_bottom {
 	clear: both;
 }
-.aside_block aside {
-	border: 1px solid red;
-}
 .main_bottom {
 	padding-top: 20px;
+}
+aside[class*="span4"], aside[class*="span2"], .page_content {
+	display: table-cell; 
+	vertical-align: top;
 }
 aside[class*="span4"] {
 	margin-left: 0;
