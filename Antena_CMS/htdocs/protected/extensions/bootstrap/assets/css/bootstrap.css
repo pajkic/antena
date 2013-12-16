@@ -6180,7 +6180,7 @@ a.badge:focus {
   position: fixed;
 }
 /* blokovi */
-hgroup, footer, .main_bottom {
+hgroup, footer, .main_bottom, .main_top {
 	clear: both;
 }
 .main_bottom {
