@@ -68,7 +68,7 @@
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 							 	
-			<aside class="span2"> 
+			<aside> 
 				<?php $this->actionBlocks(5); ?>		
 			</aside> <!-- aside right blocks -->
 				 	
