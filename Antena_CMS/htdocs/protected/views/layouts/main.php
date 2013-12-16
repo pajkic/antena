@@ -86,7 +86,7 @@
   			</div>		
 		</div> <!-- content -->
 		 				 
-		 	$(".span2:empty").parent().hide();
+		 <?php (".span2:empty").parent().hide(); ?>
 		 	 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
