@@ -6186,6 +6186,9 @@ hgroup, footer, .main_bottom, .main_top {
 hgroup form {
 	margin: 0;
 }
+	hgroup select {
+		margin-bottom: 18px;
+	}
 .main_bottom {
 	padding-top: 20px;
 }
