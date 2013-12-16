@@ -6190,6 +6190,10 @@ aside[class*="span4"], aside[class*="span2"], .page_content {
 	display: table-cell; 
 	vertical-align: top;
 }
+aside[class*="span2"]:empty {
+	border: none;
+	width: 0px;
+}
 aside[class*="span4"] {
 	margin-left: 0;
 	float: left;
