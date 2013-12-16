@@ -78,11 +78,11 @@
 					</div> <!-- content bottom blocks -->		 
   			</div>
   			
-		 	<aside class="span4">
+		 	<aside class="span4 row">
 					<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 			
-			<aside class="span2"> 
+			<aside class="span2 row"> 
 					<?php $this->actionBlocks(5); ?>		
 			</aside> <!-- aside right blocks -->
 				
