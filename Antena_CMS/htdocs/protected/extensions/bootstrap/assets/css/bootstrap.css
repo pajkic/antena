@@ -6183,6 +6183,9 @@ a.badge:focus {
 hgroup, footer, .main_bottom, .main_top {
 	clear: both;
 }
+hgroup form {
+	margin: 0;
+}
 .main_bottom {
 	padding-top: 20px;
 }
