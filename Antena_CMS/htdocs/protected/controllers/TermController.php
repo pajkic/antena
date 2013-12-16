@@ -58,6 +58,8 @@ class TermController extends Controller
 		
 		$breadcrumbs[0]=$content['title'];		
 		
+		$this->pageTitle=Yii::app()->name .' - '. $content['title'];
+		
 		$this->render('view',array(
 			'term'=>$term,
 			'posts'=> $posts,

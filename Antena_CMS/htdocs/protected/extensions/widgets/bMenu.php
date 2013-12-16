@@ -1,66 +1,38 @@
 <?php
-class bMenu extends CWidget
-{
-    /**
-     * @var $data
-     */
-    public $data;
-	
-	
-    public function run()
-    {
-    $str = '';
-	
-	foreach ($this->data as $level0) {
-		
-		$str.='<li class="';
-		if (isset($level0['items'])) {
-			$str.='has-sub';
-		} else {
-			$str.='last';
-		}
-		$str.='"><a href="'.$level0['url'].'"><span>'.$level0['label'].'</span></a>';
+class bMenu extends CWidget {
+	/**
+	 * @var $data
+	 */
+	public $data;
 
-		if (isset($level0['items'])) {
-			$str.='<ul>';
-			
-			foreach ($level0['items'] as $level1) {
-				$str.='<li class="';
-				if (isset($level1['items'])) {
-					$str.='has-sub';
-				} else {
-					$str.='last';
-				}
-				$str.='"><a href="'.$level1['url'].'"><span>'.$level1['label'].'</span></a>';
-				
-				if (isset($level1['items'])) {
-					$str.='<ul>';
-					
-					foreach ($level1['items'] as $level2) {
-						$str.='<li class="';
-						if (isset($level2['items'])) {
-							$str.='has-sub';
-						} else {
-							$str.='last';
-						}
-						$str.='"><a href="'.$level2['url'].'"><span>'.$level2['label'].'</span></a></li>';
-					}
-					$str.='</ul></li>';
-		
-				} else {
-					$str.='</li>';
-				}
-				
-			}
-			$str.='</ul></li>';
-
-		} else {
-			$str.='</li>';
-		}
-
+	public function run() {
+		$str = '';
+		$this->buildMenu($this->data,$str);
+		$this -> render('bMenu', array('menustr' => $str));
 	}
+
+	public function buildMenu($items,&$str='') 
+	{
 		
-    $this->render('bMenu',array('menustr'=>$str));
-    }
+		foreach($items as $item) {
+			$str .= '<li class="';
+			if (isset($item['items'])) {
+				$str .= 'has-sub';
+			} else {
+				$str .= 'last';
+			}
+			$str .= '"><a href="' . $item['url'] . '"><span>' . $item['label'] . '</span></a>';
+			
+			if (isset($item['items'])) {
+				$str .= '<ul>';
+				$this->buildMenu($item['items'],$str);
+				$str .= '</ul></li>';
+			} else {
+				$str .= '</li>';
+			}
+			
+		}
+	} 
+
 }
 ?>

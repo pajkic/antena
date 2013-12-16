@@ -1,18 +1,7 @@
-<div id="lang"> 
-<label>
-    <select>
-        <option selected>English</option>
-        <option>Srpski</option>
-        <option>Hrvatski</option>
-    </select>
-</label>
-
- 
-<?php foreach ($data as $k=>$v):?>
-<div>
-<?php echo TbHtml::link($v,'?_lang='.$k);?>
-</div>
-<?php endforeach; ?>
- 
-</div> 
- 
+<?php echo CHtml::form(); ?>
+    <div id="lang">
+    	
+        <?php echo CHtml::dropDownList('_lang', $currentLang, array('sr' => 'Srpski', 'hr' => 'Hrvatski', 'en' => 'English'), array('submit' => '')); ?>
+		
+    </div>
+<?php echo CHtml::endForm(); ?>

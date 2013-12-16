@@ -68,7 +68,7 @@
 				var ccontent='<?php  echo preg_replace( "/\r|\n/", "", $form->textFieldControlGroup($model,"content",array("prepend"=>"http://", "span"=>5,"maxlength"=>255))); ?>';
 				break;
 			case 'anchor':
-				var ccontent='<?php  echo $form->textFieldControlGroup($model,"content",array("span"=>5,"maxlength"=>255)); ?>';
+				var ccontent='<?php  echo $form->textFieldControlGroup($model,"content",array("span"=>5,"maxlength"=>255, "value"=>"#")); ?>';
 				break;
 			default:
 				break;			
