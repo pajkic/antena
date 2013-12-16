@@ -70,8 +70,8 @@
 			</aside> <!-- aside left blocks --> 
 							 	
 			<aside> 
-				<span class="span2>"
-				<?php $this->actionBlocks(5); ?>
+				<span class="span2">
+				<?php $this->actionBlocks(5); ?>			 
 				 </span>	
 			</aside> <!-- aside right blocks -->
 				 	
@@ -84,10 +84,12 @@
 					<?php $this->actionBlocks(6); ?>
 				</div> <!-- content bottom blocks -->		 
   			</div>		
-		</div> <!-- content -->
-		 				 
-		 <?php (".span2:empty").parent().hide(); ?>
-		 	 
+		</div> <!-- content -->		 		
+		 	  
+		<script>
+			$(".span2:empty").parent().hide();
+		</script>
+		 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
 		 		'links'=>$this->breadcrumbs,  
