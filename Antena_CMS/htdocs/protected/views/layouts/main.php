@@ -68,8 +68,8 @@
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 							 	
-			<aside> 
-				<?php $this->actionBlocks(5); ?>		
+			<aside class="span2"> 
+				<?php if(isset($this->actionBlocks(5))); ?>		
 			</aside> <!-- aside right blocks -->
 				 	
 			<div class="page_content">	 	
