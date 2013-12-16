@@ -6294,9 +6294,9 @@ aside[class*="span4"], aside[class*="span2"] {
 }
 #cssmenu {
 	background: none repeat scroll 0 0 #2898D4;
-    border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+    border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
   width: auto;
   padding: 0;
   margin: 0 0 15px;
