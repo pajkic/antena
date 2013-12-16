@@ -64,10 +64,15 @@
 			<?php $this->actionBlocks(2); ?>
 		</div><!-- main top blocks -->
 					  		
+					  		
 		<div id="main_content">
 			<aside class="span4" style="display: table-cell; vertical-align: top;">
 					<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
+				 	
+			<aside class="span2" style="display: table-cell; vertical-align: top;"> 
+					<?php $this->actionBlocks(5); ?>		
+			</aside> <!-- aside right blocks -->
 				 	
 			 <div class="page_content" style="display: table-cell; vertical-align: top;">	 	
 					<div class="content_top">
@@ -80,13 +85,7 @@
 						<?php $this->actionBlocks(6); ?>
 					</div> <!-- content bottom blocks -->		 
   			</div>
-  			
-		 	 
 			
-			<aside class="span2" style="display: table-cell; vertical-align: top;"> 
-					<?php $this->actionBlocks(5); ?>		
-			</aside> <!-- aside right blocks -->
-				
 		</div> <!-- content -->
 		 			
 		 	 
