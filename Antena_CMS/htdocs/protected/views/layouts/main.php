@@ -28,10 +28,9 @@
 <div class="container" id="page">
 	
 	<header>
-		<?php $this->widget('application.extensions.widgets.langBox');?>	
 		<hgroup>
-			<?php $this->actionBlocks(1); ?>
-		  
+		<?php $this->widget('application.extensions.widgets.langBox');?>	
+		 	  
 <!--
 <div id="cssmenu">
 <ul>
@@ -60,6 +59,8 @@
 
 		</hgroup> <!-- header blocks -->	
 	</header> <!-- header -->
+	
+	<?php $this->actionBlocks(1); ?> <!-- main navigation -->	
 	
 	<div id="main"> 		
 		<div class="main_top">
