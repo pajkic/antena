@@ -22,14 +22,8 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
 	
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-	<script>
-$( "td:empty" )
-  .text( "Was empty!" )
-  .css( "background", "rgb(255,220,200)" );
-</script>
 
 <div class="container" id="page">
 	
@@ -75,8 +69,10 @@ $( "td:empty" )
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 							 	
-			<aside class="span2"> 
-				<?php $this->actionBlocks(5); ?>	
+			<aside> 
+				<span class="span2>"
+				<?php $this->actionBlocks(5); ?>
+				 </span>	
 			</aside> <!-- aside right blocks -->
 				 	
 			<div class="page_content">	 	
@@ -90,6 +86,7 @@ $( "td:empty" )
   			</div>		
 		</div> <!-- content -->
 		 				 
+		 	$(".span2:empty").parent().hide();
 		 	 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
