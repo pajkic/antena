@@ -21,10 +21,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
-	
-			<script>
-			$(".test:empty").parent().hide();
-		</script>
 		
 </head>
 <body>
@@ -74,9 +70,7 @@
 			</aside> <!-- aside left blocks --> 
 							 	
 			<aside class="span2"> 
-				<div class="test">
 				<?php $this->actionBlocks(5); ?>			 
-				 </div>	
 			</aside> <!-- aside right blocks -->
 				 	
 			<div class="page_content">	 	
