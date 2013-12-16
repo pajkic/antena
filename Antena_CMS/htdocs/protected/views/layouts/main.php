@@ -22,6 +22,10 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
 	
+			<script>
+			$(".test:empty").parent().hide();
+		</script>
+		
 </head>
 <body>
 
@@ -86,9 +90,6 @@
   			</div>		
 		</div> <!-- content -->		 		
 		 	  
-		<script>
-			$(".test:empty").parent().hide();
-		</script>
 		 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
