@@ -69,8 +69,8 @@
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
 							 	
-			<aside> 
-				<span class="span2">
+			<aside class="span2"> 
+				<span class="test">
 				<?php $this->actionBlocks(5); ?>			 
 				 </span>	
 			</aside> <!-- aside right blocks -->
@@ -87,7 +87,7 @@
 		</div> <!-- content -->		 		
 		 	  
 		<script>
-			$(".span2:empty").parent().hide();
+			$(".test:empty").parent().hide();
 		</script>
 		 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
