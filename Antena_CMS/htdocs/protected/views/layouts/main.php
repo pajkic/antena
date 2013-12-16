@@ -69,7 +69,7 @@
 			</aside> <!-- aside left blocks --> 
 							 	
 			<aside class="span2"> 
-				<?php if(isset($this->actionBlocks(5))); ?>		
+				<?php $this->actionBlocks(5); ?>	
 			</aside> <!-- aside right blocks -->
 				 	
 			<div class="page_content">	 	
