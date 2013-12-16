@@ -70,9 +70,9 @@
 			</aside> <!-- aside left blocks --> 
 							 	
 			<aside class="span2"> 
-				<span class="test">
+				<div class="test">
 				<?php $this->actionBlocks(5); ?>			 
-				 </span>	
+				 </div>	
 			</aside> <!-- aside right blocks -->
 				 	
 			<div class="page_content">	 	
