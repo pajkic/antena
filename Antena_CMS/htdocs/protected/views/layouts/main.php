@@ -22,9 +22,9 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
 </head>
-<body>
+<body style="height:100%;">
 	
-<div class="container" id="page">
+<div class="container" id="page" style="display: table;">
 	
 	<header>
 		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
@@ -65,8 +65,11 @@
 		</div><!-- main top blocks -->
 					  		
 		<div id="main_content">
-			 	 	
-			 <div class="page_content">	 	
+			<aside class="span4" style="display: table-cell; vertical-align: top;">
+					<?php $this->actionBlocks(4); ?>	
+			</aside> <!-- aside left blocks --> 
+				 	
+			 <div class="page_content" style="display: table-cell; vertical-align: top;">	 	
 					<div class="content_top">
 						 <?php $this->actionBlocks(3); ?>
 					</div> <!-- content top blocks -->
@@ -78,11 +81,9 @@
 					</div> <!-- content bottom blocks -->		 
   			</div>
   			
-		 	<aside class="span4 row">
-					<?php $this->actionBlocks(4); ?>	
-			</aside> <!-- aside left blocks --> 
+		 	 
 			
-			<aside class="span2 row"> 
+			<aside class="span2" style="display: table-cell; vertical-align: top;"> 
 					<?php $this->actionBlocks(5); ?>		
 			</aside> <!-- aside right blocks -->
 				
