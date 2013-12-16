@@ -1,11 +1,5 @@
 <div id="cssmenu">
 <ul>
-
-<?php
-	
-	// echo TbHtml::tabs($this->data);
-	echo $menustr;
-
-?>
+<?php echo $menustr; ?>
 </ul>
 </div>

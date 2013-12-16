@@ -26,16 +26,10 @@ class Controller extends CController
 		
 		parent::init();
 		$app = Yii::app();
-		$languages = Language::model()->findAllByAttributes(array('active'=>1));
-		$langs =array();
 
-		foreach ($languages as $lang){
-			$langs[]=$lang['lang'];
-		}
-
-        if (isset($_GET['_lang']) AND in_array($_GET['_lang'],$langs))
+        if (isset($_POST['_lang']))
         {
-        	$app->language = $_GET['_lang'];
+        	$app->language = $_POST['_lang'];
 			$app->session['_lang'] = $app->language;
 		}
         else if (isset($app->session['_lang']))
@@ -52,7 +46,7 @@ class Controller extends CController
 		foreach ($blocks as $block) {
 			
 			switch ($block['block_type_id']){
-				case 1:
+				case 1: //bNews
 					$params = json_decode($block['options'],true);
 					$criteria = new CDbCriteria;
 					$criteria->group='post_id';
@@ -75,12 +69,12 @@ class Controller extends CController
 						'excerpt'=> $params['excerpt']
 						));
 					break;
-				case 2:
+				case 2: //bGallery
 					$this->widget('application.extensions.widgets.bGallery',array(
 						'data' => json_decode($block['options'],true)
 						));
 					break;
-				case 3:
+				case 3: //bMenu
 					$menus = Menu::model()->findAll(array('order'=>'sort'));
 					$array = array();
 					
@@ -110,9 +104,16 @@ class Controller extends CController
 						'data' => $menu
 						));
 					break;
-				case 4: 
+				case 4: //bSubMenu
+					if (isset($_GET['id'])){
+						$link = '/'.$this->id.'/'.$_GET['id'];
+						$menu_item = Menu::model()->findByAttributes(array('content'=>$link));
+						$level = null;
+						if ($menu_item) $level = $menu_item->level;
+						$this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level));
+					}
 					break;
-				case 5:
+				case 5: //bBreadcrumbs
 					
 					$this->widget('zii.widgets.CBreadcrumbs', array(  
 		 				'links'=>$this->breadcrumbs,
@@ -121,7 +122,7 @@ class Controller extends CController
 					break;
 				case 6: 
 					break;
-				case 7:
+				case 7: //bCustomNav
 					$params = json_decode($block['options'],true);
 					$this->widget('application.extensions.widgets.bCustomNav',array(
 						'data'=>$params

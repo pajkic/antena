@@ -28,7 +28,7 @@
 <div class="container" id="page">
 	
 	<header>
-		<?php $this->widget('application.extensions.widgets.langBox',array('type'=>''));?>	
+		<?php $this->widget('application.extensions.widgets.langBox');?>	
 		<hgroup>
 			<?php $this->actionBlocks(1); ?>
 		  

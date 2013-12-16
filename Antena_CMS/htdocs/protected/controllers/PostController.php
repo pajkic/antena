@@ -58,7 +58,7 @@ class PostController extends Controller
 		
 		$breadcrumbs = array_reverse($breadcrumbs);
 		$breadcrumbs[0]=$content['title'];		
-		
+		$this->pageTitle=Yii::app()->name .' - '. $content['title'];
 		$this->render('view',array(
 			'post'=> $post,
 			'content' => $content,
