@@ -32,6 +32,7 @@
 		<hgroup>
 			<?php $this->actionBlocks(1); ?>
 		  
+<!--
 <div id="cssmenu">
 <ul>
    <li class="active"><a href="#"><span>EU CBC IP</span></a></li>
@@ -54,7 +55,8 @@
    <li><a href="#"><span>Stranica</span></a></li>
    <li class="last"><a href="#"><span>Stranica</span></a></li>
 </ul>
-</div>	
+</div>
+-->	
 
 		</hgroup> <!-- header blocks -->	
 	</header> <!-- header -->
