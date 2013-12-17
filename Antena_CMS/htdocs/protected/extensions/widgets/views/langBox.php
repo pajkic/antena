@@ -1,11 +1,9 @@
 <div id="lang">
-
 <select id="languages" name="_lang">
 	<?php foreach ($languages as $language): ?>
 	 <option value="<?php echo $language['lang'];?>" data-imagesrc="/images/backend/languages/<?php echo $language['flag'];?>" <?php echo ($language['lang']==Yii::app()->language) ? 'selected' : '';?>> <?php echo $language['title'];?></option>
 	 <?php endforeach; ?>	
 </select>
-
 </div>
 
 <script type="text/javascript">
