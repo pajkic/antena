@@ -17,7 +17,7 @@ class bNews extends CWidget
 			$content[$news['id']]['id'] = $news['id'];
 			$content[$news['id']]['user_id'] = $news['user_id'];
 			if ($this->date == 1) {	
-				$content[$news['id']]['date'] = $news['created'];
+				$content[$news['id']]['date'] = date('d. m. Y.', strtotime($news['created']));
 			} else {
 				$content[$news['id']]['date'] = '';
 			}
