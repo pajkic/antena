@@ -25,17 +25,30 @@ class Controller extends CController
 	{
 		
 		parent::init();
+		
 		$app = Yii::app();
-
-        if (isset($_POST['_lang']))
-        {
-        	$app->language = $_POST['_lang'];
-			$app->session['_lang'] = $app->language;
+		if (isset($_GET['lang']))
+		{
+			$languages = Language::model()->findAllByAttributes(array('active'=>1));
+			foreach ($languages as $language) {
+				$lang[]=$language['lang'];
+			}
+			if (in_array($_GET['lang'], $lang)) {
+				$app->language = $_GET['lang'];
+				$app->session['_lang'] = $app->language;
+			}
 		}
+		if (isset($_POST['_lang']))
+        {
+  			/*
+			 */       	
+  		}
+		
         else if (isset($app->session['_lang']))
         {
             $app->language = $app->session['_lang'];
         }
+		
 	}
 	
 	
@@ -80,7 +93,7 @@ class Controller extends CController
 					
 					foreach($menus as $menu) {
 						if (strpos($menu['content'],'post/') !== false OR strpos($menu['content'],'term/') !== false) 
-							$menu['content'] .= '/'.urlencode($menu['name']);
+							$menu['content'] .= '/'.urlencode($menu['name']).'/lang/'.Yii::app()->language;
 						$array[] = array(
 						'id'=>$menu['id'],
 						'label'=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu['id']))->title,
