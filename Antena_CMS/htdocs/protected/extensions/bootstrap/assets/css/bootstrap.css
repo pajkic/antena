@@ -6283,7 +6283,7 @@ aside[class*="span4"], aside[class*="span2"] {
 	margin-right: 7px;
 }
 select#_lang option[value="sr"] {
-	background-image: url("/images/backend/languages/rs.jpg");
+	background-image: url("/images/frontend/languages/rs.jpg");
 }
 /* glavna navigacija */
 #cssmenu ul,
