@@ -59,10 +59,12 @@ return array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
 			'rules'=>array(
-			
-			 	'post/<id:\d+>/<title:.*?>'=>'post/view',
+				
+				'lang/<lang:.*?>'=>'',
+				'' => 'lang/sr',
+			 	'post/<id:\d+>/<title:.*?>/lang/<lang:.*?>'=>'post/view',
                 'posts/<tag:.*?>'=>'post/index',
-			 	'term/<id:\d+>/<title:.*?>'=>'term/view',
+			 	'term/<id:\d+>/<title:.*?>lang/<lang:.*?>'=>'term/view',
                 'terms/<tag:.*?>'=>'term/index',
                 
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

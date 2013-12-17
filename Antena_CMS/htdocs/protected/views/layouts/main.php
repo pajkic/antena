@@ -23,6 +23,12 @@
 	 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<?php Yii::app()->bootstrap->register(); ?>
+	<?php  
+	  $baseUrl = Yii::app()->request->baseUrl; 
+	  $cs = Yii::app()->getClientScript();
+	  $cs->registerScriptFile($baseUrl.'/ddslick/jquery.ddslick.min.js');
+	?>
+
 		
 </head>
 <body>
@@ -112,5 +118,7 @@
 		</div>	
 	</footer> <!-- footer -->
 </div><!-- page -->
+
+
 </body>
 </html>

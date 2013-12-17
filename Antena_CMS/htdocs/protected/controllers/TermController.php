@@ -49,7 +49,7 @@ class TermController extends Controller
 		
 		while ($parent != null)	{
 			$title = TermDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'term_id'=>$parent))->title;
-			$breadcrumbs[$title] = array('/term/'.$parent.'/'.urlencode($title));
+			$breadcrumbs[$title] = array('/term/'.$parent.'/'.urlencode($title).'/lang/'.Yii::app()->language);
 			$parent = Term::model()->findByPk($parent)->parent_id;
 			} 	
 		
