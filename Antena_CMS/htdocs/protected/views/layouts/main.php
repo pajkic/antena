@@ -28,8 +28,7 @@
 	  $cs = Yii::app()->getClientScript();
 	  $cs->registerScriptFile($baseUrl.'/ddslick/jquery.ddslick.min.js');
 	?>
-
-		
+	
 </head>
 <body>
 
@@ -37,6 +36,11 @@
 	
 	<header>
 		<hgroup>
+			
+		<a href="#" alt="ime sajta na odabranom jeziku"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-en.png"/></a>	
+			
+		<a href="#" alt="ime sajta na odabranom jeziku"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png"/></a>	
+			
 		<?php $this->widget('application.extensions.widgets.langBox');?>	
 		 	  
 <!--
