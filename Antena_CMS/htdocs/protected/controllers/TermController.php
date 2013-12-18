@@ -35,7 +35,7 @@ class TermController extends Controller
 		        // 'order' and 'with' clauses have no meaning for the count query
 		    ),*/
 		    'pagination'=>array(
-		        'pageSize'=>20,
+		        'pageSize'=>10,
 		    ),
 		));
 		
