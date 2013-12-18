@@ -201,12 +201,14 @@ class GalleryItemController extends Controller
 					'savePath' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/thumbs/'.$_FILES['file_name']['name'],
 					'box_w' => 160,
 					'box_h' => 160,
+					/*
 					'r' => 230,
 					'g' => 230,
 					'b' => 230
+					 */ 
 					
 				);
-				$this->resize($thumbnail);
+				$this->makeThumb($thumbnail);
                 //$gallery->image->saveAs('uploads/gallery/');
                 // redirect to success page
             	foreach($languages as $language) {
@@ -229,6 +231,54 @@ class GalleryItemController extends Controller
         } 
 	}
 
+
+	private function makeThumb( $thumbnail ){
+		$srcFile = $thumbnail['url'];
+		$thumbFile = $thumbnail['savePath'];
+		$thumbSize = $thumbnail['box_w'];
+		$filename = $srcFile;	
+		  /* Determine the File Type */
+		  $type = substr( $filename , strrpos( $filename , '.' )+1 );
+		 /* Create the Source Image */
+		  switch( $type ){
+		    case 'jpg' : case 'jpeg' :
+		  $src = imagecreatefromjpeg( $srcFile ); break;
+		case 'png' :
+		  $src = imagecreatefrompng( $srcFile ); break;
+		case 'gif' :
+		      $src = imagecreatefromgif( $srcFile ); break;
+		  }
+		 /* Determine the Image Dimensions */
+		  $oldW = imagesx( $src );
+		  $oldH = imagesy( $src );
+		 /* Calculate the New Image Dimensions */
+		  if( $oldH > $oldW ){
+		   /* Portrait */
+		    $newW = $thumbSize;
+		    $newH = $oldH * ( $thumbSize / $oldW );
+		  }else{
+		   /* Landscape */
+		    $newH = $thumbSize;
+		    $newW = $oldW * ( $thumbSize / $oldH );
+		  }
+		 /* Create the New Image */
+		  $new = ImageCreateTrueColor( $thumbSize , $thumbSize );
+		 /* Transcribe the Source Image into the New (Square) Image */
+		  ImagecopyResampled( $new , $src , 0 , 0 , ( $newW - $thumbSize)/2 , ( $newH - $thumbSize)/2 , $newW , $newH , $oldW, $oldH );
+		  switch( $type ){
+		    case 'jpg' : case 'jpeg' :
+		  imagejpeg( $new , $thumbFile ); break;
+		case 'png' :
+		  imagepng( $new , $thumbFile ); break;
+		case 'gif' :
+		  imagegif( $new , $thumbFile ); break;
+		  }
+		  ImageDestroy( $new );
+		  ImageDestroy( $src );
+		  
+	}
+
+	
 	private function resize($p){
 		
 		$background = ImageCreateTrueColor($p['box_w'], $p['box_h']);

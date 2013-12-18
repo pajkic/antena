@@ -79,19 +79,23 @@
 			<aside class="span4">
 				<?php $this->actionBlocks(4); ?>	
 			</aside> <!-- aside left blocks --> 
-							 	
+			<?php if (Block::model()->countByAttributes(array('block_position_id'=>5,'status_id'=>1)) > 0):?>				 	
 			<aside class="span2"> 
-				<?php $this->actionBlocks(5); ?>			 
+				<?php $this->actionBlocks(5); ?>
 			</aside> <!-- aside right blocks -->
-				 	
-			<div class="page_content">	 	
+			<?php endif; ?>	 	
+			<div class="page_content">	
+				<?php if (Block::model()->countByAttributes(array('block_position_id'=>3,'status_id'=>1)) > 0):?> 	
 				<div class="content_top">
 					 <?php $this->actionBlocks(3); ?>
-				</div> <!-- content top blocks -->						  			 			 
-					<?php echo $content; ?>										
+				</div> <!-- content top blocks -->						  			 	
+				<?php endif; ?>		 
+				<?php echo $content; ?>	
+				<?php if (Block::model()->countByAttributes(array('block_position_id'=>6,'status_id'=>1)) > 0):?>									
 				<div class="content_bottom">
 					<?php $this->actionBlocks(6); ?>
 				</div> <!-- content bottom blocks -->		 
+				<?php endif; ?>
   			</div>		
 		</div> <!-- content -->		 		
 		 	  

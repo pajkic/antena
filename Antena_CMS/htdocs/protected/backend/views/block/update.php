@@ -6,7 +6,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Blokovi'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
+	$model->name ." "=>array('view','id'=>$model->id),
 	Yii::t('app','Izmeni'),
 );
 
