@@ -60,7 +60,7 @@ class TermController extends Controller
 		 
 		//pagination
 		$pages = new CPagination($count);
-		$pages->setPageSize(2);
+		$pages->setPageSize(10);
 		$pages->applyLimit($criteria);
 		 
 		//result to show on page
