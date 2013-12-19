@@ -23,21 +23,51 @@ class TermController extends Controller
 		} 
 		
 		// Posts
-		
+		/*
 		$posts=new CActiveDataProvider('Post', array(
 		    'criteria'=>array(
 		        'condition'=>'status_id=1 AND FIND_IN_SET('.$id.', term_id)>0',
 		        'order'=>'created DESC',
 		        //'with'=>array('author'),
 		    ),
+		 */ 
 		    /*'countCriteria'=>array(
 		        'condition'=>'status_id=1',
 		        // 'order' and 'with' clauses have no meaning for the count query
 		    ),*/
+		   /* 
 		    'pagination'=>array(
-		        'pageSize'=>10,
+		        'pageSize'=>2,
 		    ),
+			
 		));
+		
+		$cr = new CDbCriteria();
+		$cr->condition = 'status_id=1 AND FIND_IN_SET('.$id.', term_id)>0';
+		$cr->order = 'created DESC';
+		$count=Post::model()->count($cr);
+    	$pages=new CPagination($count);
+		$pages->pageSize=2;
+    	$pages->applyLimit($cr);
+		*/
+		//get criteria
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'status_id=1 AND FIND_IN_SET('.$id.', term_id)>0';
+		$criteria->order = 'created DESC';
+		 
+		//get count
+		$count = Post::model()->count($criteria);
+		 
+		//pagination
+		$pages = new CPagination($count);
+		$pages->setPageSize(2);
+		$pages->applyLimit($criteria);
+		 
+		//result to show on page
+		$result = Post::model()->findAll($criteria);
+		$posts = new CArrayDataProvider($result);
+ 
+		
 		
 				
 		// Breadcrumbs
@@ -66,7 +96,9 @@ class TermController extends Controller
 			'content' => $content,
 			//'gallery' => $gallery,
 			'breadcrumbs'=>$breadcrumbs,
+			'pages'=>$pages,
 		));
+		
 		  
 	}
 
@@ -81,30 +113,4 @@ class TermController extends Controller
 	}
 
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }

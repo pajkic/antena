@@ -64,7 +64,8 @@ return array(
 				'' => 'lang/sr',
 			 	'post/<id:\d+>/<title:.*?>/lang/<lang:.*?>'=>'post/view',
                 'posts/<tag:.*?>'=>'post/index',
-			 	'term/<id:\d+>/<title:.*?>lang/<lang:.*?>'=>'term/view',
+			 	'term/<id:\d+>/<title:.*?>/lang/<lang:.*?>'=>'term/view',
+			 	'term/<id:\d+>/<title:.*?>/lang/<lang:.*?>/page/<page:.*?>'=>'term/view',
                 'terms/<tag:.*?>'=>'term/index',
                 
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

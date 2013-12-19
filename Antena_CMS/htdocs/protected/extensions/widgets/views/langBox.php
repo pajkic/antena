@@ -13,11 +13,11 @@ $(document).ready(function(){
     onSelected: function(data){
     	var lang = data.selectedData.value;
     	var url = document.URL;
-    	var first = url.indexOf('lang/') + 5;
+    	var first = url.indexOf('/lang/') + 6;
     	if (first > 4) {
 	    	var newurl = url.substr(0,first)+lang+url.substr(first+2,url.length);
     	} else {
-    		var newurl = url+'lang/'+lang;
+    		var newurl = url+'/lang/'+lang;
     	}
     	if (newurl !== url) window.location=newurl;
     }   
