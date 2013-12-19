@@ -134,6 +134,10 @@ class Controller extends CController
 		 			));
 					break;
 				case 6: 
+					$bcontent = json_decode($block['options'],true);
+					$this->widget('application.extensions.widgets.bCustom', array(
+						'data'=>$bcontent
+					));
 					break;
 				case 7: //bCustomNav
 					$params = json_decode($block['options'],true);
