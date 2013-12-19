@@ -37,38 +37,7 @@
 	<header>
 		<hgroup>
 			
-			
-<!--    <a class="site_title" href="#" alt="ime sajta na engleskom jeziku"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-en.png"/></a> 				
-		<a class="site_title" href="#" alt="ime sajta na srpskom jeziku"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png"/></a>	
-		<a class="site_title" href="#" alt="ime sajta na hrvatskom jeziku"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png"/></a> -->
-			
-		<?php $this->widget('application.extensions.widgets.langBox');?>	
-		 	  
-<!--
-<div id="cssmenu">
-<ul>
-   <li class="active"><a href="#"><span>EU CBC IP</span></a></li>
-   <li class="has-sub"><a href="#"><span>Investments profile</span></a>
-      <ul>
-         <li class="has-sub"><a href="#"><span>Drugi nivo</span></a>
-            <ul>
-               <li><a href="#"><span>Treći nivo</span></a></li>
-               <li class="last"><a href="#"><span>Treći nivo dva</span></a></li>
-            </ul>
-         </li>
-         <li class="has-sub"><a href="#"><span>Drugi nivo 2</span></a>
-            <ul>
-               <li><a href="#"><span>Treći nivo drugog nivoa</span></a></li>
-               <li class="last"><a href="#"><span>Treći nivo drugog nivoa 2</span></a></li>
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href="#"><span>Stranica</span></a></li>
-   <li class="last"><a href="#"><span>Stranica</span></a></li>
-</ul>
-</div>
--->	
+		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
 
 		</hgroup> <!-- header blocks -->	
 	</header> <!-- header -->
