@@ -27,7 +27,7 @@ class PostController extends Controller
 		$gallery = array(
 			'galleries' => $gallery_id,
 			'thumb_w' => "80",
-			'thumb_h'=> "60",
+			'thumb_h'=> "",
 			'picture_count'=>999,
 		);
 
