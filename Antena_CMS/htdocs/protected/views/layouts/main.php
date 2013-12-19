@@ -74,8 +74,7 @@
 				<?php endif; ?>
   			</div>		
 		</div> <!-- content -->		 		
-		 	  
-		 
+		 	  		 
 		 <!--	<?php if(isset($this->breadcrumbs)):?>  
 		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
 		 		'links'=>$this->breadcrumbs,  
@@ -101,7 +100,6 @@
 		</div>	
 	</footer> <!-- footer -->
 </div><!-- page -->
-
 
 </body>
 </html>
