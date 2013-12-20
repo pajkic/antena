@@ -6277,6 +6277,9 @@ aside[class*="span4"], aside[class*="span2"] {
 #lang a {
 	color: #999;
 }
+#lang select {
+	width: 125px;
+}
 #lang img {
 	margin-right: 7px;
 	margin-top: 1px;
