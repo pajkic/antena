@@ -6286,6 +6286,13 @@ aside[class*="span4"], aside[class*="span2"] {
 #lang #languages label {
 	line-height: normal;
 }
+.dd-select {
+	border: 1px solid #DDDDDD;
+    -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
 /* glavna navigacija */
 #cssmenu ul,
 #cssmenu li,
