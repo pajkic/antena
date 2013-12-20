@@ -6390,3 +6390,10 @@ aside[class*="span4"], aside[class*="span2"] {
 #cssmenu .has-sub .has-sub ul li a:hover {
   background: #1c6a94;
 }
+
+header .custom_block {
+	padding-left: 20px;
+}
+#lang {
+	margin-top: 20px;
+}
