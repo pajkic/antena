@@ -6277,11 +6277,10 @@ aside[class*="span4"], aside[class*="span2"] {
 #lang a {
 	color: #999;
 }
-#lang select {
- 	width: 135px;
-}
 #lang img {
 	margin-right: 7px;
+	margin-top: 1px;
+	margin-left: 2px;
 }
 #lang #languages label {
 	line-height: normal;
