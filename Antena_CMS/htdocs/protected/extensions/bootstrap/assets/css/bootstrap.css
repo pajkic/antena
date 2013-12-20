@@ -6283,6 +6283,9 @@ aside[class*="span4"], aside[class*="span2"] {
 #lang img {
 	margin-right: 7px;
 }
+#lang #languages label {
+	line-height: normal;
+}
 /* glavna navigacija */
 #cssmenu ul,
 #cssmenu li,
