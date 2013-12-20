@@ -8,7 +8,7 @@
 $this->breadcrumbs=$breadcrumbs;
 ?>
 
- 
+ <img src="<?php echo $post['image'];?>" width="400" height="200"/>  
  <p>
 	<?php /*
 	echo date('d.m.Y H:i:s', strtotime($post['created']));
