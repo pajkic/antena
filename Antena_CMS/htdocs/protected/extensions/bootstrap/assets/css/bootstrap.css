@@ -6279,6 +6279,7 @@ aside[class*="span4"], aside[class*="span2"] {
 }
 #lang select {
 	width: 125px;
+	border: none;
 }
 #lang img {
 	margin-right: 7px;
@@ -6288,7 +6289,7 @@ aside[class*="span4"], aside[class*="span2"] {
 #lang #languages label {
 	line-height: normal;
 }
-.dd-select {
+#lang .dd-select {
 	border: 1px solid #DDDDDD;
     -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
