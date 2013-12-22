@@ -65,6 +65,7 @@ class PostController extends Controller
 	{
 		$this->allowUser(EDITOR);
 		$model=new Post;
+		$model->created = date('d.m.Y');
 		$languages = Language::model()->findAllByAttributes(array('active'=>1));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -72,8 +73,9 @@ class PostController extends Controller
 		if (isset($_POST['Post'])) {
 			
 			$attributes = $_POST['Post'];
-			$attributes['created'] = new CDbExpression('NOW()');
-			$attributes['updated'] = new CDbExpression('NOW()');
+			
+			$attributes['created'] = date('Y-m-d',strtotime($attributes['created']));
+			$attributes['modified'] = new CDbExpression('NOW()');
 			$attributes['user_id'] = Yii::app()->user->id;
 			$attributes['post_type_id'] = 1;
 			$attributes['parent_id'] = null;
@@ -150,6 +152,7 @@ class PostController extends Controller
 
 		if (isset($_POST['Post'])) {
 			$attributes = $_POST['Post'];
+			$attributes['created'] = date('Y-m-d',strtotime($attributes['created']));
 			$attributes['modified'] = new CDbExpression('NOW()');
 			if (!is_array($attributes['term_id'])) {
 				$attributes['term_id']=null;
@@ -197,7 +200,7 @@ class PostController extends Controller
 		$model['term_id'] = explode(',',$model['term_id']);
 		$this->render('update',array(
 			'model'=>$model,
-			'terms'=>$array
+			'terms'=>$array,
 		));
 	}
 

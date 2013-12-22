@@ -40,8 +40,23 @@
             <?php echo $form->textFieldControlGroup($model,'guid',array('span'=>5,'maxlength'=>255)); ?>
             
 			<?php echo $form->dropDownListControlGroup($model,'status_id',CHtml::listData(PostStatus::model()->findAll(), 'id', 'name')); ?>            
-			
-            <?php //echo $form->hiddenField($model,'created',array('span'=>5)); ?>
+			<div class="control-group">
+			<?php echo $form->label($model,'created');?>
+            <?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+	    		'name'=>'Post[created]',
+	    		'model'=>$model,
+	    		'language'=>Yii::app()->language,
+	    		'value'=>date('d.m.Y',strtotime($model->created)),
+	    		'options'=>array(
+		        	'showAnim'=>'fold',
+		        	'dateFormat'=>'dd.mm.yy'
+	    		),
+	    		'htmlOptions'=>array(
+	        		'style'=>'height:20px;'
+	    		),
+			));
+			?>
+			</div>
 
             <?php //echo $form->textFieldControlGroup($model,'modified',array('span'=>5)); ?>
 		

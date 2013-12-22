@@ -79,7 +79,7 @@ class PageController extends Controller
 		if (isset($_POST['Post'])) {
 			$attributes = $_POST['Post'];
 			$attributes['created'] = new CDbExpression('NOW()');
-			$attributes['updated'] = new CDbExpression('NOW()');
+			$attributes['modified'] = new CDbExpression('NOW()');
 			$attributes['user_id'] = Yii::app()->user->id;
 			$attributes['post_type_id'] = 2;
 			$attributes['term_id'] = 0;
