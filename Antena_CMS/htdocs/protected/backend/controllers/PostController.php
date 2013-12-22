@@ -144,9 +144,13 @@ class PostController extends Controller
 	public function actionUpdate($id)
 	{
 		$this->allowUser(EDITOR);
+		
+		
+		
 		$model=$this->loadModel($id);
 		
-
+		if ((!$model->user_id OR $model->user_id == Yii::app()->user->id) OR $this->userData->level >= 20)
+		{
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -202,6 +206,11 @@ class PostController extends Controller
 			'model'=>$model,
 			'terms'=>$array,
 		));
+		}
+		else
+		{
+			$this->redirect(array('view','id'=>$model->id));
+		}
 	}
 
 	/**
