@@ -19,8 +19,9 @@ $this->breadcrumbs=$breadcrumbs;
 	 */?>
 </p>
 <h1><?php echo $content['title'];?></h1>
-<?php echo $content['excerpt'];?>
-<?php echo $content['content'];?>
+<p><?php echo date('d.m.Y', strtotime($post['created']));?></p>
+<p><?php echo $content['excerpt'];?></p>
+<p><?php echo $content['content'];?></p>
 
 <?php
 $this->widget('application.extensions.widgets.bGallery',array(
