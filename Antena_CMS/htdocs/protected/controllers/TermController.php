@@ -52,7 +52,7 @@ class TermController extends Controller
 		*/
 		//get criteria
 		$criteria = new CDbCriteria();
-		$criteria->condition = 'status_id=1 AND FIND_IN_SET('.$id.', term_id)>0';
+		$criteria->condition = 'status_id=1 AND FIND_IN_SET('.$id.', term_id)>0 AND created <= now()';
 		$criteria->order = 'created DESC';
 		 
 		//get count

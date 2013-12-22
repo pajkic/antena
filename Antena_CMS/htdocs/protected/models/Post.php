@@ -54,7 +54,7 @@ class Post extends CActiveRecord
 			array('user_id', 'length', 'max'=>19),
 			array('parent_id', 'length', 'max'=>20),
 			array('gallery_id', 'length', 'max'=>10),
-			array('modified', 'safe'),
+			array('modified, created', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, user_id, user.display_name, post_type_id, term_id, parent_id, gallery_id, status_id,  image, guid, created, modified', 'safe', 'on'=>'search'),

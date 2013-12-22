@@ -59,8 +59,14 @@ $this->menu=array(
 		),
 		'image',
 		'guid',
-		'created',
-		'modified',
+		array(
+		'label'=>Yii::t('app','Kreiran'),
+		'value'=>date('d.m.Y',strtotime($model->created))
+		),
+		array(
+		'label'=>Yii::t('app','Izmenjen'),
+		'value'=>date('d.m.Y',strtotime($model->modified))
+		),
 		array(
 		'label'=>Yii::t('app','Status'),
 		'value'=> $model->postStatuses->name
