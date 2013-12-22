@@ -38,16 +38,16 @@ class Controller extends CController
 				$app->session['_lang'] = $app->language;
 			}
 		}
-		if (isset($_POST['_lang']))
-        {
-  			/*
-			 */       	
-  		}
 		
         else if (isset($app->session['_lang']))
         {
             $app->language = $app->session['_lang'];
+			$this->redirect('/lang/'.$app->language);
         }
+		else 
+		{
+			$this->redirect('/lang/'.Language::model()->findByAttributes(array('main'=>1))->lang);
+		}
 		
 	}
 	

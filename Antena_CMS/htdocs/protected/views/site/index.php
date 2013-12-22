@@ -8,3 +8,5 @@ $this->pageTitle=Yii::app()->name;
 
 <p>Očekujemo Vaš sadržaj.</p>
 
+<?php echo Yii::app()->language; ?> 
+
