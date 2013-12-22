@@ -87,6 +87,8 @@ class PostDescriptionController extends Controller
 	public function actionUpdate($id)
 	{
 		$this->allowUser(EDITOR);
+		
+		
 		if (isset($_POST['PostDescription'])) {
 		
 				
@@ -147,12 +149,19 @@ class PostDescriptionController extends Controller
 		$_SESSION['KCFINDER']['disabled'] = false; // enables the file browser in the admin
 		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id);
 		
-		
-		$this->render('update',array(
-			'model'=>$parentmodel,
-			'tabs'=>$tabs,
-			'post'=>$post
-		));
+		if (($post->users->id == Yii::app()->user->id) OR User::model()->findByPk(Yii::app()->user->id)->level >= 20)
+		{
+			$this->render('update',array(
+				'model'=>$parentmodel,
+				'tabs'=>$tabs,
+				'post'=>$post
+			));
+		}
+		else 
+		{
+			$this->redirect(array('/Post/view','id'=>$post->id));
+			
+		}
 	}
 
 	/**

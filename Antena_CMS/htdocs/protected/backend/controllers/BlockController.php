@@ -51,6 +51,7 @@ class BlockController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -112,6 +113,7 @@ class BlockController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -138,6 +140,7 @@ class BlockController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -156,6 +159,7 @@ class BlockController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		$dataProvider=new CActiveDataProvider('Block');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -167,6 +171,7 @@ class BlockController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->allowUser(SUPERADMINISTRATOR);
 		$model=new Block('search');
 		$model->unsetAttributes();  // clear any default values
 		if (isset($_GET['Block'])) {
