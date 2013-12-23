@@ -92,22 +92,19 @@ class Controller extends CController
 					$array = array();
 					
 					foreach($menus as $menu) {
-						if (strpos($menu['content'],'post/') !== false OR strpos($menu['content'],'term/') !== false) 
-							$menu['content'] .= '/'.urlencode($menu['name']).'/lang/'.Yii::app()->language;
+						
+						if (strpos($menu->content,'post/') !== false OR strpos($menu->content,'term/') !== false) 
+							$menu->content .= '/'.urlencode(MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu->id))->title).'/lang/'.Yii::app()->language;
 						$array[] = array(
-						'id'=>$menu['id'],
-						'label'=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu['id']))->title,
-						'url'=> $menu['content'],
-						'parent_id'=>$menu['parent_id']
+						'id'=>$menu->id,
+						'label'=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu->id))->title,
+						'url'=> $menu->content,
+						'parent_id'=>$menu->parent_id
 						);
 			
 					}
-					$menu = array(/*
-					0 => array(
-					'label' => TbHtml::icon(TbHtml::ICON_HOME),
-					'url'=>'http://'.$_SERVER['HTTP_HOST'],
-					)
-					*/);
+					
+					$menu = array();
 					$tree = $this->buildTree($array);
 					foreach($tree as $branch){
 						array_push($menu,$branch);
