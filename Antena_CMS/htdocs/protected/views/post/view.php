@@ -19,7 +19,9 @@ $this->breadcrumbs=$breadcrumbs;
 	 */?>
 </p>
 <h1><?php echo $content['title'];?></h1>
+<?php if ($post['post_type_id']==1): ?>
 <p><?php echo date('d.m.Y', strtotime($post['created']));?></p>
+<?php endif; ?>
 <p><?php echo $content['excerpt'];?></p>
 <p><?php echo $content['content'];?></p>
 
