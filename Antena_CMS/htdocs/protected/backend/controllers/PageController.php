@@ -155,7 +155,7 @@ class PageController extends Controller
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
-			Page::model()->updateAll(array('parent_id'=>null),'parent_id="'.$id.'"');
+			Post::model()->updateAll(array('parent_id'=>null),'parent_id="'.$id.'"');
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax'])) {
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

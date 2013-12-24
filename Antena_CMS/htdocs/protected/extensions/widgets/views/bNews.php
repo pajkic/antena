@@ -1,4 +1,9 @@
 <div class="news_block">
+
+<?php if ($block['heading'] == 1): ?>
+<h3><?php echo $block_title;?></h3>
+<?php endif; ?>	
+	
 <?php foreach ($data as $d):?>
 	<h3><a href = "/post/<?php echo $d['id']; ?>/<?php echo urlencode($d['title']); ?>/lang/<?php echo Yii::app()->language; ?>"><?php echo $d['title']; ?></a></h3>
 	<small><?php echo $d['date']; ?></small>	

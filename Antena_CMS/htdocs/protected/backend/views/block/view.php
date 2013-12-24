@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>Yii::t('app','Lista blokova'),'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj blok'),'url'=>array('create')),
 	array('label'=>Yii::t('app','Izmeni blok'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Prevedi naziv bloka'), 'url'=>array('BlockDescription/update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši blok'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>Yii::t('app','Upravljaj blokovima'), 'url'=>array('admin')),
 );

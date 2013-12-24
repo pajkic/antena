@@ -27,7 +27,8 @@ $this->breadcrumbs=$breadcrumbs;
 
 <?php
 $this->widget('application.extensions.widgets.bGallery',array(
-	'data' => $gallery
+	'data' => $gallery,
+	'block' => array(),
 ));
 ?>
 

@@ -97,14 +97,19 @@ class PostController extends Controller
 						'data' => $news,
 						'image'=> $params['image'],
 						'date'=> $params['date'],
-						'excerpt'=> $params['excerpt']
+						'excerpt'=> $params['excerpt'],
+						'block' => $block,
 						));
 					break;
+					
 				case 2: //bGallery
+				
 					$this->widget('application.extensions.widgets.bGallery',array(
-						'data' => json_decode($block['options'],true)
+						'data' => json_decode($block['options'],true),
+						'block'=> $block,
 						));
 					break;
+					
 				case 3: //bMenu
 					$menus = Menu::model()->findAll(array('order'=>'sort'));
 					$array = array();
@@ -138,7 +143,11 @@ class PostController extends Controller
 						$menu_item = Menu::model()->findByAttributes(array('content'=>$link));
 						$level = null;
 						if ($menu_item) $level = $menu_item->level;
-						$this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level));
+						$this->widget('application.extensions.widgets.bSubMenu', array(
+						'data'=>$level,
+						'block'=>$block,
+						'menu_item'=>$menu_item,
+						));
 					}
 					break;
 				case 5: //bBreadcrumbs
@@ -148,16 +157,18 @@ class PostController extends Controller
 		 				'homeLink'=>CHtml::link(Yii::app()->name, Yii::app()->homeUrl),   
 		 			));
 					break;
-				case 6: 
+				case 6: // bCustom
 					$bcontent = json_decode($block['options'],true);
 					$this->widget('application.extensions.widgets.bCustom', array(
-						'data'=>$bcontent
+						'data'=>$bcontent,
+						'block'=>$block,
 					));
 					break;
 				case 7: //bCustomNav
 					$params = json_decode($block['options'],true);
 					$this->widget('application.extensions.widgets.bCustomNav',array(
-						'data'=>$params
+						'data'=>$params,
+						'block'=>$block,
 					));
 					break;
 				default:
