@@ -2,6 +2,8 @@
 
 class PostController extends Controller
 {
+	
+	
 	public function actionIndex()
 	{
 		$this->render('index');
@@ -69,13 +71,11 @@ class PostController extends Controller
 
 	public function actionBlocks($position_id) 
 	{
-		$post_id = $_GET['id'];
 		
+		$post_id = $_GET['id'];
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
 		foreach ($blocks as $block) {
-			if ($this->showBlock($block['id'],$post_id))
-			{
-			
+		
 			switch ($block['block_type_id']){
 				case 1: //bNews
 					$params = json_decode($block['options'],true);
@@ -163,7 +163,7 @@ class PostController extends Controller
 				default:
 					break;
 				}
-			}
+			
 		}
 	}
 	
@@ -204,9 +204,10 @@ class PostController extends Controller
 							return true;
 							break;
 						}
+						$parent_id = $parent->id;
 					}
 				}
-				return 3; 
+				return false; 
 				break;
 			
 			default: // ako je clanak
@@ -222,7 +223,20 @@ class PostController extends Controller
 		}
 		
 	}
-	
+
+	public function hasBlock($position_id)
+	{
+		$renderBlock = false;
+		$post_id = $_GET['id'];
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
+		foreach ($blocks as $block) {
+			if ($this->showBlock($block['id'],$post_id)) {
+				$renderBlock = true;
+			}
+		}
+		return $renderBlock;
+	}
+		
 	public function loadModel($id)
 	{
 		
