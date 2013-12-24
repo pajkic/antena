@@ -109,7 +109,7 @@ class TermController extends Controller
 		
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
 		foreach ($blocks as $block) {
-			
+			if ($this->showBlock($block['id'],$term_id)) {
 			switch ($block['block_type_id']){
 				case 1: //bNews
 					$params = json_decode($block['options'],true);
@@ -196,6 +196,7 @@ class TermController extends Controller
 					break;
 				default:
 					break;
+				}
 			}
 		}
 	}
@@ -230,10 +231,10 @@ class TermController extends Controller
 	public function hasBlock($position_id)
 	{
 		$renderBlock = false;
-		$post_id = $_GET['id'];
+		$term_id = $_GET['id'];
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
 		foreach ($blocks as $block) {
-			if ($this->showBlock($block['id'],$post_id)) {
+			if ($this->showBlock($block['id'],$term_id)) {
 				$renderBlock = true;
 			}
 		}

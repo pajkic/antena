@@ -113,7 +113,7 @@ class SiteController extends Controller
 		
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
 		foreach ($blocks as $block) {
-			
+			if (in_array(-1,explode(',',$block['pages']))) {
 			switch ($block['block_type_id']){
 				case 1: //bNews
 					$params = json_decode($block['options'],true);
@@ -200,6 +200,7 @@ class SiteController extends Controller
 					break;
 				default:
 					break;
+				}
 			}
 		}
 	}
