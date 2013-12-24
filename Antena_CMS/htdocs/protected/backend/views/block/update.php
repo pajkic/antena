@@ -20,4 +20,4 @@ $this->menu=array(
 
     <h1>Update Block <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'bterms'=>$bterms, 'bpages'=>$bpages)); ?>

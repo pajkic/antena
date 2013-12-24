@@ -67,6 +67,162 @@ class PostController extends Controller
 		));
 	}
 
+	public function actionBlocks($position_id) 
+	{
+		$post_id = $_GET['id'];
+		
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
+		foreach ($blocks as $block) {
+			if ($this->showBlock($block['id'],$post_id))
+			{
+			
+			switch ($block['block_type_id']){
+				case 1: //bNews
+					$params = json_decode($block['options'],true);
+					$criteria = new CDbCriteria;
+					$criteria->group='post_id';
+					$criteria->condition = "term_id IN (" . implode(',',$params['terms']) . ")";
+					$posts = TermHasPost::model()->findAll($criteria);
+					$p = array();
+					foreach($posts as $post) {
+						$p[] = $post['post_id'];
+					}
+					$criteria2 = new CDbCriteria;
+					$criteria2->condition = "id IN (" . implode(',',$p) . ") AND status_id = 1 AND post_type_id=1";
+					$criteria2->limit = $params['post_count'];
+					$criteria2->order = 'created DESC'; 
+					$news = Post::model()->findAll($criteria2);
+					
+					$this->widget('application.extensions.widgets.bNews', array(
+						'data' => $news,
+						'image'=> $params['image'],
+						'date'=> $params['date'],
+						'excerpt'=> $params['excerpt']
+						));
+					break;
+				case 2: //bGallery
+					$this->widget('application.extensions.widgets.bGallery',array(
+						'data' => json_decode($block['options'],true)
+						));
+					break;
+				case 3: //bMenu
+					$menus = Menu::model()->findAll(array('order'=>'sort'));
+					$array = array();
+					
+					foreach($menus as $menu) {
+						
+						if (strpos($menu->content,'post/') !== false OR strpos($menu->content,'term/') !== false) 
+							$menu->content .= '/'.urlencode(MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu->id))->title).'/lang/'.Yii::app()->language;
+						$array[] = array(
+						'id'=>$menu->id,
+						'label'=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu->id))->title,
+						'url'=> $menu->content,
+						'parent_id'=>$menu->parent_id
+						);
+			
+					}
+					
+					$menu = array();
+					$tree = $this->buildTree($array);
+					foreach($tree as $branch){
+						array_push($menu,$branch);
+					}
+					
+					$this->widget('application.extensions.widgets.bMenu',array(
+						'data' => $menu
+						));
+					break;
+				case 4: //bSubMenu
+					if (isset($_GET['id'])){
+						$link = '/'.$this->id.'/'.$_GET['id'];
+						$menu_item = Menu::model()->findByAttributes(array('content'=>$link));
+						$level = null;
+						if ($menu_item) $level = $menu_item->level;
+						$this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level));
+					}
+					break;
+				case 5: //bBreadcrumbs
+					
+					$this->widget('zii.widgets.CBreadcrumbs', array(  
+		 				'links'=>$this->breadcrumbs,
+		 				'homeLink'=>CHtml::link(Yii::app()->name, Yii::app()->homeUrl),   
+		 			));
+					break;
+				case 6: 
+					$bcontent = json_decode($block['options'],true);
+					$this->widget('application.extensions.widgets.bCustom', array(
+						'data'=>$bcontent
+					));
+					break;
+				case 7: //bCustomNav
+					$params = json_decode($block['options'],true);
+					$this->widget('application.extensions.widgets.bCustomNav',array(
+						'data'=>$params
+					));
+					break;
+				default:
+					break;
+				}
+			}
+		}
+	}
+	
+	private function buildTree(array $elements, $parentId = 0) {
+	    $branch = array();
+	
+	    foreach ($elements as $element) {
+
+	        if ($element['parent_id'] == $parentId) {
+	            $children = $this->buildTree($elements, $element['id']);
+	            if ($children) {
+	                $element['items'] = $children;
+	            }
+	            $branch[] = $element;
+	        }
+	    }
+	    return $branch;
+	}
+
+	private function showBlock($block_id,$post_id)
+	{
+		$post = Post::model()->findByPk($post_id);
+		$block = Block::model()->findByPk($block_id);
+		switch ($post->post_type_id)
+		{
+			
+			case 2: // ako je stranica
+				$block_pages = explode(',',$block->pages);
+				if (in_array($post_id,$block_pages)) {
+					return true;
+					break;
+				} else {
+					$parent_id = $post->parent_id;
+					while ($parent_id !== null)
+					{
+						$parent = Post::model()->findByPk($parent_id);
+						if (in_array($parent->id,$block_pages)){
+							return true;
+							break;
+						}
+					}
+				}
+				return 3; 
+				break;
+			
+			default: // ako je clanak
+				$block_terms = explode(',',$block->terms);
+				$post_terms = explode(',',$post->term_id);
+				
+				if (count(array_intersect($block_terms, $post_terms)) > 0) {
+					return true;
+				} else {
+					return false;
+				}
+				break;
+		}
+		
+	}
+	
 	public function loadModel($id)
 	{
 		
@@ -78,30 +234,4 @@ class PostController extends Controller
 	}
 
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }
