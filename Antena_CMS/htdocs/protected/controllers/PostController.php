@@ -197,14 +197,14 @@ class PostController extends Controller
 					break;
 				} else {
 					$parent_id = $post->parent_id;
-					while ($parent_id !== null)
+					while ($parent_id != null)
 					{
 						$parent = Post::model()->findByPk($parent_id);
 						if (in_array($parent->id,$block_pages)){
 							return true;
 							break;
 						}
-						$parent_id = $parent->id;
+						$parent_id = $parent->parent_id;
 					}
 				}
 				return false; 
