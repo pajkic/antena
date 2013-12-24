@@ -75,7 +75,7 @@ class PostController extends Controller
 		$post_id = $_GET['id'];
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
 		foreach ($blocks as $block) {
-		
+			if ($this->showBlock($block['id'],$post_id)) {
 			switch ($block['block_type_id']){
 				case 1: //bNews
 					$params = json_decode($block['options'],true);
@@ -163,7 +163,7 @@ class PostController extends Controller
 				default:
 					break;
 				}
-			
+			}
 		}
 	}
 	
