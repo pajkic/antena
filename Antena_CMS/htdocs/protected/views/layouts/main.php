@@ -50,24 +50,25 @@
 		</div><!-- main top blocks -->
 					  						  		
 		<div id="main_content">
-			<?php if (Block::model()->countByAttributes(array('block_position_id'=>4,'status_id'=>1)) > 0):?>
+			<?php if ($this->hasBlock(4)):?>
+				<?php //var_dump($this->hasBlock(4));?>
 			<aside class="span4">
-				<?php $this->actionBlocks(4); ?>	
+				<?php $this->actionBlocks(4); ?>
 			</aside> <!-- aside left blocks --> 
 			<?php endif; ?>
-			<?php if (Block::model()->countByAttributes(array('block_position_id'=>5,'status_id'=>1)) > 0):?>				 	
+			<?php if ($this->hasBlock(5)):?>				 	
 			<aside class="span2"> 
 				<?php $this->actionBlocks(5); ?>
 			</aside> <!-- aside right blocks -->
 			<?php endif; ?>	 	
 			<div class="page_content">	
-				<?php if (Block::model()->countByAttributes(array('block_position_id'=>3,'status_id'=>1)) > 0):?> 	
+				<?php if ($this->hasBlock(3)):?> 	
 				<div class="content_top">
 					 <?php $this->actionBlocks(3); ?>
 				</div> <!-- content top blocks -->						  			 	
 				<?php endif; ?>		 
 				<?php echo $content; ?>	
-				<?php if (Block::model()->countByAttributes(array('block_position_id'=>6,'status_id'=>1)) > 0):?>									
+				<?php if ($this->hasBlock(6)):?>									
 				<div class="content_bottom">
 					<?php $this->actionBlocks(6); ?>
 				</div> <!-- content bottom blocks -->		 
@@ -83,14 +84,14 @@
 		<!--	<?php endif?>  -->
 			
 		<!-- 	<?php echo $content; ?> -->
-		<?php if (Block::model()->countByAttributes(array('block_position_id'=>7,'status_id'=>1)) > 0):?>
+		<?php if ($this->hasBlock(7)):?>
 		<div class="main_bottom">
 			<?php $this->actionBlocks(7); ?>
 		</div> <!-- main bottom blocks -->
 		<?php endif; ?>
 	</div> <!-- main -->	
 	<footer>
-		<?php if (Block::model()->countByAttributes(array('block_position_id'=>8,'status_id'=>1)) > 0):?>
+		<?php if ($this->hasBlock(8)):?>
 		<div class="f_blocks">
 			<?php $this->actionBlocks(8); ?>
 		</div>
