@@ -73,6 +73,16 @@ class BlockController extends Controller
 			$attributes = $_POST['Block'];
 			$attributes['created'] = new CDbExpression('NOW()');
 			$attributes['updated'] = new CDbExpression('NOW()');
+			if (!is_array($attributes['terms'])) {
+				$attributes['terms']=null;
+			} else { 
+				$attributes['terms']=implode(',',$attributes['terms']);
+			}
+			if (!is_array($attributes['pages'])) {
+				$attributes['pages']=null;
+			} else { 
+				$attributes['pages']=implode(',',$attributes['pages']);
+			}
 			
 			$model->attributes=$attributes;
 			if ($model->save()) {
@@ -93,16 +103,38 @@ class BlockController extends Controller
 		}
 		$term_name = array();
 		$term_id = array();
+		
 		$terms = Term::model()->findAll();
+		$ids = array();
+		$names=array();
 		foreach ($terms as $term) {
 			$term_name[$term->id] = $term->name;
 			$term_id[$term->id] = true;
+			$ids[] = $term['id'];
+			$names[] = $term['name'];
 		}
-
+		$tarray = array_combine($ids, $names);
+		$model['terms'] = explode(',',$model['terms']);
+		
+		$pages = Post::model()->findAllByAttributes(array('post_type_id'=>2));
+		
+		$pids = array('-1');
+		$pnames=array('Index');
+		
+		foreach ($pages as $page) {
+			$pids[] = $page['id'];
+			$pnames[] = $page['name'];
+		}
+		$parray = array_combine($pids, $pnames);
+		
+		
+		$model['pages'] = explode(',',$model['pages']);
 
 		$this->render('create',array(
 			'model'=>$model,
-			'terms'=>array('id'=>$term_id,'name'=>$term_name)
+			'terms'=>array('id'=>$term_id,'name'=>$term_name),
+			'bterms'=>$tarray,
+			'bpages'=>$parray
 		));
 	}
 
@@ -122,14 +154,52 @@ class BlockController extends Controller
 		if (isset($_POST['Block'])) {
 			$attributes = $_POST['Block'];
 			$attributes['updated'] = new CDbExpression('NOW()');
+			if (!is_array($attributes['terms'])) {
+				$attributes['terms']=null;
+			} else { 
+				$attributes['terms']=implode(',',$attributes['terms']);
+			}
+			if (!is_array($attributes['pages'])) {
+				$attributes['pages']=null;
+			} else { 
+				$attributes['pages']=implode(',',$attributes['pages']);
+			}
+			
 			$model->attributes=$attributes;
 			if ($model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
+		$terms = Term::model()->findAll();
+		$ids = array();
+		$names=array();
+		foreach ($terms as $term) {
+			$ids[] = $term['id'];
+			$names[] = $term['name'];
+		}
+		$tarray = array_combine($ids, $names);
+		$model['terms'] = explode(',',$model['terms']);
+		
+		$pages = Post::model()->findAllByAttributes(array('post_type_id'=>2));
+		
+		$pids = array('-1');
+		$pnames=array('Index');
+		foreach ($pages as $page) {
+			$pids[] = $page['id'];
+			$pnames[] = $page['name'];
+		}
+		$parray = array_combine($pids, $pnames);
+		
+		
+		$model['pages'] = explode(',',$model['pages']);
+		
+		
 		$this->render('update',array(
 			'model'=>$model,
+			'bterms'=>$tarray,
+			'bpages'=>$parray
+			
 		));
 	}
 

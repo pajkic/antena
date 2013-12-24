@@ -25,7 +25,8 @@
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>255)); ?>
 
             <?php echo $form->dropDownListControlGroup($model,'block_position_id', CHtml::listData(BlockPosition::model()->findAll(), 'id', 'name')); ?>
-
+			<?php echo $form->checkBoxListControlGroup($model, 'pages', $bpages); ?>
+			<?php echo $form->checkBoxListControlGroup($model, 'terms', $bterms); ?>
             <?php echo $form->dropDownListControlGroup($model,'status_id', CHtml::listData(BlockStatus::model()->findAll(), 'id', 'name')); ?>
 
 			<?php if (!$model->id):?>

@@ -118,6 +118,7 @@ class PostController extends Controller
 		$_SESSION['KCFINDER'] = array();
 		$_SESSION['KCFINDER']['disabled'] = false;
 		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id); 
+		
 		$terms = Term::model()->findAll();
 		
 		$ids = array();

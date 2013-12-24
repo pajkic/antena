@@ -52,7 +52,7 @@ class Block extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			array('block_type_id', 'length', 'max'=>10),
 			array('user_id', 'length', 'max'=>20),
-			array('options, created, updated', 'safe'),
+			array('pages, terms, options, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, block_type.name, block_position.name, status_id, options, created, updated, user_id', 'safe'),
@@ -85,6 +85,8 @@ class Block extends CActiveRecord
 			'name' => Yii::t('app','Naziv'),
 			'block_type_id' => Yii::t('app','Tip'),
 			'block_position_id' => Yii::t('app','Pozicija'),
+			'pages'=>Yii::t('app','Stranice'),
+			'terms'=>Yii::t('app','Kategorije'),
 			'status_id' => Yii::t('app','Status'),
 			'options' => Yii::t('app','Opcije'),
 			'created' => 'Created',

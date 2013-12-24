@@ -17,4 +17,4 @@ $this->menu=array(
 
 <h1>Napravi blok</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'terms' => $terms)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'terms' => $terms, 'bterms'=>$bterms, 'bpages'=>$bpages)); ?>
