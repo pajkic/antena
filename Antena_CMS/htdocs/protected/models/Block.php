@@ -55,7 +55,7 @@ class Block extends CActiveRecord
 			array('pages, terms, options, created, updated', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, block_type.name, block_position.name, status_id, options, created, updated, user_id', 'safe'),
+			array('id, name, block_type.name, block_position.name, status_id, options, created, updated, user_id, heading', 'safe'),
 		);
 	}
 
@@ -92,6 +92,7 @@ class Block extends CActiveRecord
 			'created' => 'Created',
 			'updated' => 'Updated',
 			'user_id' => 'User',
+			'heading' => 'Naslov',
 		);
 	}
 

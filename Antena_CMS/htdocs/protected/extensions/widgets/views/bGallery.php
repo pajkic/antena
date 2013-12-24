@@ -1,4 +1,9 @@
 <div class="gallery_block">
+
+<?php if ($block['heading'] == 1): ?>
+<h3><?php echo $block_title;?></h3>
+<?php endif; ?>
+	
 <?php
 $this->beginWidget('application.extensions.prettyPhoto.PrettyPhoto', array(
   'id'=>'pretty_photo_widget',
