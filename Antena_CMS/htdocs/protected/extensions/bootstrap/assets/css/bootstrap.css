@@ -6260,13 +6260,13 @@ aside[class*="span4"] .submenu_block {
 	aside[class*="span4"] .submenu_block ul { 
 		margin: 0;
 		list-style: circle outside none;
-		padding: 0;
+		padding: 0 20px 0 40px;
 		color: #BB191F;
 	}
 	aside[class*="span4"] .submenu_block ul li a {
 		color: #BB191F;
-		display: inline-block;
-		padding: 3px 20px 2px 20px;
+		display: block;
+		padding: 3px 20px 2px 0;
 	}
  	aside[class*="span4"] .submenu_block ul li a:hover {
  		color: #202020;
