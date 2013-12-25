@@ -6324,8 +6324,8 @@ aside[class*="span4"], aside[class*="span2"] {
 #cssmenu a {
   display: inline-block;
  	font-family: 'Source Sans Pro',sans-serif;
-    font-size: 17px;
-  padding: 9px 0 9px 20px;
+    font-size: 18px;
+  padding: 10px 0 10px 20px;
   text-decoration: none;
 }
 #cssmenu ul {
@@ -6373,7 +6373,7 @@ aside[class*="span4"], aside[class*="span2"] {
   filter: none;
   display: block;
   line-height: 120%;
-  padding: 9px 20px;
+  padding: 10px 20px;
   font-size: 16px;
 }
 #cssmenu .has-sub .has-sub:hover > ul {
