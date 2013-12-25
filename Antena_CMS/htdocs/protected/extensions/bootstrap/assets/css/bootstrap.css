@@ -6398,3 +6398,8 @@ header .custom_block {
 header #lang {
 	margin-top: 20px;
 }
+footer .f_blocks {
+	color: #585858;
+	font-size: 13px;
+	line-height: 17px;
+}
