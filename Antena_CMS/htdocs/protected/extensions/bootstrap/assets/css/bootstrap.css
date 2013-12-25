@@ -6248,6 +6248,13 @@ aside[class*="span4"], aside[class*="span2"] {
 	padding: 20px; 
 } */
 
+aside[class*="span4"] .news_block {
+	border: 1px solid #DEDEDE;
+	-webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px; 
+	padding: 20px; 
+}
 aside[class*="span4"] .submenu_block {
 	background: #FEF0EE;
 	border: 1px solid #FEF0EE;
