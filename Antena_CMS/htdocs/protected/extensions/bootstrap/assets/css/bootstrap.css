@@ -6261,6 +6261,7 @@ aside[class*="span4"] .submenu_block {
 		margin: 0;
 		list-style: circle inside none;
 		padding: 0;
+		color: #BB191F;
 	}
 	aside[class*="span4"] .submenu_block ul li a {
 		color: #BB191F;
