@@ -6261,7 +6261,7 @@ aside[class*="span4"] .submenu_block {
 		margin: 0;
 		list-style: none;
 		/* list-style: circle outside none; */
-		padding: 0 20px 0 40px;
+		padding: 0;
 		color: #BB191F;
 	}
 	aside[class*="span4"] .submenu_block ul li a {
@@ -6282,6 +6282,7 @@ aside[class*="span4"] .submenu_block {
  		-webkit-border-radius: 4px;
    		  -moz-border-radius: 4px;
           border-radius: 4px;
+          list-style: none;
  	} 
  		aside[class*="span4"] .submenu_block ul li:first-child a {
  			color: #fff;
