@@ -6270,7 +6270,7 @@ aside[class*="span4"] .submenu_block {
  	aside[class*="span4"] .submenu_block ul li a:hover {
  		color: #202020;
  	}
- 	aside[class*="span4"] .submenu_block ul li a:first-child {
+ 	aside[class*="span4"] .submenu_block ul li:first-child {
  		background: silver;
  		
  	} 
