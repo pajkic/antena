@@ -6238,12 +6238,14 @@ aside[class*="span2"] {
 	float: right;
 }
 aside[class*="span4"], aside[class*="span2"] {
+    margin-bottom: 20px;
+}
+aside[class*="span4"] .submenu_block, aside[class*="span2"] {
 	border: 1px solid #DEDEDE;
 	-webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;  
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 20px;      
 }
 .page_content .content_top, .page_content .content_bottom {
 	overflow: hidden;
