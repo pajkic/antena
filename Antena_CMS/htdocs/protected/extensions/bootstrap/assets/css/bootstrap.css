@@ -6259,13 +6259,13 @@ aside[class*="span4"] .submenu_block {
 }
 	aside[class*="span4"] .submenu_block ul { 
 		margin: 0;
-		list-style: circle inside none;
+		list-style: circle outside none;
 		padding: 0;
 		color: #BB191F;
 	}
 	aside[class*="span4"] .submenu_block ul li a {
 		color: #BB191F;
-		display: block;
+		display: inline-block;
 		padding: 3px 20px 2px 20px;
 	}
  	aside[class*="span4"] .submenu_block ul li a:hover {
