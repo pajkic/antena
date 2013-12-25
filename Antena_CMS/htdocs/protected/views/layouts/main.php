@@ -96,7 +96,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="modal-footer">
-			Copyright &copy; <?php echo date('Y'); ?> <?php echo CHtml::encode($this); ?> | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
+			Copyright &copy; <?php echo date('Y'); ?> ... | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 		</div>	
 	</footer> <!-- footer -->
 </div><!-- page -->
