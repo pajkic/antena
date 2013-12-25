@@ -39,14 +39,13 @@
 			
 		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
 
-		<?php $this->actionBlocks(1); ?> <!-- main navigation -->	
-		</hgroup> <!-- header blocks -->	
+		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
+		</hgroup>  	
 	</header> <!-- header -->
-	
 	 
 	<div id="main"> 		
 		<div class="main_top">
-			<?php $this->actionBlocks(2); ?>
+			<?php $this->actionBlocks(2); ?> 
 		</div><!-- main top blocks -->
 					  						  		
 		<div id="main_content">
