@@ -6229,7 +6229,7 @@ aside[class*="span4"] {
 		float: left;
 		margin-right: 10px;
 		width: 70px;
-		height: 65px
+		height: 65px;
 		background url("../images/frontend/news.png");
 	}
 	aside[class*="span4"] .news_info:last-child {
