@@ -6264,6 +6264,8 @@ aside[class*="span4"] .submenu_block {
 	}
 	aside[class*="span4"] .submenu_block ul li a {
 		color: #BB191F;
+		display: block;
+		padding: 2px 0;
 	}
  	aside[class*="span4"] .submenu_block ul li a:hover {
  		color: #202020;
