@@ -6392,8 +6392,8 @@ aside[class*="span4"], aside[class*="span2"] {
   background: #1c6a94;
 }
 
-.custom_block {
-	padding-left: 20px;
+header .custom_block {
+	padding: 0 0 5px 20px;
 }
 header #lang {
 	margin-top: 20px;
