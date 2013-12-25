@@ -96,7 +96,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="modal-footer">
-			Copyright &copy; <?php echo date('Y'); ?> by My Company. All Rights Reserved.
+			Copyright &copy; <?php echo date('Y'); ?> <?php echo CHtml::encode($this->pageTitle); ?>. All Rights Reserved.
 		</div>	
 	</footer> <!-- footer -->
 </div><!-- page -->
