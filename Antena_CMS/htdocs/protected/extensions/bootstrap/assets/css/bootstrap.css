@@ -5275,7 +5275,7 @@ input[type="submit"].btn.btn-mini {
    -webkit-border-radius: 4px;
        -moz-border-radius: 4px;
             border-radius: 4px;
-  margin-top: 20px;
+  margin-top: 25px;
   clear: both;
  /* -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
@@ -6255,6 +6255,7 @@ aside[class*="span4"] .news_block {
           border-radius: 4px; 
 	padding: 20px; 
 }
+/* podnavigacija blok */
 aside[class*="span4"] .submenu_block {
 	background: #FEF0EE;
 	border: 1px solid #FEF0EE;
@@ -6318,6 +6319,12 @@ aside[class*="span4"] .submenu_block {
 } 
 
 /* lang */
+header .custom_block {
+	padding: 0 0 5px 20px;
+}
+header #lang {
+	margin-top: 20px;
+}
 #lang {
 	float: right;
 	font-size: 14px;
@@ -6439,15 +6446,14 @@ aside[class*="span4"] .submenu_block {
   background: #1c6a94;
 }
 
-header .custom_block {
-	padding: 0 0 5px 20px;
-}
-header #lang {
-	margin-top: 20px;
+footer {
+	margin-top: 25px;
 }
 footer .f_blocks {
 	color: #585858;
 	font-size: 13px;
 	line-height: 17px;
 	overflow: hidden;
+border-top: 1px solid #DEDEDE;
+padding-top: 20px;
 }
