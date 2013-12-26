@@ -149,6 +149,29 @@
 			jstring = '['+ids+']';
 			$('#Block_options').val(jstring);				
 			break;
+			
+			case "8":
+
+			custom = {};
+			custom.options = new Object();
+			$("#opts :input").each(function() {
+				
+				switch(this.type) {
+					case 'checkbox':
+						if (this.name=="title" && this.checked) {
+							custom.options['title'] = "1";
+						} else {
+							custom.options['title'] = "0";
+						}
+						break;
+					default:
+						custom.options[this.name] = this.value;
+						break;
+				}
+			});
+			
+			$('#Block_options').val(JSON.stringify(custom.options));	
+				
 			default:
 			break;
 		}
