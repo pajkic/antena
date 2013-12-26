@@ -18,7 +18,6 @@ class bSubMenu extends CWidget
 		
 		foreach($items as $item) {
 			$post_id = ltrim(strrchr($item['content'],'/'),'/');
-			
 			$submenu[$post_id] = MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$item['id']))->title;
 			
 		}
