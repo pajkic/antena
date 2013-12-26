@@ -14,7 +14,7 @@ $this->beginWidget('application.extensions.prettyPhoto.PrettyPhoto', array(
     
   ),
   'gallery'=>false,
-  'theme'=>'facebook'
+  'theme'=>'dark_square'
 ));
  
 foreach ($data as $image) {
