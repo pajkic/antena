@@ -198,6 +198,14 @@ class TermController extends Controller
 						'block'=>$block,
 					));
 					break;
+				case 8:
+					$params = json_decode($block['options'],true);
+					$this->widget('application.extensions.widgets.bSlider', array(
+						'data'=>$params,
+						'block'=>$block,
+					));
+					break;
+					
 				default:
 					break;
 				}

@@ -322,6 +322,8 @@ class BlockController extends Controller
 					break;
 				case 7:
 					$this->renderPartial('forms/_cmenu');
+				case 8:
+					$this->renderPartial('forms/_slider');
 				default:
 					break;
 			}
