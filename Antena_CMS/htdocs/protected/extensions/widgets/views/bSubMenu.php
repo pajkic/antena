@@ -3,7 +3,7 @@
 <?php if ($block['heading'] == 1): ?>
 <h3><?php echo $block_title;?></h3>
 <?php endif; ?>	
-	
+	<?php var_dump($data);?>
 	<ul>
 		<?php foreach ($data as $k=>$v):?>
 		<li>
