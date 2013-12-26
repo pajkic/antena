@@ -19,9 +19,9 @@ $this->breadcrumbs=$breadcrumbs;
 <small><?php echo date('d. m. Y.', strtotime($post['created']));?></small>
 <?php endif; ?>
 
-<?php if (strlen($content['excerpt']) > 0): ?>
+<!--  <?php if (strlen($content['excerpt']) > 0): ?>
 <p><?php echo $content['excerpt'];?></p>
-<?php endif;?>
+<?php endif;?> -->
 
 <p><?php echo $content['content'];?></p>
 
