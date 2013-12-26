@@ -8,5 +8,4 @@
 	<small><?php echo date('d. m. Y.',strtotime($data->created));?></small>
 	<img src="<?php echo $data->image;?>" width="80" height="60"/>
 	<p><?php echo CHtml::encode($data->postDescription->excerpt); ?></p>
-	<br />
 </div>
