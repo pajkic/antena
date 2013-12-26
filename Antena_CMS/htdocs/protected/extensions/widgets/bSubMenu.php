@@ -15,7 +15,7 @@ class bSubMenu extends CWidget
 		$items = Menu::model()->findAll('parent_id=:t1 OR parent_id=:t2 OR id=:t3 OR id=:t4', array(':t1'=>$this->menu_item['id'],':t2'=>$this->menu_item['parent_id'],':t3'=>$this->menu_item['id'],':t4'=>$this->menu_item['parent_id']));
 		//$submenu = array($this->menu_item['id']=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$this->menu_item['id']))->title);
 		$submenu=array();
-		
+		var_dump($items);
 		foreach($items as $item) {
 			$post_id = ltrim(strrchr($item['content'],'/'),'/');
 			$submenu[$post_id] = MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$item['id']))->title;
