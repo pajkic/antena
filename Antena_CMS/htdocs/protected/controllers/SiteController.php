@@ -117,6 +117,18 @@ class SiteController extends Controller
 			}
 		}
 	}
+	
+	public function hasBlock($position_id)
+	{
+		$renderBlock = false;
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
+		foreach ($blocks as $block) {
+			if (in_array(-1,explode(',',$block['pages']))) {
+				$renderBlock = true;
+			}
+		}
+		return $renderBlock;
+	}	
 
 
 	

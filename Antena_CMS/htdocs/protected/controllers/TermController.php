@@ -138,7 +138,18 @@ class TermController extends Controller
 		return $model;
 	}
 	
-	
+	public function hasBlock($position_id)
+	{
+		$renderBlock = false;
+		$term_id = $_GET['id'];
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
+		foreach ($blocks as $block) {
+			if ($this->showBlock($block['id'],$term_id)) {
+				$renderBlock = true;
+			}
+		}
+		return $renderBlock;
+	}
 
 
 }

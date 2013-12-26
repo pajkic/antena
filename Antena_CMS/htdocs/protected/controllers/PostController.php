@@ -132,6 +132,19 @@ class PostController extends Controller
 		}
 		return $model;
 	}
+	
+	public function hasBlock($position_id)
+	{
+		$renderBlock = false;
+		$post_id = $_GET['id'];
+		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
+		foreach ($blocks as $block) {
+			if ($this->showBlock($block['id'],$post_id)) {
+				$renderBlock = true;
+			}
+		}
+		return $renderBlock;
+	}
 
 
 }
