@@ -6206,7 +6206,7 @@ aside[class*="span4"] {
 	float: left;
 	margin-right: 25px;
 }
-	aside[class*="span4"] small {
+	aside[class*="span4"] small, #content small {
 		color: #ccc;
 		font-size: 12px; 
 		line-height: 25px;
