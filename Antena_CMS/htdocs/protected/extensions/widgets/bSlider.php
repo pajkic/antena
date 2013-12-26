@@ -19,8 +19,9 @@ class bSlider extends CWidget
 				'caption'=>GalleryItemDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'gallery_item_id'=>$item->id))->description
 			));
 		}
-		
-        $this->render('bSlider', array('data'=>$images));
+	
+    Yii::app()->clientScript->registerScript('helloscript',"$('.carousel').carousel({interval: 5000});",CClientScript::POS_READY);
+    $this->render('bSlider', array('data'=>$images));
     }
 }
 ?>
