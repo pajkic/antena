@@ -6455,8 +6455,8 @@ footer .f_blocks {
 	font-size: 13px;
 	line-height: 17px;
 	overflow: hidden;
-border-top: 1px solid #DEDEDE;
-padding-top: 20px;
+	border-top: 1px solid #DEDEDE;
+	padding-top: 20px;
 }
 .listanje_clanci {
 	clear: both;
@@ -6470,6 +6470,9 @@ padding-top: 20px;
 .listanje_clanci img {
 	margin-right: 15px;
 	float: left;
+	background: url("/images/frontend/news.png");
+	width: 70px;
+	height: 65px !important;
 }
 .block_title {
 	margin-bottom: 10px;
