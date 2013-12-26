@@ -9,9 +9,9 @@ $this->breadcrumbs=$breadcrumbs;
 ?>
 
 
-<?php if (strlen($post['image']) > 0): ?>	
+<!-- <?php if (strlen($post['image']) > 0): ?>	
 <img src="<?php echo $post['image'];?>" width="400" height="200"/>  
-<?php endif; ?>
+<?php endif; ?> -->
 
 <h1><?php echo $content['title'];?></h1>
 
