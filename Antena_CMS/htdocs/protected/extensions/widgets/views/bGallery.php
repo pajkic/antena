@@ -14,6 +14,7 @@ $this->beginWidget('application.extensions.prettyPhoto.PrettyPhoto', array(
     
   ),
   'gallery'=>false,
+  'theme'=>'dark_rounded'
 ));
  
 foreach ($data as $image) {
