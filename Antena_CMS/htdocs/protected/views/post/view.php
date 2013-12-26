@@ -23,7 +23,7 @@ $this->breadcrumbs=$breadcrumbs;
 <p><?php echo $content['excerpt'];?></p>
 <?php endif;?> -->
 
-<p><?php echo $content['content'];?></p>
+<?php echo $content['content'];?>
 
 <?php
 $this->widget('application.extensions.widgets.bGallery',array(
