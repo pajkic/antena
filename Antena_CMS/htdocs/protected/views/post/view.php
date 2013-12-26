@@ -21,7 +21,7 @@ $this->breadcrumbs=$breadcrumbs;
 <?php endif; ?>
 
 <?php  if (strlen($content['excerpt']) > 0): ?>
-<p><?php /* echo $content['excerpt']; */?></p>
+
 <?php endif; ?> 
 
 <?php echo $content['content']; ?>
