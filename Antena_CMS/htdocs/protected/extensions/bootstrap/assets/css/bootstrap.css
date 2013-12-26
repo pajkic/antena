@@ -6458,3 +6458,13 @@ footer .f_blocks {
 border-top: 1px solid #DEDEDE;
 padding-top: 20px;
 }
+.listanje_clanci {
+	clear: both;
+}
+.listanje_clanci h3 {
+	margin-bottom: 15px;
+}
+.listanje_clanci img {
+	margin-right: 15px;
+	float: left;
+}
