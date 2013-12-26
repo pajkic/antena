@@ -1,7 +1,7 @@
 <div class="news_block">
 
 <?php if ($block['heading'] == 1): ?>
-<h3><?php echo $block_title;?></h3>
+<div class="block_title"><?php echo $block_title;?></div>
 <?php endif; ?>	
 	
 <?php foreach ($data as $d):?>
