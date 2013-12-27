@@ -6105,7 +6105,7 @@ a.badge:focus {
 }
 
 .carousel-indicators .active {
-  background-color: #fff;
+  background-color: #ddd;
 }
 
 .carousel-caption {
@@ -6135,6 +6135,10 @@ left: 700px;
   padding: 0 25px 25px 25px;
 }
 
+.carousel-caption a {
+	background: #B51B20;
+	color: #fff;
+}
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
