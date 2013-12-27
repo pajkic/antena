@@ -6009,6 +6009,9 @@ a.badge:focus {
 .carousel-inner > .item > a > img {
   display: block;
   line-height: 1;
+    -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
 }
 
 .carousel-inner > .active,
@@ -6102,7 +6105,9 @@ a.badge:focus {
   text-indent: -999px;
   background-color: #ccc;
   background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   cursor: pointer;
 }
 
@@ -6117,6 +6122,9 @@ top: 40px;
 left: 700px;
   background: #fff;
   background: rgba(255, 255, 255, 0.80);
+      -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
 }
 
 .carousel-caption h4,
