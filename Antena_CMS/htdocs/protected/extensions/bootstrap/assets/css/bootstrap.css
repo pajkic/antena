@@ -6510,7 +6510,7 @@ footer .f_blocks {
 	margin-bottom: 10px;
 }
 #main_content .ui-accordion.ui-widget.ui-helper-reset {
-	background: red;
+	/*background: red; */
 } 
 #main_content .ui-widget-content {
 	height: auto !important;
@@ -6523,6 +6523,10 @@ padding-left: 20px;
 }
 #main_content .ui-accordion .ui-accordion-header {
 	padding: 0;
+}
+#main_content .ui-state-default {
+	border: 1px solid #DEDEDE;
+	background: #F6F6F6; 
 }
 
 /* #main_content .ui-state-active, #main_content .ui-state-active a, #main_content .ui-state-active a:link {
