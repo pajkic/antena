@@ -6198,8 +6198,7 @@ aside[class*="span4"], aside[class*="span2"], .page_content {
 	vertical-align: top;
 }
 	.page_content p img {
-		max-width: 780px;
-		text-align: center;	
+		max-width: 795px;	
 	}
 aside[class*="span2"]:empty {
 	border: none;
