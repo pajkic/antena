@@ -6509,3 +6509,6 @@ footer .f_blocks {
 .block_title {
 	margin-bottom: 10px;
 }
+#main_content .ui-accordion.ui-widget.ui-helper-reset {
+	background: red;
+} 
