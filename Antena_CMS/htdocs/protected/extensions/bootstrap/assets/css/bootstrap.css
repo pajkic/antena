@@ -6325,6 +6325,7 @@ aside[class*="span4"] .submenu_block {
 /* lang */
 header .custom_block {
 	padding: 0 0 5px 20px;
+	float: left;
 }
 header #lang {
 	margin-top: 20px;
