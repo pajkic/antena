@@ -171,10 +171,23 @@ class Controller extends CController
 			    'options'=>array(
 			        'animated'=>'bounceslide',
 			    ),
+			    'themeUrl'=>'/css',
+			    'theme'=>'accordion',
+			    'cssFile' => 'custom.css',
+				
 			));
 			
 			break;
-			
+		case 8: //bSubCategory
+			if (isset($_GET['id'])){
+					
+				$link = '/'.$this->id.'/'.$_GET['id'];
+				$menu_item = Menu::model()->findByAttributes(array('content'=>$link));
+				$level = null;
+				if ($menu_item) $level = $menu_item->level;
+				$this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level,'block'=>$block,'menu_item'=>$menu_item,));
+			}
+			break;			
 		default:
 			break;
 		}
