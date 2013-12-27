@@ -321,11 +321,23 @@ class BlockController extends Controller
 					$this->renderPartial('forms/_custom');
 					break;
 				case 7:
-					$this->renderPartial('forms/_cmenu');
+					$terms = Term::model()->findAll();
+					$posts = Post::model()->findAllByAttributes(array('status_id'=>1));
+					$items = array();
+					foreach($terms as $term){
+						$items['/term/'.$term->id] = 'Kategorija: ' . $term->name;
+					}
+					foreach($posts as $post){
+						$items['/post/'.$post->id] = $post->name;
+					}
+					$this->renderPartial('forms/_cmenu',array('items'=>$items));
+					break;
 				case 8:
 					$this->renderPartial('forms/_slider');
+					break;
 				case 9:
 					$this->renderPartial('forms/_subcategory');
+					break;
 				case 10:
 					$this->renderPartial('forms/_accordion');
 					break;

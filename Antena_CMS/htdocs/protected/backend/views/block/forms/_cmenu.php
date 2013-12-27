@@ -1,6 +1,8 @@
 <?php
+
 echo Yii::t('app','Dodaj stavku u meni');
-echo TbHtml::dropDownListControlGroup("post_id","", CHtml::listData(Post::model()->findAll(), "id", "name"));
+
+echo TbHtml::dropDownListControlGroup("post_id","", $items);
 echo TbHtml::link(Yii::t('app','Dodaj'),"javascript:void(0);",array("id"=>"add_post"));
 echo TbHtml::textAreaControlGroup("custom_menu","",array("id"=>"custom_menu","rows"=>"10"));	
 echo TbHtml::textAreaControlGroup("custom_menu_id","",array("id"=>"custom_menu_id", 'class'=>'hidden'));

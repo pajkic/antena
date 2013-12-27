@@ -32,8 +32,7 @@
 
 			<?php if (!$model->id):?>
             <?php echo $form->dropDownListControlGroup($model,'block_type_id', CHtml::listData(BlockType::model()->findAll(), 'id', 'name')); ?>	
-			
-            <?php echo $form->textAreaControlGroup($model,'options',array('rows'=>6,'span'=>8, 'class'=>'hidden')); ?>
+			<?php echo $form->textAreaControlGroup($model,'options',array('rows'=>6,'span'=>8, 'class'=>'')); ?>
             <?php //echo $form->textFieldControlGroup($model,'created',array('span'=>5)); ?>
             <?php //echo $form->textFieldControlGroup($model,'updated',array('span'=>5)); ?>
             <?php echo $form->hiddenField($model,'user_id',array('value'=>Yii::app()->user->id)); ?>
