@@ -6132,13 +6132,24 @@ left: 700px;
 .carousel-caption p {
   margin-bottom: 0;
   font-size: 16px;
-  padding: 0 25px 25px 25px;
+  padding: 0 25px 20px 25px;
 }
 
 .carousel-caption a {
 	background: #B51B20;
 	color: #fff;
+	display: block;
+width: 30%;
+text-align: center;
+margin: 0 35%;
+padding: 8px 0;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
 }
+	.carousel-caption a:hover {
+		background: #2898D4;
+	}
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
