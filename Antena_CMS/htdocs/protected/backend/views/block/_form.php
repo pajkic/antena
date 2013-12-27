@@ -171,6 +171,14 @@
 			});
 			
 			$('#Block_options').val(JSON.stringify(custom.options));	
+			break;
+			
+			case "10":
+				ids = $('#acc_block_id').val();
+				ids = ids.substr(0,ids.length-1);
+				jstring = '['+ids+']';
+				$('#Block_options').val(jstring);				
+			break;
 				
 			default:
 			break;
