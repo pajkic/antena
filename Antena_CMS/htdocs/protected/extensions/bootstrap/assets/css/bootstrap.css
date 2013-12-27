@@ -6528,7 +6528,10 @@ padding-left: 20px;
 	border: 1px solid #DEDEDE;
 	background: #F6F6F6; 
 }
-
+#main_content .ui-accordion .ui-accordion-content {
+	padding: 0;
+	border-top: 1px none;
+}
 /* #main_content .ui-state-active, #main_content .ui-state-active a, #main_content .ui-state-active a:link {
 	background: #F6F6F6;
 	border: 1px solid #DEDEDE;
