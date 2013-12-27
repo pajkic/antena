@@ -6529,7 +6529,7 @@ padding-left: 20px;
 	border: 1px solid #1C6084;
 	color: #525252;
 }
-#main_content .ui-state-default, #main_content .ui-state-active a:visited, #main_content .ui-state-default a, #main_content .ui-state-default a:link {
+/* #main_content .ui-state-default, #main_content .ui-state-active a:visited, #main_content .ui-state-default a, #main_content .ui-state-default a:link {
 	border: 1px solid #DEDEDE;
-	/* background: #F6F6F6;  #2889C0*/
-}
+	  background: #F6F6F6;  #2889C0* 
+} */
