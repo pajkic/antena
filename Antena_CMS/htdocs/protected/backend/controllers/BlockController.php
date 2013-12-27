@@ -326,7 +326,9 @@ class BlockController extends Controller
 					$this->renderPartial('forms/_slider');
 				case 9:
 					$this->renderPartial('forms/_subcategory');
-					
+				case 10:
+					$this->renderPartial('forms/_accordion');
+					break;
 				default:
 					break;
 			}

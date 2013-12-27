@@ -51,7 +51,7 @@ class Controller extends CController
 		
 	}
 	
-	public function renderBlock($block)
+	public function renderBlock($block,$save=FALSE)
 	{
 		switch ($block['block_type_id'])
 		{
@@ -71,19 +71,19 @@ class Controller extends CController
 			$criteria2->order = 'created DESC'; 
 			$news = Post::model()->findAll($criteria2);
 			
-			$this->widget('application.extensions.widgets.bNews', array(
+			return $this->widget('application.extensions.widgets.bNews', array(
 				'data' => $news,
 				'image'=> $params['image'],
 				'date'=> $params['date'],
 				'excerpt'=> $params['excerpt'],
 				'block'=>$block,
-				));
+				),$save);
 			break;
 		case 2: //bGallery
-			$this->widget('application.extensions.widgets.bGallery',array(
+			return $this->widget('application.extensions.widgets.bGallery',array(
 				'data' => json_decode($block['options'],true),
 				'block'=>$block,
-				));
+				),$save);
 			break;
 		case 3: //bMenu
 			$menus = Menu::model()->findAll(array('order'=>'sort'));
@@ -108,9 +108,10 @@ class Controller extends CController
 				array_push($menu,$branch);
 			}
 			
-			$this->widget('application.extensions.widgets.bMenu',array(
+			return $this->widget('application.extensions.widgets.bMenu',array(
 				'data' => $menu
-				));
+				),$save);
+			
 			break;
 		case 4: //bSubMenu
 			if (isset($_GET['id'])){
@@ -118,41 +119,60 @@ class Controller extends CController
 				$menu_item = Menu::model()->findByAttributes(array('content'=>$link));
 				$level = null;
 				if ($menu_item) $level = $menu_item->level;
-				$this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level,'block'=>$block,'menu_item'=>$menu_item,));
+				return $this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level,'block'=>$block,'menu_item'=>$menu_item,),$save);
 			}
 			break;
 		case 5: //bBreadcrumbs
 			
-			$this->widget('zii.widgets.CBreadcrumbs', array(  
+			return $this->widget('zii.widgets.CBreadcrumbs', array(  
  				'links'=>$this->breadcrumbs,
  				'homeLink'=>CHtml::link(Yii::app()->name, Yii::app()->homeUrl),   
- 			));
+ 			),$save);
 			break;
 		case 6: 
 			$bcontent = json_decode($block['options'],true);
-			$this->widget('application.extensions.widgets.bCustom', array(
+			return $this->widget('application.extensions.widgets.bCustom', array(
 				'data'=>$bcontent,
 				'block'=>$block,
-			));
+			),$save);
 			break;
 		case 7: //bCustomNav
 			$params = json_decode($block['options'],true);
-			$this->widget('application.extensions.widgets.bCustomNav',array(
+			return $this->widget('application.extensions.widgets.bCustomNav',array(
 				'data'=>$params,
 				'block'=>$block,
-			));
+			),$save);
 			break;
 		case 8:
 			$params = json_decode($block['options'],true);
-			$this->widget('application.extensions.widgets.bSlider', array(
+			return $this->widget('application.extensions.widgets.bSlider', array(
 				'data'=>$params,
 				'block'=>$block,
-			));
+			),$save);
 			break;
 		case 9: //bSubCategory
 			if (isset($_GET['id'])){
-				$this->widget('application.extensions.widgets.bSubCategory', array('data'=>array('type'=>$this->id,'id'=>$_GET['id']),'block'=>$block));
+				return $this->widget('application.extensions.widgets.bSubCategory', array('data'=>array('type'=>$this->id,'id'=>$_GET['id']),'block'=>$block),$save);
 			}
+			break;
+		case 10:
+			$params = json_decode($block['options'],true);
+			$acc_blocks=array();
+			foreach($params as $block_id)
+			{
+				$b = Block::model()->findByPk($block_id);
+				$b_title = BlockDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'block_id'=>$b->id))->title;
+				$acc_blocks[$b_title] = $this->renderBlock($b,TRUE);	
+			}
+			
+			$this->widget('zii.widgets.jui.CJuiAccordion',array(
+			    'panels'=>$acc_blocks,
+			    // additional javascript options for the accordion plugin
+			    'options'=>array(
+			        'animated'=>'bounceslide',
+			    ),
+			));
+			
 			break;
 			
 		default:
