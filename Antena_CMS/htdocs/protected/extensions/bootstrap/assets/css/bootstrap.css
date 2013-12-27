@@ -6115,13 +6115,13 @@ bottom: 50px;
 left: 700px
   padding: 15px;
   background: #fff;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.80);
 }
 
 .carousel-caption h4,
 .carousel-caption p {
   line-height: 20px;
-  color: #222;
+  color: #333;
 }
 
 .carousel-caption h4 {
