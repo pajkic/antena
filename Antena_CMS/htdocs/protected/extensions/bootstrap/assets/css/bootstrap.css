@@ -6126,11 +6126,12 @@ a.badge:focus {
 
 .carousel-caption h4 {
   margin: 0 0 5px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .carousel-caption p {
   margin-bottom: 0;
+  font-size: 16px;
 }
 
 .hero-unit {
