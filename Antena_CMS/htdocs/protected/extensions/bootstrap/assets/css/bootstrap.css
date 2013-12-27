@@ -6514,6 +6514,8 @@ footer .f_blocks {
 } 
 #main_content .ui-widget-content {
 	height: auto !important;
+	background: transparent;
+	border: 1px solid #DEDEDE;
 }
 #main_content .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
 	display: none;
@@ -6532,6 +6534,7 @@ padding-left: 20px;
 	padding: 0;
 	border-top: 1px none;
 }
+ 
 /* #main_content .ui-state-active, #main_content .ui-state-active a, #main_content .ui-state-active a:link {
 	background: #F6F6F6;
 	border: 1px solid #DEDEDE;
