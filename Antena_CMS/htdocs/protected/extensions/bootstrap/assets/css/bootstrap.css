@@ -6522,20 +6522,3 @@ footer .f_blocks {
 	padding: 0;
 	border: 0;
 }
-#main_content .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-	display: none;
-}
-#main_content .ui-accordion .ui-accordion-icons {
-padding-left: 20px;
-}
-#main_content .ui-accordion .ui-accordion-header {
-	padding: 6px 20px;
-}
-#main_content .ui-state-default {
-	border: 1px solid #DEDEDE;
-	background: #F6F6F6; 
-}
-#main_content .ui-accordion .ui-accordion-content {
-	border-top: 1px none;
-	margin-top: 0;
-}
