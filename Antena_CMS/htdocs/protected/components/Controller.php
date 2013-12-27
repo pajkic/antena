@@ -149,6 +149,11 @@ class Controller extends CController
 				'block'=>$block,
 			));
 			break;
+		case 9: //bSubCategory
+			if (isset($_GET['id'])){
+				$this->widget('application.extensions.widgets.bSubCategory', array('data'=>array('type'=>$this->id,'id'=>$_GET['id']),'block'=>$block));
+			}
+			break;
 			
 		default:
 			break;

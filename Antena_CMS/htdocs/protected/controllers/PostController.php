@@ -135,6 +135,7 @@ class PostController extends Controller
 	
 	public function hasBlock($position_id)
 	{
+		
 		$renderBlock = false;
 		$post_id = $_GET['id'];
 		$blocks = Block::model()->findAllByAttributes(array('block_position_id'=>$position_id, 'status_id'=>1));
