@@ -6509,9 +6509,6 @@ footer .f_blocks {
 .block_title {
 	margin-bottom: 10px;
 }
-#main_content .ui-accordion.ui-widget.ui-helper-reset {
-	/*background: red; */
-} 
 #main_content .ui-widget-content {
 	height: auto !important;
 	background: transparent;
@@ -6520,6 +6517,7 @@ footer .f_blocks {
 }
 #main_content .ui-widget-content .news_block {
 	padding: 0;
+	border: 0;
 }
 #main_content .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
 	display: none;
@@ -6528,7 +6526,7 @@ footer .f_blocks {
 padding-left: 20px;
 }
 #main_content .ui-accordion .ui-accordion-header {
-	padding: 0;
+	padding: 6px 20px;
 }
 #main_content .ui-state-default {
 	border: 1px solid #DEDEDE;
