@@ -6512,3 +6512,6 @@ footer .f_blocks {
 #main_content .ui-accordion.ui-widget.ui-helper-reset {
 	background: red;
 } 
+#main_content .ui-widget-content {
+	height: auto !important;
+}
