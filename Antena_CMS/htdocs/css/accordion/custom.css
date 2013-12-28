@@ -1,15 +1,23 @@
-#main_content .ui-widget-content {
+#color: #525252; .ui-widget-content {
 	font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #main_content .ui-accordion .ui-accordion-header {
+	background: #2889C0;
+	border: 1px solid #1C6084;
+}
+
+#main_content .ui-accordion .ui-accordion-header-active {
 	background: #F6F6F6;
+	border: 1px solid #DEDEDE;
 }
 .ui-accordion .ui-accordion-header a {
 	padding: 0;
-	color: #525252;
+	color: #fff;
 	font-size: 15px;
-	border: 1px solid #DEDEDE;
+}
+#main_content .ui-accordion .ui-accordion-header-active a {
+	color: #fff;
 }
 /* #main_content .ui-accordion h3 .ui-accordion-header a {
 	color: #525252;
