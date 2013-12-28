@@ -21,10 +21,10 @@
 	padding: 0;
 	border: 0;
 }
-#main_content .ui-accordion h3 {
+#main_content .ui-widget-content h3 {
 	font-size: 16px;
 }
-#main_content .ui-accordion h3 a {
+#main_content .ui-widget-content h3 a {
 	color: #2898D4;
 }
  
