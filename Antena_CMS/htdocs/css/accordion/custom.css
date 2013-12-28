@@ -4,6 +4,9 @@
 #main_content .ui-accordion .ui-accordion-header {
 	background: #2889C0;
 	border: 1px solid #1C6084;
+	border-radius: 4px;
+		-moz-border-radius: 4px;
+	  	-webkit-border-radius: 4px;
 }
 
 #main_content .ui-accordion .ui-accordion-header-active {
@@ -19,11 +22,6 @@
 #main_content .ui-accordion .ui-accordion-header-active a {
 	color: #7F7F7F;
 }
-/* #main_content .ui-accordion h3 .ui-accordion-header a {
-	color: #525252;
-	font-size: 15px;
-	border: 1px solid #DEDEDE; 
-} */
 #main_content .ui-widget-content {
 	height: auto !important;
 	background: transparent;
