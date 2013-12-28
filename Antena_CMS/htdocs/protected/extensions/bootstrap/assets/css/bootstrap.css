@@ -5612,7 +5612,7 @@ aside .news_info:last-child {
 }
 
 /* podnavigacija blok */
-aside .submenu_block {
+aside .submenu_block, aside .customnav_block {
 	background: #FEF0EE;
 	border: 1px solid #FEF0EE;
 	padding: 0 0 15px 0;
@@ -5621,34 +5621,35 @@ aside .submenu_block {
 	border-radius: 4px;
 	font-size: 15px;
 }
-aside .submenu_block ul {
+aside .submenu_block ul, aside .customnav_block ul {
 	margin: 0;
 	list-style: none;
 	padding: 0;
 	color: #BB191F;
 }
-aside .submenu_block ul li a {
+aside .submenu_block ul li a, aside .customnav_block ul li a {
 	color: #BB191F;
 	display: list-item;
 	list-style: circle inside none;
 	padding: 3px 20px 2px;
 }
-aside .submenu_block ul li a:hover {
+aside .submenu_block ul li a:hover, aside .customnav_block ul li a:hover {
 	color: #202020;
 }
-aside .submenu_block ul li:first-child {
+aside .submenu_block ul li:first-child,aside .customnav_block ul li:first-child {
 	background: #F0553D;
 	list-style: none;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-aside .submenu_block ul li:first-child a {
+aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-child a {
 	color: #fff;
 	padding: 7px 20px;
 	margin-bottom: 10px;
 	list-style: none;
 }
+/* content blok */
 .page_content .content_top, .page_content .content_bottom {
 	overflow: hidden;
 }
