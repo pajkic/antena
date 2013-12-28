@@ -7,13 +7,15 @@
 }
 .ui-accordion .ui-accordion-header a {
 	padding: 0;
-}
-#main_content .ui-accordion h3 .ui-accordion-header a {
 	color: #525252;
 	font-size: 15px;
 	border: 1px solid #DEDEDE;
-	 
 }
+/* #main_content .ui-accordion h3 .ui-accordion-header a {
+	color: #525252;
+	font-size: 15px;
+	border: 1px solid #DEDEDE; 
+} */
 #main_content .ui-widget-content {
 	height: auto !important;
 	background: transparent;
