@@ -5529,7 +5529,7 @@ to {
 /* blokovi */
 .block_title {
 	margin-bottom: 10px;
-	padding: 20px;
+	padding: 7px 20px;
 	color: #7F7F7F;
 	background: #F6F6F6;
 	border-bottom: 1px solid #DEDEDE;
@@ -5585,14 +5585,6 @@ aside[class*="span2"] {
 aside[class*="span4"], aside[class*="span2"] {
 	margin-bottom: 20px;
 }
-/* aside[class*="span2"] {
- border: 1px solid #DEDEDE;
- -webkit-border-radius: 4px;
- -moz-border-radius: 4px;
- border-radius: 4px;
- padding: 20px;
- } */
-
 /* news blok */
 aside .news_block {
 	border: 1px solid #DEDEDE;
