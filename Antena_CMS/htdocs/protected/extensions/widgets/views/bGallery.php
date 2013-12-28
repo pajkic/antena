@@ -6,11 +6,12 @@
 	
 <?php
 $this->beginWidget('application.extensions.prettyPhoto.PrettyPhoto', array(
-  'id'=>'pretty_photo_widget',
+  'id'=>rand(0,9999),
   // prettyPhoto options
   'options'=>array(
     'opacity'=>0.80,
     'modal'=>false,
+    'show_title'=>false,
     
   ),
   'gallery'=>false,
@@ -19,7 +20,9 @@ $this->beginWidget('application.extensions.prettyPhoto.PrettyPhoto', array(
  
 foreach ($data as $image) {
 ?>
-<a href="<?php echo $image['image']; ?>"  title="<?php echo $image['description']; ?>"  rel="prettyPhoto[<?php echo $gid; ?>]">	<img src="<?php echo $image['thumb']; ?>" width="<?php echo $w; ?>" height="<?php echo $h; ?>" alt="<?php //echo $image['title']; ?>"/> </a>
+<a href="<?php echo $image['image']; ?>" rel="prettyPhoto[<?php echo $gid; ?>]">	
+<img src="<?php echo $image['thumb']; ?>" width="<?php echo $w; ?>" height="<?php echo $h;?>"  alt="<?php  echo $image['description']; ?>" />
+</a>
 	<?php
 	}
 
