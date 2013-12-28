@@ -41,6 +41,9 @@ aside .ui-widget-content .news_block h3, aside .ui-widget-content .news_block sm
 }
 aside .ui-widget-content .news_info {
 	padding: 5px 0 15px 0;
+}
+aside .ui-widget-content .news_info:last-child {
+	padding: 5px 0 0 0;
 } 
 #main_content .ui-widget-content h3 {
 	font-size: 16px;
