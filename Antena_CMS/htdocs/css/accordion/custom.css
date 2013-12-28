@@ -12,9 +12,10 @@
 	border: 1px solid #DEDEDE;
 }
 .ui-accordion .ui-accordion-header a {
-	padding: 0;
+	padding: 7px 20px;
 	color: #fff;
 	font-size: 15px;
+	display: block;
 }
 #main_content .ui-accordion .ui-accordion-header-active a {
 	color: #7F7F7F;
