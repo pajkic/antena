@@ -5829,6 +5829,6 @@ footer .f_blocks {
 	height: 65px !important;
 }
 /* galerija */
-#gallery_block img {
+.gallery_block img {
 	margin-bottom: 3px;
 }
