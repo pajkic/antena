@@ -8,8 +8,10 @@
 		-moz-border-radius: 4px;
 	  	-webkit-border-radius: 4px;
 }
-
-#main_content .ui-accordion .ui-accordion-header-active {
+#main_content .ui-accordion .ui-accordion-header:hover {
+	background: #1C6084;
+}
+#main_content .ui-accordion .ui-accordion-header-active, #main_content .ui-accordion .ui-accordion-header-active:hover {
 	background: #F6F6F6;
 	border: 1px solid #DEDEDE;
 }
