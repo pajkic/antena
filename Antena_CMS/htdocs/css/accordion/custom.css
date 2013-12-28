@@ -5,7 +5,12 @@
 #main_content .ui-accordion .ui-accordion-header {
 	background:#000;
 }
-
+#main_content .ui-accordion-header a {
+	color: #525252;
+	font-size: 15px;
+	border: 1px solid #DEDEDE;
+	background: #F6F6F6;
+}
 #main_content .ui-widget-content {
 	height: auto !important;
 	background: transparent;
@@ -22,6 +27,7 @@
 #main_content .ui-accordion h3 a {
 	color: #2898D4;
 }
+ 
 #main_content .ui-accordion h3 a:hover {
 	color: #005580;
 }
