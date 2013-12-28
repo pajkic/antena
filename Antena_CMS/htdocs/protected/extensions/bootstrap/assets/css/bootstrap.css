@@ -5620,6 +5620,7 @@ aside .submenu_block, aside .customnav_block {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 	font-size: 15px;
+	margin-bottom: 20px;
 }
 aside .submenu_block ul, aside .customnav_block ul {
 	margin: 0;
