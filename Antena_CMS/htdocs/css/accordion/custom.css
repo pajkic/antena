@@ -5,7 +5,7 @@
 #main_content .ui-accordion .ui-accordion-header {
 	background:#000;
 }
-#main_content .ui-accordion-header a {
+#main_content h3 .ui-accordion-header a {
 	color: #525252;
 	font-size: 15px;
 	border: 1px solid #DEDEDE;
