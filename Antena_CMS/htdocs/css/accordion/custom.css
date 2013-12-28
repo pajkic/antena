@@ -12,3 +12,13 @@
 	padding: 0;
 	border: 0;
 }
+#main_content .ui-accordion h3 {
+	font-size: 16px;
+}
+#main_content .ui-accordion a {
+	color: #2898D4;
+}
+#main_content .ui-accordion a:hover {
+	color: #005580;
+}
+ 
