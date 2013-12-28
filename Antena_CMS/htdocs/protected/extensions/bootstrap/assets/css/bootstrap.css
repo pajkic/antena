@@ -5528,7 +5528,7 @@ to {
 }
 /* blokovi */
 .block_title {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	padding: 7px 20px;
 	color: #7F7F7F;
 	background: #F6F6F6;
@@ -5608,7 +5608,7 @@ aside .news_info img {
 	background: url("/images/frontend/news.png");
 }
 aside .news_info:last-child {
-	padding-bottom: 0;
+	padding-bottom: 25px;
 }
 
 /* podnavigacija blok */
