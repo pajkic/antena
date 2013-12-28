@@ -6209,6 +6209,9 @@ padding: 8px 0;
   position: fixed;
 }
 /* blokovi */
+.block_title {
+	margin-bottom: 10px;
+}
 hgroup, footer, .main_bottom, .main_top {
 	clear: both;
 }
@@ -6279,7 +6282,6 @@ aside[class*="span4"], aside[class*="span2"] {
           border-radius: 4px; 
 	padding: 20px; 
 } */
-
 aside[class*="span4"] .news_block {
 	border: 1px solid #DEDEDE;
 	-webkit-border-radius: 4px;
@@ -6349,7 +6351,6 @@ aside[class*="span4"] .submenu_block {
      -moz-border-radius: 4px;
           border-radius: 4px;
 } 
-
 /* lang */
 header .custom_block {
 	padding: 0 0 5px 20px;
@@ -6478,7 +6479,7 @@ header #lang {
 #cssmenu .has-sub .has-sub ul li a:hover {
   background: #1c6a94;
 }
-
+/* footer blokovi */
 footer {
 	margin-top: 25px;
 }
@@ -6490,6 +6491,7 @@ footer .f_blocks {
 	border-top: 1px solid #DEDEDE;
 	padding-top: 20px;
 }
+/* kategorija */
 .listanje_clanci {
 	clear: both;
 	border-bottom: 1px dotted #eee;
@@ -6506,19 +6508,7 @@ footer .f_blocks {
 	width: 70px;
 	height: 65px !important;
 }
-.block_title {
-	margin-bottom: 10px;
-}
+/* galerija */
 #pretty_photo_widget img {
 	margin-bottom: 3px;
-}
-#main_content .ui-widget-content {
-	height: auto !important;
-	background: transparent;
-	border: 1px solid #DEDEDE;
-	padding: 20px;
-}
-#main_content .ui-widget-content .news_block {
-	padding: 0;
-	border: 0;
 }
