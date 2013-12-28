@@ -36,6 +36,7 @@ $this->widget('CLinkPager', array(
 	'enablePagination'=>false,
 	'pagerCssClass' => 'result-list',
 	'summaryText' => '',
+	'emptyText' => ''
 ));
 $this->widget('CLinkPager', array(
 	'header' => '',
