@@ -38,7 +38,7 @@ class bGallery extends CWidget
 			$this->block['heading'] = 0;
 		}
 		
-        $this->render('bGallery', array('data'=>$images, 'w' => $this->data['thumb_w'], 'h'=>$this->data['thumb_h'], 'gid'=>md5($galleries), 'block'=>$this->block, 'block_title'=>$block_title));
+        $this->render('bGallery', array('data'=>$images, 'w' => $this->data['thumb_w'], 'h'=>$this->data['thumb_h'], 'gid'=>md5(rand(0,999999)), 'block'=>$this->block, 'block_title'=>$block_title));
     }
 }
 ?>

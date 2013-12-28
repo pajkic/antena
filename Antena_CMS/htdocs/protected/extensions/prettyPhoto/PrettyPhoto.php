@@ -104,6 +104,7 @@ class PrettyPhoto extends CWidget {
 			
 			jQuery('a[rel^=\"prettyPhoto\"]').prettyPhoto(".$options.');
 		',CClientScript::POS_END);
+		 
 	}
 
 	public function run() {

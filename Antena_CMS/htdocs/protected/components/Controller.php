@@ -155,7 +155,7 @@ class Controller extends CController
 				return $this->widget('application.extensions.widgets.bSubCategory', array('data'=>array('type'=>$this->id,'id'=>$_GET['id']),'block'=>$block),$save);
 			}
 			break;
-		case 10:
+		case 10: // bAccordion
 			$params = json_decode($block['options'],true);
 			$acc_blocks=array();
 			foreach($params as $block_id)
@@ -164,19 +164,20 @@ class Controller extends CController
 				$b_title = BlockDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'block_id'=>$b->id))->title;
 				$acc_blocks[$b_title] = $this->renderBlock($b,TRUE);	
 			}
-			
+			echo '<div class="accordion_block">';
 			$this->widget('zii.widgets.jui.CJuiAccordion',array(
 			    'panels'=>$acc_blocks,
 			    // additional javascript options for the accordion plugin
 			    'options'=>array(
 			        'animated'=>'bounceslide',
+			        
 			    ),
 			    'themeUrl'=>'/css',
 			    'theme'=>'accordion',
 			    'cssFile' => 'custom.css',
 				
 			));
-			
+			echo '</div>';
 			break;
 		case 8: //bSubCategory
 			if (isset($_GET['id'])){
