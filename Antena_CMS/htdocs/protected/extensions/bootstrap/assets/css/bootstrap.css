@@ -5817,8 +5817,9 @@ footer .f_blocks {
 .listanje_clanci {
 	clear: both;
 	border-bottom: 1px dotted #eee;
-	margin-bottom: 20px;
-	padding-bottom: 15px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	overflow: hidden;
 }
 .listanje_clanci h3 {
 	margin-bottom: 15px;
