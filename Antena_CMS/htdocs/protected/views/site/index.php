@@ -4,5 +4,3 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<?php echo Yii::app()->language; ?> 
-
