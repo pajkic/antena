@@ -706,7 +706,7 @@ h2, h3 {
 h1 {
 	font-size: 30px;
 	margin: 0 0 25px 0;
-	line-height: 30px;
+	line-height: 31px;
 }
 
 h2 {
@@ -5668,6 +5668,11 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 	margin-top: 20px;
 	padding-top: 20px;
 } */
+.custom_block h3 {
+	font-size: 25px;
+	margin: 0 0 20px 0;
+	line-height: 31px;
+}
 .page_content ul, ol {
 	margin: 0 0 10px 35px;
 	list-style: disc outside none;
