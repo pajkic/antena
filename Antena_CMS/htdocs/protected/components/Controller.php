@@ -164,20 +164,7 @@ class Controller extends CController
 				$b_title = BlockDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'block_id'=>$b->id))->title;
 				$acc_blocks[$b_title] = $this->renderBlock($b,TRUE);	
 			}
-			echo '<div class="accordion_block">';
-			$this->widget('zii.widgets.jui.CJuiAccordion',array(
-			    'panels'=>$acc_blocks,
-			    // additional javascript options for the accordion plugin
-			    'options'=>array(
-			        'animated'=>'bounceslide',
-			        
-			    ),
-			    'themeUrl'=>'/css',
-			    'theme'=>'accordion',
-			    'cssFile' => 'custom.css',
-				
-			));
-			echo '</div>';
+			return $this->widget('application.extensions.widgets.bAccordion', array('data'=>$acc_blocks, 'block'=>$block));
 			break;
 		case 8: //bSubCategory
 			if (isset($_GET['id'])){
