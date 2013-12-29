@@ -3,6 +3,7 @@ class bAccordion extends CWidget
 {
     /**
      * @var $data
+	 * @var $block
      */
     public $data;
 	public $block;
