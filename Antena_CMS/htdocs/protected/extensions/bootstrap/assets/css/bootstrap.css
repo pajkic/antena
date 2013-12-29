@@ -5663,11 +5663,11 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 .page_content .content_top h3 {
 	font-size: 27px;
 }
-.page_content .content_bottom {
+/* .page_content .content_bottom {
 	border-top: 1px solid #eee;
 	margin-top: 20px;
 	padding-top: 20px;
-}
+} */
 .page_content ul, ol {
 	margin: 0 0 10px 35px;
 	list-style: disc outside none;
