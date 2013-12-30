@@ -341,6 +341,10 @@ class BlockController extends Controller
 				case 10:
 					$this->renderPartial('forms/_accordion');
 					break;
+				case 11:
+					$this->renderPartial('forms/_tabs');
+					break;
+
 				default:
 					break;
 			}

@@ -166,16 +166,18 @@ class Controller extends CController
 			}
 			return $this->widget('application.extensions.widgets.bAccordion', array('data'=>$acc_blocks, 'block'=>$block));
 			break;
-		case 8: //bSubCategory
-			if (isset($_GET['id'])){
-					
-				$link = '/'.$this->id.'/'.$_GET['id'];
-				$menu_item = Menu::model()->findByAttributes(array('content'=>$link));
-				$level = null;
-				if ($menu_item) $level = $menu_item->level;
-				$this->widget('application.extensions.widgets.bSubMenu', array('data'=>$level,'block'=>$block,'menu_item'=>$menu_item,));
+		case 11: // bTabs
+			$params = json_decode($block['options'],true);
+			$tab_blocks=array();
+			foreach($params as $block_id)
+			{
+				$b = Block::model()->findByPk($block_id);
+				$b_title = BlockDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'block_id'=>$b->id))->title;
+				$tab_blocks[$b_title] = $this->renderBlock($b,TRUE);	
 			}
-			break;			
+			return $this->widget('application.extensions.widgets.bTabs', array('data'=>$tab_blocks, 'block'=>$block));
+			break;
+
 		default:
 			break;
 		}
