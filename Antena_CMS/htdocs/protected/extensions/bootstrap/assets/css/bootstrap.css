@@ -5673,6 +5673,11 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 	margin: 0 0 20px 0;
 	line-height: 31px;
 }
+#content .custom_block .block_title {
+padding: 0;
+background: transparent;
+border-bottom: 0;
+}
 .page_content ul, ol {
 	margin: 0 0 10px 35px;
 	list-style: disc outside none;
