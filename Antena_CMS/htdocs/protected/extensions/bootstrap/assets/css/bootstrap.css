@@ -5539,6 +5539,11 @@ to {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
+#content .custom_block .block_title {
+	padding: 0;
+	background: transparent;
+	border-bottom: 0;
+}
 hgroup, footer, .main_bottom, .main_top {
 	clear: both;
 }
@@ -5672,11 +5677,6 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 	font-size: 25px;
 	margin: 0 0 20px 0;
 	line-height: 31px;
-}
-#content .custom_block .block_title {
-padding: 0;
-background: transparent;
-border-bottom: 0;
 }
 .page_content ul, ol {
 	margin: 0 0 10px 35px;
