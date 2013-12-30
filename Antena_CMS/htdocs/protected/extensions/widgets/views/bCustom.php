@@ -4,7 +4,6 @@
 <div class="block_title"><?php echo $block_title;?></div>
 <?php endif; ?>
 
-<h3> <?php echo $data['title'];?> </h3>
 <?php echo $data['content']; ?>
 
 </div>
