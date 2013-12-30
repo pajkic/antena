@@ -1,8 +1,10 @@
 <div class="custom_block">
 
 <?php if ($block['heading'] == 1): ?>
-<h3><?php echo $data->title;?></h3>
+<div class="block_title"><?php echo $block_title;?></div>
 <?php endif; ?>
 
-<?php echo $data->content; ?>
+<h3> <?php echo $data['title'];?> </h3>
+<?php echo $data['content']; ?>
+
 </div>
