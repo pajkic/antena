@@ -5694,6 +5694,9 @@ header .custom_block {
 header #lang {
 	margin-top: 20px;
 }
+header .custom_block h3, .f_blocks .custom_block h3 {
+	display: none;
+}
 #lang {
 	float: right;
 	font-size: 14px;
