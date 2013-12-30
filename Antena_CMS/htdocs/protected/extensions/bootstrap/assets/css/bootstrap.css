@@ -5539,7 +5539,7 @@ to {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-#content .custom_block .block_title {
+.content_bottom .custom_block .block_title {
 	padding: 0;
 	background: transparent;
 	border-bottom: 0;
