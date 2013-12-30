@@ -4,6 +4,10 @@
 <div class="block_title"><?php echo $block_title;?></div>
 <?php endif; ?>
 
+<?php if ($page_title == 1): ?>
+<?php echo $data['title'];?>
+<?php endif; ?>
+
 <?php echo $data['content']; ?>
 
 </div>
