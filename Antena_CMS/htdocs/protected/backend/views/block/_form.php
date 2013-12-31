@@ -178,6 +178,14 @@
 				jstring = '['+ids+']';
 				$('#Block_options').val(jstring);				
 			break;
+
+			case "11":
+				ids = $('#tab_block_id').val();
+				ids = ids.substr(0,ids.length-1);
+				jstring = '['+ids+']';
+				$('#Block_options').val(jstring);				
+			break;
+
 				
 			default:
 			break;
