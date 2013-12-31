@@ -7,11 +7,10 @@ $this->widget('zii.widgets.jui.CJuiTabs',array(
      //   'animated'=>'bounceslide',
         
     ),
-    /*
+    
     'themeUrl'=>'/css',
     'theme'=>'tabs',
     'cssFile' => 'custom.css',
-	*/
 	
 ));
 ?>
