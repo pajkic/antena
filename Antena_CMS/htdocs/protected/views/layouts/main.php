@@ -38,6 +38,28 @@
 			
 		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
 
+
+<div class="search-form">
+
+    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+	'id'=>'search-form',
+	//'layout' => TbHtml::FORM_LAYOUTHORIZONTAL,
+	'action' => '/site/search/lang/'.Yii::app()->language,
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableAjaxValidation'=>true,
+	)); ?>
+	
+	<?php echo TbHtml::textField('needle', '', array('placeholder' => Yii::t('app','Pretraži'))); ?>
+	<?php echo TbHtml::submitButton(Yii::t('app','Pretraži'));?>
+
+    <?php $this->endWidget(); ?>
+
+</div><!-- form -->
+
+		
 		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
 		</hgroup>  	
 	</header> <!-- header -->
@@ -100,5 +122,14 @@
 	</footer> <!-- footer -->
 </div><!-- page -->
 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#search-form').submit(function(){
+			var ss = $('#needle').val();
+			if (ss.length < 3) return false;
+		})
+	})
+	
+</script>
 </body>
 </html>

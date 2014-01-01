@@ -17,8 +17,9 @@ class SiteController extends Controller
 			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
-			),
-		);
+			)
+			);
+			
 	}
 
 	/**
@@ -44,6 +45,63 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+	
+	public function actionSearch()
+	{
+			
+		if(isset($_POST['needle'])) {
+
+		    $search_string =  trim(filter_var($_POST['needle'],FILTER_SANITIZE_MAGIC_QUOTES));
+		    $search_array = explode(' ',$search_string);
+			$criteria = new CDbCriteria();
+			
+			foreach ($search_array as $needle) {
+				$criteria->compare('title', $needle, true, 'OR');
+				$criteria->compare('excerpt', $needle, true, 'OR');
+				$criteria->compare('content', $needle, true, 'OR');
+			}
+			$criteria->compare('language_id',Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id, false);
+			$result = PostDescription::model()->findAll($criteria);
+			
+			
+	 		$post_ids = array();
+			foreach($result as $description) {
+				$post_ids[] = $description->post_id;
+			}
+			if (count($post_ids)>0){
+				$post_array = implode(',',$post_ids);
+			} else {
+				$post_array = '0';
+			}
+			
+			$post_criteria = new CDbCriteria();
+			$post_criteria->condition = 'status_id=1 AND post_type_id = 1 AND id IN ('.$post_array.') AND created <= now()';
+			
+			$post_criteria->order = 'created DESC';
+			 
+			//get count
+			$count = Post::model()->count($post_criteria);
+			 
+			//pagination
+			/*
+			$pages = new CPagination($count);
+			$pages->setPageSize(10);
+			$pages->applyLimit($post_criteria);
+			 */
+			//result to show on page
+			$post_result = Post::model()->findAll($post_criteria);
+			$posts = new CArrayDataProvider($post_result);
+		
+			$this->render('results',array(
+				'posts'=> $posts,
+				//'pages'=>$pages,
+				'post_count'=>$post_array,
+			));
+	    } else {
+			$this->render('index');
+		}
+		
 	}
 
 	/**

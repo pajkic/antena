@@ -40,6 +40,9 @@ return array (
 'Korisnik'=>'User',
 'Slika'=>'Image',
 'Nadređena stranica' => 'Parent page',
-'Nadređena kategorija' => 'Parent category'
+'Nadređena kategorija' => 'Parent category',
+'Rezultati pretrage' => 'Search results',
+'Ništa nije pronađeno' => 'Nothing found',
+'Pretraži' => 'Search',
 );
 ?>
