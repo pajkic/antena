@@ -7,7 +7,7 @@ $this->widget('zii.widgets.jui.CJuiTabs',array(
      //   'animated'=>'bounceslide',
         
     ),
-    'headerTemplate' => '<li><a href="{url}" title="{title}">{title}</a></li>',
+    'headerTemplate' => '<li><a href="{url}">{title}</a></li>',
     /*
     'themeUrl'=>'/css',
     'theme'=>'tabs',
