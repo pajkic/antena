@@ -8,11 +8,11 @@ $this->widget('zii.widgets.jui.CJuiTabs',array(
         
     ),
     'headerTemplate' => '<li><a href="{url}">{title}</a></li>',
-    /*
+  
     'themeUrl'=>'/css',
     'theme'=>'tabs',
     'cssFile' => 'custom.css',
-	*/
+	
 ));
 ?>
 </div>
