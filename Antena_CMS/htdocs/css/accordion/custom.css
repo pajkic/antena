@@ -7,6 +7,7 @@
 	border-radius: 4px;
 		-moz-border-radius: 4px;
 	  	-webkit-border-radius: 4px;
+	padding: 0; 	
 }
 #main_content .ui-accordion .ui-accordion-header:hover {
 	background: #1C6084;
@@ -27,7 +28,9 @@
 #main_content .ui-widget-content {
 	height: auto !important;
 	background: transparent;
-	border: 1px solid #DEDEDE;
+	border-left: 1px solid #DEDEDE;
+	border-bottom: 1px solid #DEDEDE;
+	border-right: 1px solid #DEDEDE;
 	padding: 20px;
 	margin-bottom: 2px;
 	border-radius: 4px;
@@ -56,4 +59,9 @@ aside .ui-widget-content .news_info:last-child {
 #main_content .ui-widget-content h3 a:hover {
 	color: #005580;
 }
- 
+.ui-accordion .ui-accordion-icons {
+padding-left: 0;
+}
+.ui-state-default a, .ui-state-default a:link {
+	color: #fff;
+}
