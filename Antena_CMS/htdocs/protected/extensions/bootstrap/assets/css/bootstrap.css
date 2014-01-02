@@ -5698,6 +5698,7 @@ header .custom_block {
 }
 header #lang {
 	margin-top: 20px;
+	margin-right: 2px;
 }
 header .custom_block h3, .f_blocks .custom_block h3 {
 	display: none;
@@ -5856,13 +5857,14 @@ footer .f_blocks {
 hgroup .form-search { 
 	float: right;
 	clear: right;
-	margin-top: 15px;
+	margin-top: 13px;
 }
 hgroup .form-search input { 
 	border: 1px solid #DDDDDD;
 	width: 180px;
 	margin-right: -8px;
 	height: 23px;
+	box-shadow: 0 0 0 0;
 }
 hgroup .form-search .btn {
 	background: url("/images/frontend/search.jpg") no-repeat 2px scroll #F0F0F0;
