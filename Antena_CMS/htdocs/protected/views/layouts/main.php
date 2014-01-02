@@ -38,8 +38,7 @@
 			
 		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
 
-
-<div class="search-form">
+<div class="form-search">
 
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'search-form',
