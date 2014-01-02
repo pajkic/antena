@@ -23,7 +23,7 @@
 	background: #F6F6F6;
 } */
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, 
-.ui-state-active
+li.ui-state-active a
 /* .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a */ {
 	border: 1px solid #DEDEDE;
 	background: #F6F6F6;
