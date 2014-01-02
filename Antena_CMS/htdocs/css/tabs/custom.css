@@ -5,7 +5,7 @@
 .ui-tabs .ui-tabs-nav {
 	padding: 0;
 	margin: 0 0 2px;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 .ui-widget-header {
 	background: none;
@@ -18,6 +18,7 @@
 }
 .ui-tabs .ui-tabs-nav li a {
 	padding: 8px 20px;
+	display: block;
 }
 .ui-tabs .ui-tabs-panel { 
 	padding: 20px;
