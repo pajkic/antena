@@ -5700,9 +5700,9 @@ header #lang {
 	margin-top: 20px;
 	margin-right: 2px;
 }
-header .custom_block h3, .f_blocks .custom_block h3 {
+/*header .custom_block h3, .f_blocks .custom_block h3 {
 	display: none;
-}
+} */
 #lang {
 	float: right;
 	font-size: 14px;
@@ -5861,7 +5861,6 @@ hgroup .form-search {
 }
 hgroup .form-search input { 
 	border: 1px solid #DDDDDD;
-	width: 180px;
 	margin-right: -8px;
 	height: 23px;
 	box-shadow: 0 0 0 0;
