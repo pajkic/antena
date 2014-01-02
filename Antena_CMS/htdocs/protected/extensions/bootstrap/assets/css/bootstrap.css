@@ -5856,5 +5856,8 @@ footer .f_blocks {
 hgroup .form-search { 
 	float: right;
 	clear: right;
-	margin-top: 5px;
+	margin-top: 15px;
+}
+hgroup .form-search input { 
+	border: 1px solid #DDDDDD;
 }
