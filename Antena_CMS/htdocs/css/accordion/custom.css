@@ -65,8 +65,8 @@ aside .ui-widget-content .news_info:last-child {
 #main_content .ui-widget-content h3 a:hover {
 	color: #005580;
 }
-.ui-accordion .ui-accordion-icons {
-padding-left: 0;
+.ui-accordion .ui-accordion-icons, .ui-accordion .ui-accordion-header {
+padding: 0;
 }
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
 	display: none;
