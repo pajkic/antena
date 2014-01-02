@@ -34,7 +34,7 @@ li.ui-state-active a
 	border: 1px solid #707070;
 	color: #fff;
 } */
-.ui-state-default a, .ui-state-default a:focus {
+li.ui-state-default a, .ui-state-default a:focus {
 	background: #707070;
 	border: 1px solid #707070;
 	color: #fff;
