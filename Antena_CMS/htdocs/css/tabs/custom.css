@@ -18,22 +18,23 @@
 	border: 1px solid #DEDEDE;
 	background: #F6F6F6;
 }
-.ui-tabs .ui-tabs-nav li a { 
+/*.ui-tabs .ui-tabs-nav li a { 
 	border: 1px solid #DEDEDE;
 	background: #F6F6F6;
-}
+} */
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, 
 .ui-state-active
 /* .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a */ {
 	border: 1px solid #DEDEDE;
 	background: #F6F6F6;
+	cursor: default;
 }
 /* .ui-tabs .ui-tabs-nav li a {
 	background: #707070;
 	border: 1px solid #707070;
 	color: #fff;
 } */
-.ui-state-default a {
+.ui-state-default a, .ui-state-default a:focus {
 	background: #707070;
 	border: 1px solid #707070;
 	color: #fff;
