@@ -5852,6 +5852,8 @@ footer .f_blocks {
 .gallery_block img {
 	margin-bottom: 3px;
 }
-/* */ 
-div.search-form { 
+/* pretraga */ 
+.form-search { 
+	float: right;
+	clear: right;
 }
