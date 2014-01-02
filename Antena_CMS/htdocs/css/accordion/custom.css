@@ -16,7 +16,7 @@
 	background: #F6F6F6;
 	border: 1px solid #DEDEDE;
 }
-.ui-accordion .ui-accordion-header a {
+#main_content .ui-accordion .ui-accordion-header a {
 	padding: 8px 20px;
 	color: #fff;
 	font-size: 15px;
@@ -62,6 +62,9 @@ aside .ui-widget-content .news_info:last-child {
 .ui-accordion .ui-accordion-icons {
 padding-left: 0;
 }
-.ui-state-default a, .ui-state-default a:link {
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	display: none;
+}
+#main_content .ui-state-default a, #main_content .ui-state-default a:link {
 	color: #fff;
 }
