@@ -5853,7 +5853,7 @@ footer .f_blocks {
 	margin-bottom: 3px;
 }
 /* pretraga */ 
-hgroup.form-search { 
+hgroup .form-search { 
 	float: right;
 	clear: right;
 	margin-top: 5px;
