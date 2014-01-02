@@ -5860,7 +5860,12 @@ hgroup .form-search {
 }
 hgroup .form-search input { 
 	border: 1px solid #DDDDDD;
+	width: 180px;
+	margin-right: -7px;
 }
 hgroup .form-search .btn {
 	background: url("/images/frontend/search.jpg");
+	height: 30px;
+	width: 32px;
+	border: 1px solid #DDDDDD;
 }
