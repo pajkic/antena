@@ -1,10 +1,23 @@
-.ui-widget-header {
-	background: none;
+.ui-tabs {
+	padding: 0;
 	border: 0;
 }
 .ui-tabs .ui-tabs-nav {
 	padding: 0;
 }
+.ui-widget-header {
+	background: none;
+	border: 0;
+}
 .ui-tabs .ui-tabs-nav li {
-	margin: 0;
+	margin: 0 1px 0 0;
+}
+.ui-tabs .ui-tabs-panel { 
+	padding: 20px;
+	border: 1px solid #DEDEDE;
+	background: #F6F6F6;
+}
+.ui-tabs .ui-tabs-nav li a { 
+	border: 1px solid #DEDEDE;
+	background: #F6F6F6;
 }
