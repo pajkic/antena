@@ -30,7 +30,8 @@
 	background: #F6F6F6;
 	clear: both;
 }
-.ui-state-default.ui-state-active, .ui-widget-content .ui-state-default.ui-state-active, .ui-widget-header .ui-state-active, li.ui-state-default.ui-state-active a:link {
+.ui-state-default.ui-state-active, .ui-widget-content .ui-state-default.ui-state-active, .ui-widget-header .ui-state-active, 
+li.ui-state-default.ui-state-active a:link, li.ui-state-default.ui-state-active a:link:hover {
 	border-color: #DEDEDE;
 	background: #F6F6F6;
 	color: #525252;
@@ -42,6 +43,9 @@ li.ui-state-default a:link, .ui-state-default a:focus, .ui-state-default a:focus
 	color: #fff;
 }
 
+li.ui-state-default a:link:hover {
+	background: #444;
+}
 .ui-tabs .ui-tabs-panel, .ui-tabs .ui-tabs-nav li a { 
 	border-radius: 4px;
 		-moz-border-radius: 4px;
