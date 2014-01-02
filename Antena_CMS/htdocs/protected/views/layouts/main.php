@@ -51,7 +51,7 @@
 	'enableAjaxValidation'=>true,
 	)); ?>
 	
-	<?php echo TbHtml::textField('needle', '', array('placeholder' => Yii::t('app','Pretraži'))); ?>
+	<?php echo TbHtml::textField('needle', '', array('placeholder' => Yii::t('app',' '))); ?>
 	<?php echo TbHtml::submitButton(Yii::t('app','Pretraži'));?>
 
     <?php $this->endWidget(); ?>
