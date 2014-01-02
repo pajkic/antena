@@ -9,7 +9,7 @@
 	  	-webkit-border-radius: 4px;
 	padding: 0; 	
 }
-#main_content .ui-accordion .ui-accordion-header:hover {
+#main_content .ui-accordion .ui-accordion-header:hover a {
 	background: #1C6084;
 }
 #main_content .ui-accordion .ui-accordion-header-active, #main_content .ui-accordion .ui-accordion-header-active:hover {
@@ -24,6 +24,7 @@
 }
 #main_content .ui-accordion .ui-accordion-header-active a {
 	color: #7F7F7F;
+	border-bottom: 1px solid #DEDEDE;
 }
 #main_content .ui-widget-content {
 	height: auto !important;
@@ -65,6 +66,6 @@ padding-left: 0;
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
 	display: none;
 }
-#main_content .ui-state-default a, #main_content .ui-state-default a:link {
+#main_content .ui-state-default a {
 	color: #fff;
 }
