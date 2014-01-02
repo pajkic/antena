@@ -1,7 +1,7 @@
-#page .ui-widget-header {
+.ui-widget-header {
 	background: none;
 	border: 0;
 }
-#page .ui-tabs .ui-tabs-nav {
+.ui-tabs .ui-tabs-nav {
 	padding: 0;
 }
