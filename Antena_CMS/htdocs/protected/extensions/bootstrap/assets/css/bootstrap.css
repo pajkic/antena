@@ -5864,7 +5864,7 @@ hgroup .form-search input {
 	margin-right: -7px;
 }
 hgroup .form-search .btn {
-	background: url("/images/frontend/search.jpg");
+	background: url("/images/frontend/search.jpg") no-repeat scroll #F0F0F0;
 	height: 30px;
 	width: 32px;
 	border: 1px solid #DDDDDD;
