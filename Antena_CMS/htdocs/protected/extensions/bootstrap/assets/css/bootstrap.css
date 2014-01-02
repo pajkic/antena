@@ -5861,3 +5861,6 @@ hgroup .form-search {
 hgroup .form-search input { 
 	border: 1px solid #DDDDDD;
 }
+hgroup .form-search .btn {
+	background: url("/images/frontend/search.jpg");
+}
