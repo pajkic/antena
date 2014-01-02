@@ -27,7 +27,12 @@
 	border: 1px solid #DEDEDE;
 	background: #F6F6F6;
 }
-.ui-tabs .ui-tabs-nav li a {
+/* .ui-tabs .ui-tabs-nav li a {
+	background: #707070;
+	border: 1px solid #707070;
+	color: #fff;
+} */
+.ui-state-default a {
 	background: #707070;
 	border: 1px solid #707070;
 	color: #fff;
