@@ -5861,11 +5861,12 @@ hgroup .form-search {
 hgroup .form-search input { 
 	border: 1px solid #DDDDDD;
 	width: 180px;
-	margin-right: -7px;
+	margin-right: -8px;
+	height: 23px;
 }
 hgroup .form-search .btn {
-	background: url("/images/frontend/search.jpg") no-repeat scroll #F0F0F0;
-	height: 30px;
-	width: 32px;
+	background: url("/images/frontend/search.jpg") no-repeat 2px scroll #F0F0F0;
+	height: 33px;
+	width: 36px;
 	border: 1px solid #DDDDDD;
 }
