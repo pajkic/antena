@@ -35,31 +35,30 @@
 	
 	<header>
 		<hgroup>
+		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
 			
 		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
 
-<div class="form-search">
-
-    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-	'id'=>'search-form',
-	//'layout' => TbHtml::FORM_LAYOUTHORIZONTAL,
-	'action' => '/site/search/lang/'.Yii::app()->language,
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>true,
-	)); ?>
-	
-	<?php echo TbHtml::textField('needle', '', array('placeholder' => Yii::t('app',' '))); ?>
-	<?php echo TbHtml::submitButton(Yii::t('app','Pretraži'));?>
-
-    <?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
+		<div class="form-search">
 		
-		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
+		    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+			'id'=>'search-form',
+			//'layout' => TbHtml::FORM_LAYOUTHORIZONTAL,
+			'action' => '/site/search/lang/'.Yii::app()->language,
+			// Please note: When you enable ajax validation, make sure the corresponding
+			// controller action is handling ajax validation correctly.
+			// There is a call to performAjaxValidation() commented in generated controller code.
+			// See class documentation of CActiveForm for details on this.
+			'enableAjaxValidation'=>true,
+			)); ?>
+			
+			<?php echo TbHtml::textField('needle', '', array('placeholder' => Yii::t('app',' '))); ?>
+			<?php echo TbHtml::submitButton(Yii::t('app','Pretraži'));?>
+		
+		    <?php $this->endWidget(); ?>
+		
+		</div><!-- form -->
+	 
 		</hgroup>  	
 	</header> <!-- header -->
 	 
