@@ -177,7 +177,10 @@ class Controller extends CController
 			}
 			return $this->widget('application.extensions.widgets.bTabs', array('data'=>$tab_blocks, 'block'=>$block));
 			break;
-
+		case 12: //bSearch
+			return $this->widget('application.extensions.widgets.bSearch',array(),$save);
+			break;
+	
 		default:
 			break;
 		}
