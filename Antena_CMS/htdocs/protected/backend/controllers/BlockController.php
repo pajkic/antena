@@ -118,8 +118,8 @@ class BlockController extends Controller
 		
 		$pages = Post::model()->findAllByAttributes(array('post_type_id'=>2));
 		
-		$pids = array('-1');
-		$pnames=array('Index');
+		$pids = array('-1','-2');
+		$pnames=array('Index','Rezultati pretrage');
 		
 		foreach ($pages as $page) {
 			$pids[] = $page['id'];
@@ -344,6 +344,8 @@ class BlockController extends Controller
 				case 11:
 					$this->renderPartial('forms/_tabs');
 					break;
+				case 12:
+					$this->renderPartial('forms/_search');
 
 				default:
 					break;
