@@ -99,7 +99,7 @@ class SearchController extends Controller
 				'post_count'=>$post_array,
 			));
 	    } else {
-			$this->render('index');
+			$this->render('/site/index');
 		}
 		
 	}
