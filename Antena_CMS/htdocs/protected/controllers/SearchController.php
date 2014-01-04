@@ -76,7 +76,7 @@ class SearchController extends Controller
 			}
 			
 			$post_criteria = new CDbCriteria();
-			$post_criteria->condition = 'status_id=1 AND post_type_id = 1 AND id IN ('.$post_array.') AND created <= now()';
+			$post_criteria->condition = 'status_id=1 AND id IN ('.$post_array.') AND created <= now()';
 			
 			$post_criteria->order = 'created DESC';
 			 
