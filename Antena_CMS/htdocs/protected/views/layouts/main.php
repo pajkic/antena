@@ -34,11 +34,9 @@
 <div class="container" id="page">
 	
 	<header>
-		<hgroup>
-		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
-			
+		<hgroup>			
 		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
-
+		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
 	</hgroup>  	
 	</header> <!-- header -->
 	 
