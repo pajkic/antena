@@ -5,7 +5,9 @@
 
 <div class="listanje_clanci">
 	<h3><?php echo TbHtml::link(CHtml::encode($data->postDescription->title),'/post/'.$data->id.'/'.urlencode($data->postDescription->title).'/lang/'.Yii::app()->language); ?></h3>
+	<?php if ($data->post_type_id == 1): ?>
 	<small><?php echo date('d. m. Y.',strtotime($data->created));?></small>
 	<img src="<?php echo $data->image;?>" width="70" height="66"/>
 	<p><?php echo CHtml::encode($data->postDescription->excerpt); ?></p>
+	<?php endif; ?>
 </div>

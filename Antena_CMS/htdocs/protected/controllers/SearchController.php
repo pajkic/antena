@@ -78,21 +78,21 @@ class SearchController extends Controller
 			$post_criteria = new CDbCriteria();
 			$post_criteria->condition = 'status_id=1 AND id IN ('.$post_array.') AND created <= now()';
 			
-			$post_criteria->order = 'created DESC';
-			 
+			$post_criteria->order = 'post_type_id, created DESC';
+			
+			
 			//get count
 			$count = Post::model()->count($post_criteria);
 			 
-			//pagination
 			/*
 			$pages = new CPagination($count);
 			$pages->setPageSize(10);
 			$pages->applyLimit($post_criteria);
-			 */
+			*/
 			//result to show on page
 			$post_result = Post::model()->findAll($post_criteria);
 			$posts = new CArrayDataProvider($post_result);
-		
+			$posts->setPagination(false);
 			$this->render('results',array(
 				'posts'=> $posts,
 				//'pages'=>$pages,

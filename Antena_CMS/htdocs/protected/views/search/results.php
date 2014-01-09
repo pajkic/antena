@@ -1,5 +1,6 @@
 <h2><?php echo Yii::t('app','Rezultati pretrage');?> ("<?php echo $_POST['needle'];?>"):</h2>
 
+
 <? if ($post_count !== '0'): ?>
 <?php 
  $this->widget('zii.widgets.CListView', array(
@@ -7,9 +8,9 @@
 	'itemView' => '/term/_view',
 	'ajaxUpdate'=>false,
 	'enablePagination'=>false,
-	'pagerCssClass' => 'result-list',
+	//'pagerCssClass' => 'result-list',
 	'summaryText' => '',
-	'emptyText' => ''
+	'emptyText' => '',	
 ));
 /*
 $this->widget('CLinkPager', array(
@@ -20,9 +21,9 @@ $this->widget('CLinkPager', array(
 	'lastPageLabel' => '&lt;&lt;',
 	'pages' => $pages,
 ));
+
  * 
- */
-?>
+ */?>
 
 <?php else: ?>
 	<h3><?php echo Yii::t('app','Ništa nije pronađeno');?>.</h3>
