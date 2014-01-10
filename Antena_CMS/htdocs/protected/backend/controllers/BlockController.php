@@ -346,6 +346,8 @@ class BlockController extends Controller
 					break;
 				case 12:
 					$this->renderPartial('forms/_search');
+				case 13:
+					$this->renderPartial('forms/_sitemap');
 
 				default:
 					break;

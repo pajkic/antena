@@ -180,6 +180,34 @@ class Controller extends CController
 		case 12: //bSearch
 			return $this->widget('application.extensions.widgets.bSearch',array(),$save);
 			break;
+		case 13: //bSiteMap
+			$menus = Menu::model()->findAll(array('order'=>'sort'));
+			$array = array();
+			
+			foreach($menus as $menu) {
+				
+				if (strpos($menu->content,'post/') !== false OR strpos($menu->content,'term/') !== false) 
+					$menu->content .= '/'.urlencode(MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu->id))->title).'/lang/'.Yii::app()->language;
+				$array[] = array(
+				'id'=>$menu->id,
+				'label'=>MenuDescription::model()->findByAttributes(array('language_id'=>Language::model()->findByAttributes(array('lang' => Yii::app()->language))->id,'menu_id'=>$menu->id))->title,
+				'url'=> $menu->content,
+				'parent_id'=>$menu->parent_id
+				);
+	
+			}
+			
+			$menu = array();
+			$tree = $this->buildTree($array);
+			foreach($tree as $branch){
+				array_push($menu,$branch);
+			}
+			
+			return $this->widget('application.extensions.widgets.bSiteMap',array(
+				'data' => $menu
+				),$save);
+			
+			break;
 	
 		default:
 			break;
