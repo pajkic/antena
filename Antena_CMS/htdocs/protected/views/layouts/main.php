@@ -93,6 +93,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="modal-footer">
+			<?php echo Yii::getVersion();?>
 			Copyright &copy; <?php echo date('Y'); ?> ... | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 		</div>	
 	</footer> <!-- footer -->
