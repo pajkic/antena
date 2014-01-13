@@ -11,7 +11,6 @@ class bGallery extends CWidget
     public function run()
     {
     	
-    	
 		$galleries = "(" . implode(',',$this->data['galleries']) . ")";
 		$criteria = new CDbCriteria;
 		$criteria->select = "*, rand() as rand";

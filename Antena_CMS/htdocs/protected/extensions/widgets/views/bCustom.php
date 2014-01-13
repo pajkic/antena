@@ -1,4 +1,4 @@
-<div class="custom_block">
+<div class="custom_block" id="block_<?php echo $block['id']?>">
 
 <?php if ($block['heading'] == 1): ?>
 <div class="block_title"><?php echo $block_title;?></div>

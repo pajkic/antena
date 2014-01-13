@@ -1,4 +1,4 @@
-<div class="gallery_block">
+<div class="gallery_block" <?php if (isset($block['id'])): ?> id="block_<?php echo $block['id']?>" <?php endif; ?>>
 
 <?php if ($block['heading'] == 1): ?>
 <h3><?php echo $block_title;?></h3>

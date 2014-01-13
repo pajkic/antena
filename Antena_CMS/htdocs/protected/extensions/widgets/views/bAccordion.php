@@ -1,4 +1,4 @@
-<div class="accordion_block">
+<div class="accordion_block" id="block_<?php echo $block['id']?>">
 <?php
 $this->widget('zii.widgets.jui.CJuiAccordion',array(
     'panels'=>$data,

@@ -1,4 +1,4 @@
-<div class="tabs_block">
+<div class="tabs_block" id="block_<?php echo $block['id']?>">
 <?php
 $this->widget('zii.widgets.jui.CJuiTabs',array(
     'tabs'=>$data,

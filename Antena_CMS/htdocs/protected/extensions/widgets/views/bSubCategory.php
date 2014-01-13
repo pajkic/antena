@@ -1,4 +1,4 @@
-<div class="subcategory_block">
+<div class="subcategory_block" id="block_<?php echo $block['id']?>">
 
 <?php if ($block['heading'] == 1): ?>
 <h3><?php echo $block_title;?></h3>
