@@ -199,8 +199,8 @@ class GalleryItemController extends Controller
                 $thumbnail = array(
 					'url' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/'.$_FILES['file_name']['name'],
 					'savePath' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/thumbs/'.$_FILES['file_name']['name'],
-					'box_w' => 160,
-					'box_h' => 160,
+					'box_w' => Yii::app()->setting->getValue('thumbnail_size'),
+					'box_h' => Yii::app()->setting->getValue('thumbnail_size'),
 					/*
 					'r' => 230,
 					'g' => 230,

@@ -60,7 +60,7 @@ class TermController extends Controller
 		 
 		//pagination
 		$pages = new CPagination($count);
-		$pages->setPageSize(10);
+		$pages->setPageSize(Yii::app()->setting->getValue('posts_per_page'));
 		$pages->applyLimit($criteria);
 		 
 		//result to show on page
