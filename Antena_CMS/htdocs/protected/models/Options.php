@@ -42,7 +42,7 @@ class Options extends CActiveRecord
 			array('value', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, value, autoload', 'safe', 'on'=>'search'),
+			array('id, name, value, autoload', 'safe'),
 		);
 	}
 

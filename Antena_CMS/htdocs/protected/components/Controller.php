@@ -25,8 +25,9 @@ class Controller extends CController
 	{
 		
 		parent::init();
-		
+
 		$app = Yii::app();
+		
 		if (isset($_GET['lang']))
 		{
 			$languages = Language::model()->findAllByAttributes(array('active'=>1));

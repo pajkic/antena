@@ -10,24 +10,6 @@ $this->breadcrumbs=$breadcrumbs;
 
 <h1><?php echo $content['title'];?></h1>
 
-<?php
-/* 
-$this->widget('bootstrap.widgets.TbListView',array(
-	'dataProvider'=>$posts,
-	'itemView'=>'_view',
-)); 
- 
-*/?>
-
-<?php 
-/*
-$this->widget('CLinkPager', array(
-    'pages' => $pages,
-    
-))
- * 
- */ 
-?>
 <?php 
  $this->widget('zii.widgets.CListView', array(
 	'dataProvider' => $posts,

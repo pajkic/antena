@@ -53,6 +53,8 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+		
+		'setting'=>array('class'=>'WebSetting'),
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -114,8 +116,7 @@ return array(
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				 * 
-				 */
+				*/
 				
 			),
 		),
