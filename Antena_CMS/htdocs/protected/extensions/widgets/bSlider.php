@@ -21,7 +21,7 @@ class bSlider extends CWidget
 		}
 	
     Yii::app()->clientScript->registerScript('helloscript',"$('.carousel').carousel({interval: 5000});",CClientScript::POS_READY);
-    $this->render('bSlider', array('data'=>$images));
+    $this->render('bSlider', array('data'=>$images,'block'=>$this->block));
     }
 }
 ?>
