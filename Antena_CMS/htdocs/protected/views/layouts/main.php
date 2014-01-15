@@ -101,10 +101,15 @@
 		</div>	
 	</footer> <!-- footer -->
 	
- 	<a href="/post/79/Mapa+sajta/lang/en"><img src="/images/frontend/sitemap.jpg" /></a>
 	
-</div><!-- page -->
+ <!-- mapa sajta -->
+ <!--	
+ 	<a href="/post/79/Mapa+sajta/lang/en"><img src="/images/frontend/sitemap.jpg" /></a>
+ 	<a href="/post/79/Mapa+sajta/lang/sr"><img src="/images/frontend/sitemap.jpg" /></a>
+ 	<a href="/post/79/Mapa+sajta/lang/hr"><img src="/images/frontend/sitemap.jpg" /></a> -->
 
+ 		
+</div><!-- page -->
 
 </body>
 </html>
