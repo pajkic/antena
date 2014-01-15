@@ -35,9 +35,12 @@
 	
 	<header>
 		<hgroup>			
-		<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
-		<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
-	</hgroup>  	
+			
+			 
+			
+			<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
+			<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
+		</hgroup>  	
 	</header> <!-- header -->
 	 
 	<div id="main"> 		
@@ -97,6 +100,9 @@
 			Copyright &copy; <?php echo date('Y'); ?> ... | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 		</div>	
 	</footer> <!-- footer -->
+	
+	<img src="/images/sitemap.jpg" />
+	
 </div><!-- page -->
 
 
