@@ -101,7 +101,7 @@
 		</div>	
 	</footer> <!-- footer -->
 	
-	<img src="/images/sitemap.jpg" />
+ 	<a href="/post/79/Mapa+sajta/lang/en"><img src="/images/frontend/sitemap.jpg" /></a>
 	
 </div><!-- page -->
 
