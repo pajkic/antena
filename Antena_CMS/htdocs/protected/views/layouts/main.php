@@ -129,5 +129,20 @@
 	</div>			
 -->
 
+<!-- partneri na projektu  -->
+<!-- 
+	<div class="partneri">
+		Partneri na projektu
+		<a href="#" target="_blank"><img src="" /></a>
+	</div>
+	<div class="partneri">
+		Partneri na projektu
+		<a href="#" target="_blank"><img src="" /></a>
+	</div>
+	<div class="partneri">
+		Project partners
+		<a href="#" target="_blank"><img src="" /></a>
+	</div>
+-->
 </body>
 </html>
