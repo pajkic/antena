@@ -92,6 +92,10 @@
 			<?php $this->actionBlocks(8); ?>
 		</div>
 		<?php endif; ?>
+	
+	<!-- disclaimer  -->
+	<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
+	
 		<div class="modal-footer">
 			Copyright &copy; <?php echo date('Y'); ?> ... | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 		</div>	
@@ -112,10 +116,6 @@
  	<a class="cross_border_logo" href="/lang/sr" title="Hrvatska-Srbija - Prekogranična saradnja za promociju investicija"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png" alt="Hrvatska-Srbija - Prekogranična saradnja za promociju investicija" /></a>
  	<a class="cross_border_logo" href="/lang/hr" title="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png" alt="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja" /></a> 
 -->
-
-<!-- disclaimer  -->
-
-<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
 
 <!-- partneri na projektu  -->
 <!-- 
