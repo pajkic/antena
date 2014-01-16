@@ -5529,6 +5529,11 @@ to {
 	position: fixed;
 }
 /* blokovi */
+.cross_border_logo {
+	padding: 0 0 5px 20px;
+	float: left;
+	margin-bottom: 15px;
+}
 .block_title {
 	margin-bottom: 15px;
 	padding: 7px 20px;
@@ -5668,11 +5673,6 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 .page_content .content_top h3 {
 	font-size: 27px;
 }
-/* .page_content .content_bottom {
-	border-top: 1px solid #eee;
-	margin-top: 20px;
-	padding-top: 20px;
-} */
 .custom_block h3 {
 	font-size: 25px;
 	margin: 0 0 20px 0;
@@ -5700,9 +5700,6 @@ header #lang {
 	margin-top: 20px;
 	margin-right: 2px;
 }
-/*header .custom_block h3, .f_blocks .custom_block h3 {
-	display: none;
-} */
 #lang {
 	float: right;
 	font-size: 14px;
