@@ -109,19 +109,7 @@
 </div><!-- page -->
 
 <!-- partneri na projektu  -->
-<!-- 
-	<div class="partneri">
-		Partneri na projektu
-		<a href="#" target="_blank"><img src="" /></a>
-	</div>
-	<div class="partneri">
-		Partneri na projektu
-		<a href="#" target="_blank"><img src="" /></a>
-	</div>
-	<div class="partneri">
-		Project partners
-		<a href="#" target="_blank"><img src="" /></a>
-	</div>
--->
+<?php include('html_blocks/' . Yii::app()->language . '/partneri.php'); ?>
+
 </body>
 </html>
