@@ -5823,13 +5823,17 @@ header #lang {
 footer {
 	margin-top: 25px;
 }
-footer .f_blocks {
+footer .f_blocks, .disclaimer {
 	color: #585858;
 	font-size: 13px;
 	line-height: 17px;
 	overflow: hidden;
 	border-top: 1px solid #DEDEDE;
 	padding-top: 20px;
+}
+.disclaimer img {
+	float: left;
+	margin-right: 20px;
 }
 /* kategorija */
 .listanje_clanci {
