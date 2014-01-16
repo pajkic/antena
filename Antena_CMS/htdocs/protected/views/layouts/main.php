@@ -98,6 +98,8 @@
 		</div>
 		<?php endif; ?>
 	
+	<!-- partneri na projektu  -->
+		<?php include('html_blocks/' . Yii::app()->language . '/partneri.php'); ?>
 	<!-- disclaimer  -->
 		<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
 	
@@ -107,9 +109,5 @@
 	</footer> <!-- footer --> 		
  		
 </div><!-- page -->
-
-<!-- partneri na projektu  -->
-<?php include('html_blocks/' . Yii::app()->language . '/partneri.php'); ?>
-
 </body>
 </html>
