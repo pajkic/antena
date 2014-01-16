@@ -107,11 +107,7 @@
 </div><!-- page -->
 
 <!-- mapa sajta -->
-<!--	
-	<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/en"><img src="/images/frontend/sitemap.jpg" /></a>
-	<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/sr"><img src="/images/frontend/sitemap.jpg" /></a>
-	<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/hr"><img src="/images/frontend/sitemap.jpg" /></a> 
--->
+<?php include('html_blocks/' . Yii::app()->language . '/sitemap.php'); ?>
 
 <!-- partneri na projektu  -->
 <!-- 

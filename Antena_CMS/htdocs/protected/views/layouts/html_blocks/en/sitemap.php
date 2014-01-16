@@ -1,0 +1,1 @@
+<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/en"><img src="/images/frontend/sitemap.jpg" /></a>
