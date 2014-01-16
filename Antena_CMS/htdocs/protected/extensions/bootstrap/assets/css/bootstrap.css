@@ -5839,23 +5839,22 @@ footer .f_blocks, .disclaimer {
 }
 .disclaimer {
 	margin: 20px 0;
-	border-top: 1px solid #eee;
 }
 .disclaimer img {
 	float: left;
 	margin-right: 20px;
 }
-.partneri p {
+.partneri {
+	padding-top: 25px;
+	border-top: 1px solid #eee;
 	color: #999;
-	margin: 15px 0 15px 8px;
 }
 .partneri a img {
-	border: 1px solid #eee;
-	padding: 10px 20px;
+	padding: 0 10px;
 	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	margin: 0 6px;
+}
+.partneri a .one img {
+	margin-left: 10px
 }
 /* kategorija */
 .listanje_clanci {
