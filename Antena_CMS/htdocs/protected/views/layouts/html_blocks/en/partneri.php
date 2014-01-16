@@ -1,6 +1,6 @@
 	<div class="partneri">
-		<p>Project partners</p>
-		<a href="http://www.naled-serbia.org/" target="_blank"><img src="/images/frontend/naled.png" alt="NALED" /> </a>
+		Project partners
+		<a class="one" href="http://www.naled-serbia.org/" target="_blank"><img src="/images/frontend/naled.png" alt="NALED" /> </a>
 		<a href="http://www.gradiste.hr/" target="_blank"><img src="/images/frontend/gradiste.png" alt="Municipality of Gradište" /> </a>
 		<a href="http://www.lovas.hr/" target="_blank"><img src="/images/frontend/lovas.png" alt="Municipality of Lovas" /> </a>
 		<a href="http://www.ilok.hr/" target="_blank"><img src="/images/frontend/ilok.png" alt="City of Ilok" /> </a>
