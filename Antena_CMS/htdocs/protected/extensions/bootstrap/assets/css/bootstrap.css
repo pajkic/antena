@@ -5853,7 +5853,7 @@ footer .f_blocks, .disclaimer {
 	padding: 0 10px;
 	border-radius: 3px;
 }
-.partneri a .one img {
+.partneri a.one img {
 	margin-left: 10px;
 }
 /* kategorija */
