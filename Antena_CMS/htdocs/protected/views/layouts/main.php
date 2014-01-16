@@ -34,7 +34,10 @@
 <div class="container" id="page">
 	
 	<header>
-		<hgroup>						
+		<hgroup>	
+		<!-- logo -->
+		<?php include('html_blocks/' . Yii::app()->language . '/logo.php'); ?>
+						
 			<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
 			<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
 		</hgroup>  	
@@ -94,7 +97,7 @@
 		<?php endif; ?>
 	
 	<!-- disclaimer  -->
-	<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
+		<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
 	
 		<div class="modal-footer">
 			Copyright &copy; <?php echo date('Y'); ?> ... | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
@@ -109,10 +112,6 @@
 	<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/sr"><img src="/images/frontend/sitemap.jpg" /></a>
 	<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/hr"><img src="/images/frontend/sitemap.jpg" /></a> 
 -->
-
-<!-- logo -->
-<?php include('html_blocks/' . Yii::app()->language . '/logo.php'); ?>
-
 
 <!-- partneri na projektu  -->
 <!-- 
