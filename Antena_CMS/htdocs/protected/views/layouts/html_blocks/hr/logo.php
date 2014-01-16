@@ -1,0 +1,1 @@
+<a class="cross_border_logo" href="/lang/hr" title="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png" alt="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja" /></a> 

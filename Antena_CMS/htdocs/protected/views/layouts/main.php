@@ -111,11 +111,8 @@
 -->
 
 <!-- logo -->
-<!--	
- 	<a class="cross_border_logo" href="/lang/en" title="Croatia-Serbia - Cross-Border Cooperation for Investment Promotion"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-en.png" alt="Croatia-Serbia - Cross-Border Cooperation for Investment Promotion" /></a>
- 	<a class="cross_border_logo" href="/lang/sr" title="Hrvatska-Srbija - Prekogranična saradnja za promociju investicija"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png" alt="Hrvatska-Srbija - Prekogranična saradnja za promociju investicija" /></a>
- 	<a class="cross_border_logo" href="/lang/hr" title="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-hr-sr.png" alt="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja" /></a> 
--->
+<?php include('html_blocks/' . Yii::app()->language . '/logo.php'); ?>
+
 
 <!-- partneri na projektu  -->
 <!-- 
