@@ -115,7 +115,7 @@
 
 <!-- disclaimer  -->
 
-<?php /* include('html_blocks/' . Yii::app()->language . '/disclaimer.php');  */ ?>
+<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
 
 <!-- partneri na projektu  -->
 <!-- 
