@@ -5,7 +5,7 @@
 <?php endif; ?>
 
 <?php if ($page_title == 1): ?>
-<?php echo $data['title'];?>
+<?php echo '<h2>' .$data['title'] . '</h2>';?>
 <?php endif; ?>
 
 
