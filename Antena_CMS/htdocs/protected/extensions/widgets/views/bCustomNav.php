@@ -6,8 +6,9 @@
 
 	<ul>
 		<?php foreach ($data as $k=>$v):?>
-		<li>
-			<?php echo TbHtml::link($v, $k . '/'.urlencode($v) .'/lang/' . Yii::app()->language); ?>
+		<?php $link = $k  . '/' . urlencode($v) . '/lang/' . Yii::app()->language;?>
+		<li<?php echo ($link == Yii::app()->request->url) ? ' class="active"': ''; ?>>
+			<?php echo TbHtml::link($v, $link); ?>
 		</li>
 
 		<?php endforeach; ?>

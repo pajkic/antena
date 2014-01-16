@@ -21,6 +21,8 @@ class bMenu extends CWidget {
 			} else {
 				$str .= 'last';
 			}
+			if ($item['url'] == Yii::app()->request->url)
+			$str.=' active';
 			$str .= '"><a href="' . $item['url'] . '"><span>' . $item['label'] . '</span></a>';
 			
 			if (isset($item['items'])) {
