@@ -5841,13 +5841,13 @@ footer .f_blocks, .disclaimer {
 	margin: 20px 0;
 	border-top: 1px solid #eee;
 }
-.disclaimer p {
-	margin: 15px 0 15px 8px;
-	color: #999;
-}
 .disclaimer img {
 	float: left;
 	margin-right: 20px;
+}
+.partneri p {
+	color: #999;
+	margin: 15px 0 15px 8px;
 }
 .partneri a img {
 	border: 1px solid #eee;
