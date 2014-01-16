@@ -5678,7 +5678,11 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 .page_content .content_top h3 {
 	font-size: 27px;
 }
-.custom_block h3 {
+.custom_block .block_title {
+	color: #999;
+	margin-top: 8px;
+} 
+.custom_block h2 {
 	font-size: 25px;
 	margin: 0 0 20px 0;
 	line-height: 31px;
