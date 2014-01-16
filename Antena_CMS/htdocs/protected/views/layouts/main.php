@@ -38,7 +38,9 @@
 		<!-- logo -->
 		<?php include('html_blocks/' . Yii::app()->language . '/logo.php'); ?>
 						
-			<?php $this->widget('application.extensions.widgets.langBox');?>		 	  
+			<?php $this->widget('application.extensions.widgets.langBox');?>		 	 
+		<!-- mapa sajta -->
+		<?php include('html_blocks/' . Yii::app()->language . '/sitemap.php'); ?> 
 			<?php $this->actionBlocks(1); ?> <!-- header blocks -->  	
 		</hgroup>  	
 	</header> <!-- header -->
@@ -105,9 +107,6 @@
 	</footer> <!-- footer --> 		
  		
 </div><!-- page -->
-
-<!-- mapa sajta -->
-<?php include('html_blocks/' . Yii::app()->language . '/sitemap.php'); ?>
 
 <!-- partneri na projektu  -->
 <!-- 

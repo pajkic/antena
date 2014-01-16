@@ -5534,6 +5534,11 @@ to {
 	float: left;
 	margin-bottom: 15px;
 }
+.sitemap_icon {
+	float: right;
+	margin-top: 25px;
+	margin-right: 10px;
+}
 .block_title {
 	margin-bottom: 15px;
 	padding: 7px 20px;
