@@ -5853,6 +5853,8 @@ footer .f_blocks, .disclaimer {
 	border: 1px solid #eee;
 	padding: 10px 20px;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	margin: 0 6px;
 }
 /* kategorija */
