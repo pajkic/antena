@@ -11,7 +11,7 @@ $this->breadcrumbs=$breadcrumbs;
 
 <?php if (strlen($post['image']) > 0): ?>	
 
-	<?php if (($post['post_type_id'] == 1) OR ($post['post_type_id']==2 AND Yii::app()->setting->getValue('page_image')=='yes')): ?>
+	<?php if (/*($post['post_type_id'] == 1) OR */($post['post_type_id']==2 AND Yii::app()->setting->getValue('page_image')=='yes')): ?>
 	
 		<img src="<?php echo $post['image'];?>" width="<?php echo Yii::app()->setting->getValue('post_image_width');?>";?>
 		
