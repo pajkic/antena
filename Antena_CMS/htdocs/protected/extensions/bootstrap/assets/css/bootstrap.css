@@ -5651,7 +5651,8 @@ aside .submenu_block ul li a, aside .customnav_block ul li a {
 	list-style: circle inside none;
 	padding: 3px 20px 2px;
 }
-aside .submenu_block ul li a:hover, aside .customnav_block ul li a:hover {
+aside .submenu_block ul li a:hover, aside .customnav_block ul li a:hover, 
+aside .submenu_block ul li .active a, aside .customnav_block ul li .active a {
 	color: #202020;
 }
 aside .submenu_block ul li:first-child,aside .customnav_block ul li:first-child {
