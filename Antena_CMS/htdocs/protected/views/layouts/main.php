@@ -27,7 +27,7 @@
 	  $cs = Yii::app()->getClientScript();
 	  $cs->registerScriptFile($baseUrl.'/ddslick/jquery.ddslick.min.js');
 	?>
-	
+	<meta name="keywords" content="Investments, EU CBC IP, Croatia-Serbia">
 </head>
 <body>
 
