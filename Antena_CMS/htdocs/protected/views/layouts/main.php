@@ -104,7 +104,7 @@
 		<?php include('html_blocks/' . Yii::app()->language . '/disclaimer.php'); ?>
 	
 		<div class="modal-footer">
-			Copyright &copy; <?php echo date('Y'); ?> ... | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
+			<?php include('html_blocks/' . Yii::app()->language . '/copyright.php'); ?>
 		</div>	
 	</footer> <!-- footer --> 		
  		

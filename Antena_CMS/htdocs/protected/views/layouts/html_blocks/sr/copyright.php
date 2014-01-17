@@ -1,0 +1,1 @@
+Copyright &copy; 2014. <a href="/lang/sr" title="Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja">Hrvatska-Srbija - Prekogranična suradnja za poticanje ulaganja</a> | Izrada <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o. - Dizajn digitalnih rešenja">Implementacija d.o.o.</a>
