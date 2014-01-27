@@ -5692,6 +5692,7 @@ aside .submenu_block ul li:first-child a, aside .customnav_block ul li:first-chi
 .page_content ul, ol {
 	margin: 0 0 10px 35px;
 	list-style: disc outside none;
+	text-align: justify;
 }
 .breadcrumbs {
 	background: #eee;
