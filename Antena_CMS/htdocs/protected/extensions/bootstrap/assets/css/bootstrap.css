@@ -5845,6 +5845,9 @@ footer .f_blocks, .disclaimer {
 	float: left;
 	margin-right: 20px;
 }
+.disclaimer p {
+	margin: 8px 0 5px;
+}
 .partneri {
 	padding-top: 25px;
 	border-top: 1px solid #eee;
