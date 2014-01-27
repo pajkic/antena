@@ -607,6 +607,7 @@ a:hover, a:focus {
 
 p {
 	margin: 0 0 15px;
+	text-align: justify;
 }
 
 .lead {
