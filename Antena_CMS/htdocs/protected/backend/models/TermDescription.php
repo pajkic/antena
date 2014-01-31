@@ -42,7 +42,7 @@ class TermDescription extends CActiveRecord
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, term_id, language_id, title', 'safe'),
+			array('id, term_id, language_id, title, excerpt, keywords', 'safe'),
 		);
 	}
 
@@ -67,6 +67,9 @@ class TermDescription extends CActiveRecord
 			'term_id' => Yii::t('app','Kategorija'),
 			'language_id' => Yii::t('app','Jezik'),
 			'title' => Yii::t('app','Naziv'),
+			'excerpt' => Yii::t('app','Uvod'),
+			'keywords'=> Yii::t('app','Ključne reči'),
+			
 		);
 	}
 
@@ -85,6 +88,8 @@ class TermDescription extends CActiveRecord
 		$criteria->compare('term_id',$this->term_id);
 		$criteria->compare('language_id',$this->language_id);
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('excerpt',$this->excerpt,true);
+		$criteria->compare('keywords',$this->keywords,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

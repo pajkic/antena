@@ -22,6 +22,9 @@
             <?php echo $form->hiddenField($model,'term_id',array('span'=>5)); ?>
             <?php echo $form->hiddenField($model,'language_id',array('span'=>5)); ?>
             <?php echo $form->textFieldControlGroup($model,'title',array('span'=>5,'maxlength'=>255)); ?>
+            <?php echo $form->textAreaControlGroup($model,'excerpt',array('rows'=>6,'span'=>8)); ?>
+            <?php echo $form->textAreaControlGroup($model,'keywords',array('rows'=>2,'span'=>8)); ?>
+            
 
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Snimi',array(
 		    'color'=>TbHtml::BUTTON_COLOR_PRIMARY,

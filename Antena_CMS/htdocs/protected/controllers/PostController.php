@@ -20,6 +20,7 @@ class PostController extends Controller
 				$content['title'] = $descriptions->title;
 				$content['excerpt'] = $descriptions->excerpt;
 				$content['content'] = $descriptions->content;
+				$content['keywords'] = $descriptions->keywords;
 			}
 		} 
 		
@@ -62,6 +63,7 @@ class PostController extends Controller
 		$breadcrumbs[0]=$content['title'];		
 		$this->pageTitle=Yii::app()->name .' - '. $content['title'];
 		Yii::app()->clientScript->registerMetaTag($content['excerpt'],'description');
+		Yii::app()->clientScript->registerMetaTag($content['keywords'],'keywords');
 		
 		$this->render('view',array(
 			'post'=> $post,
