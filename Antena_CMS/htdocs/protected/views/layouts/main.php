@@ -76,15 +76,7 @@
 				<?php endif; ?>
   			</div>		
 		</div> <!-- content -->		 		
-		 	  		 
-		 <!--	<?php if(isset($this->breadcrumbs)):?>  
-		 	<?php $this->widget('zii.widgets.CBreadcrumbs', array(  
-		 		'links'=>$this->breadcrumbs,  
-		 	)); ?> -->
-			<!-- breadcrumbs -->
-		<!--	<?php endif?>  -->
-			
-		<!-- 	<?php echo $content; ?> -->
+
 		<?php if ($this->hasBlock(7)):?>
 		<div class="main_bottom">
 			<?php $this->actionBlocks(7); ?>
