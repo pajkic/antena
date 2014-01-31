@@ -48,7 +48,7 @@ class PostDescription extends CActiveRecord
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, post_id, language_id, title, excerpt, content', 'safe'),
+			array('id, post_id, language_id, title, excerpt, content, keywords', 'safe'),
 		);
 	}
 
@@ -77,6 +77,7 @@ class PostDescription extends CActiveRecord
 			'title' => Yii::t('app','Naslov'),
 			'excerpt' => Yii::t('app','Uvod'),
 			'content' => Yii::t('app','Sadržaj'),
+			'keywords' => Yii::t('app','Ključne reči'),
 		);
 	}
 
@@ -97,6 +98,7 @@ class PostDescription extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('excerpt',$this->excerpt,true);
 		$criteria->compare('content',$this->content,true);
+		$criteria->compare('keywords',$this->keywords,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

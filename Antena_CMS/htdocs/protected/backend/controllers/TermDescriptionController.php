@@ -90,7 +90,6 @@ class TermDescriptionController extends Controller
 	{
 		$this->allowUser(SUPERADMINISTRATOR);
 		if (isset($_POST['TermDescription'])) {
-			
 			$d_id = $_POST['TermDescription']['id'];
 			$model = $this->loadModel($d_id);
 			$model->attributes = $_POST['TermDescription'];

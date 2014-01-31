@@ -29,6 +29,8 @@
             <?php echo $form->textFieldControlGroup($model,'title',array('span'=>8)); ?>
 
             <?php echo $form->textAreaControlGroup($model,'excerpt',array('rows'=>6,'span'=>8)); ?>
+            
+            <?php echo $form->textAreaControlGroup($model,'keywords',array('rows'=>2,'span'=>8)); ?>
 			
             <?php echo $form->textAreaControlGroup($model,'content',array('id'=>$content_id)); ?>
 			
