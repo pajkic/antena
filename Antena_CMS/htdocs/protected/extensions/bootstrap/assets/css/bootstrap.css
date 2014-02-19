@@ -5628,6 +5628,9 @@ aside .news_info img {
 aside .news_info:last-child {
 	padding-bottom: 25px;
 }
+aside .news_info p {
+	text-align: left;
+}
 
 /* podnavigacija blok */
 aside .submenu_block, aside .customnav_block {
