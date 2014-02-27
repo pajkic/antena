@@ -27,7 +27,6 @@
 
 	<?php echo $content; ?>
 
-	<p>Jezik:<code><?php echo Yii::app()->language;?></code></p>
 	<div id="footer" class="modal-footer">
 		Copyright &copy; <?php echo date('Y'); ?> <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o.">Implementacija d.o.o.</a>
 	</div><!-- footer -->
