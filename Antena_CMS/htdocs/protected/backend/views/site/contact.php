@@ -19,8 +19,7 @@ $this->breadcrumbs=array(
 
 <?php else: ?>
 
-<p>Ukoliko imate dodatnih pitanja, dilema ili problema u radu sa Antena CMS-om molimo vas da se konsultujete sa svojim administratorom ili pošaljete poruku direktno Implementaciji d.o.o.</p>
-
+<p>Ukoliko imate dodatnih pitanja, dilema ili problema u radu sa <b>Antena CMS</b>-om molimo vas da se konsultujete sa svojim administratorom ili pošaljete poruku direktno Implementaciji d.o.o.</p>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -64,14 +63,13 @@ $this->breadcrumbs=array(
 		<?php $this->widget('CCaptcha'); ?>
 		<?php echo $form->textField($model,'verifyCode'); ?>
 		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
+		<div class="hint">Molimo vas unesite verifikacioni kod ispisan pored polja.</div>
 		<?php echo $form->error($model,'verifyCode'); ?>
 	</div>
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
+		<?php echo CHtml::submitButton('Pošalji'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
