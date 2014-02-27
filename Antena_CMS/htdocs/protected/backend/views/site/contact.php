@@ -19,7 +19,8 @@ $this->breadcrumbs=array(
 
 <?php else: ?>
 
-<p>Ukoliko imate dodatnih pitanja, dilema ili problema u radu sa <b>Antena CMS</b>-om molimo vas da se konsultujete sa svojim administratorom ili pošaljete poruku direktno Implementaciji d.o.o.</p>
+<p>Ukoliko imate dodatnih pitanja, dilema ili problema u radu sa <b>Antena CMS</b>-om molimo vas da se konsultujete sa svojim administratorom <br />
+	ili pošaljete poruku direktno Implementaciji d.o.o.</p>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
