@@ -19,9 +19,7 @@ $this->breadcrumbs=array(
 
 <?php else: ?>
 
-<p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-</p>
+<p>Ukoliko imate dodatnih pitanja, dilema ili problema u radu sa Antena CMS-om molimo vas da se konsultujete sa svojim administratorom ili pošaljete poruku direktno Implementaciji d.o.o.</p>
 
 <div class="form">
 
@@ -32,8 +30,6 @@ If you have business inquiries or other questions, please fill out the following
 		'validateOnSubmit'=>true,
 	),
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
