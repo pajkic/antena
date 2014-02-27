@@ -42,7 +42,7 @@
 		                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo Yii::app()->user->name;?> <b class="caret"></b></a>
 		                        <ul class="dropdown-menu">
 		                            <li><a href="/backend.php/user/view/<?php echo Yii::app()->user->id;?>"><i class="icon-cog"></i> <?php echo Yii::t('app','Podaci o korisniku');?></a></li>
-		                            <li><a href="/backend.php/site/contact"><i class="icon-envelope"></i> <?php echo Yii::t('app','Podrška');?></a></li>
+		                            <li><a href="/backend.php/site/podrska"><i class="icon-envelope"></i> <?php echo Yii::t('app','Podrška');?></a></li>
 		                            <li class="divider"></li>
 		                            <li><a href="/backend.php/site/logout"><i class="icon-off"></i> <?php echo Yii::t('app','Odjavi me');?></a></li>
 		                        </ul>
