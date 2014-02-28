@@ -238,7 +238,7 @@ class GalleryItemController extends Controller
 		$thumbSize = $thumbnail['box_w'];
 		$filename = $srcFile;	
 		  /* Determine the File Type */
-		  $type = substr( $filename , strrpos( $filename , '.' )+1 );
+		  $type = strtolower(substr( $filename , strrpos( $filename , '.' )+1 ));
 		 /* Create the Source Image */
 		  switch( $type ){
 		    case 'jpg' : case 'jpeg' :
