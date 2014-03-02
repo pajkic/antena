@@ -184,8 +184,9 @@ class GalleryItemController extends Controller
         	
         	$attributes  = array(
 			'gallery_id' => $_GET['gallery_id'],
-			'name' => $_GET['file_name'],
+			'name' => strtolower($_GET['file_name']),
 			);
+			
             $model->attributes=$attributes;
 			
             try {
@@ -195,10 +196,10 @@ class GalleryItemController extends Controller
             		mkdir(Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'],0777);
 					mkdir(Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/thumbs',0777);
             	}
-            	move_uploaded_file($_FILES['file_name']['tmp_name'], Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/'.$_FILES['file_name']['name']);
+            	move_uploaded_file($_FILES['file_name']['tmp_name'], Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/'.strtolower($_FILES['file_name']['name']));
                 $thumbnail = array(
-					'url' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/'.$_FILES['file_name']['name'],
-					'savePath' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/thumbs/'.$_FILES['file_name']['name'],
+					'url' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/'.strtolower($_FILES['file_name']['name']),
+					'savePath' => Yii::app()->basePath.'/../uploads/gallery/'.$_GET['gallery_id'].'/thumbs/'.strtolower($_FILES['file_name']['name']),
 					'box_w' => Yii::app()->setting->getValue('thumbnail_size'),
 					'box_h' => Yii::app()->setting->getValue('thumbnail_size'),
 					/*
@@ -223,7 +224,7 @@ class GalleryItemController extends Controller
 					$description->save();
             	} 
 				   
-                echo json_encode(array('success'=>'true','filename'=>$_FILES['file_name']['name']));
+                echo json_encode(array('success'=>'true','filename'=>strtolower($_FILES['file_name']['name'])));
             } 
             catch (Exception $e) {
             	echo 'Error!';
