@@ -1,1 +1,0 @@
-Copyright &copy; 2014. <a href="/lang/en" title="Croatia-Serbia - Cross-Border Cooperation for Investment Promotion">Croatia-Serbia - Cross-Border Cooperation for Investment Promotion </a> | Developed by <a href="http://implementacija.rs/" target="_blank" title="Implementacija d.o.o. - Dizajn digitalnih rešenja">Implementacija d.o.o.</a>

@@ -1,1 +1,0 @@
-<a class="sitemap_icon" href="/post/79/Mapa+sajta/lang/sr"><img src="/images/frontend/sitemap.jpg" /></a>
