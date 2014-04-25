@@ -1,0 +1,2 @@
+<a href="/" title="IsoTeck"><img class="img-responsive" src="/images/frontend/prijava-za-projektante.png"/></a> 
+<a href="/" title="IsoTeck"><img class="img-responsive" src="/images/frontend/regulisana-sredina.png"/></a>

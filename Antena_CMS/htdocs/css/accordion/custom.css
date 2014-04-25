@@ -1,0 +1,76 @@
+#main_content .ui-widget, .ui-widget-content {
+	font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#main_content .ui-accordion .ui-accordion-header { 
+	border-radius: 4px;
+		-moz-border-radius: 4px;
+	  	-webkit-border-radius: 4px;
+	padding: 0; 	
+	border: 0;
+	margin: 0;
+}
+#main_content .ui-accordion .ui-accordion-header a {
+	background: #2889C0;
+	border: 1px solid #1C6084;
+	padding: 8px 20px;
+	color: #fff;
+	font-size: 15px;
+	display: block;
+}
+#main_content .ui-accordion .ui-accordion-header:hover a {
+	background: #1C6084;
+}
+#main_content .ui-accordion .ui-accordion-header-active a, #main_content .ui-accordion .ui-accordion-header-active a:hover {
+	background: #F6F6F6;
+	border: 1px solid #DEDEDE;
+	color: #7F7F7F;
+	cursor: default;
+}
+#main_content .ui-accordion .ui-accordion-header-active a, #main_content .ui-accordion .ui-accordion-header a {
+	border-radius: 4px;
+		-moz-border-radius: 4px;
+	  	-webkit-border-radius: 4px;
+}
+#main_content .ui-widget-content {
+	height: auto !important;
+	background: transparent;
+	border-left: 1px solid #DEDEDE;
+	border-bottom: 1px solid #DEDEDE;
+	border-right: 1px solid #DEDEDE;
+	padding: 20px;
+	margin-bottom: 2px;
+	border-radius: 4px;
+		-moz-border-radius: 4px;
+	  	-webkit-border-radius: 4px;
+}
+#main_content .ui-widget-content .news_block {
+	padding: 0;
+	border: 0;
+}
+aside .ui-widget-content .news_block h3, aside .ui-widget-content .news_block small {
+	padding: 0;
+}
+aside .ui-widget-content .news_info {
+	padding: 5px 0 15px 0;
+}
+aside .ui-widget-content .news_info:last-child {
+	padding: 5px 0 0 0;
+} 
+#main_content .ui-widget-content h3 {
+	font-size: 16px;
+}
+#main_content .ui-widget-content h3 a {
+	color: #2898D4;
+}
+#main_content .ui-widget-content h3 a:hover {
+	color: #005580;
+}
+.ui-accordion .ui-accordion-icons, .ui-accordion .ui-accordion-header {
+padding: 0;
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	display: none;
+}
+#main_content .ui-state-default a, #main_content .ui-accordion .ui-accordion-header {
+	color: #fff;
+}  
