@@ -87,12 +87,12 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=seecap',
+			'connectionString' => 'mysql:host=localhost;dbname=antena',
 			
 			'emulatePrepare' => true,
 			
-			'username' => 'seecap',
-			'password' => '09f5551e3c',
+			'username' => 'antena',
+			'password' => 'f6511080a9',
 			/*
 			 'username' => 'root',
 			 'password' => '',
