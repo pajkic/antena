@@ -1,1 +1,0 @@
-<a class="cross_border_logo" href="/lang/en" title="Croatia-Serbia - Cross-Border Cooperation for Investment Promotion"><img src="/images/frontend/croatia-serbia-cross-border-cooperation-for-investment-promotion-en.png" alt="Croatia-Serbia - Cross-Border Cooperation for Investment Promotion" /></a>
