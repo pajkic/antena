@@ -1,6 +1,6 @@
 <?php
-/* @var $this LanguageController */
-/* @var $model Language */
+/* @var $this StateController */
+/* @var $model State */
 /* @var $form CActiveForm */
 ?>
 
@@ -15,7 +15,7 @@
 
                     <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>20)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'lang',array('span'=>5,'maxlength'=>2)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'state',array('span'=>5,'maxlength'=>2)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'flagpath',array('span'=>5,'maxlength'=>45)); ?>
 
