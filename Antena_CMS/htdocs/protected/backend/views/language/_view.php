@@ -1,7 +1,8 @@
 <?php
-/* @var $this StateController */
-/* @var $data State */
+/* @var $this LanguageController */
+/* @var $data Language */
 ?>
+
 
 <div class="view">
 
@@ -13,8 +14,8 @@
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('state')); ?>:</b>
-	<?php echo CHtml::encode($data->state); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('lang')); ?>:</b>
+	<?php echo CHtml::encode($data->lang); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('flagpath')); ?>:</b>
