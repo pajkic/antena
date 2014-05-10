@@ -1,13 +1,14 @@
 <?php
-/* @var $this StateController */
-/* @var $model State */
+/* @var $this LanguageController */
+/* @var $model Language */
 /* @var $form TbActiveForm */
 ?>
+
 
 <div class="form">
 
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-	'id'=>'state-form',
+	'id'=>'language-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -21,9 +22,9 @@
     <?php echo $form->errorSummary($model); ?>
 
             <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>20)); ?>
-            <?php echo $form->textFieldControlGroup($model,'state',array('span'=>5,'maxlength'=>2)); ?>
+            <?php echo $form->textFieldControlGroup($model,'lang',array('span'=>5,'maxlength'=>2)); ?>
             <?php echo $form->fileFieldControlGroup($model,'flagpath',array('span'=>5,'maxlength'=>45)); ?>
-            <?php echo $form->dropDownListControlGroup($model,'active',array('0'=>'Nije aktivna','1'=>'Aktivna'),array('span'=>5)); ?>
+            <?php echo $form->dropDownListControlGroup($model,'active',array('0'=>'Nije aktivan','1'=>'Aktivan'),array('span'=>5)); ?>
             <?php echo $form->hiddenField($model,'main',array('span'=>5)); ?>
 
         <?php echo TbHtml::submitButton($model->isNewRecord ? 'Snimi' : 'Save',array(

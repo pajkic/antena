@@ -1,8 +1,9 @@
 <?php
-/* @var $this StateController */
-/* @var $model State */
+/* @var $this LanguageController */
+/* @var $model Language */
 /* @var $form CActiveForm */
 ?>
+
 
 <div class="wide form">
 
@@ -15,7 +16,7 @@
 
                     <?php echo $form->textFieldControlGroup($model,'name',array('span'=>5,'maxlength'=>20)); ?>
 
-                    <?php echo $form->textFieldControlGroup($model,'state',array('span'=>5,'maxlength'=>2)); ?>
+                    <?php echo $form->textFieldControlGroup($model,'lang',array('span'=>5,'maxlength'=>2)); ?>
 
                     <?php echo $form->textFieldControlGroup($model,'flagpath',array('span'=>5,'maxlength'=>45)); ?>
 

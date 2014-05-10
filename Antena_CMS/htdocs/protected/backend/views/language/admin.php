@@ -2,15 +2,14 @@
 /* @var $this LanguageController */
 /* @var $model Language */
 
-
 $this->breadcrumbs=array(
-	'States'=>array('index'),
+	'Languages'=>array('index'),
 	Yii::t('app','Upravljaj'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'State', 'url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'State', 'url'=>array('create')),
+	array('label'=>Yii::t('app','Lista ') . 'Language', 'url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj ') . 'Language', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('app','Upravljaj');?> States</h1>
+<h1><?php echo Yii::t('app','Upravljaj');?> Languages</h1>
 
 <p><?php echo Yii::t('app', 'Možete koristiti simbole za poređenje (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b> or <b>=</b>) na početku svake vrednosti za pretragu da biste definisali kako će se pretraga ponašati.');?></p>
 
@@ -46,7 +45,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'name',
-		'state',
+		'lang',
 		'flagpath',
 		'active',
 		'main',
