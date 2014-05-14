@@ -72,11 +72,11 @@
 	        		array('label'=>Yii::t('app','Jezici'), 'icon'=>'leaf', 'url'=>array('/language'), 'visible' => $this->userData->level>=40),
 	        		
 					array('label'=>Yii::t('app','Rent-A-Car'), 'icon'=>'', 'url'=>array(''), 'visible' => $this->userData->level>=20), 
-	        		array('label'=>Yii::t('app','Države'), 'icon'=>'circle-arrow-right', 'url'=>array('/state'), 'visible' => $this->userData->level>=30),
+	        		array('label'=>Yii::t('app','Države'), 'icon'=>'globe', 'url'=>array('/state'), 'visible' => $this->userData->level>=30),
 	        		array('label'=>Yii::t('app','Gradovi'), 'icon'=>'circle-arrow-down', 'url'=>array('/city'), 'visible' => $this->userData->level>=30),
 	        		array('label'=>Yii::t('app','Lokacije'), 'icon'=>'map-marker', 'url'=>array('/location'), 'visible' => $this->userData->level>=30),
 	        		array('label'=>Yii::t('app','Cenovnici'), 'icon'=>'calendar', 'url'=>array('/pricelist'), 'visible' => $this->userData->level>=20),	        		
-	        		array('label'=>Yii::t('app','Vozila'), 'icon'=>'car', 'url'=>array('/vehicle'), 'visible' => $this->userData->level>=20),
+	        		array('label'=>Yii::t('app','Vozila'), 'icon'=>'plane', 'url'=>array('/vehicle'), 'visible' => $this->userData->level>=20),
 	        		//array('label'=>Yii::t('app','Meniji'), 'icon'=>'th', 'url'=>array('/menu'), 'visible' => !$this->userData->level<30),
 	        		//array('label'=>Yii::t('app','Kategorije članaka'), 'icon'=>'category', 'url'=>array('/term'), 'visible' => $this->userData->level>=40),
 					// array('label'=>Yii::t('app','O nama'), 'icon'=>'star', 'url'=>array('/site/page', 'view'=>'about')),
