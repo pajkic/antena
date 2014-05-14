@@ -14,7 +14,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Vehicles</h1>
+<h1>Vozila</h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
