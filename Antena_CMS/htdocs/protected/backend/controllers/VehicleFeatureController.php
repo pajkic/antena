@@ -85,7 +85,7 @@ class VehicleFeatureController extends Controller
             	}    
 			
 				
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('VehicleFeatureDescription/update','id'=>$model->id));
 			}
 		}
 
