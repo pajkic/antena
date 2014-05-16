@@ -1,6 +1,6 @@
 <?php
 
-class MenuDescriptionController extends Controller
+class VehicleFeatureDescriptionController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class MenuDescriptionController extends Controller
 	public function filters()
 	{
 		return array(
-			//'accessControl', // perform access control for CRUD operations
+		//  'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -45,40 +45,6 @@ class MenuDescriptionController extends Controller
 		);
 	}
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		
-		$model=new MenuDescription;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if (isset($_POST['MenuDescription'])) {
-			$model->attributes=$_POST['MenuDescription'];
-			if ($model->save()) {
-				$this->redirect(array('view','id'=>$model->id));
-			}
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Updates a particular model.
@@ -87,18 +53,18 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->allowUser(SUPER_EDITOR);
-		if (isset($_POST['MenuDescription'])) {
+		$this->allowUser(ADMINISTRATOR);
+		if (isset($_POST['VehicleFeatureDescription'])) {
 			
-			$d_id = $_POST['MenuDescription']['id'];
+			$d_id = $_POST['VehicleFeatureDescription']['id'];
 			$model = $this->loadModel($d_id);
-			$model->attributes = $_POST['MenuDescription'];
+			$model->attributes = $_POST['VehicleFeatureDescription'];
 			if ($model->save()) {
 				//$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
-		$descriptions = MenuDescription::model()->findAllByAttributes(array('menu_id' => $id));
+		$descriptions = VehicleFeatureDescription::model()->findAllByAttributes(array('vehicle_feature_id' => $id));
 		
 		$ld = array();
 		foreach($descriptions as $d) {
@@ -107,10 +73,10 @@ class MenuDescriptionController extends Controller
 		$languages = Language::model()->findAllByAttributes(array('active' => 1));
 		foreach ($languages as $l) {
 			if (!in_array($l->attributes['id'],$ld)) {
-				$new_model = new MenuDescription;
-				$new_model->attributes = array('menu_id' => $id, 'language_id' => $l->attributes['id']);
+				$new_model = new VehicleFeatureDescription;
+				$new_model->attributes = array('vehicle_feature_id' => $id, 'language_id' => $l->attributes['id']);
 				$new_model->save();
-				$descriptions = MenuDescription::model()->findAllByAttributes(array('menu_id' => $id));
+				$descriptions = VehicleFeatureDescription::model()->findAllByAttributes(array('vehicle_feature_id' => $id));
 			}
 		}
 		
@@ -128,7 +94,7 @@ class MenuDescriptionController extends Controller
 			if ($language['main'] == 1) {
 				$active = true;
 			} else {
-			$active = false; 
+				$active = false; 
 			}
 			if ($language['active'] == 1) {
 				$tabs[] = array(
@@ -139,71 +105,25 @@ class MenuDescriptionController extends Controller
 			}
 		}
 		
-		$menu = Menu::model()->findByPk($id);
+		$vehicle_feature = VehicleFeature::model()->findByPk($id);
 		$this->render('update',array(
 			'model'=>$parentmodel,
 			'tabs'=>$tabs,
-			'menu'=>$menu
-		));
+			'vehicle_feature'=>$vehicle_feature
+		));	
 	}
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		if (Yii::app()->request->isPostRequest) {
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if (!isset($_GET['ajax'])) {
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-			}
-		} else {
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-		}
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('MenuDescription');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new MenuDescription('search');
-		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['MenuDescription'])) {
-			$model->attributes=$_GET['MenuDescription'];
-		}
-
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return MenuDescription the loaded model
+	 * @return VehicleFeatureDescription the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=MenuDescription::model()->findByPk($id);
+		$model=VehicleFeatureDescription::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -212,11 +132,11 @@ class MenuDescriptionController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param MenuDescription $model the model to be validated
+	 * @param VehicleFeatureDescription $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='menu-description-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='vehicle-feature-description-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

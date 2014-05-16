@@ -1,6 +1,6 @@
 <?php
 
-class MenuDescriptionController extends Controller
+class VehicleFeatureController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class MenuDescriptionController extends Controller
 	public function filters()
 	{
 		return array(
-			//'accessControl', // perform access control for CRUD operations
+			// 'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -51,6 +51,7 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->allowUser(ADMINISTRATOR);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,15 +63,28 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		
-		$model=new MenuDescription;
-
+		$this->allowUser(ADMINISTRATOR);
+		$model=new VehicleFeature;
+		$languages = Language::model()->findAllByAttributes(array('active'=>1));
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['MenuDescription'])) {
-			$model->attributes=$_POST['MenuDescription'];
+		if (isset($_POST['VehicleFeature'])) {
+			$model->attributes=$_POST['VehicleFeature'];
 			if ($model->save()) {
+				
+			foreach($languages as $language) {
+            		$description = new VehicleFeatureDescription;
+            		$description->attributes =  array(
+            		'vehicle_feature_id' => $model->primaryKey,
+            		'language_id'=>$language['id'],
+            		'title'=>$model->name,
+					);
+					
+					$description->save();
+            	}    
+			
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -87,63 +101,21 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->allowUser(SUPER_EDITOR);
-		if (isset($_POST['MenuDescription'])) {
-			
-			$d_id = $_POST['MenuDescription']['id'];
-			$model = $this->loadModel($d_id);
-			$model->attributes = $_POST['MenuDescription'];
+		$this->allowUser(ADMINISTRATOR);
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if (isset($_POST['VehicleFeature'])) {
+			$model->attributes=$_POST['VehicleFeature'];
 			if ($model->save()) {
-				//$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
-		$descriptions = MenuDescription::model()->findAllByAttributes(array('menu_id' => $id));
-		
-		$ld = array();
-		foreach($descriptions as $d) {
-			$ld[] = $d->attributes['language_id'];
-		}
-		$languages = Language::model()->findAllByAttributes(array('active' => 1));
-		foreach ($languages as $l) {
-			if (!in_array($l->attributes['id'],$ld)) {
-				$new_model = new MenuDescription;
-				$new_model->attributes = array('menu_id' => $id, 'language_id' => $l->attributes['id']);
-				$new_model->save();
-				$descriptions = MenuDescription::model()->findAllByAttributes(array('menu_id' => $id));
-			}
-		}
-		
-		
-		$parentmodel = array();
-		foreach($descriptions as $description) {
-			$parentmodel[] = $this->loadModel($description['id']);
-			
-		}
-		$tabs = array();
-		foreach ($parentmodel as $lm) {
-			$language_id = $lm->attributes['language_id'];
-			$language = Language::model()->findByPk($language_id);
-			$content = $this->renderPartial('_form', array('model' => $lm), true);
-			if ($language['main'] == 1) {
-				$active = true;
-			} else {
-			$active = false; 
-			}
-			if ($language['active'] == 1) {
-				$tabs[] = array(
-				'label' => $language['name'],
-				'content' => $content,
-				'active' => $active
-			);
-			}
-		}
-		
-		$menu = Menu::model()->findByPk($id);
 		$this->render('update',array(
-			'model'=>$parentmodel,
-			'tabs'=>$tabs,
-			'menu'=>$menu
+			'model'=>$model,
 		));
 	}
 
@@ -154,6 +126,7 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$this->allowUser(ADMINISTRATOR);
 		if (Yii::app()->request->isPostRequest) {
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -172,7 +145,8 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('MenuDescription');
+		$this->allowUser(ADMINISTRATOR);
+		$dataProvider=new CActiveDataProvider('VehicleFeature');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -183,10 +157,11 @@ class MenuDescriptionController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new MenuDescription('search');
+		$this->allowUser(ADMINISTRATOR);
+		$model=new VehicleFeature('search');
 		$model->unsetAttributes();  // clear any default values
-		if (isset($_GET['MenuDescription'])) {
-			$model->attributes=$_GET['MenuDescription'];
+		if (isset($_GET['VehicleFeature'])) {
+			$model->attributes=$_GET['VehicleFeature'];
 		}
 
 		$this->render('admin',array(
@@ -198,12 +173,13 @@ class MenuDescriptionController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return MenuDescription the loaded model
+	 * @return VehicleFeature the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=MenuDescription::model()->findByPk($id);
+		$this->allowUser(ADMINISTRATOR);
+		$model=VehicleFeature::model()->findByPk($id);
 		if ($model===null) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		}
@@ -212,11 +188,11 @@ class MenuDescriptionController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param MenuDescription $model the model to be validated
+	 * @param VehicleFeature $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if (isset($_POST['ajax']) && $_POST['ajax']==='menu-description-form') {
+		if (isset($_POST['ajax']) && $_POST['ajax']==='vehicle-feature-form') {
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

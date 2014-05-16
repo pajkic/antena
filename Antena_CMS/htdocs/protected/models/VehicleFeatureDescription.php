@@ -1,19 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "{{vehicle_has_feature}}".
+ * This is the model class for table "{{vehicle_feature_description}}".
  *
- * The followings are the available columns in table '{{vehicle_has_feature}}':
- * @property integer $vehicle_id
+ * The followings are the available columns in table '{{vehicle_feature_description}}':
+ * @property integer $id
  * @property integer $vehicle_feature_id
- * @property string $content
+ * @property integer $language_id
+ * @property string $title
+ * @property string $values
+ *
+ * The followings are the available model relations:
+ * @property VehicleFeature $vehicleFeature
  */
-class VehicleHasFeature extends CActiveRecord
+class VehicleFeatureDescription extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return VehicleHasFeature the static model class
+	 * @return VehicleFeatureDescription the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -25,7 +30,7 @@ class VehicleHasFeature extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{vehicle_has_feature}}';
+		return '{{vehicle_feature_description}}';
 	}
 
 	/**
@@ -36,12 +41,11 @@ class VehicleHasFeature extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('vehicle_id, vehicle_feature_id', 'required'),
-			array('vehicle_id, vehicle_feature_id', 'numerical', 'integerOnly'=>true),
-			array('content', 'safe'),
+			array('vehicle_feature_id, language_id', 'numerical', 'integerOnly'=>true),
+			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('vehicle_id, vehicle_feature_id, content', 'safe', 'on'=>'search'),
+			array('id, vehicle_feature_id, language_id, title, values', 'safe'),
 		);
 	}
 
@@ -53,6 +57,7 @@ class VehicleHasFeature extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'VehicleFeatures' => array(self::BELONGS_TO, 'VehicleFeature', 'vehicle_feature_id'),
 		);
 	}
 
@@ -62,9 +67,11 @@ class VehicleHasFeature extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'vehicle_id' => 'Vehicle',
+			'id' => 'ID',
 			'vehicle_feature_id' => 'Vehicle Feature',
-			'content' => 'Vrednost',
+			'language_id' => 'Jezik',
+			'title' => 'Naziv',
+			'values' => 'Default',
 		);
 	}
 
@@ -79,9 +86,11 @@ class VehicleHasFeature extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('vehicle_id',$this->vehicle_id);
+		$criteria->compare('id',$this->id);
 		$criteria->compare('vehicle_feature_id',$this->vehicle_feature_id);
-		$criteria->compare('content',$this->content,true);
+		$criteria->compare('language_id',$this->language_id);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('values',$this->values,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
