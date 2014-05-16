@@ -77,7 +77,7 @@
 	        		array('label'=>Yii::t('app','Lokacije'), 'icon'=>'map-marker', 'url'=>array('/location'), 'visible' => $this->userData->level>=30),
 	        		array('label'=>Yii::t('app','Cenovnici'), 'icon'=>'calendar', 'url'=>array('/pricelist'), 'visible' => $this->userData->level>=20),	        		
 	        		array('label'=>Yii::t('app','Vozila'), 'icon'=>'plane', 'url'=>array('/vehicle'), 'visible' => $this->userData->level>=20),
-	        		array('label'=>Yii::t('app','Karakteristike vozila'), 'icon'=>'minus', 'url'=>array('/vehiclefeature'), 'visible' => $this->userData->level>=30),
+	        		array('label'=>Yii::t('app','Karakteristike vozila'), 'icon'=>'minus', 'url'=>array('/VehicleFeature'), 'visible' => $this->userData->level>=30),
 	        		
 	        		//array('label'=>Yii::t('app','Meniji'), 'icon'=>'th', 'url'=>array('/menu'), 'visible' => !$this->userData->level<30),
 	        		//array('label'=>Yii::t('app','Kategorije članaka'), 'icon'=>'category', 'url'=>array('/term'), 'visible' => $this->userData->level>=40),
