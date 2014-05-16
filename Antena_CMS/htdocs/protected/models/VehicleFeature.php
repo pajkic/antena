@@ -6,9 +6,9 @@
  * The followings are the available columns in table '{{vehicle_feature}}':
  * @property integer $id
  * @property string $name
- * @property string $values
  *
  * The followings are the available model relations:
+ * @property VehicleFeatureDescription[] $vehicleFeatureDescriptions
  * @property Vehicle[] $cmsVehicles
  */
 class VehicleFeature extends CActiveRecord
@@ -43,7 +43,7 @@ class VehicleFeature extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, values', 'safe'),
+			array('id, name', 'safe'),
 		);
 	}
 
@@ -55,6 +55,7 @@ class VehicleFeature extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'VehicleFeatureDescriptions' => array(self::HAS_MANY, 'VehicleFeatureDescription', 'vehicle_feature_id'),
 			'Vehicles' => array(self::MANY_MANY, 'Vehicle', '{{vehicle_has_feature}}(vehicle_feature_id, vehicle_id)'),
 		);
 	}
@@ -67,7 +68,6 @@ class VehicleFeature extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Naziv',
-			'values' => 'Default',
 		);
 	}
 
@@ -84,7 +84,6 @@ class VehicleFeature extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('values',$this->values,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
