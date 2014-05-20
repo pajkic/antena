@@ -52,6 +52,7 @@ class VehicleController extends Controller
 	public function actionView($id)
 	{
 		$this->allowUser(SUPER_EDITOR);
+	
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -79,7 +80,8 @@ class VehicleController extends Controller
 		$_SESSION['KCFINDER'] = array();
 		$_SESSION['KCFINDER']['disabled'] = false;
 		$_SESSION['KCFINDER']['uploadURL'] = "/uploads/editors/".md5(Yii::app()->user->id); 
-
+		
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -160,6 +162,7 @@ class VehicleController extends Controller
 		));
 	}
 	
+
 	public function actionSetActive($id)
 	{
 		$this->allowUser(SUPER_EDITOR);
@@ -167,6 +170,67 @@ class VehicleController extends Controller
 		$model->attributes = array('active'=>$_POST['active']);
 		$model->save();
 		echo Yii::t('app','Izmena uspešno izvršena.');
+	}
+	
+	public function actionVehicleFeatures($id)
+	{
+
+		$this->allowUser(SUPER_EDITOR);
+		if (isset($_POST['Value'])) {
+			$vehicle_id = $_POST['vehicle_id'];
+			$language_id = $_POST['language_id'];
+		}
+		if (isset($_POST['Feature'])) {
+			VehicleHasFeature::model()->deleteAllByAttributes(array('vehicle_id'=>$vehicle_id,'language_id'=>$language_id));
+			$features = $_POST['Feature'];
+			$values = $_POST['Value'];
+			
+			foreach($features as $k => $v) {
+				$vehicle_has_feature = new VehicleHasFeature;
+				$vehicle_has_feature->attributes = array(
+				'vehicle_id'=>$vehicle_id,
+				'language_id'=>$language_id,
+				'vehicle_feature_id'=>$k,
+				'content'=>$values[$k]
+				);
+				$vehicle_has_feature->save();
+				
+			}
+			
+		}
+		
+		$tabs=array();
+		$languages = Language::model()->findAllByAttributes(array('active'=>1));
+		foreach($languages as $language) {
+			$features_model = VehicleHasFeature::model()->findAllByAttributes(array('vehicle_id'=>$id, 'language_id'=>$language->id));
+			$vehicle_features = array();
+			foreach($features_model as $fm) {
+				$vehicle_features[$fm['vehicle_feature_id']] = $fm['content'];
+			}
+
+			$features = VehicleFeatureDescription::model()->findAllByAttributes(array('language_id'=>$language->id));
+			$content = $this->renderPartial('_features', array('vehicle_features'=>$vehicle_features,'features' => $features,'vehicle_id'=>$id, 'language_id'=>$language->id), true);
+				if ($language['main'] == 1) {
+				$active = true;
+			} else {
+				$active = false; 
+			}
+			if ($language['active'] == 1) {
+				$tabs[] = array(
+				'label' => $language['name'],
+				'content' => $content,
+				'active' => $active
+			);
+			}
+			 
+		}
+		
+		
+		$this->render('view_features',array(
+			'model'=>$this->loadModel($id),
+			'tabs'=>$tabs,
+		));
+
 	}
 
 	

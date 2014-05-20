@@ -6,7 +6,8 @@
 <?php
 $this->breadcrumbs=array(
 	'Vozila'=>array('index'),
-	$model->name,
+	$model->name =>array('view',array('id'=>$model->id)),
+	'Karakteristike',
 );
 
 $this->menu=array(
@@ -18,18 +19,14 @@ $this->menu=array(
 );
 ?>
 
-<h1>Pogledaj vozilo <?php echo $model->name; ?></h1>
+<h1>Karakteristike vozila <?php echo $model->name; ?></h1>
 <p><?php echo CHtml::image(Yii::app()->getBaseUrl(true).$model->image,'',array('width'=>220,'height'=>157));?></p>
+<?php
+ 
+	$this->widget('bootstrap.widgets.TbTabs', array(
+    'tabs' => $tabs
+    )); 
 
-<?php $this->widget('zii.widgets.CDetailView',array(
-    'htmlOptions' => array(
-        'class' => 'table table-striped table-condensed table-hover',
-    ),
-    'data'=>$model,
-    'attributes'=>array(
-		'id',
-		'name',
-	),
-)); 
 
+ 
 ?>
