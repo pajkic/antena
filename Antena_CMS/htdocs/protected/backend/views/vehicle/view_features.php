@@ -6,7 +6,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Vozila'=>array('index'),
-	$model->name =>array('view',array('id'=>$model->id)),
+	$model->name=>array('view','id'=>$model->id),
 	'Karakteristike',
 );
 
