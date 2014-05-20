@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>Yii::t('app','Izmeni ') . 'Vozilo', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Obriši ') . 'Vozilo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Da li zaista želite da obrišete ovu stavku?')),
 	array('label'=>Yii::t('app','Upravljaj ') . 'Vozilima', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Karakteristike ') . 'Vozila', 'url'=>array('VehicleFeatures', 'id'=>$model->id)),
 );
 ?>
 
