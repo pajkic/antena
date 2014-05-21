@@ -233,6 +233,60 @@ class VehicleController extends Controller
 
 	}
 
+	public function actionVehiclePrices($id)
+	{
+
+		$this->allowUser(SUPER_EDITOR);
+		if (isset($_POST['Prices'])) {
+			$vehicle_id = $_POST['vehicle_id'];
+			$pricelist_id = $_POST['pricelist_id'];
+			VehicleHasPrice::model()->deleteAllByAttributes(array('vehicle_id'=>$vehicle_id,'pricelist_id'=>$pricelist_id));
+			$prices = $_POST['Prices'];
+			
+			
+			foreach($prices as $k => $v) {
+				$vehicle_has_price = new VehicleHasPrice;
+				$vehicle_has_price->attributes = array(
+				'vehicle_id'=>$vehicle_id,
+				'pricelist_id'=>$pricelist_id,
+				'pricedays_id'=>$k,
+				'price'=>$v
+				);
+				$vehicle_has_price->save();
+				
+			}
+			
+		}
+
+
+
+		$tabs=array();
+		$pricelists = Pricelist::model()->findAllByAttributes(array('active'=>1));
+		$active = true;
+		foreach($pricelists as $pricelist) {
+			$prices_model = VehicleHasPrice::model()->findAllByAttributes(array('vehicle_id'=>$id, 'pricelist_id'=>$pricelist->id));
+			$vehicle_prices = array();
+			foreach($prices_model as $pm) {
+				$vehicle_prices[$pm['pricedays_id']] = $pm['price'];
+			}
+
+			$pricedays = Pricedays::model()->findAll();
+			$content = $this->renderPartial('_prices', array('vehicle_prices'=>$vehicle_prices,'pricedays' => $pricedays,'vehicle_id'=>$id, 'pricelist_id'=>$pricelist->id), true);
+				$tabs[] = array(
+				'label' => $pricelist['name'],
+				'content' => $content,
+				'active' => $active
+			);
+			if ($active) $active=false;
+		}
+		
+		$this->render('view_prices',array(
+			'model'=>$this->loadModel($id),
+			'tabs'=>$tabs,
+		));
+		
+		
+	}
 	
 
 	/**

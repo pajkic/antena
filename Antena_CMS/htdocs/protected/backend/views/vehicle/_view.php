@@ -20,7 +20,7 @@
 	<?php echo CHtml::encode($data->active); ?>
 	<br />
 	
-	<?php echo Chtml::link(Yii::t('app','Cene'),array('view','id'=>$data->id)); ?>
+	<?php echo Chtml::link(Yii::t('app','Cene'),array('VehiclePrices','id'=>$data->id)); ?>
 	<br/>
 
 	<?php echo Chtml::link(Yii::t('app','Karakteristike'),array('VehicleFeatures','id'=>$data->id)); ?>
