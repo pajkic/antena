@@ -15,6 +15,9 @@ $this->menu=array(
 	array('label'=>Yii::t('app','Kreiraj ') . 'Vozilo', 'url'=>array('create')),
 	array('label'=>Yii::t('app','Pregledaj ') . 'Vozila', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Upravljaj ') . 'Vozilima', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Cene ') . 'Vozila', 'url'=>array('VehiclePrices', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Karakteristike ') . 'Vozila', 'url'=>array('VehicleFeatures', 'id'=>$model->id)),
+	
 );
 ?>
 
