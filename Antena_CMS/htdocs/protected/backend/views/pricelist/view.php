@@ -18,7 +18,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Pogledaj cenovnik #<?php echo $model->name; ?></h1>
+<h1>Pogledaj cenovnik <?php echo $model->name; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
     'htmlOptions' => array(
