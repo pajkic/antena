@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('start_date')); ?>:</b>
-	<?php echo CHtml::encode($data->start_date); ?>
+	<?php echo CHtml::encode(date('d.m.Y',strtotime($data->start_date))); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
