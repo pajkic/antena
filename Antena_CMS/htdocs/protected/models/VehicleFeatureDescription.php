@@ -43,9 +43,10 @@ class VehicleFeatureDescription extends CActiveRecord
 		return array(
 			array('vehicle_feature_id, language_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
+			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, vehicle_feature_id, language_id, title, values', 'safe'),
+			array('id, vehicle_feature_id, language_id, title, description, values', 'safe'),
 		);
 	}
 
@@ -71,6 +72,7 @@ class VehicleFeatureDescription extends CActiveRecord
 			'vehicle_feature_id' => 'Vehicle Feature',
 			'language_id' => 'Jezik',
 			'title' => 'Naziv',
+			'description' => 'Opis',
 			'values' => 'Default',
 		);
 	}
@@ -90,6 +92,7 @@ class VehicleFeatureDescription extends CActiveRecord
 		$criteria->compare('vehicle_feature_id',$this->vehicle_feature_id);
 		$criteria->compare('language_id',$this->language_id);
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('description',$this->description,true);
 		$criteria->compare('values',$this->values,true);
 
 		return new CActiveDataProvider($this, array(

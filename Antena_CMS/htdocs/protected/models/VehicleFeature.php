@@ -40,7 +40,7 @@ class VehicleFeature extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>255),
+			array('name, image, icon', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name', 'safe'),
@@ -67,7 +67,9 @@ class VehicleFeature extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Naziv',
+			'name' => Yii::t('app','Naziv'),
+			'image' => Yii::t('app','Slika'),
+			'icon' => Yii::t('app','Ikonica'),
 		);
 	}
 

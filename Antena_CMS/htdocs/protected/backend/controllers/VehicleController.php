@@ -258,8 +258,6 @@ class VehicleController extends Controller
 			
 		}
 
-
-
 		$tabs=array();
 		$pricelists = Pricelist::model()->findAllByAttributes(array('active'=>1));
 		$active = true;

@@ -28,5 +28,17 @@ $this->menu=array(
     'attributes'=>array(
 		'id',
 		'name',
+        array(               
+	        'label'=>Yii::t('app','Slika'),
+	        'type'=>'image',
+	        'value'=>$model->image,
+        ),    
+        array(               
+	        'label'=>Yii::t('app','Ikonica'),
+	        'type'=>'image',
+	        'value'=>$model->icon,
+        ),      
+		  
+		
 	),
 )); ?>
