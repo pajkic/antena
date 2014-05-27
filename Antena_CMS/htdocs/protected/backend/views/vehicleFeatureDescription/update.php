@@ -24,6 +24,4 @@ $this->menu=array(
 	$this->widget('bootstrap.widgets.TbTabs', array(
     'tabs' => $tabs
     )); 
-
-
  ?>

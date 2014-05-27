@@ -55,7 +55,7 @@ $this->menu=array(
     'name' => 'active',
     'type' => 'raw',
     'value'=>'CHtml::checkBox("active[]",$data->active,array("value"=>$data->id,"id"=>"active_".$data->id,"class"=>"state_active"))',
-    'header' => 'Aktivan',
+    'header' => 'Aktivna',
     ),
     array(
     'name' => 'main',

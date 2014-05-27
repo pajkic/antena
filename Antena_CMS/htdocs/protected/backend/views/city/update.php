@@ -11,10 +11,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Gradova', 'url'=>array('index')),
+	//array('label'=>Yii::t('app','Lista ') . 'Gradova', 'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj ') . 'Grad', 'url'=>array('create')),
 	array('label'=>Yii::t('app','Pregledaj ') . 'Grad', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>Yii::t('app','Upravljaj ') . 'Gradovima', 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Prevedi ') . 'Grad', 'url'=>array('CityDescription/update', 'id'=>$model->id)),
 );
 ?>
 
