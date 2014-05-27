@@ -1,24 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "{{block_description}}".
+ * This is the model class for table "{{state_description}}".
  *
- * The followings are the available columns in table '{{block_description}}':
- * @property string $id
- * @property string $block_id
- * @property string $language_id
+ * The followings are the available columns in table '{{state_description}}':
+ * @property integer $id
+ * @property integer $state_id
+ * @property integer $language_id
  * @property string $title
- * @property string $content
  *
  * The followings are the available model relations:
- * @property Block $block
+ * @property State $state
  */
-class BlockDescription extends CActiveRecord
+class StateDescription extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return BlockDescription the static model class
+	 * @return StateDescription the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -30,7 +29,7 @@ class BlockDescription extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return '{{block_description}}';
+		return '{{state_description}}';
 	}
 
 	/**
@@ -41,14 +40,11 @@ class BlockDescription extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('block_id, language_id, title', 'required'),
-			array('block_id', 'length', 'max'=>19),
-			array('language_id', 'length', 'max'=>10),
+			array('state_id, language_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
-			array('content', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, block_id, language_id, title, content', 'safe', 'on'=>'search'),
+			array('id, state_id, language_id, title', 'safe'),
 		);
 	}
 
@@ -60,7 +56,7 @@ class BlockDescription extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'block' => array(self::BELONGS_TO, 'Block', 'block_id'),
+			'state' => array(self::BELONGS_TO, 'State', 'state_id'),
 		);
 	}
 
@@ -71,10 +67,9 @@ class BlockDescription extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'block_id' => 'Block',
-			'language_id' => 'Language',
+			'state_id' => 'Država',
+			'language_id' => 'Jezik',
 			'title' => 'Naziv',
-			'content' => 'Content',
 		);
 	}
 
@@ -89,11 +84,10 @@ class BlockDescription extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('block_id',$this->block_id,true);
-		$criteria->compare('language_id',$this->language_id,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('state_id',$this->state_id);
+		$criteria->compare('language_id',$this->language_id);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('content',$this->content,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -10,10 +10,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('app','Lista ') . 'Lokacija','url'=>array('index')),
-	array('label'=>Yii::t('app','Kreiraj ') . 'Lokaciju','url'=>array('create')),
-	array('label'=>Yii::t('app','Izmeni ') . 'Lokaciju', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>Yii::t('app','Upravljaj ') . 'Lokacijama', 'url'=>array('admin')),
+	//array('label'=>Yii::t('app','Lista ') . 'Lokacija','url'=>array('index')),
+	array('label'=>Yii::t('app','Kreiraj Lokaciju'),'url'=>array('create')),
+	array('label'=>Yii::t('app','Izmeni Lokaciju'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app','Upravljaj Lokacijama'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app','Prevedi Lokaciju'), 'url'=>array('LocationDescription/update', 'id'=>$model->id)),
 );
 ?>
 

@@ -13,6 +13,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>Yii::t('app','Lista država'), 'url'=>array('index')),
 	array('label'=>Yii::t('app','Kreiraj državu'), 'url'=>array('create')),
+	array('label'=>Yii::t('app','Prevedi ') . 'Državu', 'url'=>array('StateDescription/update', 'id'=>$model->id)),
 	//array('label'=>Yii::t('app','Pregledaj jezik'), 'url'=>array('view', 'id'=>$model->id)),
 	//array('label'=>Yii::t('app','Upravljaj ') . 'Language', 'url'=>array('admin')),
 );
