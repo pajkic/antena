@@ -22,11 +22,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
-	<?php echo CHtml::encode($data->active); ?>
+	<?php echo ($data->active == 1) ? Yii::t('app','Da') : Yii::t('app','Ne'); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('main')); ?>:</b>
-	<?php echo CHtml::encode($data->main); ?>
+	<?php echo ($data->main == 1) ? Yii::t('app','Da') : Yii::t('app','Ne'); ?>
 	<br />
 
 

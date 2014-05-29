@@ -172,6 +172,61 @@ class PricelistController extends Controller
 	}
 
 
+	public function actionPricelistVehicles($id)
+	{
+
+		$this->allowUser(SUPER_EDITOR);
+		if (isset($_POST['Prices'])) {
+			
+			$pricedays_id = $_POST['pricedays_id'];
+			$pricelist_id = $_POST['pricelist_id'];
+			VehicleHasPrice::model()->deleteAllByAttributes(array('pricedays_id'=>$pricedays_id,'pricelist_id'=>$pricelist_id));
+			$prices = $_POST['Prices'];
+			
+			
+			foreach($prices as $k => $v) {
+				$vehicle_has_price = new VehicleHasPrice;
+				$vehicle_has_price->attributes = array(
+				'vehicle_id'=>$k,
+				'pricelist_id'=>$pricelist_id,
+				'pricedays_id'=>$pricedays_id,
+				'price'=>$v
+				);
+				$vehicle_has_price->save();
+				
+			}
+			
+		}
+
+		$tabs=array();
+		$pricedays = Pricedays::model()->findAll();
+		$active = true;
+		foreach($pricedays as $priceday) {
+			$prices_model = VehicleHasPrice::model()->findAllByAttributes(array('pricelist_id'=>$id, 'pricedays_id'=>$priceday->id));
+			$pricelist_vehicles = array();
+			foreach($prices_model as $pm) {
+				$pricelist_vehicles[$pm['vehicle_id']] = $pm['price'];
+			}
+
+			$vehicles = Vehicle::model()->findAll();
+			$content = $this->renderPartial('_prices', array('pricelist_vehicles'=>$pricelist_vehicles,'vehicles' => $vehicles,'pricelist_id'=>$id, 'pricedays_id'=>$priceday->id), true);
+				$tabs[] = array(
+				'label' => $priceday['name'],
+				'content' => $content,
+				'active' => $active
+			);
+			if ($active) $active=false;
+		}
+		
+		$this->render('view_prices',array(
+			'model'=>$this->loadModel($id),
+			'tabs'=>$tabs,
+		));
+		
+		
+	}
+
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
