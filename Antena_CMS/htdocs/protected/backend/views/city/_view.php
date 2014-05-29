@@ -18,7 +18,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('active')); ?>:</b>
-	<?php echo CHtml::encode($data->active); ?>
+	<?php echo ($data->active == 1) ? Yii::t('app','Da') : Yii::t('app','Ne'); ?>
 	<br />
 
 
