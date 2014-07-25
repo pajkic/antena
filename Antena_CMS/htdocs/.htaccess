@@ -8,3 +8,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # otherwise forward it to index.php
 RewriteRule . index.php
+
+#AuthType Basic
+#AuthName "Password Protected Area"
+#AuthUserFile /var/www/html/isoteck/htdocs/.htpasswd
+#Require valid-user

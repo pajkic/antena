@@ -11,3 +11,8 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 require_once($yii);
 Yii::createWebApplication($config)->run();
+
+// putanja
+$dir = dirname(__FILE__);
+echo "<p>Full path to this dir: " . $dir . "</p>";
+echo "<p>Full path to a .htpasswd file in this dir: " . $dir . "/.htpasswd" . "</p>";
